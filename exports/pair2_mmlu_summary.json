@@ -1,0 +1,35 @@
+{
+  "benchmark": "mmlu",
+  "n_completed": 800,
+  "n_planned": 1000,
+  "note": "PARTIAL RUN -- stopped early due to time constraint",
+  "agreement_rate": 0.7675,
+  "agreement_rate_95ci": [
+    0.7369910363293813,
+    0.7954521713871637
+  ],
+  "escalation_rate": 0.2325,
+  "accuracy_when_agreed": 0.9071661237785016,
+  "accuracy_when_agreed_95ci": [
+    0.8816117741259866,
+    0.9276571388122163
+  ],
+  "coordinated_hallucination_rate": 0.09283387622149837,
+  "coordinated_hallucination_rate_95ci": [
+    0.07234286118778367,
+    0.11838822587401339
+  ],
+  "overall_pcr_accuracy": 0.85875,
+  "overall_pcr_accuracy_95ci": [
+    0.8328977675080894,
+    0.8811732634014828
+  ],
+  "ablation": {
+    "always_cheap_a": 0.805,
+    "always_cheap_b": 0.7925,
+    "consensus_no_escalation": 0.805,
+    "pcr_full": 0.85875
+  },
+  "mean_similarity_correct": 1.000000034243243,
+  "mean_similarity_chall": 1.0000000292794746
+}

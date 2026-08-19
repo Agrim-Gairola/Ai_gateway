@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — AI Gateway</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#0a0a0f;--surface:#111118;--border:#1e1e2e;--text:#e2e2f0;--muted:#6b6b8a;--accent:#7c6af7;--green:#22d3a5;--amber:#f59e0b;--red:#f43f5e;--blue:#38bdf8}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+  .grid-bg{position:fixed;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:40px 40px;opacity:0.3;pointer-events:none}
+  header{padding:20px 40px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.95);backdrop-filter:blur(16px)}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo-icon{width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:white}
+  .logo-text{font-size:18px;font-weight:700}
+  .nav-links{display:flex;align-items:center;gap:16px}
+  .nav-link{color:var(--muted);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:6px;transition:all .2s}
+  .nav-link:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+  .nav-link.active{color:var(--accent)}
+  main{padding:40px;max-width:800px;margin:0 auto;position:relative;z-index:10}
+  h1{font-size:28px;font-weight:700;margin-bottom:8px}
+  .page-sub{color:var(--muted);font-size:14px;margin-bottom:40px}
+  .section{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:24px}
+  .section-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:20px}
+  .provider-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .provider-label{font-size:13px;font-weight:600;min-width:80px}
+  .provider-badge{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;font-family:'JetBrains Mono',monospace;flex-shrink:0}
+  input[type=text],input[type=password],input[type=number]{flex:1;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;outline:none;transition:border-color .2s;font-family:'JetBrains Mono',monospace}
+  input:focus{border-color:var(--accent)}
+  .btn{padding:9px 18px;border-radius:8px;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+  .btn-primary{background:var(--accent);color:white}
+  .btn-primary:hover{opacity:.85}
+  .btn-danger{background:rgba(244,63,94,.15);color:var(--red);border:1px solid rgba(244,63,94,.3)}
+  .btn-danger:hover{background:rgba(244,63,94,.25)}
+  .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  .key-saved{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(34,211,165,.05);border:1px solid rgba(34,211,165,.2);border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);flex:1}
+  .toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:8px;font-size:13px;font-weight:600;z-index:1000;display:none;animation:slideUp .3s ease}
+  .toast.success{background:rgba(34,211,165,.15);border:1px solid rgba(34,211,165,.3);color:var(--green)}
+  .toast.error{background:rgba(244,63,94,.15);border:1px solid rgba(244,63,94,.3);color:var(--red)}
+  @keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  .budget-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .budget-item label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px;font-family:'JetBrains Mono',monospace}
+  .usage-bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:8px}
+  .usage-fill{height:100%;border-radius:3px;transition:width .6s ease}
+  .user-info{display:flex;align-items:center;gap:16px}
+  .avatar{width:48px;height:48px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;flex-shrink:0}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<header>
+  <div class="logo">
+    <div class="logo-icon">AI</div>
+    <div class="logo-text">Enterprise AI Gateway</div>
+  </div>
+  <div class="nav-links">
+    <a href="/app" class="nav-link">Dashboard</a>
+    <a href="/user/settings" class="nav-link active">Settings</a>
+    <a href="#" class="nav-link" onclick="logout()">Sign out</a>
+  </div>
+</header>
+
+<main>
+  <h1>Account Settings</h1>
+  <p class="page-sub">Manage your API keys, usage limits, and account details.</p>
+
+  <div class="section">
+    <div class="section-title">Account</div>
+    <div class="user-info">
+      <div class="avatar" id="user-avatar">?</div>
+      <div>
+        <div style="font-size:16px;font-weight:600" id="user-name">Loading...</div>
+        <div style="font-size:13px;color:var(--muted)" id="user-email"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">API Keys</div>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:20px">Your keys are encrypted and used only for your requests.</p>
+    <div id="keys-container">
+      <div style="color:var(--muted);font-size:13px">Loading...</div>
+    </div>
+    <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--border)">
+      <div class="section-title" style="margin-bottom:16px">Add / Update Key</div>
+      <div class="provider-row">
+        <select id="new-provider" style="padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:13px;outline:none;min-width:120px">
+          <option value="groq">Groq</option>
+          <option value="gemini">Gemini</option>
+          <option value="openai">OpenAI</option>
+        </select>
+        <input type="password" id="new-key" placeholder="Paste your API key here" />
+        <button class="btn btn-primary" onclick="addKey()">Save Key</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Usage Limits</div>
+    <div class="budget-grid">
+      <div class="budget-item">
+        <label>Daily limit (USD)</label>
+        <input type="number" id="daily-limit" value="10" min="0" step="1" />
+      </div>
+      <div class="budget-item">
+        <label>Monthly limit (USD)</label>
+        <input type="number" id="monthly-limit" value="100" min="0" step="10" />
+      </div>
+    </div>
+    <div style="margin-top:16px" id="usage-display"></div>
+    <button class="btn btn-primary" style="margin-top:16px" onclick="saveBudget()">Save Limits</button>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const token = localStorage.getItem('token');
+// For Google OAuth users, token is in cookie - still allow access
+const headers = token 
+  ? {'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`, 'X-API-Key': 'ak_dev_1234567890abcdef'}
+  : {'Content-Type': 'application/json', 'X-API-Key': 'ak_dev_1234567890abcdef'};
+
+// Check auth
+async function checkAuth() {
+  const r = await fetch('/auth/me', {headers});
+  if (!r.ok) window.location.href = '/login';
+}
+checkAuth();
+
+async function loadUser() {
+  try {
+    const r = await fetch('/auth/me', {headers});
+    if (!r.ok) { window.location.href = '/login'; return; }
+    const u = await r.json();
+    document.getElementById('user-name').textContent = u.name || u.email;
+    document.getElementById('user-email').textContent = u.email;
+    document.getElementById('user-avatar').textContent = (u.name || u.email)[0].toUpperCase();
+  } catch(e) {}
+}
+
+async function loadKeys() {
+  try {
+    const r = await fetch('/user/keys', {headers});
+    const keys = await r.json();
+    const container = document.getElementById('keys-container');
+    if (!keys.length) {
+      container.innerHTML = '<div style="color:var(--muted);font-size:13px">No API keys added yet.</div>';
+      return;
+    }
+    container.innerHTML = keys.map(k => `
+      <div class="provider-row" style="margin-bottom:12px">
+        <div class="provider-badge" style="background:${k.provider==='groq'?'rgba(124,106,247,.2)':k.provider==='gemini'?'rgba(34,211,165,.2)':'rgba(56,189,248,.2)'}">
+          ${k.provider[0].toUpperCase()}
+        </div>
+        <div class="provider-label">${k.provider}</div>
+        <div class="key-saved">${k.key_preview}</div>
+        <button class="btn btn-danger" onclick="deleteKey('${k.id}')">Remove</button>
+      </div>
+    `).join('');
+  } catch(e) {}
+}
+
+async function loadBudget() {
+  try {
+    const r = await fetch('/user/budget', {headers});
+    const b = await r.json();
+    document.getElementById('daily-limit').value = b.daily_limit_usd;
+    document.getElementById('monthly-limit').value = b.monthly_limit_usd;
+    const dailyPct = Math.min(b.daily_spent_usd / b.daily_limit_usd * 100, 100) || 0;
+    const monthlyPct = Math.min(b.monthly_spent_usd / b.monthly_limit_usd * 100, 100) || 0;
+    document.getElementById('usage-display').innerHTML = `
+      <div style="margin-bottom:12px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:4px">
+          <span>Daily usage</span><span>$${b.daily_spent_usd.toFixed(4)} / $${b.daily_limit_usd}</span>
+        </div>
+        <div class="usage-bar"><div class="usage-fill" style="width:${dailyPct}%;background:${dailyPct>90?'var(--red)':dailyPct>70?'var(--amber)':'var(--green)'}"></div></div>
+      </div>
+      <div>
+        <div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:4px">
+          <span>Monthly usage</span><span>$${b.monthly_spent_usd.toFixed(4)} / $${b.monthly_limit_usd}</span>
+        </div>
+        <div class="usage-bar"><div class="usage-fill" style="width:${monthlyPct}%;background:${monthlyPct>90?'var(--red)':monthlyPct>70?'var(--amber)':'var(--green)'}"></div></div>
+      </div>
+    `;
+  } catch(e) {}
+}
+
+async function addKey() {
+  const provider = document.getElementById('new-provider').value;
+  const api_key = document.getElementById('new-key').value.trim();
+  if (!api_key) { showToast('Please enter an API key', 'error'); return; }
+  try {
+    const r = await fetch('/user/keys', {method:'POST', headers, body: JSON.stringify({provider, api_key})});
+    const d = await r.json();
+    showToast(d.message, 'success');
+    document.getElementById('new-key').value = '';
+    loadKeys();
+  } catch(e) { showToast('Failed to save key', 'error'); }
+}
+
+async function deleteKey(id) {
+  try {
+    await fetch(`/user/keys/${id}`, {method:'DELETE', headers});
+    showToast('Key removed', 'success');
+    loadKeys();
+  } catch(e) { showToast('Failed to remove key', 'error'); }
+}
+
+async function saveBudget() {
+  const daily = parseFloat(document.getElementById('daily-limit').value);
+  const monthly = parseFloat(document.getElementById('monthly-limit').value);
+  try {
+    const r = await fetch('/user/budget', {method:'POST', headers, body: JSON.stringify({daily_limit_usd: daily, monthly_limit_usd: monthly})});
+    const d = await r.json();
+    showToast(d.message, 'success');
+    loadBudget();
+  } catch(e) { showToast('Failed to save budget', 'error'); }
+}
+
+async function logout() {
+  await fetch('/auth/logout', {method:'POST', headers});
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  window.location.href = '/';
+}
+
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${type}`;
+  t.style.display = 'block';
+  setTimeout(() => t.style.display = 'none', 3000);
+}
+
+loadUser();
+loadKeys();
+loadBudget();
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise AI Gateway</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600;700;900&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#0a0a0f;--surface:#111118;--border:#1e1e2e;--text:#e2e2f0;--muted:#6b6b8a;--accent:#7c6af7;--green:#22d3a5;--amber:#f59e0b;--blue:#38bdf8}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+  .grid-bg{position:fixed;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:40px 40px;opacity:0.3;pointer-events:none}
+  nav{padding:20px 60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+  .nav-logo{display:flex;align-items:center;gap:12px}
+  .nav-logo-icon{width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700;color:white}
+  .nav-logo-text{font-size:18px;font-weight:700}
+  .nav-links{display:flex;align-items:center;gap:24px}
+  .nav-link{color:var(--muted);text-decoration:none;font-size:14px;transition:color .2s}
+  .nav-link:hover{color:var(--text)}
+  .btn{padding:10px 24px;border-radius:8px;border:none;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;text-decoration:none;display:inline-block}
+  .btn-primary{background:var(--accent);color:white}
+  .btn-primary:hover{opacity:.85;transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+  hero{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 60px 80px;text-align:center;position:relative;z-index:10}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid rgba(124,106,247,0.3);border-radius:20px;font-size:12px;color:var(--accent);font-family:'JetBrains Mono',monospace;margin-bottom:32px;background:rgba(124,106,247,0.05)}
+  .hero-title{font-size:64px;font-weight:900;letter-spacing:-2px;line-height:1.1;margin-bottom:24px;max-width:800px}
+  .hero-title span{background:linear-gradient(135deg,var(--accent),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .hero-sub{font-size:20px;color:var(--muted);max-width:600px;line-height:1.6;margin-bottom:48px}
+  .hero-actions{display:flex;gap:16px;align-items:center}
+  .hero-stats{display:flex;gap:60px;margin-top:80px;padding:32px 48px;background:var(--surface);border:1px solid var(--border);border-radius:16px}
+  .stat{text-align:center}
+  .stat-value{font-size:36px;font-weight:900;letter-spacing:-1px;font-family:'JetBrains Mono',monospace}
+  .stat-label{font-size:12px;color:var(--muted);margin-top:6px;text-transform:uppercase;letter-spacing:.1em}
+  .features{padding:80px 60px;position:relative;z-index:10}
+  .features-title{font-size:14px;color:var(--accent);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.1em;text-align:center;margin-bottom:16px}
+  .features-heading{font-size:42px;font-weight:900;letter-spacing:-1px;text-align:center;margin-bottom:64px}
+  .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto}
+  .feature-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;transition:border-color .2s}
+  .feature-card:hover{border-color:var(--accent)}
+  .feature-phase{font-size:11px;color:var(--accent);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px}
+  .feature-title{font-size:20px;font-weight:700;margin-bottom:12px}
+  .feature-desc{font-size:14px;color:var(--muted);line-height:1.7}
+  .feature-tag{display:inline-block;margin-top:16px;padding:4px 12px;border-radius:4px;font-size:11px;font-family:'JetBrains Mono',monospace;font-weight:700}
+  .cta{padding:80px 60px;text-align:center;position:relative;z-index:10}
+  .cta-card{max-width:600px;margin:0 auto;padding:64px;background:linear-gradient(135deg,rgba(124,106,247,0.1),rgba(56,189,248,0.05));border:1px solid rgba(124,106,247,0.3);border-radius:24px}
+  .cta-title{font-size:42px;font-weight:900;letter-spacing:-1px;margin-bottom:16px}
+  .cta-sub{font-size:16px;color:var(--muted);margin-bottom:32px}
+  footer{padding:32px 60px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px;position:relative;z-index:10}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">AI</div>
+    <div class="nav-logo-text">Enterprise AI Gateway</div>
+  </div>
+  <div class="nav-links">
+    <a href="#features" class="nav-link">Features</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="/login" class="btn btn-outline">Sign in</a>
+    <a href="/signup" class="btn btn-primary">Get started free</a>
+  </div>
+</nav>
+
+<hero style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px 60px 80px;text-align:center;position:relative;z-index:10">
+  <div class="hero-badge">
+    <div style="width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite"></div>
+    Production-grade LLM orchestration
+  </div>
+  <h1 class="hero-title">The intelligent layer<br>between you and <span>every LLM</span></h1>
+  <p class="hero-sub">Compress prompts, cache semantically, dispatch speculatively. Cut your AI costs by 90% without touching your code.</p>
+  <div class="hero-actions">
+    <a href="/signup" class="btn btn-primary" style="font-size:16px;padding:14px 32px">Start for free</a>
+    <a href="/app" class="btn btn-outline" style="font-size:16px;padding:14px 32px">View live demo</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-value" style="color:var(--green)">97%</div><div class="stat-label">Cost reduction</div></div>
+    <div class="stat"><div class="stat-value" style="color:var(--blue)">55%</div><div class="stat-label">Token compression</div></div>
+    <div class="stat"><div class="stat-value" style="color:var(--accent)">0.90</div><div class="stat-label">SPD consensus</div></div>
+    <div class="stat"><div class="stat-value" style="color:var(--amber)">30%</div><div class="stat-label">Zero-cost cache hits</div></div>
+  </div>
+</hero>
+
+<section class="features" id="features">
+  <div class="features-title">5-Phase Pipeline</div>
+  <h2 class="features-heading">Not a router. An optimizer.</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-phase">Phase 1</div>
+      <div class="feature-title">Prompt Compression</div>
+      <div class="feature-desc">LLMLingua-2 runs on GPU to strip conversational noise before your prompt hits any model. Typical reduction: 40-55% fewer input tokens.</div>
+      <span class="feature-tag" style="background:rgba(56,189,248,.1);color:var(--blue)">LLMLingua-2</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-phase">Phase 2</div>
+      <div class="feature-title">Prompt DNA Cache</div>
+      <div class="feature-desc">Every compressed prompt gets a semantic fingerprint. Near-identical intent returns the cached response instantly at zero API cost.</div>
+      <span class="feature-tag" style="background:rgba(34,211,165,.1);color:var(--green)">FAISS + sentence-transformers</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-phase">Phase 3</div>
+      <div class="feature-title">Speculative Parallel Dispatch</div>
+      <div class="feature-desc">Fire two cheap models simultaneously. If they semantically agree, return the cheaper one. Only escalate to frontier models on disagreement.</div>
+      <span class="feature-tag" style="background:rgba(124,106,247,.1);color:var(--accent)">Consensus Arbiter</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-phase">Phase 4</div>
+      <div class="feature-title">Smart Routing Engine</div>
+      <div class="feature-desc">Query classifier + complexity scorer routes each request to the optimal model tier automatically. Simple queries never hit expensive models.</div>
+      <span class="feature-tag" style="background:rgba(245,158,11,.1);color:var(--amber)">Intelligent routing</span>
+    </div>
+    <div class="feature-card">
+      <div class="feature-phase">Phase 5</div>
+      <div class="feature-title">Cost Governance</div>
+      <div class="feature-desc">Per-team budget caps enforced before every request. Full audit log with dual savings baseline: routing savings + compression savings.</div>
+      <span class="feature-tag" style="background:rgba(244,63,94,.1);color:#f43f5e">Policy engine</span>
+    </div>
+    <div class="feature-card" style="border-color:rgba(124,106,247,0.3);background:rgba(124,106,247,0.03)">
+      <div class="feature-phase">Your Keys</div>
+      <div class="feature-title">Bring Your Own API Keys</div>
+      <div class="feature-desc">Connect your Groq, Gemini, and OpenAI keys. Your keys, your costs, your data. Full usage analytics per key.</div>
+      <span class="feature-tag" style="background:rgba(124,106,247,.2);color:var(--accent)">Secure storage</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-card">
+    <h2 class="cta-title">Ready to cut your AI costs?</h2>
+    <p class="cta-sub">Set up in 2 minutes. No credit card required.</p>
+    <a href="/signup" class="btn btn-primary" style="font-size:16px;padding:14px 40px">Get started free</a>
+  </div>
+</section>
+
+<footer>
+  <div>Enterprise AI Gateway — Built with Groq, Gemini, LLMLingua-2</div>
+  <div style="display:flex;gap:24px">
+    <a href="/app" style="color:var(--muted);text-decoration:none">Live Demo</a>
+    <a href="/login" style="color:var(--muted);text-decoration:none">Sign in</a>
+  </div>
+</footer>
+
+<style>@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}</style>
+</body>
+</html>

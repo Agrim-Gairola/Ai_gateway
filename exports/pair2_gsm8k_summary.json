@@ -1,0 +1,35 @@
+{
+  "benchmark": "gsm8k",
+  "n_completed": 500,
+  "n_planned": 500,
+  "note": "complete",
+  "agreement_rate": 0.124,
+  "agreement_rate_95ci": [
+    0.09794566312958619,
+    0.15578805000565316
+  ],
+  "escalation_rate": 0.876,
+  "accuracy_when_agreed": 0.7096774193548387,
+  "accuracy_when_agreed_95ci": [
+    0.5871211868886291,
+    0.8077659361460482
+  ],
+  "coordinated_hallucination_rate": 0.2903225806451613,
+  "coordinated_hallucination_rate_95ci": [
+    0.192234063853952,
+    0.4128788131113709
+  ],
+  "overall_pcr_accuracy": 0.916,
+  "overall_pcr_accuracy_95ci": [
+    0.8884001169044928,
+    0.9372562004777957
+  ],
+  "ablation": {
+    "always_cheap_a": 0.368,
+    "always_cheap_b": 0.252,
+    "consensus_no_escalation": 0.368,
+    "pcr_full": 0.916
+  },
+  "mean_similarity_correct": 0.46511088497936726,
+  "mean_similarity_chall": 0.5300070171554884
+}
