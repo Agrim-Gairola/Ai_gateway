@@ -1,0 +1,37 @@
+{
+  "pair": "pair3",
+  "benchmark": "gsm8k",
+  "n_completed": 150,
+  "n_planned": 150,
+  "metrics": {
+    "agreement_rate": 0.78,
+    "escalation_rate": 0.22,
+    "accuracy_when_agreed": 0.9572649572649573,
+    "coordinated_hallucination_rate": 0.042735042735042736,
+    "overall_pcr_accuracy": 0.8933333333333333
+  },
+  "metrics_95ci": {
+    "agreement_rate": [
+      0.7071754568460243,
+      0.8388407052323733
+    ],
+    "accuracy_when_agreed": [
+      0.903846223810073,
+      0.9816104401202294
+    ],
+    "coordinated_hallucination_rate": [
+      0.01838955987977076,
+      0.09615377618992708
+    ],
+    "overall_pcr_accuracy": [
+      0.8337524992356726,
+      0.9332702046363619
+    ]
+  },
+  "ablation": {
+    "always_cheap_a": 0.7866666666666666,
+    "always_cheap_b": 0.8133333333333334,
+    "no_escalation": 0.7866666666666666,
+    "pcr_full": 0.8933333333333333
+  }
+}

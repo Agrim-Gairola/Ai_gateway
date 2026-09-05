@@ -1,0 +1,119 @@
+=== PCR-3 / arc  23:00:39 ===
+=== PCR-3 [allgroq_gptoss20_qwen36_qwen38] -- arc n=120 (from 0) ===
+cheap: ['groq:openai/gpt-oss-20b', 'groq:qwen/qwen3.6-27b', 'groq:qwen/qwen3.8-27b'] frontier: groq:openai/gpt-oss-120b
+  [groq:openai/gpt-oss-20b] empty content (finish_reason=length); retrying with 3x max_tokens
+  checkpointed 50/120
+  checkpointed 100/120
+  [groq:openai/gpt-oss-20b] empty content (finish_reason=length); retrying with 3x max_tokens
+  [groq:openai/gpt-oss-20b] empty content (finish_reason=length); retrying with 3x max_tokens
+  checkpointed 120/120
+
+========================================================
+PCR-3 SUMMARY -- allgroq_gptoss20_qwen36_qwen38/arc
+========================================================
+N:                          120
+Majority formed (2/3+):     120/120 = 100.0%
+Escalation (all 3 differ):  0/120 = 0.0%
+Accuracy | majority:        114/120 = 95.0%
+C-Hall | majority:          6/120 = 5.0%
+Overall PCR-3 accuracy:     95.0%
+========================================================
+=== end arc rc=0 ===
+=== PCR-3 / mmlu_pro  23:10:45 ===
+=== PCR-3 [allgroq_gptoss20_qwen36_qwen38] -- mmlu_pro n=120 (from 0) ===
+cheap: ['groq:openai/gpt-oss-20b', 'groq:qwen/qwen3.6-27b', 'groq:qwen/qwen3.8-27b'] frontier: groq:openai/gpt-oss-120b
+  [groq:openai/gpt-oss-20b] error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k31g96jmf8fr68tv87v8yv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199856, Requested 364. Please try again in 1m35.04s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); retrying in 1.0s
+  [groq:openai/gpt-oss-20b] error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k31g96jmf8fr68tv87v8yv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199853, Requested 364. Please try again in 1m33.744s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); retrying in 2.0s
+  [groq:openai/gpt-oss-20b] error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k31g96jmf8fr68tv87v8yv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199849, Requested 364. Please try again in 1m32.015999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); retrying in 4.0s
+  [groq:openai/gpt-oss-20b] error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k31g96jmf8fr68tv87v8yv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199839, Requested 364. Please try again in 1m27.696s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); retrying in 8.0s
+  [groq:openai/gpt-oss-20b] error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k31g96jmf8fr68tv87v8yv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199820, Requested 367. Please try again in 1m20.783999999s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); retrying in 16.0s
+  emergency-checkpointed 5/120
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\files\pcr_experiment\pcr3_runner.py", line 142, in <module>
+    asyncio.run(run(a.benchmark, a.n))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "D:\files\pcr_experiment\pcr3_runner.py", line 76, in run
+    calls = await asyncio.gather(*[
+            ^^^^^^^^^^^^^^^^^^^^^^^
+        R.call_model(m, it["prompt"], cbud) for m in TRIPLE["cheap"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ])
+    ^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 378, in call_model
+    return await caller(spec.model, prompt, max_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+=== end mmlu_pro rc=1 ===
+=== PCR-3 / truthfulqa  23:11:51 ===
+=== PCR-3 [allgroq_gptoss20_qwen36_qwen38] -- truthfulqa n=120 (from 0) ===
+cheap: ['groq:openai/gpt-oss-20b', 'groq:qwen/qwen3.6-27b', 'groq:qwen/qwen3.8-27b'] frontier: groq:openai/gpt-oss-120b
+  [groq:openai/gpt-oss-20b] error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k31g96jmf8fr68tv87v8yv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199902, Requested 294. Please try again in 1m24.672s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); retrying in 1.0s
+  [groq:openai/gpt-oss-20b] error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k31g96jmf8fr68tv87v8yv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199899, Requested 291. Please try again in 1m22.08s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); retrying in 2.0s
+  [groq:openai/gpt-oss-20b] error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k31g96jmf8fr68tv87v8yv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199894, Requested 278. Please try again in 1m14.304s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); retrying in 4.0s
+  [groq:openai/gpt-oss-20b] error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k31g96jmf8fr68tv87v8yv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199885, Requested 294. Please try again in 1m17.328s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); retrying in 8.0s
+  [groq:openai/gpt-oss-20b] error (Error code: 429 - {'error': {'message': 'Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01k31g96jmf8fr68tv87v8yv42` service tier `on_demand` on tokens per day (TPD): Limit 200000, Used 199866, Requested 294. Please try again in 1m9.12s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}); retrying in 16.0s
+  emergency-checkpointed 1/120
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\files\pcr_experiment\pcr3_runner.py", line 142, in <module>
+    asyncio.run(run(a.benchmark, a.n))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\asyncio\runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\asyncio\runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "D:\files\pcr_experiment\pcr3_runner.py", line 76, in run
+    calls = await asyncio.gather(*[
+            ^^^^^^^^^^^^^^^^^^^^^^^
+        R.call_model(m, it["prompt"], cbud) for m in TRIPLE["cheap"]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ])
+    ^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 378, in call_model
+    return await caller(spec.model, prompt, max_tokens)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+=== end truthfulqa rc=1 ===
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\files\pcr_experiment\ablation_study.py", line 260, in <module>
+    main(export=a.export)
+    ~~~~^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\ablation_study.py", line 196, in main
+    cells[(pair, bm)] = score_cell(data, fr_acc)
+                        ~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\ablation_study.py", line 147, in score_cell
+    c, l = cost_latency_for_policy(rows, models, pol)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\ablation_study.py", line 86, in cost_latency_for_policy
+    ta = [toks(x["cheap_a"]) for x in u]
+               ~^^^^^^^^^^^
+KeyError: 'cheap_a'
+  wrote D:\files\pcr_experiment\exports\figures\fig7_tradeoff_cost.png
+  wrote D:\files\pcr_experiment\exports\figures\fig8_tradeoff_latency.png
+  wrote D:\files\pcr_experiment\exports\figures\fig9_policy_ladder.png
+
+frontier lower-bound accuracy by tier (from disagreement subset): {'easy': 0.664, 'math': 0.848, 'medium': 0.662, 'hard': 0.629}
+PCR3 PHASE DONE 23:13:04

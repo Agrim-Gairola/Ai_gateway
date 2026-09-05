@@ -1,0 +1,5148 @@
+{
+  "tag": "allgroq_gptoss20_qwen36_qwen38",
+  "benchmark": "mmlu_pro",
+  "n_total": 120,
+  "cheap": [
+    "groq:openai/gpt-oss-20b",
+    "groq:qwen/qwen3.6-27b",
+    "groq:qwen/qwen3.8-27b"
+  ],
+  "frontier": "groq:openai/gpt-oss-120b",
+  "results": [
+    {
+      "idx": 0,
+      "domain": "physics",
+      "gold": "A",
+      "ans": [
+        "E",
+        "E",
+        "E"
+      ],
+      "majority": "E",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 224,
+            "tokens_out": 42,
+            "latency_seconds": 0.753,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 171,
+            "tokens_out": 2,
+            "latency_seconds": 0.262,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 171,
+            "tokens_out": 2,
+            "latency_seconds": 0.343,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.753,
+        "total_latency_seconds": 0.753
+      }
+    },
+    {
+      "idx": 1,
+      "domain": "health",
+      "gold": "E",
+      "ans": [
+        "E",
+        "E",
+        "E"
+      ],
+      "majority": "E",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 253,
+            "tokens_out": 29,
+            "latency_seconds": 0.461,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 205,
+            "tokens_out": 2,
+            "latency_seconds": 0.121,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 205,
+            "tokens_out": 2,
+            "latency_seconds": 0.61,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.61,
+        "total_latency_seconds": 0.61
+      }
+    },
+    {
+      "idx": 2,
+      "domain": "math",
+      "gold": "B",
+      "ans": [
+        "B",
+        "E",
+        "D"
+      ],
+      "majority": "B",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 207,
+            "tokens_out": 104,
+            "latency_seconds": 0.543,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 161,
+            "tokens_out": 2,
+            "latency_seconds": 0.12,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 161,
+            "tokens_out": 2,
+            "latency_seconds": 0.28,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 207,
+          "tokens_out": 117,
+          "latency_seconds": 0.601,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.543,
+        "total_latency_seconds": 1.144
+      }
+    },
+    {
+      "idx": 3,
+      "domain": "history",
+      "gold": "I",
+      "ans": [
+        "I",
+        "I",
+        "I"
+      ],
+      "majority": "I",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 581,
+            "tokens_out": 43,
+            "latency_seconds": 0.598,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 540,
+            "tokens_out": 2,
+            "latency_seconds": 0.156,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 540,
+            "tokens_out": 2,
+            "latency_seconds": 0.342,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.598,
+        "total_latency_seconds": 0.598
+      }
+    },
+    {
+      "idx": 4,
+      "domain": "economics",
+      "gold": "E",
+      "ans": [
+        "B",
+        "E",
+        "E"
+      ],
+      "majority": "E",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 193,
+            "tokens_out": 113,
+            "latency_seconds": 0.474,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 145,
+            "tokens_out": 2,
+            "latency_seconds": 0.126,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 145,
+            "tokens_out": 2,
+            "latency_seconds": 0.241,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.474,
+        "total_latency_seconds": 0.474
+      }
+    },
+    {
+      "idx": 5,
+      "domain": "math",
+      "gold": "H",
+      "ans": [
+        "H",
+        "H",
+        "H"
+      ],
+      "majority": "H",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 214,
+            "tokens_out": 263,
+            "latency_seconds": 1.905,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 160,
+            "tokens_out": 2,
+            "latency_seconds": 0.368,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 160,
+            "tokens_out": 2,
+            "latency_seconds": 0.422,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 1.905,
+        "total_latency_seconds": 1.905
+      }
+    },
+    {
+      "idx": 6,
+      "domain": "engineering",
+      "gold": "D",
+      "ans": [
+        "D",
+        "A",
+        "A"
+      ],
+      "majority": "A",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 234,
+            "tokens_out": 52,
+            "latency_seconds": 0.238,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 186,
+            "tokens_out": 2,
+            "latency_seconds": 0.125,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 186,
+            "tokens_out": 2,
+            "latency_seconds": 0.299,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.299,
+        "total_latency_seconds": 0.299
+      }
+    },
+    {
+      "idx": 7,
+      "domain": "engineering",
+      "gold": "H",
+      "ans": [
+        "H",
+        "H",
+        "H"
+      ],
+      "majority": "H",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 447,
+            "tokens_out": 528,
+            "latency_seconds": 1.65,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 389,
+            "tokens_out": 2,
+            "latency_seconds": 0.141,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 389,
+            "tokens_out": 2,
+            "latency_seconds": 0.248,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 1.65,
+        "total_latency_seconds": 1.65
+      }
+    },
+    {
+      "idx": 8,
+      "domain": "business",
+      "gold": "F",
+      "ans": [
+        "F",
+        "F",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 304,
+            "tokens_out": 173,
+            "latency_seconds": 0.617,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 312,
+            "tokens_out": 2,
+            "latency_seconds": 0.126,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 312,
+            "tokens_out": 2,
+            "latency_seconds": 0.305,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.617,
+        "total_latency_seconds": 0.617
+      }
+    },
+    {
+      "idx": 9,
+      "domain": "economics",
+      "gold": "C",
+      "ans": [
+        "F",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 292,
+            "tokens_out": 55,
+            "latency_seconds": 0.77,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 236,
+            "tokens_out": 2,
+            "latency_seconds": 0.123,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 236,
+            "tokens_out": 2,
+            "latency_seconds": 0.233,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.77,
+        "total_latency_seconds": 0.77
+      }
+    },
+    {
+      "idx": 10,
+      "domain": "economics",
+      "gold": "B",
+      "ans": [
+        "B",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 210,
+            "tokens_out": 28,
+            "latency_seconds": 0.488,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 162,
+            "tokens_out": 2,
+            "latency_seconds": 0.12,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 162,
+            "tokens_out": 2,
+            "latency_seconds": 0.29,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.488,
+        "total_latency_seconds": 0.488
+      }
+    },
+    {
+      "idx": 11,
+      "domain": "physics",
+      "gold": "D",
+      "ans": [
+        "D",
+        "I",
+        "A"
+      ],
+      "majority": "D",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 163,
+            "tokens_out": 72,
+            "latency_seconds": 0.451,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 117,
+            "tokens_out": 2,
+            "latency_seconds": 0.369,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 117,
+            "tokens_out": 2,
+            "latency_seconds": 0.226,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 163,
+          "tokens_out": 65,
+          "latency_seconds": 0.587,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.451,
+        "total_latency_seconds": 1.038
+      }
+    },
+    {
+      "idx": 12,
+      "domain": "business",
+      "gold": "B",
+      "ans": [
+        "C",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 162,
+            "tokens_out": 37,
+            "latency_seconds": 0.735,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 106,
+            "tokens_out": 2,
+            "latency_seconds": 0.112,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 106,
+            "tokens_out": 2,
+            "latency_seconds": 0.408,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.735,
+        "total_latency_seconds": 0.735
+      }
+    },
+    {
+      "idx": 13,
+      "domain": "psychology",
+      "gold": "G",
+      "ans": [
+        "C",
+        "G",
+        "G"
+      ],
+      "majority": "G",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 168,
+            "tokens_out": 37,
+            "latency_seconds": 0.303,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 110,
+            "tokens_out": 2,
+            "latency_seconds": 0.18,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 110,
+            "tokens_out": 2,
+            "latency_seconds": 0.225,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.303,
+        "total_latency_seconds": 0.303
+      }
+    },
+    {
+      "idx": 14,
+      "domain": "history",
+      "gold": "C",
+      "ans": [
+        "C",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 560,
+            "tokens_out": 163,
+            "latency_seconds": 0.562,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 551,
+            "tokens_out": 2,
+            "latency_seconds": 0.157,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 551,
+            "tokens_out": 2,
+            "latency_seconds": 0.267,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.562,
+        "total_latency_seconds": 0.562
+      }
+    },
+    {
+      "idx": 15,
+      "domain": "engineering",
+      "gold": "D",
+      "ans": [
+        "C",
+        "A",
+        "D"
+      ],
+      "majority": "C",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 404,
+            "tokens_out": 506,
+            "latency_seconds": 1.663,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 362,
+            "tokens_out": 2,
+            "latency_seconds": 0.276,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 362,
+            "tokens_out": 2,
+            "latency_seconds": 0.248,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 404,
+          "tokens_out": 1052,
+          "latency_seconds": 3.998,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.663,
+        "total_latency_seconds": 5.661
+      }
+    },
+    {
+      "idx": 16,
+      "domain": "other",
+      "gold": "D",
+      "ans": [
+        "J",
+        "D",
+        "D"
+      ],
+      "majority": "D",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 253,
+            "tokens_out": 49,
+            "latency_seconds": 0.489,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 200,
+            "tokens_out": 2,
+            "latency_seconds": 0.193,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 200,
+            "tokens_out": 2,
+            "latency_seconds": 0.301,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.489,
+        "total_latency_seconds": 0.489
+      }
+    },
+    {
+      "idx": 17,
+      "domain": "health",
+      "gold": "H",
+      "ans": [
+        "F",
+        "H",
+        "E"
+      ],
+      "majority": "F",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "F",
+      "final_ans": "F",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 281,
+            "tokens_out": 36,
+            "latency_seconds": 0.461,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 231,
+            "tokens_out": 2,
+            "latency_seconds": 0.123,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 231,
+            "tokens_out": 2,
+            "latency_seconds": 0.236,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 281,
+          "tokens_out": 40,
+          "latency_seconds": 0.262,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.461,
+        "total_latency_seconds": 0.722
+      }
+    },
+    {
+      "idx": 18,
+      "domain": "philosophy",
+      "gold": "I",
+      "ans": [
+        "I",
+        "J",
+        "J"
+      ],
+      "majority": "J",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "J",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 137,
+            "tokens_out": 26,
+            "latency_seconds": 0.461,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 89,
+            "tokens_out": 2,
+            "latency_seconds": 3.135,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 89,
+            "tokens_out": 2,
+            "latency_seconds": 0.223,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 3.135,
+        "total_latency_seconds": 3.135
+      }
+    },
+    {
+      "idx": 19,
+      "domain": "other",
+      "gold": "D",
+      "ans": [
+        "D",
+        "A",
+        "A"
+      ],
+      "majority": "A",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 202,
+            "tokens_out": 106,
+            "latency_seconds": 0.574,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 147,
+            "tokens_out": 2,
+            "latency_seconds": 0.108,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 147,
+            "tokens_out": 2,
+            "latency_seconds": 0.59,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.59,
+        "total_latency_seconds": 0.59
+      }
+    },
+    {
+      "idx": 20,
+      "domain": "computer science",
+      "gold": "H",
+      "ans": [
+        "H",
+        "H",
+        "H"
+      ],
+      "majority": "H",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 360,
+            "tokens_out": 82,
+            "latency_seconds": 0.633,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 337,
+            "tokens_out": 2,
+            "latency_seconds": 0.42,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 337,
+            "tokens_out": 2,
+            "latency_seconds": 0.247,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.633,
+        "total_latency_seconds": 0.633
+      }
+    },
+    {
+      "idx": 21,
+      "domain": "economics",
+      "gold": "F",
+      "ans": [
+        "G",
+        "F",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 286,
+            "tokens_out": 38,
+            "latency_seconds": 0.482,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 249,
+            "tokens_out": 2,
+            "latency_seconds": 0.128,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 249,
+            "tokens_out": 2,
+            "latency_seconds": 0.233,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.482,
+        "total_latency_seconds": 0.482
+      }
+    },
+    {
+      "idx": 22,
+      "domain": "business",
+      "gold": "I",
+      "ans": [
+        "I",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 448,
+            "tokens_out": 149,
+            "latency_seconds": 0.558,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 449,
+            "tokens_out": 2,
+            "latency_seconds": 0.141,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 449,
+            "tokens_out": 2,
+            "latency_seconds": 0.256,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.558,
+        "total_latency_seconds": 0.558
+      }
+    },
+    {
+      "idx": 23,
+      "domain": "computer science",
+      "gold": "A",
+      "ans": [
+        "A",
+        "A",
+        "J"
+      ],
+      "majority": "A",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 301,
+            "tokens_out": 76,
+            "latency_seconds": 0.322,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 244,
+            "tokens_out": 2,
+            "latency_seconds": 0.615,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 244,
+            "tokens_out": 2,
+            "latency_seconds": 0.334,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.615,
+        "total_latency_seconds": 0.615
+      }
+    },
+    {
+      "idx": 24,
+      "domain": "engineering",
+      "gold": "E",
+      "ans": [
+        "E",
+        "E",
+        "E"
+      ],
+      "majority": "E",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 252,
+            "tokens_out": 72,
+            "latency_seconds": 0.556,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 244,
+            "tokens_out": 2,
+            "latency_seconds": 0.198,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 244,
+            "tokens_out": 2,
+            "latency_seconds": 0.306,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.556,
+        "total_latency_seconds": 0.556
+      }
+    },
+    {
+      "idx": 25,
+      "domain": "biology",
+      "gold": "C",
+      "ans": [
+        "C",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 481,
+            "tokens_out": 16,
+            "latency_seconds": 0.923,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 431,
+            "tokens_out": 2,
+            "latency_seconds": 0.424,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 431,
+            "tokens_out": 2,
+            "latency_seconds": 0.546,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.923,
+        "total_latency_seconds": 0.923
+      }
+    },
+    {
+      "idx": 26,
+      "domain": "computer science",
+      "gold": "E",
+      "ans": [
+        "G",
+        "G",
+        "G"
+      ],
+      "majority": "G",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 272,
+            "tokens_out": 113,
+            "latency_seconds": 0.608,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 224,
+            "tokens_out": 2,
+            "latency_seconds": 0.186,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 224,
+            "tokens_out": 2,
+            "latency_seconds": 0.399,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.608,
+        "total_latency_seconds": 0.608
+      }
+    },
+    {
+      "idx": 27,
+      "domain": "health",
+      "gold": "H",
+      "ans": [
+        "H",
+        "H",
+        "H"
+      ],
+      "majority": "H",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 153,
+            "tokens_out": 20,
+            "latency_seconds": 0.63,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 95,
+            "tokens_out": 2,
+            "latency_seconds": 0.342,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 95,
+            "tokens_out": 2,
+            "latency_seconds": 0.38,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.63,
+        "total_latency_seconds": 0.63
+      }
+    },
+    {
+      "idx": 28,
+      "domain": "law",
+      "gold": "C",
+      "ans": [
+        "C",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 371,
+            "tokens_out": 25,
+            "latency_seconds": 0.166,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 321,
+            "tokens_out": 2,
+            "latency_seconds": 0.131,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 321,
+            "tokens_out": 2,
+            "latency_seconds": 0.357,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.357,
+        "total_latency_seconds": 0.357
+      }
+    },
+    {
+      "idx": 29,
+      "domain": "law",
+      "gold": "D",
+      "ans": [
+        "J",
+        "D",
+        "J"
+      ],
+      "majority": "J",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "J",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 432,
+            "tokens_out": 66,
+            "latency_seconds": 0.474,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 399,
+            "tokens_out": 2,
+            "latency_seconds": 0.139,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 399,
+            "tokens_out": 2,
+            "latency_seconds": 0.312,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.474,
+        "total_latency_seconds": 0.474
+      }
+    },
+    {
+      "idx": 30,
+      "domain": "psychology",
+      "gold": "G",
+      "ans": [
+        "G",
+        "G",
+        "G"
+      ],
+      "majority": "G",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 189,
+            "tokens_out": 71,
+            "latency_seconds": 0.47,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 133,
+            "tokens_out": 2,
+            "latency_seconds": 0.118,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 133,
+            "tokens_out": 2,
+            "latency_seconds": 0.284,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.47,
+        "total_latency_seconds": 0.47
+      }
+    },
+    {
+      "idx": 31,
+      "domain": "law",
+      "gold": "A",
+      "ans": [
+        "C",
+        "E",
+        "E"
+      ],
+      "majority": "E",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 204,
+            "tokens_out": 70,
+            "latency_seconds": 0.494,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 158,
+            "tokens_out": 2,
+            "latency_seconds": 0.115,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 158,
+            "tokens_out": 2,
+            "latency_seconds": 0.299,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.494,
+        "total_latency_seconds": 0.494
+      }
+    },
+    {
+      "idx": 32,
+      "domain": "other",
+      "gold": "I",
+      "ans": [
+        "I",
+        "I",
+        "I"
+      ],
+      "majority": "I",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 250,
+            "tokens_out": 36,
+            "latency_seconds": 0.445,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 201,
+            "tokens_out": 2,
+            "latency_seconds": 0.118,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 201,
+            "tokens_out": 2,
+            "latency_seconds": 0.289,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.445,
+        "total_latency_seconds": 0.445
+      }
+    },
+    {
+      "idx": 33,
+      "domain": "philosophy",
+      "gold": "A",
+      "ans": [
+        "B",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 217,
+            "tokens_out": 46,
+            "latency_seconds": 0.473,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 160,
+            "tokens_out": 2,
+            "latency_seconds": 0.119,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 160,
+            "tokens_out": 2,
+            "latency_seconds": 0.281,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.473,
+        "total_latency_seconds": 0.473
+      }
+    },
+    {
+      "idx": 34,
+      "domain": "math",
+      "gold": "H",
+      "ans": [
+        "H",
+        "A",
+        "B"
+      ],
+      "majority": "H",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 196,
+            "tokens_out": 569,
+            "latency_seconds": 1.796,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 160,
+            "tokens_out": 2,
+            "latency_seconds": 0.112,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 160,
+            "tokens_out": 2,
+            "latency_seconds": 0.296,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 196,
+          "tokens_out": 208,
+          "latency_seconds": 0.888,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.796,
+        "total_latency_seconds": 2.684
+      }
+    },
+    {
+      "idx": 35,
+      "domain": "chemistry",
+      "gold": "J",
+      "ans": [
+        "J",
+        "A",
+        "D"
+      ],
+      "majority": "J",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "J",
+      "final_ans": "J",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 384,
+            "tokens_out": 158,
+            "latency_seconds": 0.654,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 350,
+            "tokens_out": 2,
+            "latency_seconds": 0.15,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 350,
+            "tokens_out": 2,
+            "latency_seconds": 0.38,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 384,
+          "tokens_out": 220,
+          "latency_seconds": 0.872,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.654,
+        "total_latency_seconds": 1.526
+      }
+    },
+    {
+      "idx": 36,
+      "domain": "economics",
+      "gold": "H",
+      "ans": [
+        "C",
+        "H",
+        "E"
+      ],
+      "majority": "C",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 295,
+            "tokens_out": 57,
+            "latency_seconds": 0.513,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 254,
+            "tokens_out": 2,
+            "latency_seconds": 0.126,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 254,
+            "tokens_out": 2,
+            "latency_seconds": 0.512,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 295,
+          "tokens_out": 149,
+          "latency_seconds": 0.891,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.513,
+        "total_latency_seconds": 1.404
+      }
+    },
+    {
+      "idx": 37,
+      "domain": "physics",
+      "gold": "D",
+      "ans": [
+        "D",
+        "A",
+        "E"
+      ],
+      "majority": "D",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 226,
+            "tokens_out": 215,
+            "latency_seconds": 0.571,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 194,
+            "tokens_out": 2,
+            "latency_seconds": 0.118,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 194,
+            "tokens_out": 2,
+            "latency_seconds": 0.338,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 226,
+          "tokens_out": 193,
+          "latency_seconds": 0.806,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.571,
+        "total_latency_seconds": 1.378
+      }
+    },
+    {
+      "idx": 38,
+      "domain": "other",
+      "gold": "F",
+      "ans": [
+        "F",
+        "F",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 148,
+            "tokens_out": 29,
+            "latency_seconds": 0.524,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 98,
+            "tokens_out": 2,
+            "latency_seconds": 0.108,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 98,
+            "tokens_out": 2,
+            "latency_seconds": 0.36,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.524,
+        "total_latency_seconds": 0.524
+      }
+    },
+    {
+      "idx": 39,
+      "domain": "history",
+      "gold": "G",
+      "ans": [
+        "F",
+        "E",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 326,
+            "tokens_out": 56,
+            "latency_seconds": 0.539,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 272,
+            "tokens_out": 2,
+            "latency_seconds": 0.128,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 272,
+            "tokens_out": 2,
+            "latency_seconds": 0.291,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.539,
+        "total_latency_seconds": 0.539
+      }
+    },
+    {
+      "idx": 40,
+      "domain": "business",
+      "gold": "C",
+      "ans": [
+        "D",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 212,
+            "tokens_out": 111,
+            "latency_seconds": 0.254,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 154,
+            "tokens_out": 2,
+            "latency_seconds": 0.118,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 154,
+            "tokens_out": 2,
+            "latency_seconds": 0.284,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.284,
+        "total_latency_seconds": 0.284
+      }
+    },
+    {
+      "idx": 41,
+      "domain": "biology",
+      "gold": "E",
+      "ans": [
+        "E",
+        "E",
+        "E"
+      ],
+      "majority": "E",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 221,
+            "tokens_out": 17,
+            "latency_seconds": 0.299,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 168,
+            "tokens_out": 2,
+            "latency_seconds": 0.141,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 168,
+            "tokens_out": 2,
+            "latency_seconds": 0.294,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.299,
+        "total_latency_seconds": 0.299
+      }
+    },
+    {
+      "idx": 42,
+      "domain": "engineering",
+      "gold": "C",
+      "ans": [
+        "D",
+        "A",
+        "C"
+      ],
+      "majority": "D",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 233,
+            "tokens_out": 444,
+            "latency_seconds": 1.996,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 190,
+            "tokens_out": 2,
+            "latency_seconds": 0.177,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 190,
+            "tokens_out": 2,
+            "latency_seconds": 0.286,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 233,
+          "tokens_out": 526,
+          "latency_seconds": 3.11,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.996,
+        "total_latency_seconds": 5.106
+      }
+    },
+    {
+      "idx": 43,
+      "domain": "psychology",
+      "gold": "I",
+      "ans": [
+        "I",
+        "I",
+        "I"
+      ],
+      "majority": "I",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 395,
+            "tokens_out": 19,
+            "latency_seconds": 0.485,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 342,
+            "tokens_out": 2,
+            "latency_seconds": 0.14,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 342,
+            "tokens_out": 2,
+            "latency_seconds": 0.354,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.485,
+        "total_latency_seconds": 0.485
+      }
+    },
+    {
+      "idx": 44,
+      "domain": "business",
+      "gold": "I",
+      "ans": [
+        "B",
+        "A",
+        "E"
+      ],
+      "majority": "B",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "I",
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 217,
+            "tokens_out": 507,
+            "latency_seconds": 1.706,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 195,
+            "tokens_out": 2,
+            "latency_seconds": 0.128,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 195,
+            "tokens_out": 2,
+            "latency_seconds": 0.287,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 217,
+          "tokens_out": 350,
+          "latency_seconds": 1.222,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.706,
+        "total_latency_seconds": 2.929
+      }
+    },
+    {
+      "idx": 45,
+      "domain": "physics",
+      "gold": "I",
+      "ans": [
+        "B",
+        "A",
+        "I"
+      ],
+      "majority": "B",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "I",
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 272,
+            "tokens_out": 628,
+            "latency_seconds": 2.247,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 238,
+            "tokens_out": 2,
+            "latency_seconds": 0.302,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 238,
+            "tokens_out": 2,
+            "latency_seconds": 0.342,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 272,
+          "tokens_out": 408,
+          "latency_seconds": 1.273,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 2.247,
+        "total_latency_seconds": 3.521
+      }
+    },
+    {
+      "idx": 46,
+      "domain": "biology",
+      "gold": "I",
+      "ans": [
+        "G",
+        "I",
+        "I"
+      ],
+      "majority": "I",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 361,
+            "tokens_out": 122,
+            "latency_seconds": 0.655,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 312,
+            "tokens_out": 2,
+            "latency_seconds": 0.293,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 312,
+            "tokens_out": 2,
+            "latency_seconds": 0.368,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.655,
+        "total_latency_seconds": 0.655
+      }
+    },
+    {
+      "idx": 47,
+      "domain": "economics",
+      "gold": "I",
+      "ans": [
+        "I",
+        "I",
+        "I"
+      ],
+      "majority": "I",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 259,
+            "tokens_out": 16,
+            "latency_seconds": 0.452,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 207,
+            "tokens_out": 2,
+            "latency_seconds": 0.123,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 207,
+            "tokens_out": 2,
+            "latency_seconds": 0.294,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.452,
+        "total_latency_seconds": 0.452
+      }
+    },
+    {
+      "idx": 48,
+      "domain": "philosophy",
+      "gold": "G",
+      "ans": [
+        "G",
+        "G",
+        "G"
+      ],
+      "majority": "G",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 210,
+            "tokens_out": 31,
+            "latency_seconds": 0.437,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 153,
+            "tokens_out": 2,
+            "latency_seconds": 0.117,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 153,
+            "tokens_out": 2,
+            "latency_seconds": 0.285,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.437,
+        "total_latency_seconds": 0.437
+      }
+    },
+    {
+      "idx": 49,
+      "domain": "law",
+      "gold": "E",
+      "ans": [
+        "B",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 387,
+            "tokens_out": 42,
+            "latency_seconds": 0.514,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 334,
+            "tokens_out": 2,
+            "latency_seconds": 0.143,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 334,
+            "tokens_out": 2,
+            "latency_seconds": 0.449,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.514,
+        "total_latency_seconds": 0.514
+      }
+    },
+    {
+      "idx": 50,
+      "domain": "chemistry",
+      "gold": "F",
+      "ans": [
+        "F",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 334,
+            "tokens_out": 122,
+            "latency_seconds": 0.534,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 293,
+            "tokens_out": 2,
+            "latency_seconds": 0.132,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 293,
+            "tokens_out": 2,
+            "latency_seconds": 0.399,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.534,
+        "total_latency_seconds": 0.534
+      }
+    },
+    {
+      "idx": 51,
+      "domain": "health",
+      "gold": "F",
+      "ans": [
+        "F",
+        "F",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 287,
+            "tokens_out": 45,
+            "latency_seconds": 0.463,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 238,
+            "tokens_out": 2,
+            "latency_seconds": 0.137,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 238,
+            "tokens_out": 2,
+            "latency_seconds": 0.308,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.463,
+        "total_latency_seconds": 0.463
+      }
+    },
+    {
+      "idx": 52,
+      "domain": "history",
+      "gold": "J",
+      "ans": [
+        "A",
+        "A",
+        "D"
+      ],
+      "majority": "A",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 218,
+            "tokens_out": 36,
+            "latency_seconds": 0.423,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 221,
+            "tokens_out": 2,
+            "latency_seconds": 0.122,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 221,
+            "tokens_out": 2,
+            "latency_seconds": 0.299,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.423,
+        "total_latency_seconds": 0.423
+      }
+    },
+    {
+      "idx": 53,
+      "domain": "physics",
+      "gold": "A",
+      "ans": [
+        "A",
+        "A",
+        "A"
+      ],
+      "majority": "A",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 236,
+            "tokens_out": 46,
+            "latency_seconds": 0.699,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 206,
+            "tokens_out": 2,
+            "latency_seconds": 0.125,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 206,
+            "tokens_out": 2,
+            "latency_seconds": 0.305,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.699,
+        "total_latency_seconds": 0.699
+      }
+    },
+    {
+      "idx": 54,
+      "domain": "physics",
+      "gold": "A",
+      "ans": [
+        "A",
+        "A",
+        "A"
+      ],
+      "majority": "A",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 121,
+            "tokens_out": 57,
+            "latency_seconds": 0.534,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 63,
+            "tokens_out": 2,
+            "latency_seconds": 0.119,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 63,
+            "tokens_out": 2,
+            "latency_seconds": 0.375,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.534,
+        "total_latency_seconds": 0.534
+      }
+    },
+    {
+      "idx": 55,
+      "domain": "economics",
+      "gold": "G",
+      "ans": [
+        "G",
+        "G",
+        "G"
+      ],
+      "majority": "G",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 281,
+            "tokens_out": 59,
+            "latency_seconds": 0.555,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 232,
+            "tokens_out": 2,
+            "latency_seconds": 0.124,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 232,
+            "tokens_out": 2,
+            "latency_seconds": 0.292,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.555,
+        "total_latency_seconds": 0.555
+      }
+    },
+    {
+      "idx": 56,
+      "domain": "math",
+      "gold": "H",
+      "ans": [
+        "H",
+        "H",
+        "J"
+      ],
+      "majority": "H",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 160,
+            "tokens_out": 35,
+            "latency_seconds": 0.467,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 115,
+            "tokens_out": 2,
+            "latency_seconds": 0.12,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 115,
+            "tokens_out": 2,
+            "latency_seconds": 0.288,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.467,
+        "total_latency_seconds": 0.467
+      }
+    },
+    {
+      "idx": 57,
+      "domain": "business",
+      "gold": "F",
+      "ans": [
+        "F",
+        "B",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 231,
+            "tokens_out": 55,
+            "latency_seconds": 0.356,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 210,
+            "tokens_out": 2,
+            "latency_seconds": 0.881,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 210,
+            "tokens_out": 2,
+            "latency_seconds": 0.285,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.881,
+        "total_latency_seconds": 0.881
+      }
+    },
+    {
+      "idx": 58,
+      "domain": "history",
+      "gold": "B",
+      "ans": [
+        "F",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 325,
+            "tokens_out": 34,
+            "latency_seconds": 0.846,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 274,
+            "tokens_out": 2,
+            "latency_seconds": 0.131,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 274,
+            "tokens_out": 2,
+            "latency_seconds": 0.399,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.846,
+        "total_latency_seconds": 0.846
+      }
+    },
+    {
+      "idx": 59,
+      "domain": "math",
+      "gold": "A",
+      "ans": [
+        "A",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 141,
+            "tokens_out": 111,
+            "latency_seconds": 0.716,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 85,
+            "tokens_out": 2,
+            "latency_seconds": 0.106,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 85,
+            "tokens_out": 2,
+            "latency_seconds": 0.277,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.716,
+        "total_latency_seconds": 0.716
+      }
+    },
+    {
+      "idx": 60,
+      "domain": "biology",
+      "gold": "C",
+      "ans": [
+        "C",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 173,
+            "tokens_out": 31,
+            "latency_seconds": 0.508,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 117,
+            "tokens_out": 2,
+            "latency_seconds": 0.442,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 117,
+            "tokens_out": 2,
+            "latency_seconds": 0.283,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.508,
+        "total_latency_seconds": 0.508
+      }
+    },
+    {
+      "idx": 61,
+      "domain": "math",
+      "gold": "G",
+      "ans": [
+        "G",
+        "G",
+        "G"
+      ],
+      "majority": "G",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 211,
+            "tokens_out": 20,
+            "latency_seconds": 0.438,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 152,
+            "tokens_out": 2,
+            "latency_seconds": 0.177,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 152,
+            "tokens_out": 2,
+            "latency_seconds": 0.286,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.438,
+        "total_latency_seconds": 0.438
+      }
+    },
+    {
+      "idx": 62,
+      "domain": "history",
+      "gold": "H",
+      "ans": [
+        "H",
+        "H",
+        "H"
+      ],
+      "majority": "H",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 159,
+            "tokens_out": 46,
+            "latency_seconds": 0.335,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 104,
+            "tokens_out": 2,
+            "latency_seconds": 0.167,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 104,
+            "tokens_out": 2,
+            "latency_seconds": 0.381,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.381,
+        "total_latency_seconds": 0.381
+      }
+    },
+    {
+      "idx": 63,
+      "domain": "business",
+      "gold": "J",
+      "ans": [
+        "J",
+        "J",
+        "J"
+      ],
+      "majority": "J",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "J",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 327,
+            "tokens_out": 108,
+            "latency_seconds": 0.51,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 280,
+            "tokens_out": 2,
+            "latency_seconds": 0.133,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 280,
+            "tokens_out": 2,
+            "latency_seconds": 0.295,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.51,
+        "total_latency_seconds": 0.51
+      }
+    },
+    {
+      "idx": 64,
+      "domain": "other",
+      "gold": "H",
+      "ans": [
+        "H",
+        "H",
+        "H"
+      ],
+      "majority": "H",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 225,
+            "tokens_out": 27,
+            "latency_seconds": 0.455,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 170,
+            "tokens_out": 2,
+            "latency_seconds": 0.132,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 170,
+            "tokens_out": 2,
+            "latency_seconds": 0.284,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.455,
+        "total_latency_seconds": 0.455
+      }
+    },
+    {
+      "idx": 65,
+      "domain": "psychology",
+      "gold": "B",
+      "ans": [
+        "B",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 143,
+            "tokens_out": 22,
+            "latency_seconds": 0.439,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 87,
+            "tokens_out": 2,
+            "latency_seconds": 0.116,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 87,
+            "tokens_out": 2,
+            "latency_seconds": 0.285,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.439,
+        "total_latency_seconds": 0.439
+      }
+    },
+    {
+      "idx": 66,
+      "domain": "health",
+      "gold": "F",
+      "ans": [
+        "F",
+        "F",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 147,
+            "tokens_out": 79,
+            "latency_seconds": 0.483,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 92,
+            "tokens_out": 2,
+            "latency_seconds": 0.111,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 92,
+            "tokens_out": 2,
+            "latency_seconds": 0.424,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.483,
+        "total_latency_seconds": 0.483
+      }
+    },
+    {
+      "idx": 67,
+      "domain": "law",
+      "gold": "D",
+      "ans": [
+        "A",
+        "A",
+        "D"
+      ],
+      "majority": "A",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 327,
+            "tokens_out": 25,
+            "latency_seconds": 0.449,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 275,
+            "tokens_out": 2,
+            "latency_seconds": 0.27,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 275,
+            "tokens_out": 2,
+            "latency_seconds": 0.297,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.449,
+        "total_latency_seconds": 0.449
+      }
+    },
+    {
+      "idx": 68,
+      "domain": "biology",
+      "gold": "C",
+      "ans": [
+        "A",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 839,
+            "tokens_out": 122,
+            "latency_seconds": 2.39,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 834,
+            "tokens_out": 2,
+            "latency_seconds": 0.195,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 834,
+            "tokens_out": 2,
+            "latency_seconds": 0.39,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 2.39,
+        "total_latency_seconds": 2.39
+      }
+    },
+    {
+      "idx": 69,
+      "domain": "business",
+      "gold": "G",
+      "ans": [
+        "G",
+        "G",
+        "G"
+      ],
+      "majority": "G",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 171,
+            "tokens_out": 36,
+            "latency_seconds": 0.486,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 143,
+            "tokens_out": 2,
+            "latency_seconds": 0.12,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 143,
+            "tokens_out": 2,
+            "latency_seconds": 0.33,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.486,
+        "total_latency_seconds": 0.486
+      }
+    },
+    {
+      "idx": 70,
+      "domain": "physics",
+      "gold": "A",
+      "ans": [
+        "A",
+        "H",
+        "H"
+      ],
+      "majority": "H",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 212,
+            "tokens_out": 245,
+            "latency_seconds": 0.712,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 164,
+            "tokens_out": 2,
+            "latency_seconds": 0.117,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 164,
+            "tokens_out": 2,
+            "latency_seconds": 0.29,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.712,
+        "total_latency_seconds": 0.712
+      }
+    },
+    {
+      "idx": 71,
+      "domain": "chemistry",
+      "gold": "B",
+      "ans": [
+        "F",
+        "A",
+        "B"
+      ],
+      "majority": "F",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 208,
+            "tokens_out": 591,
+            "latency_seconds": 1.749,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 173,
+            "tokens_out": 2,
+            "latency_seconds": 0.133,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 173,
+            "tokens_out": 2,
+            "latency_seconds": 0.312,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 208,
+          "tokens_out": 956,
+          "latency_seconds": 3.891,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.749,
+        "total_latency_seconds": 5.64
+      }
+    },
+    {
+      "idx": 72,
+      "domain": "law",
+      "gold": "B",
+      "ans": [
+        "B",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 383,
+            "tokens_out": 36,
+            "latency_seconds": 0.52,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 326,
+            "tokens_out": 2,
+            "latency_seconds": 0.131,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 326,
+            "tokens_out": 2,
+            "latency_seconds": 0.39,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.52,
+        "total_latency_seconds": 0.52
+      }
+    },
+    {
+      "idx": 73,
+      "domain": "law",
+      "gold": "G",
+      "ans": [
+        "G",
+        "G",
+        "G"
+      ],
+      "majority": "G",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 365,
+            "tokens_out": 123,
+            "latency_seconds": 0.535,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 316,
+            "tokens_out": 2,
+            "latency_seconds": 0.14,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 316,
+            "tokens_out": 2,
+            "latency_seconds": 0.448,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.535,
+        "total_latency_seconds": 0.535
+      }
+    },
+    {
+      "idx": 74,
+      "domain": "physics",
+      "gold": "I",
+      "ans": [
+        "H",
+        "A",
+        "D"
+      ],
+      "majority": "H",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 230,
+            "tokens_out": 197,
+            "latency_seconds": 0.722,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 187,
+            "tokens_out": 2,
+            "latency_seconds": 0.119,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 187,
+            "tokens_out": 2,
+            "latency_seconds": 0.296,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 230,
+          "tokens_out": 210,
+          "latency_seconds": 0.873,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.722,
+        "total_latency_seconds": 1.595
+      }
+    },
+    {
+      "idx": 75,
+      "domain": "computer science",
+      "gold": "J",
+      "ans": [
+        "J",
+        "J",
+        "J"
+      ],
+      "majority": "J",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "J",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 1197,
+            "tokens_out": 538,
+            "latency_seconds": 2.945,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 1498,
+            "tokens_out": 2,
+            "latency_seconds": 0.236,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 1498,
+            "tokens_out": 2,
+            "latency_seconds": 0.522,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 2.945,
+        "total_latency_seconds": 2.945
+      }
+    },
+    {
+      "idx": 76,
+      "domain": "physics",
+      "gold": "H",
+      "ans": [
+        "H",
+        "A",
+        "C"
+      ],
+      "majority": "H",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 301,
+            "tokens_out": 128,
+            "latency_seconds": 1.172,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 272,
+            "tokens_out": 2,
+            "latency_seconds": 0.134,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 272,
+            "tokens_out": 2,
+            "latency_seconds": 0.381,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 301,
+          "tokens_out": 148,
+          "latency_seconds": 0.741,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.172,
+        "total_latency_seconds": 1.913
+      }
+    },
+    {
+      "idx": 77,
+      "domain": "physics",
+      "gold": "C",
+      "ans": [
+        "C",
+        "B",
+        "D"
+      ],
+      "majority": "C",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 339,
+            "tokens_out": 522,
+            "latency_seconds": 2.795,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 306,
+            "tokens_out": 2,
+            "latency_seconds": 0.261,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 306,
+            "tokens_out": 2,
+            "latency_seconds": 0.711,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 339,
+          "tokens_out": 392,
+          "latency_seconds": 1.298,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 2.795,
+        "total_latency_seconds": 4.093
+      }
+    },
+    {
+      "idx": 78,
+      "domain": "computer science",
+      "gold": "E",
+      "ans": [
+        "E",
+        "E",
+        "E"
+      ],
+      "majority": "E",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 210,
+            "tokens_out": 27,
+            "latency_seconds": 0.583,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 154,
+            "tokens_out": 2,
+            "latency_seconds": 0.135,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 154,
+            "tokens_out": 2,
+            "latency_seconds": 0.416,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.583,
+        "total_latency_seconds": 0.583
+      }
+    },
+    {
+      "idx": 79,
+      "domain": "other",
+      "gold": "B",
+      "ans": [
+        "B",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 194,
+            "tokens_out": 20,
+            "latency_seconds": 0.664,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 147,
+            "tokens_out": 2,
+            "latency_seconds": 0.118,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 147,
+            "tokens_out": 2,
+            "latency_seconds": 0.313,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.664,
+        "total_latency_seconds": 0.664
+      }
+    },
+    {
+      "idx": 80,
+      "domain": "philosophy",
+      "gold": "I",
+      "ans": [
+        "C",
+        "I",
+        "A"
+      ],
+      "majority": "C",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "I",
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 143,
+            "tokens_out": 73,
+            "latency_seconds": 0.46,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 87,
+            "tokens_out": 2,
+            "latency_seconds": 0.284,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 87,
+            "tokens_out": 2,
+            "latency_seconds": 0.275,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 143,
+          "tokens_out": 79,
+          "latency_seconds": 0.619,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.46,
+        "total_latency_seconds": 1.078
+      }
+    },
+    {
+      "idx": 81,
+      "domain": "chemistry",
+      "gold": "F",
+      "ans": [
+        "F",
+        "F",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 229,
+            "tokens_out": 45,
+            "latency_seconds": 0.604,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 170,
+            "tokens_out": 2,
+            "latency_seconds": 0.121,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 170,
+            "tokens_out": 2,
+            "latency_seconds": 0.36,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.604,
+        "total_latency_seconds": 0.604
+      }
+    },
+    {
+      "idx": 82,
+      "domain": "biology",
+      "gold": "C",
+      "ans": [
+        "C",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 119,
+            "tokens_out": 56,
+            "latency_seconds": 0.65,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 64,
+            "tokens_out": 2,
+            "latency_seconds": 0.252,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 64,
+            "tokens_out": 2,
+            "latency_seconds": 0.281,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.65,
+        "total_latency_seconds": 0.65
+      }
+    },
+    {
+      "idx": 83,
+      "domain": "physics",
+      "gold": "J",
+      "ans": [
+        "C",
+        "J",
+        "J"
+      ],
+      "majority": "J",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "J",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 157,
+            "tokens_out": 28,
+            "latency_seconds": 0.146,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 121,
+            "tokens_out": 2,
+            "latency_seconds": 0.232,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 121,
+            "tokens_out": 2,
+            "latency_seconds": 0.275,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.275,
+        "total_latency_seconds": 0.275
+      }
+    },
+    {
+      "idx": 84,
+      "domain": "health",
+      "gold": "F",
+      "ans": [
+        "F",
+        "G",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 200,
+            "tokens_out": 103,
+            "latency_seconds": 0.502,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 144,
+            "tokens_out": 2,
+            "latency_seconds": 0.123,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 144,
+            "tokens_out": 2,
+            "latency_seconds": 0.288,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.502,
+        "total_latency_seconds": 0.502
+      }
+    },
+    {
+      "idx": 85,
+      "domain": "physics",
+      "gold": "E",
+      "ans": [
+        "E",
+        "A",
+        "A"
+      ],
+      "majority": "A",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 206,
+            "tokens_out": 70,
+            "latency_seconds": 0.475,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 179,
+            "tokens_out": 2,
+            "latency_seconds": 0.118,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 179,
+            "tokens_out": 2,
+            "latency_seconds": 0.514,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.514,
+        "total_latency_seconds": 0.514
+      }
+    },
+    {
+      "idx": 86,
+      "domain": "psychology",
+      "gold": "G",
+      "ans": [
+        "D",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 196,
+            "tokens_out": 51,
+            "latency_seconds": 0.478,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 141,
+            "tokens_out": 2,
+            "latency_seconds": 0.137,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 141,
+            "tokens_out": 2,
+            "latency_seconds": 0.292,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.478,
+        "total_latency_seconds": 0.478
+      }
+    },
+    {
+      "idx": 87,
+      "domain": "physics",
+      "gold": "G",
+      "ans": [
+        "A",
+        "A",
+        "B"
+      ],
+      "majority": "A",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 169,
+            "tokens_out": 35,
+            "latency_seconds": 0.515,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 124,
+            "tokens_out": 2,
+            "latency_seconds": 0.14,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 124,
+            "tokens_out": 2,
+            "latency_seconds": 0.284,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.515,
+        "total_latency_seconds": 0.515
+      }
+    },
+    {
+      "idx": 88,
+      "domain": "math",
+      "gold": "J",
+      "ans": [
+        "J",
+        "J",
+        "J"
+      ],
+      "majority": "J",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "J",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 178,
+            "tokens_out": 28,
+            "latency_seconds": 0.445,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 124,
+            "tokens_out": 2,
+            "latency_seconds": 0.114,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 124,
+            "tokens_out": 2,
+            "latency_seconds": 0.284,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.445,
+        "total_latency_seconds": 0.445
+      }
+    },
+    {
+      "idx": 89,
+      "domain": "physics",
+      "gold": "D",
+      "ans": [
+        "D",
+        "D",
+        "D"
+      ],
+      "majority": "D",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 318,
+            "tokens_out": 376,
+            "latency_seconds": 1.643,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 310,
+            "tokens_out": 2,
+            "latency_seconds": 0.137,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 310,
+            "tokens_out": 2,
+            "latency_seconds": 0.315,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 1.643,
+        "total_latency_seconds": 1.643
+      }
+    },
+    {
+      "idx": 90,
+      "domain": "psychology",
+      "gold": "D",
+      "ans": [
+        "D",
+        "D",
+        "D"
+      ],
+      "majority": "D",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 299,
+            "tokens_out": 21,
+            "latency_seconds": 0.418,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 252,
+            "tokens_out": 2,
+            "latency_seconds": 0.179,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 252,
+            "tokens_out": 2,
+            "latency_seconds": 0.351,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.418,
+        "total_latency_seconds": 0.418
+      }
+    },
+    {
+      "idx": 91,
+      "domain": "economics",
+      "gold": "D",
+      "ans": [
+        "D",
+        "D",
+        "D"
+      ],
+      "majority": "D",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 235,
+            "tokens_out": 17,
+            "latency_seconds": 0.436,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 188,
+            "tokens_out": 2,
+            "latency_seconds": 0.126,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 188,
+            "tokens_out": 2,
+            "latency_seconds": 0.291,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.436,
+        "total_latency_seconds": 0.436
+      }
+    },
+    {
+      "idx": 92,
+      "domain": "other",
+      "gold": "B",
+      "ans": [
+        "B",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 258,
+            "tokens_out": 33,
+            "latency_seconds": 0.498,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 241,
+            "tokens_out": 2,
+            "latency_seconds": 0.125,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 241,
+            "tokens_out": 2,
+            "latency_seconds": 0.296,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.498,
+        "total_latency_seconds": 0.498
+      }
+    },
+    {
+      "idx": 93,
+      "domain": "physics",
+      "gold": "C",
+      "ans": [
+        "C",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 177,
+            "tokens_out": 42,
+            "latency_seconds": 0.476,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 119,
+            "tokens_out": 2,
+            "latency_seconds": 0.747,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 119,
+            "tokens_out": 2,
+            "latency_seconds": 0.284,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.747,
+        "total_latency_seconds": 0.747
+      }
+    },
+    {
+      "idx": 94,
+      "domain": "math",
+      "gold": "F",
+      "ans": [
+        "F",
+        "F",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 255,
+            "tokens_out": 40,
+            "latency_seconds": 0.43,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 221,
+            "tokens_out": 2,
+            "latency_seconds": 0.122,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 221,
+            "tokens_out": 2,
+            "latency_seconds": 0.294,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.43,
+        "total_latency_seconds": 0.43
+      }
+    },
+    {
+      "idx": 95,
+      "domain": "chemistry",
+      "gold": "J",
+      "ans": [
+        "J",
+        "D",
+        "D"
+      ],
+      "majority": "D",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 147,
+            "tokens_out": 31,
+            "latency_seconds": 0.494,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 91,
+            "tokens_out": 2,
+            "latency_seconds": 0.144,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 91,
+            "tokens_out": 2,
+            "latency_seconds": 0.286,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.494,
+        "total_latency_seconds": 0.494
+      }
+    },
+    {
+      "idx": 96,
+      "domain": "business",
+      "gold": "B",
+      "ans": [
+        "B",
+        "B",
+        "C"
+      ],
+      "majority": "B",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 213,
+            "tokens_out": 186,
+            "latency_seconds": 0.608,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 182,
+            "tokens_out": 2,
+            "latency_seconds": 0.134,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 182,
+            "tokens_out": 2,
+            "latency_seconds": 0.335,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.608,
+        "total_latency_seconds": 0.608
+      }
+    },
+    {
+      "idx": 97,
+      "domain": "health",
+      "gold": "A",
+      "ans": [
+        "A",
+        "A",
+        "A"
+      ],
+      "majority": "A",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 314,
+            "tokens_out": 15,
+            "latency_seconds": 0.321,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 258,
+            "tokens_out": 2,
+            "latency_seconds": 0.128,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 258,
+            "tokens_out": 2,
+            "latency_seconds": 0.293,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.321,
+        "total_latency_seconds": 0.321
+      }
+    },
+    {
+      "idx": 98,
+      "domain": "chemistry",
+      "gold": "E",
+      "ans": [
+        "J",
+        "J",
+        "F"
+      ],
+      "majority": "J",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "J",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 277,
+            "tokens_out": 239,
+            "latency_seconds": 0.739,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 252,
+            "tokens_out": 2,
+            "latency_seconds": 0.141,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 252,
+            "tokens_out": 2,
+            "latency_seconds": 0.299,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.739,
+        "total_latency_seconds": 0.739
+      }
+    },
+    {
+      "idx": 99,
+      "domain": "business",
+      "gold": "H",
+      "ans": [
+        "H",
+        "A",
+        "D"
+      ],
+      "majority": "H",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 419,
+            "tokens_out": 249,
+            "latency_seconds": 0.719,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 421,
+            "tokens_out": 2,
+            "latency_seconds": 0.141,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 421,
+            "tokens_out": 2,
+            "latency_seconds": 0.312,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 419,
+          "tokens_out": 431,
+          "latency_seconds": 1.288,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.719,
+        "total_latency_seconds": 2.007
+      }
+    },
+    {
+      "idx": 100,
+      "domain": "law",
+      "gold": "D",
+      "ans": [
+        "D",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 399,
+            "tokens_out": 51,
+            "latency_seconds": 0.538,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 361,
+            "tokens_out": 2,
+            "latency_seconds": 0.137,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 361,
+            "tokens_out": 2,
+            "latency_seconds": 0.36,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.538,
+        "total_latency_seconds": 0.538
+      }
+    },
+    {
+      "idx": 101,
+      "domain": "math",
+      "gold": "C",
+      "ans": [
+        "C",
+        "B",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 158,
+            "tokens_out": 426,
+            "latency_seconds": 1.605,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 113,
+            "tokens_out": 2,
+            "latency_seconds": 0.121,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 113,
+            "tokens_out": 2,
+            "latency_seconds": 0.281,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 1.605,
+        "total_latency_seconds": 1.605
+      }
+    },
+    {
+      "idx": 102,
+      "domain": "economics",
+      "gold": "G",
+      "ans": [
+        "I",
+        "G",
+        "I"
+      ],
+      "majority": "I",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 229,
+            "tokens_out": 81,
+            "latency_seconds": 0.555,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 189,
+            "tokens_out": 2,
+            "latency_seconds": 0.126,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 189,
+            "tokens_out": 2,
+            "latency_seconds": 0.339,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.555,
+        "total_latency_seconds": 0.555
+      }
+    },
+    {
+      "idx": 103,
+      "domain": "economics",
+      "gold": "C",
+      "ans": [
+        "C",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 252,
+            "tokens_out": 36,
+            "latency_seconds": 0.431,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 204,
+            "tokens_out": 2,
+            "latency_seconds": 0.123,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 204,
+            "tokens_out": 2,
+            "latency_seconds": 0.29,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.431,
+        "total_latency_seconds": 0.431
+      }
+    },
+    {
+      "idx": 104,
+      "domain": "economics",
+      "gold": "A",
+      "ans": [
+        "A",
+        "A",
+        "A"
+      ],
+      "majority": "A",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 181,
+            "tokens_out": 30,
+            "latency_seconds": 0.437,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 129,
+            "tokens_out": 2,
+            "latency_seconds": 0.122,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 129,
+            "tokens_out": 2,
+            "latency_seconds": 0.392,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.437,
+        "total_latency_seconds": 0.437
+      }
+    },
+    {
+      "idx": 105,
+      "domain": "physics",
+      "gold": "C",
+      "ans": [
+        "C",
+        "C",
+        "C"
+      ],
+      "majority": "C",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 234,
+            "tokens_out": 157,
+            "latency_seconds": 0.646,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 189,
+            "tokens_out": 2,
+            "latency_seconds": 0.118,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 189,
+            "tokens_out": 2,
+            "latency_seconds": 0.285,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.646,
+        "total_latency_seconds": 0.646
+      }
+    },
+    {
+      "idx": 106,
+      "domain": "law",
+      "gold": "B",
+      "ans": [
+        "C",
+        "B",
+        "A"
+      ],
+      "majority": "C",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 525,
+            "tokens_out": 129,
+            "latency_seconds": 0.803,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 486,
+            "tokens_out": 2,
+            "latency_seconds": 0.152,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 486,
+            "tokens_out": 2,
+            "latency_seconds": 0.408,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 525,
+          "tokens_out": 72,
+          "latency_seconds": 0.641,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.803,
+        "total_latency_seconds": 1.444
+      }
+    },
+    {
+      "idx": 107,
+      "domain": "chemistry",
+      "gold": "B",
+      "ans": [
+        "A",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 229,
+            "tokens_out": 85,
+            "latency_seconds": 0.633,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 169,
+            "tokens_out": 2,
+            "latency_seconds": 0.116,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 169,
+            "tokens_out": 2,
+            "latency_seconds": 0.369,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.633,
+        "total_latency_seconds": 0.633
+      }
+    },
+    {
+      "idx": 108,
+      "domain": "health",
+      "gold": "E",
+      "ans": [
+        "I",
+        "I",
+        "I"
+      ],
+      "majority": "I",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 155,
+            "tokens_out": 24,
+            "latency_seconds": 0.437,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 97,
+            "tokens_out": 2,
+            "latency_seconds": 0.114,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 97,
+            "tokens_out": 2,
+            "latency_seconds": 0.274,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.437,
+        "total_latency_seconds": 0.437
+      }
+    },
+    {
+      "idx": 109,
+      "domain": "psychology",
+      "gold": "E",
+      "ans": [
+        "G",
+        "E",
+        "E"
+      ],
+      "majority": "E",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 201,
+            "tokens_out": 31,
+            "latency_seconds": 0.465,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 152,
+            "tokens_out": 2,
+            "latency_seconds": 0.117,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 152,
+            "tokens_out": 2,
+            "latency_seconds": 0.281,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.465,
+        "total_latency_seconds": 0.465
+      }
+    },
+    {
+      "idx": 110,
+      "domain": "health",
+      "gold": "B",
+      "ans": [
+        "B",
+        "B",
+        "B"
+      ],
+      "majority": "B",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 285,
+            "tokens_out": 34,
+            "latency_seconds": 0.45,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 240,
+            "tokens_out": 2,
+            "latency_seconds": 0.125,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 240,
+            "tokens_out": 2,
+            "latency_seconds": 0.307,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.45,
+        "total_latency_seconds": 0.45
+      }
+    },
+    {
+      "idx": 111,
+      "domain": "psychology",
+      "gold": "G",
+      "ans": [
+        "G",
+        "G",
+        "G"
+      ],
+      "majority": "G",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 211,
+            "tokens_out": 78,
+            "latency_seconds": 0.491,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 158,
+            "tokens_out": 2,
+            "latency_seconds": 0.123,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 158,
+            "tokens_out": 2,
+            "latency_seconds": 0.288,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.491,
+        "total_latency_seconds": 0.491
+      }
+    },
+    {
+      "idx": 112,
+      "domain": "other",
+      "gold": "I",
+      "ans": [
+        "I",
+        "I",
+        "I"
+      ],
+      "majority": "I",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 134,
+            "tokens_out": 23,
+            "latency_seconds": 0.433,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 77,
+            "tokens_out": 2,
+            "latency_seconds": 0.112,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 77,
+            "tokens_out": 2,
+            "latency_seconds": 0.284,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.433,
+        "total_latency_seconds": 0.433
+      }
+    },
+    {
+      "idx": 113,
+      "domain": "philosophy",
+      "gold": "H",
+      "ans": [
+        "H",
+        "H",
+        "H"
+      ],
+      "majority": "H",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 215,
+            "tokens_out": 40,
+            "latency_seconds": 0.463,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 168,
+            "tokens_out": 2,
+            "latency_seconds": 0.129,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 168,
+            "tokens_out": 2,
+            "latency_seconds": 0.353,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.463,
+        "total_latency_seconds": 0.463
+      }
+    },
+    {
+      "idx": 114,
+      "domain": "physics",
+      "gold": "H",
+      "ans": [
+        "H",
+        "A",
+        "A"
+      ],
+      "majority": "A",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 463,
+            "tokens_out": 82,
+            "latency_seconds": 0.511,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 420,
+            "tokens_out": 2,
+            "latency_seconds": 0.132,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 420,
+            "tokens_out": 2,
+            "latency_seconds": 0.32,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.511,
+        "total_latency_seconds": 0.511
+      }
+    },
+    {
+      "idx": 115,
+      "domain": "law",
+      "gold": "D",
+      "ans": [
+        "E",
+        "E",
+        "E"
+      ],
+      "majority": "E",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 467,
+            "tokens_out": 63,
+            "latency_seconds": 0.411,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 428,
+            "tokens_out": 2,
+            "latency_seconds": 0.141,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 428,
+            "tokens_out": 2,
+            "latency_seconds": 0.308,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.411,
+        "total_latency_seconds": 0.411
+      }
+    },
+    {
+      "idx": 116,
+      "domain": "health",
+      "gold": "D",
+      "ans": [
+        "H",
+        "H",
+        "H"
+      ],
+      "majority": "H",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 245,
+            "tokens_out": 59,
+            "latency_seconds": 0.509,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 206,
+            "tokens_out": 2,
+            "latency_seconds": 0.153,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 206,
+            "tokens_out": 2,
+            "latency_seconds": 0.321,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.509,
+        "total_latency_seconds": 0.509
+      }
+    },
+    {
+      "idx": 117,
+      "domain": "physics",
+      "gold": "B",
+      "ans": [
+        null,
+        "E",
+        "E"
+      ],
+      "majority": "E",
+      "maj_n": 2,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": false,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 314,
+            "tokens_out": 768,
+            "latency_seconds": 1.592,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 258,
+            "tokens_out": 2,
+            "latency_seconds": 0.187,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 258,
+            "tokens_out": 2,
+            "latency_seconds": 0.294,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 1.592,
+        "total_latency_seconds": 1.592
+      }
+    },
+    {
+      "idx": 118,
+      "domain": "biology",
+      "gold": "F",
+      "ans": [
+        "F",
+        "F",
+        "F"
+      ],
+      "majority": "F",
+      "maj_n": 3,
+      "agree": true,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 227,
+            "tokens_out": 16,
+            "latency_seconds": 0.539,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 178,
+            "tokens_out": 2,
+            "latency_seconds": 0.125,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 178,
+            "tokens_out": 2,
+            "latency_seconds": 0.33,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": null,
+        "parallel_latency_seconds": 0.539,
+        "total_latency_seconds": 0.539
+      }
+    },
+    {
+      "idx": 119,
+      "domain": "math",
+      "gold": "F",
+      "ans": [
+        null,
+        "B",
+        "H"
+      ],
+      "majority": "B",
+      "maj_n": 1,
+      "agree": false,
+      "escalated": true,
+      "frontier_ans": "F",
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap": [
+          {
+            "tokens_in": 342,
+            "tokens_out": 768,
+            "latency_seconds": 2.06,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 308,
+            "tokens_out": 2,
+            "latency_seconds": 0.128,
+            "tokens_estimated": false
+          },
+          {
+            "tokens_in": 308,
+            "tokens_out": 2,
+            "latency_seconds": 0.347,
+            "tokens_estimated": false
+          }
+        ],
+        "frontier": {
+          "tokens_in": 342,
+          "tokens_out": 1212,
+          "latency_seconds": 4.312,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 2.06,
+        "total_latency_seconds": 6.372
+      }
+    }
+  ]
+}

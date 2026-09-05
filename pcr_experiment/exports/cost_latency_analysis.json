@@ -1,0 +1,643 @@
+{
+  "cells": {
+    "pair3_arc": {
+      "n": 300,
+      "escalation_rate": 0.05,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.05260226666666666,
+        "always_frontier": 0.12633866666666665,
+        "consensus_no_escalation": 0.04628533333333333
+      },
+      "cost_reduction_vs_always_frontier": 0.5836407961669163,
+      "tokens_per_query": {
+        "cheap_a": 176.34333333333333,
+        "cheap_b": 191.00666666666666,
+        "frontier_amortised": 10.706666666666667,
+        "total_pcr": 378.0566666666667
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.5099833333333333,
+        "pcr_p50": 0.462,
+        "pcr_p90": 0.672,
+        "cascade_mean": 0.7565933333333333,
+        "cascade_p50": 0.6859999999999999,
+        "cascade_p90": 1.021,
+        "always_frontier_mean": 0.5660666666666667,
+        "pcr_vs_cascade_speedup": 1.4835648223798164
+      },
+      "models": {
+        "cheap_a": "groq:openai/gpt-oss-20b",
+        "cheap_b": "groq:openai/gpt-oss-safeguard-20b",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair4_arc": {
+      "n": 100,
+      "escalation_rate": 0.26,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.039559899999999995,
+        "always_frontier": 0.10576884615384614,
+        "consensus_no_escalation": 0.01206
+      },
+      "cost_reduction_vs_always_frontier": 0.6259777671918807,
+      "tokens_per_query": {
+        "cheap_a": 98.38,
+        "cheap_b": 71.41,
+        "frontier_amortised": 46.61,
+        "total_pcr": 216.4
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.98625,
+        "pcr_p50": 0.846,
+        "pcr_p90": 1.4,
+        "cascade_mean": 1.16904,
+        "cascade_p50": 1.004,
+        "cascade_p90": 1.647,
+        "always_frontier_mean": 0.4696923076923077,
+        "pcr_vs_cascade_speedup": 1.1853384030418253
+      },
+      "models": {
+        "cheap_a": "groq:allam-2-7b",
+        "cheap_b": "gemini:gemini-3.5-flash-lite",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair4_gsm8k": {
+      "n": 800,
+      "escalation_rate": 0.65875,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.119748975,
+        "always_frontier": 0.1344203605313093,
+        "consensus_no_escalation": 0.0311995625
+      },
+      "cost_reduction_vs_always_frontier": 0.1091455600425355,
+      "tokens_per_query": {
+        "cheap_a": 219.67125,
+        "cheap_b": 202.16,
+        "frontier_amortised": 150.08375,
+        "total_pcr": 571.915
+      },
+      "latency_seconds": {
+        "pcr_mean": 1.653585,
+        "pcr_p50": 1.6269999999999998,
+        "pcr_p90": 2.238,
+        "cascade_mean": 1.914035,
+        "cascade_p50": 1.8639999999999999,
+        "cascade_p90": 2.559,
+        "always_frontier_mean": 0.6333168880455408,
+        "pcr_vs_cascade_speedup": 1.157506266687228
+      },
+      "models": {
+        "cheap_a": "groq:allam-2-7b",
+        "cheap_b": "gemini:gemini-3.5-flash-lite",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair6_arc": {
+      "n": 200,
+      "escalation_rate": 0.085,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.0421351,
+        "always_frontier": 0.10335411764705883,
+        "consensus_no_escalation": 0.03335
+      },
+      "cost_reduction_vs_always_frontier": 0.5923229672969004,
+      "tokens_per_query": {
+        "cheap_a": 173.19,
+        "cheap_b": 80.155,
+        "frontier_amortised": 14.89,
+        "total_pcr": 268.235
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.578185,
+        "pcr_p50": 0.495,
+        "pcr_p90": 0.886,
+        "cascade_mean": 0.98772,
+        "cascade_p50": 0.9219999999999999,
+        "cascade_p90": 1.342,
+        "always_frontier_mean": 0.4688235294117647,
+        "pcr_vs_cascade_speedup": 1.708311353632488
+      },
+      "models": {
+        "cheap_a": "groq:openai/gpt-oss-20b",
+        "cheap_b": "mistral:mistral-small-latest",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair6_mmlu": {
+      "n": 250,
+      "escalation_rate": 0.264,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.09430228,
+        "always_frontier": 0.16343893939393936,
+        "consensus_no_escalation": 0.0511544
+      },
+      "cost_reduction_vs_always_frontier": 0.4230121637494124,
+      "tokens_per_query": {
+        "cheap_a": 247.424,
+        "cheap_b": 132.06,
+        "frontier_amortised": 73.132,
+        "total_pcr": 452.616
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.7359,
+        "pcr_p50": 0.552,
+        "pcr_p90": 1.1989999999999998,
+        "cascade_mean": 1.167176,
+        "cascade_p50": 0.996,
+        "cascade_p90": 1.672,
+        "always_frontier_mean": 0.6132878787878788,
+        "pcr_vs_cascade_speedup": 1.5860524527789102
+      },
+      "models": {
+        "cheap_a": "groq:openai/gpt-oss-20b",
+        "cheap_b": "mistral:mistral-small-latest",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair6_mmlu_pro": {
+      "n": 150,
+      "escalation_rate": 0.4866666666666667,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.21575226666666666,
+        "always_frontier": 0.27258,
+        "consensus_no_escalation": 0.08309666666666667
+      },
+      "cost_reduction_vs_always_frontier": 0.2084809352605962,
+      "tokens_per_query": {
+        "cheap_a": 391.32666666666665,
+        "cheap_b": 219.82,
+        "frontier_amortised": 224.84,
+        "total_pcr": 835.9866666666667
+      },
+      "latency_seconds": {
+        "pcr_mean": 1.1474733333333333,
+        "pcr_p50": 0.781,
+        "pcr_p90": 2.515,
+        "cascade_mean": 1.6088533333333332,
+        "cascade_p50": 1.223,
+        "cascade_p90": 3.013,
+        "always_frontier_mean": 0.8467397260273972,
+        "pcr_vs_cascade_speedup": 1.4020834180605504
+      },
+      "models": {
+        "cheap_a": "groq:openai/gpt-oss-20b",
+        "cheap_b": "mistral:mistral-small-latest",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair6_openbookqa": {
+      "n": 192,
+      "escalation_rate": 0.16666666666666666,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.044065625000000004,
+        "always_frontier": 0.09845625,
+        "consensus_no_escalation": 0.027656249999999997
+      },
+      "cost_reduction_vs_always_frontier": 0.5524344569288389,
+      "tokens_per_query": {
+        "cheap_a": 156.53125,
+        "cheap_b": 60.015625,
+        "frontier_amortised": 27.8125,
+        "total_pcr": 244.359375
+      },
+      "latency_seconds": {
+        "pcr_mean": 2.632703125,
+        "pcr_p50": 0.515,
+        "pcr_p90": 1.197,
+        "cascade_mean": 3.0634791666666668,
+        "cascade_p50": 0.962,
+        "cascade_p90": 1.667,
+        "always_frontier_mean": 0.49653125000000004,
+        "pcr_vs_cascade_speedup": 1.1636249972798078
+      },
+      "models": {
+        "cheap_a": "groq:openai/gpt-oss-20b",
+        "cheap_b": "mistral:mistral-small-latest",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair6_truthfulqa": {
+      "n": 150,
+      "escalation_rate": 0.26,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.06936853333333334,
+        "always_frontier": 0.12060205128205127,
+        "consensus_no_escalation": 0.03801200000000001
+      },
+      "cost_reduction_vs_always_frontier": 0.4248146478777415,
+      "tokens_per_query": {
+        "cheap_a": 193.08,
+        "cheap_b": 93.52,
+        "frontier_amortised": 53.14666666666667,
+        "total_pcr": 339.74666666666667
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.7275733333333333,
+        "pcr_p50": 0.553,
+        "pcr_p90": 1.089,
+        "cascade_mean": 1.1654866666666666,
+        "cascade_p50": 1.014,
+        "cascade_p90": 1.633,
+        "always_frontier_mean": 0.4686923076923077,
+        "pcr_vs_cascade_speedup": 1.6018820554170943
+      },
+      "models": {
+        "cheap_a": "groq:openai/gpt-oss-20b",
+        "cheap_b": "mistral:mistral-small-latest",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair7_arc": {
+      "n": 200,
+      "escalation_rate": 0.04,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.0363071,
+        "always_frontier": 0.10752749999999998,
+        "consensus_no_escalation": 0.03200600000000001
+      },
+      "cost_reduction_vs_always_frontier": 0.6623459115110087,
+      "tokens_per_query": {
+        "cheap_a": 80.015,
+        "cheap_b": 80.015,
+        "frontier_amortised": 7.29,
+        "total_pcr": 167.32
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.400645,
+        "pcr_p50": 0.277,
+        "pcr_p90": 0.662,
+        "cascade_mean": 0.53592,
+        "cascade_p50": 0.402,
+        "cascade_p90": 0.837,
+        "always_frontier_mean": 0.454375,
+        "pcr_vs_cascade_speedup": 1.3376430505809382
+      },
+      "models": {
+        "cheap_a": "groq:qwen/qwen3.8-27b",
+        "cheap_b": "groq:qwen/qwen3.6-27b",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair7_commonsenseqa": {
+      "n": 200,
+      "escalation_rate": 0.085,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.03231695,
+        "always_frontier": 0.10415235294117646,
+        "consensus_no_escalation": 0.023464000000000002
+      },
+      "cost_reduction_vs_always_frontier": 0.6897146431415517,
+      "tokens_per_query": {
+        "cheap_a": 58.66,
+        "cheap_b": 58.66,
+        "frontier_amortised": 15.005,
+        "total_pcr": 132.325
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.5459,
+        "pcr_p50": 0.344,
+        "pcr_p90": 0.987,
+        "cascade_mean": 0.69296,
+        "cascade_p50": 0.45799999999999996,
+        "cascade_p90": 1.143,
+        "always_frontier_mean": 0.5855294117647059,
+        "pcr_vs_cascade_speedup": 1.2693899981681627
+      },
+      "models": {
+        "cheap_a": "groq:qwen/qwen3.8-27b",
+        "cheap_b": "groq:qwen/qwen3.6-27b",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair7_mmlu": {
+      "n": 250,
+      "escalation_rate": 0.116,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.07226004000000001,
+        "always_frontier": 0.16924862068965518,
+        "consensus_no_escalation": 0.052627200000000006
+      },
+      "cost_reduction_vs_always_frontier": 0.5730538913371677,
+      "tokens_per_query": {
+        "cheap_a": 131.568,
+        "cheap_b": 131.568,
+        "frontier_amortised": 33.276,
+        "total_pcr": 296.412
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.534416,
+        "pcr_p50": 0.352,
+        "pcr_p90": 1.072,
+        "cascade_mean": 0.685888,
+        "cascade_p50": 0.483,
+        "cascade_p90": 1.288,
+        "always_frontier_mean": 0.6448620689655172,
+        "pcr_vs_cascade_speedup": 1.2834346277057573
+      },
+      "models": {
+        "cheap_a": "groq:qwen/qwen3.8-27b",
+        "cheap_b": "groq:qwen/qwen3.6-27b",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair7_mmlu_pro": {
+      "n": 150,
+      "escalation_rate": 0.28,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.16939806666666665,
+        "always_frontier": 0.2872597619047619,
+        "consensus_no_escalation": 0.08896533333333333
+      },
+      "cost_reduction_vs_always_frontier": 0.4102965707991191,
+      "tokens_per_query": {
+        "cheap_a": 222.41333333333333,
+        "cheap_b": 222.41333333333333,
+        "frontier_amortised": 136.32666666666665,
+        "total_pcr": 581.1533333333333
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.6343866666666667,
+        "pcr_p50": 0.287,
+        "pcr_p90": 1.191,
+        "cascade_mean": 0.7776866666666666,
+        "cascade_p50": 0.429,
+        "cascade_p90": 1.349,
+        "always_frontier_mean": 0.9767380952380953,
+        "pcr_vs_cascade_speedup": 1.2258874713634167
+      },
+      "models": {
+        "cheap_a": "groq:qwen/qwen3.8-27b",
+        "cheap_b": "groq:qwen/qwen3.6-27b",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair7_openbookqa": {
+      "n": 200,
+      "escalation_rate": 0.05,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.028211200000000002,
+        "always_frontier": 0.100064,
+        "consensus_no_escalation": 0.023208
+      },
+      "cost_reduction_vs_always_frontier": 0.7180684362008314,
+      "tokens_per_query": {
+        "cheap_a": 58.02,
+        "cheap_b": 58.02,
+        "frontier_amortised": 8.48,
+        "total_pcr": 124.52
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.493585,
+        "pcr_p50": 0.34,
+        "pcr_p90": 0.885,
+        "cascade_mean": 0.65703,
+        "cascade_p50": 0.469,
+        "cascade_p90": 1.1159999999999999,
+        "always_frontier_mean": 0.5118,
+        "pcr_vs_cascade_speedup": 1.3311385070453925
+      },
+      "models": {
+        "cheap_a": "groq:qwen/qwen3.8-27b",
+        "cheap_b": "groq:qwen/qwen3.6-27b",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair7_truthfulqa": {
+      "n": 150,
+      "escalation_rate": 0.11333333333333333,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.05278580000000001,
+        "always_frontier": 0.13025117647058823,
+        "consensus_no_escalation": 0.038024
+      },
+      "cost_reduction_vs_always_frontier": 0.5947384013693,
+      "tokens_per_query": {
+        "cheap_a": 95.06,
+        "cheap_b": 95.06,
+        "frontier_amortised": 25.02,
+        "total_pcr": 215.14
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.3788533333333333,
+        "pcr_p50": 0.231,
+        "pcr_p90": 0.629,
+        "cascade_mean": 0.5071666666666667,
+        "cascade_p50": 0.357,
+        "cascade_p90": 0.763,
+        "always_frontier_mean": 0.5258823529411765,
+        "pcr_vs_cascade_speedup": 1.3386886745970297
+      },
+      "models": {
+        "cheap_a": "groq:qwen/qwen3.8-27b",
+        "cheap_b": "groq:qwen/qwen3.6-27b",
+        "frontier": "groq:openai/gpt-oss-120b"
+      }
+    },
+    "pair8_arc": {
+      "n": 150,
+      "escalation_rate": 0.12666666666666668,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.027030000000000002,
+        "always_frontier": 0.054031578947368424,
+        "consensus_no_escalation": 0.020186
+      },
+      "cost_reduction_vs_always_frontier": 0.49973699590882525,
+      "tokens_per_query": {
+        "cheap_a": 67.28666666666666,
+        "cheap_b": 67.28666666666666,
+        "frontier_amortised": 11.406666666666666,
+        "total_pcr": 145.98
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.5584,
+        "pcr_p50": 0.459,
+        "pcr_p90": 0.918,
+        "cascade_mean": 0.94468,
+        "cascade_p50": 0.847,
+        "cascade_p90": 1.31,
+        "always_frontier_mean": 0.4727368421052632,
+        "pcr_vs_cascade_speedup": 1.6917621776504297
+      },
+      "models": {
+        "cheap_a": "mistral:ministral-3b-latest",
+        "cheap_b": "mistral:ministral-8b-latest",
+        "frontier": "mistral:mistral-medium-latest"
+      }
+    },
+    "pair8_mmlu_pro": {
+      "n": 150,
+      "escalation_rate": 0.47333333333333333,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.13534300000000002,
+        "always_frontier": 0.14805633802816903,
+        "consensus_no_escalation": 0.065263
+      },
+      "cost_reduction_vs_always_frontier": 0.08586824581430741,
+      "tokens_per_query": {
+        "cheap_a": 222.02,
+        "cheap_b": 213.06666666666666,
+        "frontier_amortised": 116.8,
+        "total_pcr": 551.8866666666667
+      },
+      "latency_seconds": {
+        "pcr_mean": 1.10658,
+        "pcr_p50": 0.893,
+        "pcr_p90": 1.726,
+        "cascade_mean": 1.5857866666666667,
+        "cascade_p50": 1.319,
+        "cascade_p90": 2.233,
+        "always_frontier_mean": 0.7143239436619718,
+        "pcr_vs_cascade_speedup": 1.4330519859989037
+      },
+      "models": {
+        "cheap_a": "mistral:ministral-3b-latest",
+        "cheap_b": "mistral:ministral-8b-latest",
+        "frontier": "mistral:mistral-medium-latest"
+      }
+    },
+    "pair8_truthfulqa": {
+      "n": 150,
+      "escalation_rate": 0.32666666666666666,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.042896,
+        "always_frontier": 0.05644897959183673,
+        "consensus_no_escalation": 0.024456000000000002
+      },
+      "cost_reduction_vs_always_frontier": 0.24009255242227046,
+      "tokens_per_query": {
+        "cheap_a": 81.52,
+        "cheap_b": 81.52,
+        "frontier_amortised": 30.733333333333334,
+        "total_pcr": 193.77333333333334
+      },
+      "latency_seconds": {
+        "pcr_mean": 0.7865733333333333,
+        "pcr_p50": 0.568,
+        "pcr_p90": 1.1389999999999998,
+        "cascade_mean": 1.1958,
+        "cascade_p50": 0.992,
+        "cascade_p90": 1.641,
+        "always_frontier_mean": 0.4922244897959184,
+        "pcr_vs_cascade_speedup": 1.5202651162002272
+      },
+      "models": {
+        "cheap_a": "mistral:ministral-3b-latest",
+        "cheap_b": "mistral:ministral-8b-latest",
+        "frontier": "mistral:mistral-medium-latest"
+      }
+    },
+    "pair9_arc": {
+      "n": 150,
+      "escalation_rate": 0.1,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.021997666666666665,
+        "always_frontier": 0.04824,
+        "consensus_no_escalation": 0.017173666666666667
+      },
+      "cost_reduction_vs_always_frontier": 0.5439953012714207,
+      "tokens_per_query": {
+        "cheap_a": 67.28666666666666,
+        "cheap_b": 70.80666666666667,
+        "frontier_amortised": 8.04,
+        "total_pcr": 146.13333333333333
+      },
+      "latency_seconds": {
+        "pcr_mean": 2.7486866666666665,
+        "pcr_p50": 1.021,
+        "pcr_p90": 6.144,
+        "cascade_mean": 3.254366666666667,
+        "cascade_p50": 1.515,
+        "cascade_p90": 7.932,
+        "always_frontier_mean": 0.5417333333333333,
+        "pcr_vs_cascade_speedup": 1.1839714966905408
+      },
+      "models": {
+        "cheap_a": "mistral:ministral-8b-latest",
+        "cheap_b": "gemini:gemini-flash-lite-latest",
+        "frontier": "mistral:mistral-medium-latest"
+      }
+    },
+    "pair9_mmlu_pro": {
+      "n": 150,
+      "escalation_rate": 0.54,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.15282933333333334,
+        "always_frontier": 0.1694962962962963,
+        "consensus_no_escalation": 0.06130133333333333
+      },
+      "cost_reduction_vs_always_frontier": 0.09833231360895023,
+      "tokens_per_query": {
+        "cheap_a": 214.84,
+        "cheap_b": 290.75333333333333,
+        "frontier_amortised": 152.54666666666665,
+        "total_pcr": 658.14
+      },
+      "latency_seconds": {
+        "pcr_mean": 1.69776,
+        "pcr_p50": 1.2970000000000002,
+        "pcr_p90": 3.0839999999999996,
+        "cascade_mean": 2.2484866666666665,
+        "cascade_p50": 1.79,
+        "cascade_p90": 3.743,
+        "always_frontier_mean": 0.8081604938271605,
+        "pcr_vs_cascade_speedup": 1.3243842867464581
+      },
+      "models": {
+        "cheap_a": "mistral:ministral-8b-latest",
+        "cheap_b": "gemini:gemini-flash-lite-latest",
+        "frontier": "mistral:mistral-medium-latest"
+      }
+    },
+    "pair9_truthfulqa": {
+      "n": 150,
+      "escalation_rate": 0.3466666666666667,
+      "cost_per_1k_queries_usd": {
+        "pcr": 0.04144533333333333,
+        "always_frontier": 0.05743846153846153,
+        "consensus_no_escalation": 0.02153333333333333
+      },
+      "cost_reduction_vs_always_frontier": 0.27843935538592024,
+      "tokens_per_query": {
+        "cheap_a": 81.52,
+        "cheap_b": 93.05333333333333,
+        "frontier_amortised": 33.18666666666667,
+        "total_pcr": 207.76
+      },
+      "latency_seconds": {
+        "pcr_mean": 7.8201600000000004,
+        "pcr_p50": 2.345,
+        "pcr_p90": 23.66,
+        "cascade_mean": 8.300373333333333,
+        "cascade_p50": 2.8139999999999996,
+        "cascade_p90": 24.204,
+        "always_frontier_mean": 0.5515961538461539,
+        "pcr_vs_cascade_speedup": 1.061407098234989
+      },
+      "models": {
+        "cheap_a": "mistral:ministral-8b-latest",
+        "cheap_b": "gemini:gemini-flash-lite-latest",
+        "frontier": "mistral:mistral-medium-latest"
+      }
+    }
+  },
+  "skipped": [
+    "pair2/arc",
+    "pair2/gsm8k",
+    "pair2/mmlu",
+    "pair3/gsm8k",
+    "pair3/mmlu"
+  ],
+  "rates_usd_per_1m": {
+    "groq:openai/gpt-oss-120b": 0.59,
+    "groq:openai/gpt-oss-20b": 0.1,
+    "groq:qwen/qwen3.8-27b": 0.2,
+    "groq:qwen/qwen3.6-27b": 0.2,
+    "groq:allam-2-7b": 0.05,
+    "mistral:mistral-small-latest": 0.2,
+    "gemini:gemini-3.5-flash-lite": 0.1,
+    "gemini:gemini-flash-lite-latest": 0.1,
+    "_default_cheap": 0.15,
+    "_default_frontier": 0.6
+  }
+}

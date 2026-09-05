@@ -1,0 +1,4 @@
+# unrelated personal files that landed in this folder
+*.docx
+# transient runtime lock
+queue.lock

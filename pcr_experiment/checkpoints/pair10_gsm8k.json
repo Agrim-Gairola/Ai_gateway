@@ -1,0 +1,47 @@
+{
+  "pair_id": "pair10",
+  "benchmark": "gsm8k",
+  "n_total": 150,
+  "cheap_a": "groq:openai/gpt-oss-20b",
+  "cheap_b": "groq:qwen/qwen3.6-27b",
+  "frontier": "groq:openai/gpt-oss-120b",
+  "results": [
+    {
+      "idx": 0,
+      "domain": "gsm8k",
+      "gold": "109",
+      "resp_a": "109",
+      "resp_b": "100",
+      "ans_a": "109",
+      "ans_b": "100",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "109",
+      "final_ans": "109",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 115,
+          "tokens_out": 57,
+          "latency_seconds": 17.052,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 62,
+          "tokens_out": 4,
+          "latency_seconds": 0.406,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 115,
+          "tokens_out": 60,
+          "latency_seconds": 0.561,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 17.052,
+        "total_latency_seconds": 17.613
+      }
+    }
+  ]
+}

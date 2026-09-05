@@ -1,0 +1,7 @@
+groq
+mistralai
+google-genai
+datasets
+sentence-transformers
+python-dotenv
+numpy

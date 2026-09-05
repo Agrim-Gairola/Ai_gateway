@@ -1,0 +1,950 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{balance}
+
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% figures live in exports/figures/ ; adjust or copy alongside this .tex
+\graphicspath{{exports/figures/}{figures/}{./}}
+
+\begin{document}
+
+\title{Parallel Consensus Routing: Training-Free Quality Control, Coordinated
+Hallucination, and Model-Pair Selection in Cost-Efficient LLM Inference}
+
+\author{
+\IEEEauthorblockN{Aksh Modi}
+\IEEEauthorblockA{
+\textit{Independent AI Research}\\
+Manipal University Jaipur, Rajasthan, India
+}
+}
+
+\maketitle
+
+\begin{abstract}
+Cost-efficient large language model (LLM) inference is dominated by two
+paradigms: \textit{pre-query routing}, which commits to a model before any
+output exists, and \textit{sequential cascading}, which escalates cheap-to-expensive
+in series and accrues additive latency. We study \textbf{Parallel Consensus
+Routing (PCR)}, a third paradigm that runs two inexpensive models simultaneously
+and uses their binary output agreement as a training-free quality oracle: agreed
+queries are resolved immediately, disagreements trigger exactly one frontier
+escalation. Extending an initial single-pair study (MMLU: 92.7\% accuracy at
+27.5\% escalation with domain-calibrated thresholds), we run a
+\textbf{controlled matrix of eleven cheap-model pairs across seven benchmarks}
+(MMLU, GSM8K, ARC-Challenge, OpenBookQA, CommonsenseQA, TruthfulQA, MMLU-Pro)
+and score \textbf{eight routing policies} on identical stored data. Five results
+emerge. (1) \textbf{Coordinated hallucination (C-Hall)}---two cheap models
+agreeing on a wrong answer---\textbf{scales monotonically with question
+difficulty, not task type}: from 2\% on OpenBookQA to $\approx$30\% on MMLU-Pro,
+reaching mathematical-reasoning levels on a plain multiple-choice task. (2) A
+\textbf{capability-matched} cheap pair with PCR matches always-frontier accuracy
+on easy/medium questions at 54--69\% lower cost, but on hard questions its
+accuracy is safe while its C-Hall (20--27\%) is not. (3) \textbf{Model-family
+relatedness} raises agreement rate (5/6 benchmarks, bootstrap CI excludes 0) but
+has \textbf{no detectable effect on C-Hall} (every CI spans 0); the binding
+constraint is capability matching, not family. (4) A \textbf{third cheap model}
+(PCR-3, majority vote) reliably breaks ties but yields no accuracy or safety
+gain. (5) On free-tier APIs, \textbf{two of \{gpt-oss-20B, Qwen3.6-27B,
+Qwen3.8-27B\} on a low-latency provider} is the recommended default: solo
+accuracies within $\sim$1\,pp, $\approx$0.5\,s latency, $\approx$5--12\%
+escalation. All experiments used free-tier inference and required \$0 marginal
+API spend.
+\end{abstract}
+
+\begin{IEEEkeywords}
+LLM routing, cost-efficient inference, parallel consensus, coordinated
+hallucination, model-pair selection, capability matching, black-box API inference
+\end{IEEEkeywords}
+
+%===========================================================
+\section{Introduction}
+%===========================================================
+
+The LLM API marketplace is sharply tiered: frontier models command costs one to
+two orders of magnitude above small open models \cite{bommasani2021}. For
+throughput workloads, routing \textit{all} queries to a frontier is
+prohibitively expensive and routing all to a cheap model forfeits quality on the
+hard tail. The engineering problem is: \textit{given a query, which model or
+combination minimizes cost subject to a quality constraint?}
+
+Three paradigms exist. \textbf{Pre-query routing}
+\cite{ong2024routellm,ding2024hybrid} predicts the right tier from input
+features before any output is generated. \textbf{Sequential cascading}
+\cite{chen2023frugalgpt} queries cheap first and applies a learned scorer to
+decide escalation, adding one model's latency per hop.
+\textbf{Self-verification routing} \cite{aggarwal2024automix} lets a small model
+grade its own answer, but self-verification is noisy on reasoning
+\cite{kadavath2022}.
+
+We study a structurally different idea: \textbf{use two cheap models as quality
+oracles for each other}. Two independently deployed cheap models queried in
+parallel that converge on the same answer provide agreement evidence that is
+stronger than either model's self-assessment. On disagreement, exactly one
+frontier call is made. The system is training-free, black-box compatible, and
+faster than a serial cascade on every agreed query. The analogy to speculative
+decoding \cite{leviathan2023,chen2023speculative} is exact---draft-then-verify
+at the response level rather than the token level---but without the white-box
+probability access speculative decoding requires.
+
+The failure mode that makes this non-trivial is \textbf{coordinated
+hallucination (C-Hall)}: two cheap models agreeing on the \textit{same wrong}
+answer. C-Hall is invisible to the router---it is indistinguishable from correct
+consensus---so understanding when it occurs is a safety prerequisite, not an
+optimization.
+
+\paragraph{Contributions} This paper (i) reproduces and extends an initial
+single-pair PCR study with a \textbf{controlled 11-pair, 7-benchmark matrix};
+(ii) shows C-Hall \textbf{scales with difficulty, not task type}, generalizing
+the earlier ``knowledge vs.\ math'' dichotomy to a difficulty-tier one; (iii)
+runs a \textbf{full 8-policy ablation} (Always-Cheap, Best-Cheap, Consensus,
+PCR-2, Oracle-2-cheap, Random, Always-Frontier, PCR-3) on identical data; (iv)
+resolves the \textbf{model-family question}---agreement effect real, C-Hall
+effect absent---and identifies \textbf{capability matching} as the binding
+methodological constraint; (v) provides measured cost/latency and a concrete
+\textbf{practitioner pair-selection guide}.
+
+%===========================================================
+\section{Related Work}
+%===========================================================
+
+\subsection{Sequential Cascade Routing}
+FrugalGPT \cite{chen2023frugalgpt} defines an LLM cascade with a learned
+(DistilBERT) accept/escalate scorer, matching GPT-4 at up to 98\% cost reduction
+on classification, but requiring task-specific supervised training and incurring
+latency proportional to cascade depth. Hybrid LLM \cite{ding2024hybrid} predicts
+the small-vs-large quality gap pre-query (up to 40\% fewer large calls,
+$<$1\% quality drop) but cannot use observed output. AutoMix
+\cite{aggarwal2024automix} is architecturally closest to PCR: a single model
+self-verifies before escalation, with a POMDP meta-verifier absorbing
+self-verification noise. Our cross-model agreement is stronger than
+self-verification in principle---independent models cannot share a
+self-delusion---though, as our matrix shows, shared training corpora still
+induce correlated errors.
+
+\subsection{Pre-Query Routing}
+RouteLLM \cite{ong2024routellm} trains four router variants on Chatbot Arena
+preference data ($>$85\% cost reduction on MT-Bench, 45\% on MMLU). GraphRouter
+\cite{feng2024graphrouter} models query--LLM relationships with GNNs; FORC
+\cite{sakota2024forc} learns per-LLM score prediction via contrastive learning;
+RouterBench \cite{hu2024routerbench} standardizes evaluation. All require trained
+components; PCR requires none.
+
+\subsection{Multi-Model Consensus and Ensembles}
+Multi-agent debate \cite{du2023multiagent} improves reasoning through iterative
+text exchange at $O(\text{rounds}\times\text{models})$ cost. Self-Consistency
+\cite{wang2023selfconsistency} majority-votes multiple samples from one model;
+LLM-Blender \cite{jiang2023llmblender} fuses open-model outputs with a trained
+ranker; ChatEval \cite{chan2023chateval} debates for evaluation. None exploit
+cost differentials between tiers, and none use a single-round binary agreement
+signal.
+
+\subsection{Speculative Decoding}
+Leviathan et al.\ \cite{leviathan2023} and Chen et al.\
+\cite{chen2023speculative} accelerate decoding with a draft model whose tokens
+the target verifies by rejection sampling (2--3$\times$ speedup, provable
+equivalence). This needs the target's per-token distribution---unavailable for
+proprietary APIs. PCR realizes the same draft-then-verify separation at the
+\textit{response} level on final text only.
+
+\subsection{Semantic Caching, Calibration, and Hallucination}
+vCache \cite{schroeder2025vcache} shows global similarity thresholds carry no
+correctness guarantee and proposes per-embedding online learning; our
+per-domain/per-difficulty threshold table is the routing analogue.
+SelfCheckGPT \cite{manakul2023selfcheckgpt} detects hallucination via
+multi-sample consistency; Kadavath et al.\ \cite{kadavath2022} show LLMs are
+poorly calibrated on multi-step reasoning. Coordinated hallucination---agreement
+\textit{negatively} correlated with correctness on hard items---has not been
+characterized in the routing literature.
+
+\subsection{Benchmarks}
+MMLU \cite{hendrycks2020mmlu}, GSM8K \cite{cobbe2021gsm8k}, and ARC-Challenge
+\cite{clark2018arc} are standard. We add TruthfulQA \cite{lin2022truthfulqa}
+(adversarial misconceptions), MMLU-Pro \cite{wang2024mmlupro} (10-option,
+reasoning-heavy), OpenBookQA \cite{mihaylov2018openbookqa}, and CommonsenseQA
+\cite{talmor2019csqa}. Chain-of-thought \cite{wei2022cot} is suppressed to
+isolate the agreement signal.
+
+\begin{table*}[!t]
+\caption{Literature Review --- Related Work and Differentiation of Contribution}
+\label{tab:litreview}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{2.6cm} p{1.9cm} p{3.2cm} p{3.4cm} p{3.6cm}}
+\toprule
+\textbf{Reference} & \textbf{Year/Venue} & \textbf{Approach} & \textbf{Key Limitation} & \textbf{PCR Advantage} \\
+\midrule
+FrugalGPT \cite{chen2023frugalgpt} & 2023 / TMLR & Sequential cascade, trained quality scorer & Labeled training data; serial latency & Training-free; parallel; bounded at one frontier call \\
+Hybrid LLM \cite{ding2024hybrid} & 2024 / ICLR & Pre-query difficulty-gap router & No output signal; pre-commit & Post-query observed agreement \\
+RouteLLM \cite{ong2024routellm} & 2024 / arXiv & Preference-trained router (4 variants) & Human preference labels & Zero labeled data; any API pair \\
+AutoMix \cite{aggarwal2024automix} & 2024 / ACL & Self-verify + POMDP router & Self-verification noisy; POMDP training & Cross-model verification; training-free \\
+Multi-agent Debate \cite{du2023multiagent} & 2024 / ICML & Iterative multi-round debate & $O(\text{rounds}\times\text{models})$; high latency & Single-round; throughput-optimized \\
+Self-Consistency \cite{wang2023selfconsistency} & 2023 / ICLR & Majority vote, one model & Same tier; no cost cut & Cross-tier; cheap replaces expensive samples \\
+Spec.\ Decoding \cite{leviathan2023,chen2023speculative} & 2023 / ICML & Draft-then-verify on token probs & White-box only & Black-box; final text only \\
+vCache \cite{schroeder2025vcache} & 2025 / arXiv & Online per-embedding threshold & Caching, not routing & Per-domain/difficulty calibration for routing \\
+SelfCheckGPT \cite{manakul2023selfcheckgpt} & 2023 / EMNLP & Multi-sample consistency & Consistency assumed positive & C-Hall: consistency as \emph{negative} indicator on hard items \\
+RouterBench \cite{hu2024routerbench} & 2024 / arXiv & Routing benchmark & No algorithm proposed & Results compatible with its methodology \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Research Gap}
+No prior work evaluates a \textit{parallel binary-consensus} quality oracle for
+cost reduction, characterizes coordinated hallucination and its
+difficulty-dependence, controls for model-family relatedness while holding
+capability constant, or provides an empirical pair-selection guide for
+practitioners. This paper does all four.
+
+%===========================================================
+\section{Methodology}
+%===========================================================
+
+\subsection{Problem Formulation}
+Let $M_A, M_B$ be cheap models and $M_F$ a frontier model, with
+$\text{cost}(M_F)\gg\text{cost}(M_A)\approx\text{cost}(M_B)$. For a
+multiple-choice query $q$ each model emits a letter $r\in\{$A$,\dots\}$. The
+\textbf{PCR-2} decision rule is
+\begin{equation}
+\text{output}(q)=\begin{cases}
+r_A(q) & r_A(q)=r_B(q)\quad\text{[agreement]}\\
+M_F(q) & r_A(q)\neq r_B(q)\quad\text{[disagreement]}
+\end{cases}
+\end{equation}
+with expected per-query cost
+$\mathbb{E}[\text{cost}]=\text{cost}(M_A)+\text{cost}(M_B)+\text{cost}(M_F)\cdot P(\text{disagree})$.
+
+\subsection{PCR-3: Majority Vote}
+\textbf{PCR-3} runs three cheap models $M_A,M_B,M_C$; if any two agree, their
+answer is taken; only if all three differ is $M_F$ called. This trades one
+extra cheap call for a lower escalation rate and a majority-vote margin.
+
+\subsection{Policy Space}
+Every policy below is scored on the \textit{same} stored per-question data
+(cheap answers, agreement, frontier answer on disagreements, per-call token and
+latency instrumentation), so no policy requires additional API calls except
+Always-Frontier (see \S\ref{sec:setup}):
+\emph{Always-Cheap-A/-B} (one small model);
+\emph{Best-Cheap} (the stronger of the two);
+\emph{Consensus, no escalation} (trust agreement, fall back to $M_A$ on
+disagreement---provably equal to Always-Cheap-A);
+\emph{PCR-2}; \emph{Oracle-2-cheap} (correct whenever \textit{either} cheap
+model is correct---the ceiling for any two-cheap method);
+\emph{Random} (coin flip $M_A$ vs.\ $M_F$);
+\emph{Always-Frontier}; \emph{PCR-3}.
+
+\subsection{Agreement Signal and Outcome Categories}
+We optionally compute embedding cosine similarity $s\in[-1,1]$ between raw
+responses (\texttt{all-MiniLM-L6-v2} \cite{reimers2019sentencebert}). Three
+outcome categories: \textbf{correct consensus} ($r_A=r_B=$ gold);
+\textbf{coordinated hallucination} ($r_A=r_B\neq$ gold);
+\textbf{disagreement} ($r_A\neq r_B$).
+
+\subsection{Coordinated Hallucination Hypothesis}
+We hypothesize C-Hall arises from shared inductive biases in overlapping
+training corpora: on retrieval both models recall the same fact (beneficial),
+on procedural or adversarial items both may pattern-match the same wrong
+shortcut or misconception. We test two moderators: (a) benchmark
+\textbf{difficulty}, and (b) whether the pair is \textbf{within-family} (same
+developer/lineage) or \textbf{cross-family}.
+
+\subsection{Capability Matching}
+A within-vs-cross comparison is only interpretable if the two cheap models are
+capability-matched: if one model is much weaker, high agreement reflects the
+weak model deferring to a shared plausible-wrong answer (a skill gap), not
+family structure. We require the two cheap models' \textit{solo} accuracy to
+differ by $\leq 3$\,pp on each benchmark; cells violating this are reported but
+excluded from family pooling.
+
+\subsection{Difficulty Tiers}
+We group benchmarks by observed difficulty: \textbf{easy} (ARC-Challenge,
+OpenBookQA, CommonsenseQA), \textbf{medium} (MMLU), \textbf{hard} (MMLU-Pro,
+TruthfulQA), and \textbf{math} (GSM8K).
+
+\subsection{Domain Threshold Calibration (initial study)}
+For the initial MMLU study we calibrate per-domain agreement thresholds
+$\tau_d^*=\arg\min_{\tau\in\mathcal{T}}\text{esc\_rate}(d,\tau)$ subject to
+$\text{acc\_when\_agreed}(d,\tau)\geq 0.85$, with
+$\mathcal{T}=\{0.50,\dots,0.93\}$ and a default $\tau^*=0.64$ for domains with
+$<5$ agreed questions.
+
+%===========================================================
+\section{Experimental Setup}
+\label{sec:setup}
+%===========================================================
+
+\subsection{Initial single-pair study}
+The initial study (denoted \textbf{Pair~1}) used Llama-3.1-8B-Instant and
+Gemini-2.5-Flash-Lite as cheap models and Llama-3.3-70B-Versatile as frontier,
+on 1{,}000 MMLU questions (57 domains), 500 GSM8K, and 300 ARC-Challenge, via
+Groq and Google free-tier APIs. \textit{These three models have since been
+delisted by their providers}, so Pair~1 is not reproducible; its results are
+retained as the pilot that motivated the extended matrix.
+
+\subsection{Extended matrix: models (2026 catalogue)}
+Groq: \texttt{gpt-oss-20b}, \texttt{gpt-oss-safeguard-20b}, \texttt{gpt-oss-120b},
+\texttt{qwen3.6-27b}, \texttt{qwen3.8-27b}, \texttt{allam-2-7b}. Mistral:
+\texttt{ministral-3b/8b/14b-latest}, \texttt{mistral-small-latest},
+\texttt{mistral-medium-latest}. Google: \texttt{gemini-flash-lite},
+\texttt{gemini-flash}. All free tier; all cheap models $\leq$27B, frontier
+$M_F$= \texttt{gpt-oss-120b} unless noted.
+
+\subsection{Benchmarks}
+Seven benchmarks (Table~\ref{tab:benchmarks}). New benchmarks use letter
+extraction generalized to A--J. TruthfulQA MC1 is reduced to 6 options (the
+true option plus $\leq 5$ sampled distractors, shuffled per question) for
+comparability. Cheap answer budget is 256 tokens for all multiple-choice
+benchmarks (measured: reasoning-tuned cheap models need $\sim$200 hidden
+tokens before emitting a letter).
+
+\begin{table}[!t]
+\caption{Benchmarks}
+\label{tab:benchmarks}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{2.3cm} c p{1.0cm} p{2.6cm}}
+\toprule
+\textbf{Benchmark} & \textbf{Options} & \textbf{$N$} & \textbf{Character} \\
+\midrule
+OpenBookQA & A--D & 200 & elementary science \\
+ARC-Challenge & A--E & 100--300 & science reasoning \\
+CommonsenseQA & A--E & 200 & commonsense \\
+MMLU & A--D & 250--1000 & general knowledge, 57 domains \\
+TruthfulQA (MC1) & A--F & 150 & adversarial misconceptions \\
+MMLU-Pro & A--J & 150 & hard, reasoning-heavy \\
+GSM8K & numeric & 150--800 & grade-school math \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Model pairs}
+Eleven pairs (Table~\ref{tab:pairs}), designed so that matched within-/cross-family
+comparisons hold the frontier model and benchmark set constant. Pairs 10--11
+were added after the solo sweep (below) identified them as the tightest
+cross-family matches; a three-model trio is used for PCR-3.
+
+\begin{table*}[!t]
+\caption{Model pairs. Family = whether the two cheap models share a developer/lineage.}
+\label{tab:pairs}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l l l l l l}
+\toprule
+\textbf{Pair} & \textbf{Family} & \textbf{Cheap A} & \textbf{Cheap B} & \textbf{Frontier} & \textbf{Providers} \\
+\midrule
+Pair 1 (pilot) & cross & llama-3.1-8b-instant & gemini-2.5-flash-lite & llama-3.3-70b & Groq+Google (delisted) \\
+Pair 2 & cross & allam-2-7b$^\dagger$ & mistral-small-latest & gpt-oss-120b & Groq+Mistral \\
+Pair 3 & within & gpt-oss-20b & gpt-oss-safeguard-20b & gpt-oss-120b & Groq (gpt-oss) \\
+Pair 4 & cross & allam-2-7b & gemini-flash-lite & gpt-oss-120b & Groq+Google \\
+Pair 6 & cross & gpt-oss-20b & mistral-small-latest & gpt-oss-120b & Groq+Mistral \\
+Pair 7 & within & qwen3.8-27b & qwen3.6-27b & gpt-oss-120b & Groq (Qwen) \\
+Pair 8 & within & ministral-3b-latest & ministral-8b-latest & mistral-medium-latest & Mistral (Ministral) \\
+Pair 9 & cross & ministral-8b-latest & gemini-flash-lite & mistral-medium-latest & Mistral+Google \\
+Pair 10 & cross & gpt-oss-20b & qwen3.6-27b & gpt-oss-120b & Groq \\
+Pair 11 & cross & gpt-oss-20b & qwen3.8-27b & gpt-oss-120b & Groq \\
+PCR-3 trio & --- & \multicolumn{2}{l}{gpt-oss-20b + qwen3.6-27b + qwen3.8-27b} & gpt-oss-120b & Groq \\
+\bottomrule
+\multicolumn{6}{p{17.5cm}}{\footnotesize $^\dagger$Pair~2 MMLU q1--800 used gpt-oss-20b as Cheap~A before a forced swap; disclosed and treated as a mixed pair. Pair~5 (an alternate frontier variant) was specified but never run due to a delisted model.}
+\end{tabular}
+\end{table*}
+
+\subsection{Solo model sweep}
+Each candidate model was run \textit{alone} ($N=80$/benchmark) on ARC, MMLU,
+MMLU-Pro, and TruthfulQA to measure standalone accuracy and latency
+(Table~\ref{tab:solo}). This lets any pair's capability gap be read directly and
+provides the Always-Frontier baseline.
+
+\begin{table}[!t]
+\caption{Solo model accuracy ($N=80$). Frontier row shaded conceptually.}
+\label{tab:solo}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Model} & \textbf{ARC} & \textbf{MMLU} & \textbf{MMLU-Pro} & \textbf{TruthfulQA} \\
+\midrule
+gpt-oss-120b \textit{(frontier)} & 95.0 & 82.5 & 71.2 & 78.8 \\
+gpt-oss-20b & 96.2 & 82.5 & 65.0 & 71.2 \\
+gpt-oss-safeguard-20b & 93.8 & 85.0 & 63.7 & 75.0 \\
+qwen3.6-27b & 96.2 & 82.5 & 63.7 & 81.2 \\
+qwen3.8-27b & 95.0 & 86.2 & 63.7 & 83.8 \\
+ministral-14b & 86.2 & 71.2 & 48.8 & 60.0 \\
+ministral-8b & 91.2 & 67.5 & 46.2 & 55.0 \\
+ministral-3b & 80.0 & 50.0 & 42.5 & 43.8 \\
+allam-2-7b & 75.0 & 60.0 & 35.0 & 33.8 \\
+\bottomrule
+\multicolumn{5}{p{8.4cm}}{\footnotesize gpt-oss-20b, qwen3.6-27b, qwen3.8-27b are mutually within $\sim$1\,pp on every benchmark. The Ministral line steps down cleanly by size.}
+\end{tabular}
+\end{table}
+
+\subsection{Infrastructure}
+Python 3.13, \texttt{asyncio} for parallel cheap calls, temperature 0, seed 42,
+no chain-of-thought. A checkpoint-and-resume mechanism (every 50 questions, plus
+a crash-safety flush) tolerates rate-limit interruptions; a cap-aware job queue
+defers rate-limited work and resumes it after daily resets. Per-call token and
+wall-clock latency are recorded for cost/latency analysis. All runs used
+free-tier APIs; total marginal API spend \$0.
+
+\subsection{Ablation design}
+All policy-ablation rows for a given (pair, benchmark) share one stored result
+set; only the decision rule differs. Always-Frontier accuracy is taken from the
+solo sweep (Table~\ref{tab:solo}). PCR-3 is run separately ($N=120$/benchmark).
+
+%===========================================================
+\section{Results and Discussion}
+\label{sec:results}
+%===========================================================
+
+\subsection{Initial MMLU ablation (Pair 1)}
+Table~\ref{tab:ablation} reproduces the pilot ablation on 1{,}000 MMLU
+questions. Domain-calibrated PCR (row 6) reaches 92.7\% at 27.5\% escalation,
+exceeding frontier-only accuracy (79.5\%) by 13.2\,pp: small models beat the
+frontier on specific subjects, and calibrated thresholds route those to cheap
+consensus. Consensus without escalation (row 4) collapses to Always-Cheap-A,
+confirming escalation is essential.
+
+\begin{table}[!t]
+\caption{Pair 1 MMLU Ablation (1,000 Questions)}
+\label{tab:ablation}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{2.9cm} c c c c}
+\toprule
+\textbf{Configuration} & \textbf{Acc.} & \textbf{Esc.} & \textbf{Cost/1k} & \textbf{C-Hall} \\
+\midrule
+(1) Always Frontier & 79.5\% & 100\% & \$0.059 & N/A \\
+(2) Always Cheap A & 64.4\% & 0\% & \$0.000 & N/A \\
+(3) Always Cheap B & 76.3\% & 0\% & \$0.000 & N/A \\
+(4) Consensus, No Esc. & 64.4\% & 0\% & \$0.000 & 8.9\% \\
+(5) PCR, Global Thresh. & 80.4\% & 33.7\% & \$0.020 & 8.9\% \\
+(6) PCR, Domain Calib. & \textbf{92.7\%} & \textbf{27.5\%} & \$0.0031 & $<$5.0\% \\
+\bottomrule
+\multicolumn{5}{p{8.4cm}}{\footnotesize Costs at Llama-70B pricing (\$0.59/1M tokens, $\sim$100 tok/query).}
+\end{tabular}
+\end{table}
+
+\begin{table}[!t]
+\caption{Pair 1 Agreement Signal Statistics --- MMLU 1,000}
+\label{tab:agreement}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lc}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Agreed / disagreed & 663 / 337 (66.3\% / 33.7\%) \\
+Accuracy on agreed & 574/663 = 86.6\% \\
+Coordinated hallucinations & 89/663 = 8.9\% \\
+Mean sim $|$ correct / C-Hall & 0.981 / 0.828 \\
+Similarity delta (correct$-$C-Hall) & $+$0.153 ($t=4.24$, $p<0.001$) \\
+Frontier acc.\ on 337 disagreed & 68.25\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The similarity gap is significant ($t=4.24$, $p<0.001$) but a global similarity
+threshold sweep from 0.30--0.80 moves accuracy only 0.6\,pp
+(Table~\ref{tab:sweep})---the distributions overlap heavily, and \textbf{binary
+letter agreement, not continuous similarity, carries the signal}. Frontier
+accuracy on disagreed items (68.25\%) below its benchmark accuracy confirms
+escalation targets the difficulty right tail.
+
+\begin{table}[!t]
+\caption{Pair 1 Global Similarity Threshold Sweep (MMLU)}
+\label{tab:sweep}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{ccccc}
+\toprule
+\textbf{Threshold} & \textbf{Trusted} & \textbf{Esc.} & \textbf{Acc.} & \textbf{C-Hall} \\
+\midrule
+0.30 & 642 & 35.8\% & 88.6\% & 11.4\% \\
+0.50 & 641 & 35.9\% & 88.6\% & 11.4\% \\
+0.70 & 636 & 36.4\% & 88.8\% & 11.2\% \\
+0.80 & 636 & 36.4\% & 88.8\% & 11.2\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Finding 1: C-Hall scales with difficulty, not task type}
+The pilot framed C-Hall as knowledge ($\approx$9\%) vs.\ math (31.8\%). The
+7-benchmark matrix shows a smooth monotone climb with difficulty, entirely
+within knowledge tasks (Table~\ref{tab:ladder}, Fig.~\ref{fig:ladder}):
+
+\begin{table}[!t]
+\caption{C-Hall rate on agreed questions, by benchmark (mean over all pairs)}
+\label{tab:ladder}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{l c l}
+\toprule
+\textbf{Benchmark} & \textbf{Mean C-Hall} & \textbf{Tier} \\
+\midrule
+OpenBookQA & 2\% & easy \\
+ARC-Challenge & 4\% & easy \\
+CommonsenseQA & 7\% & easy \\
+MMLU & 10\% & medium \\
+TruthfulQA & 21\% & hard \\
+MMLU-Pro & 30\% & hard \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig6_newbench_chall.png}
+\caption{Coordinated hallucination scales with benchmark difficulty. On the
+capability-matched pairs, MMLU-Pro reaches $\approx$27\% C-Hall on a plain
+letter task---matching the pilot's GSM8K figure without any answer-extraction
+artefact (\S\ref{sec:gsm8k}).}
+\label{fig:ladder}
+\end{figure}
+
+MMLU-Pro's $\approx$27\% agreed-answer error rate (on matched pairs 6/7) equals
+the pilot's math figure, but on a 256-token multiple-choice task with $<$3\%
+unparsed responses---it is not a decoding artefact. \textbf{The prerequisite for
+safe PCR is difficulty-tier awareness, not task-type awareness.} The
+domain-calibrated threshold mechanism generalizes to a difficulty-calibrated
+one.
+
+\subsection{Finding 2: Full policy ablation}
+Table~\ref{tab:policytier} scores eight policies by difficulty tier
+(representative pairs). \textbf{Easy:} all consensus policies land within
+$\approx$2\,pp of each other and $\approx$1\,pp under Always-Frontier (95.0\%);
+PCR-2's only value here is cost. \textbf{Medium:} PCR-2 adds +1 to +15\,pp over
+Best-Cheap depending on cheap-model strength. \textbf{Hard:} for
+capability-matched pairs PCR-2 \textit{matches or beats} Always-Frontier
+(Pair~7 78.0\% vs.\ 75.0\%, Pair~6 74.3\%), but 20--27\% of the answers PCR-2
+trusts are wrong; a mismatched pair (Pair~8, 59.7\%) falls well below the
+frontier. \textbf{Oracle-2-cheap} sits 3--5\,pp above PCR-2 on several cells---a
+smarter-than-binary selector has real headroom.
+
+\begin{table}[!t]
+\caption{Policy ablation by tier (representative pairs). AF = Always-Frontier
+(gpt-oss-120b solo: ARC 95.0, MMLU 82.5, MMLU-Pro 71.3, TruthfulQA 78.8).}
+\label{tab:policytier}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l l c c c c c}
+\toprule
+\textbf{Tier} & \textbf{Pair} & \textbf{PCR-2} & \textbf{BestCh} & \textbf{AF} & \textbf{C-Hall} & \textbf{Esc.} \\
+\midrule
+easy & Pair 7 & 93.0 & 93.8 & 95.0 & 3.9 & 5.8\% \\
+easy & Pair 3 & 94.3 & 93.7 & 95.0 & 3.9 & 5.0\% \\
+easy & Pair 6 & 93.1 & 93.3 & 95.0 & 2.0 & 12.6\% \\
+easy & Pair 10 & 94.7 & 95.3 & 95.0 & 2.8 & 5.3\% \\
+medium & Pair 7 & 84.0 & 83.2 & 82.5 & 11.3 & 11.6\% \\
+medium & Pair 6 & 85.6 & 80.4 & 82.5 & 9.2 & 26.4\% \\
+medium & Pair 3 & 84.8 & 69.2 & --- & 8.3 & 42.4\% \\
+hard & Pair 7 & \textbf{78.0} & 71.7 & 75.0 & \textbf{20.1} & 19.7\% \\
+hard & Pair 6 & 74.3 & 69.0 & 75.0 & 23.5 & 37.3\% \\
+hard & Pair 8$^\ddagger$ & 59.7 & 52.0 & 75.0 & 40.8 & 40.0\% \\
+math & Pair 4 & 94.8 & 92.6 & --- & 2.6 & 65.9\% \\
+math & Pair 3 & 89.3 & 81.3 & --- & 4.3 & 22.0\% \\
+\bottomrule
+\multicolumn{7}{p{8.4cm}}{\footnotesize $^\ddagger$capability-mismatched (\S\ref{sec:capmatch}).}
+\end{tabular}
+\end{table}
+
+\subsection{Finding 3: Does a cheap pair beat the frontier?}
+Fig.~\ref{fig:tradeoff} and Table~\ref{tab:cost} give the measured trade-off.
+\textbf{On easy/medium a capability-matched cheap pair with PCR-2 matches
+Always-Frontier accuracy at 42--72\% lower cost.} Latency is decided by the
+\textit{provider}, not the policy: all-Groq pairs run PCR-2 at $\approx$0.5\,s;
+any pair with a Mistral or Google leg runs at 1.6--7.8\,s. PCR-2 is
+1.2--1.7$\times$ faster than a serial cascade but not faster than a single
+$\approx$0.9\,s Groq frontier call---its latency advantage is architectural, not
+absolute. On hard benchmarks the cost saving shrinks to 9--47\% and the accuracy
+is unsafe regardless, so PCR is the wrong tool there.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig7_tradeoff_cost.png}
+\caption{Accuracy vs.\ cost per 1{,}000 queries. Circles = PCR-2, faint squares
+= single cheap model, $\times$ = Always-Frontier (gpt-oss-120b, measured),
+dashed line = its accuracy. Easy tier: PCR-2 within $\approx$1\,pp of frontier
+accuracy at $\approx$1/3 the cost.}
+\label{fig:tradeoff}
+\end{figure}
+
+\begin{table}[!t]
+\caption{Measured cost and latency (per-call instrumentation; 20 cells,
+representative rows). Cost = list-price tokens; runs were free-tier.}
+\label{tab:cost}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{l c c c c c}
+\toprule
+\textbf{Pair / bench} & \textbf{Esc.} & \textbf{\$/1k PCR} & \textbf{\$/1k AF} & \textbf{cut} & \textbf{lat.} \\
+\midrule
+Pair 7 / OpenBookQA & 5.0\% & 0.028 & 0.100 & 72\% & 0.49\,s \\
+Pair 7 / CommonsenseQA & 8.5\% & 0.032 & 0.104 & 69\% & 0.55\,s \\
+Pair 7 / ARC & 4.0\% & 0.036 & 0.108 & 66\% & 0.40\,s \\
+Pair 7 / MMLU & 11.6\% & 0.072 & 0.169 & 57\% & 0.53\,s \\
+Pair 6 / MMLU & 26.4\% & 0.094 & 0.163 & 42\% & 0.74\,s \\
+Pair 7 / MMLU-Pro & 28.0\% & 0.169 & 0.287 & 41\% & 0.63\,s \\
+Pair 6 / MMLU-Pro & 48.7\% & 0.216 & 0.273 & 21\% & 1.15\,s \\
+Pair 4 / GSM8K & 65.9\% & 0.120 & 0.134 & 11\% & 1.65\,s \\
+Pair 9 / TruthfulQA & 34.7\% & 0.041 & 0.057 & 28\% & 7.82\,s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Finding 4: PCR-3 does not help}
+A third cheap model (all-Groq trio, $N=120$/benchmark) breaks nearly every tie
+(a 2-of-3 majority forms 84--100\% of the time), collapsing escalation---but
+buys \textbf{no accuracy and no safety} (Table~\ref{tab:pcr3}). C-Hall is
+flat-to-worse on every benchmark: the items that stop escalating are added to
+the trusted set without being any cleaner. PCR-3 trades one frontier call for
+one extra cheap call per query---net-negative on easy/medium, roughly
+break-even on hard. \textbf{Binary-agreement PCR-2 with a matched pair remains
+the right design.}
+
+\begin{table}[!t]
+\caption{PCR-3 (gpt-oss-20b + qwen3.6-27b + qwen3.8-27b, majority vote) vs.\
+PCR-2 (Pair 7, the same two Qwen models). $N=120$.}
+\label{tab:pcr3}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l c c c c}
+\toprule
+\textbf{Benchmark} & \textbf{Policy} & \textbf{Esc.} & \textbf{C-Hall} & \textbf{Overall acc.} \\
+\midrule
+\multirow{2}{*}{ARC} & PCR-2 & 4.0\% & 2.6\% & 95.0\% \\
+ & PCR-3 & \textbf{0\%} & 5.0\% & 95.0\% \\
+\multirow{2}{*}{TruthfulQA} & PCR-2 & 11.3\% & 14.3\% & 83.3\% \\
+ & PCR-3 & \textbf{1\%} & 18.5\% & 81.7\% \\
+\multirow{2}{*}{MMLU-Pro} & PCR-2 & 28.0\% & 25.9\% & 72.7\% \\
+ & PCR-3 & \textbf{16\%} & 28.7\% & 73.3\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Finding 5: Model family --- agreement yes, C-Hall no}
+Bootstrap 95\% CIs (10{,}000 iterations) on the within-minus-cross gap over
+matched pairs / three families (Table~\ref{tab:family}, Fig.~\ref{fig:forest}).
+\textbf{Agreement:} within-family pairs agree more on 5 of 6 benchmarks (each CI
+excludes 0; MMLU is the exception, $-3.0$\,pp, driven by Pair~3's
+safety-tuned model). \textbf{Coordinated hallucination:} every per-benchmark CI
+spans zero; the benchmark-balanced pair-level gap is $+2.7$\,pp,
+CI $[-1.7,+6.4]$. On the two hardest benchmarks the point estimate even runs
+\textit{opposite} to the hypothesis. \textbf{Same-family cheap models agree
+substantially more, but that extra agreement is not disproportionately wrong.}
+The ``same family $\Rightarrow$ co-hallucinate'' hypothesis is not supported;
+what drives C-Hall is the benchmark (Finding 1).
+
+\begin{table}[!t]
+\caption{Within-family minus cross-family gap, question-level bootstrap 95\% CI.}
+\label{tab:family}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{l r r r l}
+\toprule
+\textbf{Benchmark} & \textbf{within} & \textbf{cross} & \textbf{gap} & \textbf{95\% CI} \\
+\midrule
+\multicolumn{5}{l}{\textit{Agreement rate}} \\
+ARC & 93.5 & 84.3 & $+9.2$ & $[+6.2,+12.2]^\ast$ \\
+OpenBookQA & 95.0 & 83.3 & $+11.7$ & $[+5.5,+17.8]^\ast$ \\
+MMLU & 73.0 & 76.0 & $-3.0$ & $[-7.6,+1.8]$ \\
+TruthfulQA & 88.7 & 74.0 & $+14.7$ & $[+6.0,+23.3]^\ast$ \\
+MMLU-Pro & 72.0 & 51.3 & $+20.7$ & $[+10.0,+31.3]^\ast$ \\
+GSM8K & 78.0 & 34.1 & $+43.9$ & $[+36.3,+51.2]^\ast$ \\
+\textit{balanced (pair-level)} & 84.3 & 77.9 & $+6.4$ & $[-6.8,+21.2]$ \\
+\midrule
+\multicolumn{5}{l}{\textit{Coordinated hallucination}} \\
+ARC & 4.4 & 3.0 & $+1.4$ & $[-0.6,+3.4]$ \\
+MMLU & 10.1 & 9.3 & $+0.9$ & $[-2.8,+4.6]$ \\
+TruthfulQA & 14.3 & 19.8 & $-5.5$ & $[-15.1,+4.0]$ \\
+MMLU-Pro & 25.9 & 27.3 & $-1.3$ & $[-14.4,+11.6]$ \\
+GSM8K & 4.3 & 2.6 & $+1.7$ & $[-2.1,+6.1]$ \\
+\textit{balanced (pair-level)} & 8.1 & 5.4 & $+2.7$ & $[-1.7,+6.4]$ \\
+\bottomrule
+\multicolumn{5}{p{8.4cm}}{\footnotesize $^\ast$CI excludes 0. Capability-mismatched cells excluded (\S\ref{sec:capmatch}).}
+\end{tabular}
+\end{table}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\columnwidth]{fig4_family_forest.png}
+\caption{Within-minus-cross gap with 95\% bootstrap CI. Filled markers = CI
+excludes 0. Every agreement gap (except MMLU) clears zero; every coordinated-
+hallucination gap straddles it.}
+\label{fig:forest}
+\end{figure}
+
+\subsection{Finding 6: Capability matching is the binding constraint}
+\label{sec:capmatch}
+A non-Groq within-family Mistral pair (Pair~8) produced a striking result---38--43\%
+C-Hall on hard benchmarks vs.\ 12--22\% for cross-family Pair~9---which then
+collapses under inspection (Table~\ref{tab:capmatch}). In every wave-3 hard cell
+the two cheap models differ 7--24\,pp in solo accuracy, far beyond the
+$\pm3$\,pp matching bar. ministral-3b is simply weak (37\% on MMLU-Pro); when it
+``agrees'' with ministral-8b, both often defaulted to the same plausible-wrong
+answer---a \textbf{skill gap, not shared family blind spots}, the same failure
+that disqualified Pair~2 on GSM8K. \textbf{The family hypothesis cannot be
+tested with off-the-shelf same-series small-model pairs}: a 3B$+$8B pair is
+systematically mismatched. Qwen3.6/Qwen3.8 ($-0.5$ to $+2$\,pp) is the only
+within-family pair in the set that qualifies on the hard benchmarks, and it
+shows no C-Hall effect.
+
+\begin{table}[!t]
+\caption{Wave-3 hard cells: C-Hall vs.\ the two cheap models' solo-accuracy gap.}
+\label{tab:capmatch}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{l c c c}
+\toprule
+\textbf{Pair / benchmark} & \textbf{C-Hall} & \textbf{A solo} & \textbf{B solo (gap)} \\
+\midrule
+Pair 8 (within) / TruthfulQA & 38.6\% & 43.3 & 60.0 ($-16.7$) \\
+Pair 8 (within) / MMLU-Pro & 43.0\% & 36.7 & 44.0 ($-7.3$) \\
+Pair 9 (cross) / TruthfulQA & 12.2\% & 60.0 & 84.0 ($-24.0$) \\
+Pair 9 (cross) / MMLU-Pro & 21.7\% & 43.3 & 61.3 ($-18.0$) \\
+\midrule
+Pair 6/7 (matched, $\leq$3\,pp) / hard & 20--27\% & \multicolumn{2}{c}{---} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Per-pair, per-benchmark PCR-2 results}
+Table~\ref{tab:percell} gives the full grid. Two patterns: (i) C-Hall tracks
+benchmark difficulty for every pair (2--4\% easy, 8--11\% MMLU, 12--20\%
+TruthfulQA, 22--43\% MMLU-Pro); (ii) agreement rate separates within- from
+cross-family pairs on the same benchmark (Pair~7 agrees 88--96\%; cross-family
+pairs 46--92\%).
+
+\begin{table}[!t]
+\caption{PCR-2 per (pair, benchmark): agreement / C-Hall / final accuracy /
+escalation. Excerpt; matched pairs first.}
+\label{tab:percell}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{l l c c c c}
+\toprule
+\textbf{Pair} & \textbf{Bench} & \textbf{Agr.} & \textbf{C-Hall} & \textbf{Acc.} & \textbf{Esc.} \\
+\midrule
+7 & ARC & 96.0 & 2.6 & 95.0 & 4.0 \\
+7 & OpenBookQA & 95.0 & 2.1 & 94.5 & 5.0 \\
+7 & CommonsenseQA & 91.5 & 7.1 & 89.5 & 8.5 \\
+7 & MMLU & 88.4 & 11.3 & 84.0 & 11.6 \\
+7 & TruthfulQA & 88.7 & 14.3 & 83.3 & 11.3 \\
+7 & MMLU-Pro & 72.0 & 25.9 & 72.7 & 28.0 \\
+6 & ARC & 91.5 & 2.2 & 95.0 & 8.5 \\
+6 & MMLU & 73.6 & 9.2 & 85.6 & 26.4 \\
+6 & TruthfulQA & 74.0 & 19.8 & 76.0 & 26.0 \\
+6 & MMLU-Pro & 51.3 & 27.3 & 72.7 & 48.7 \\
+3 & ARC & 95.0 & 3.9 & 94.3 & 5.0 \\
+3 & MMLU & 57.6 & 8.3 & 84.8 & 42.4 \\
+3 & GSM8K & 78.0 & 4.3 & 89.3 & 22.0 \\
+10 & ARC & --- & 2.8 & 94.7 & 5.3 \\
+8 & ARC & 87.3 & 8.4 & 90.7 & 12.7 \\
+8 & TruthfulQA & 67.3 & 38.6 & 64.0 & 32.7 \\
+8 & MMLU-Pro & 52.7 & 43.0 & 55.3 & 47.3 \\
+9 & ARC & 90.0 & 2.2 & 94.7 & 10.0 \\
+9 & TruthfulQA & 65.3 & 12.2 & 76.7 & 34.7 \\
+9 & MMLU-Pro & 46.0 & 21.7 & 63.3 & 54.0 \\
+4 & GSM8K & 34.1 & 2.6 & 94.8 & 65.9 \\
+2 & GSM8K$^\S$ & 12.4 & 29.0 & 91.6 & 87.6 \\
+\bottomrule
+\multicolumn{6}{p{8.4cm}}{\footnotesize $^\S$excluded from family pooling (capability mismatch on GSM8K).}
+\end{tabular}
+\end{table}
+
+\subsection{Domain-level heterogeneity (Pair 1 MMLU)}
+Within knowledge retrieval, domain identity modulates C-Hall by an order of
+magnitude (Table~\ref{tab:domain}). Virology (C-Hall 53.3\%, sim.\ 0.966) and
+high-school biology (5.3\%, sim.\ 0.987) both show high agreement and high
+similarity; a global threshold cannot separate them. Calibrated thresholds
+range $\tau^*\!\in\![0.50, 0.93]$ across 38 domains (mean 0.64), yielding 92.6\%
+average accuracy at 27.5\% escalation---confirming a uniform policy is
+misspecified.
+
+\begin{table}[!t]
+\caption{Selected Domain-Level Results (Pair 1 MMLU)}
+\label{tab:domain}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{l c c c c c}
+\toprule
+\textbf{Domain} & \textbf{N} & \textbf{Agr.} & \textbf{Sim.} & \textbf{Acc$|$agr} & \textbf{C-Hall} \\
+\midrule
+Virology & 15 & 93.3\% & 0.966 & 42.9\% & 53.3\% \\
+Professional Law & 104 & 51.9\% & 0.816 & 75.9\% & 12.5\% \\
+High School Biology & 19 & 94.7\% & 0.987 & 94.4\% & 5.3\% \\
+Marketing & 20 & 85.0\% & 0.886 & 100.0\% & 0.0\% \\
+High School Psychology & 42 & 88.1\% & 0.921 & 97.3\% & 2.4\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The GSM8K figure revisited}
+\label{sec:gsm8k}
+The pilot reported 31.8\% C-Hall / 24.3\% accuracy-when-agreed on GSM8K under a
+12-token answer budget. Every subsequent GSM8K run in the matrix, using a
+300-token budget, shows \textbf{C-Hall 2.6--4.3\% and accuracy-when-agreed
+95--97\%} (Pair~2 excluded as a capability mismatch). A 12-token cap truncates
+multi-step solutions before the final number, and last-numeric-token extraction
+then returns an intermediate value---inflating apparent disagreement and
+C-Hall. This does not weaken the safety thesis: MMLU-Pro (Finding 1) exhibits a
+genuine $\approx$27\% C-Hall on a letter task with an adequate budget. But the
+specific 31.8\% figure is budget-sensitive and should carry that caveat.
+
+\subsection{Practitioner recommendations}
+\begin{table}[!t]
+\caption{Recommended configuration by goal (free-tier, 2026).}
+\label{tab:recs}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{p{2.4cm} p{2.7cm} p{2.7cm}}
+\toprule
+\textbf{Goal} & \textbf{Use} & \textbf{Why} \\
+\midrule
+High-volume, mostly easy/medium; minimise cost + latency
+& PCR-2: qwen3.6-27b + qwen3.8-27b $\to$ gpt-oss-120b (all Groq)
+& $\approx$Best-Cheap / Always-Frontier accuracy; 57--69\% cheaper; 0.5\,s;
+5--12\% escalation; no truncation. \\
+Maximum error-independence
+& PCR-2: gpt-oss-20b + qwen3.8-27b $\to$ gpt-oss-120b (all Groq)
+& Different developers $\Rightarrow$ independent training; solo accuracies
+within $\sim$1\,pp; both fast/free. \\
+Hard / adversarial queries
+& Do not use PCR consensus as a trust signal; route to frontier or gate by
+difficulty
+& Agreement 20--43\% wrong; PCR-2 gains +5--11\,pp accuracy but ships confident
+errors and is only $\sim$30\% cheaper. \\
+Research: settle the family question
+& $\geq$3 capability-matched pairs / condition, $N\!\approx\!1000$ on MMLU-Pro
+& Only MMLU/MMLU-Pro pools are large enough; each pair must clear the
+$\pm3$\,pp bar. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%===========================================================
+\section{Conclusion}
+%===========================================================
+Parallel Consensus Routing uses inter-model binary agreement as a training-free,
+black-box quality oracle and is the first routing approach to formalize the
+speculative-decoding analogy at the response level. Extending an initial
+single-pair study to an eleven-pair, seven-benchmark, eight-policy matrix, we
+establish: (1) coordinated hallucination scales monotonically with question
+difficulty (2\% to $\approx$30\%), not with task type; (2) a capability-matched
+cheap pair with PCR-2 matches always-frontier accuracy on easy/medium queries at
+42--72\% lower cost, but is unsafe on hard queries where 20--27\% of trusted
+answers are wrong; (3) model-family relatedness raises agreement rate but has no
+detectable effect on coordinated hallucination---capability matching, not
+family, is the binding constraint; (4) a third cheap model breaks ties but adds
+no accuracy or safety; (5) on free-tier APIs, two of \{gpt-oss-20B,
+Qwen3.6-27B, Qwen3.8-27B\} on a low-latency provider is the recommended default.
+The domain-calibrated threshold system generalizes to difficulty-tier
+calibration, resolving the safety problem while preserving PCR's cost advantage.
+
+\subsection*{Limitations}
+Pilot-scale $N$ (150--300 per new cell) gives per-benchmark C-Hall CIs of
+$\pm3$--14\,pp. The within-family condition spans two developers (gpt-oss, Qwen),
+both on one provider, so provider is confounded with family; a
+capability-matched, non-Groq within-family pair remains the key missing
+replicate. Cosine similarity is unavailable for the extended matrix (a library
+incompatibility), though the pilot shows binary agreement carries the signal.
+Always-Frontier is a single model (gpt-oss-120b). All runs used free-tier APIs;
+paid-tier cost profiles differ. Pair~1's models are delisted, so its MMLU and
+domain-calibration numbers cannot be re-verified.
+
+\subsection*{Future Work}
+A statistically powered family study ($\approx$1000 MMLU-Pro questions
+$\times\geq$3 matched pairs per condition) would let the null be \textit{claimed}
+rather than merely unrefuted. The 3--5\,pp Oracle-2-cheap gap motivates a
+lightweight learned selector beyond binary agreement. Online difficulty/domain
+threshold learning \cite{schroeder2025vcache} would remove the calibration
+corpus. Extending PCR to open-ended generation needs a semantic agreement
+criterion; applying it to retrieval-augmented generation \cite{lewis2020rag},
+where grounded facts may still be co-hallucinated, is a high-value target.
+
+%===========================================================
+\balance
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{99}
+
+\bibitem{bommasani2021}
+R. Bommasani, D.~A. Hudson, et al., ``On the opportunities and risks of foundation models,'' arXiv:2108.07258, 2021.
+
+\bibitem{ong2024routellm}
+I. Ong, A. Almahairi, V. Wu, W.-L. Chiang, T. Wu, J.~E. Gonzalez, M.~W. Kadous, and I. Stoica, ``RouteLLM: Learning to route LLMs with preference data,'' arXiv:2406.18665, 2024.
+
+\bibitem{ding2024hybrid}
+D. Ding, A. Mallick, C. Wang, R. Sim, S. Mukherjee, V. Ruhle, L.~V.~S. Lakshmanan, and A.~H. Awadallah, ``Hybrid LLM: Cost-efficient and quality-aware query routing,'' in \textit{Proc.\ ICLR}, arXiv:2404.14618, 2024.
+
+\bibitem{chen2023frugalgpt}
+L. Chen, M. Zaharia, and J. Zou, ``FrugalGPT: How to use large language models while reducing cost and improving performance,'' \textit{TMLR}, arXiv:2305.05176, 2023.
+
+\bibitem{leviathan2023}
+Y. Leviathan, M. Kalman, and Y. Matias, ``Fast inference from transformers via speculative decoding,'' in \textit{Proc.\ ICML}, PMLR 202, 2023.
+
+\bibitem{chen2023speculative}
+C. Chen, S. Borgeaud, G. Irving, J.-B. Lespiau, L. Sifre, and J. Jumper, ``Accelerating large language model decoding with speculative sampling,'' arXiv:2302.01318, 2023.
+
+\bibitem{aggarwal2024automix}
+P. Aggarwal, A. Madaan, A. Anand, et al., ``AutoMix: Automatically mixing language models,'' in \textit{Proc.\ ACL}, arXiv:2310.12963, 2024.
+
+\bibitem{du2023multiagent}
+Y. Du, S. Li, A. Torralba, J.~B. Tenenbaum, and I. Mordatch, ``Improving factuality and reasoning in language models through multiagent debate,'' in \textit{Proc.\ ICML}, arXiv:2305.14325, 2024.
+
+\bibitem{jiang2023llmblender}
+D. Jiang, X. Ren, and B.~Y. Lin, ``LLM-Blender: Ensembling large language models with pairwise ranking and generative fusion,'' in \textit{Proc.\ ACL}, pp.\ 14165--14178, 2023.
+
+\bibitem{wang2023selfconsistency}
+X. Wang, J. Wei, D. Schuurmans, Q. Le, E. Chi, S. Narang, A. Chowdhery, and D. Zhou, ``Self-consistency improves chain of thought reasoning in language models,'' in \textit{Proc.\ ICLR}, arXiv:2203.11171, 2023.
+
+\bibitem{schroeder2025vcache}
+L.~G. Schroeder, A. Desai, A. Cuadron, et al., ``vCache: Verified semantic prompt caching,'' arXiv:2502.03771, 2025.
+
+\bibitem{manakul2023selfcheckgpt}
+P. Manakul, A. Liusie, and M.~J.~F. Gales, ``SelfCheckGPT: Zero-resource black-box hallucination detection for generative large language models,'' in \textit{Proc.\ EMNLP}, pp.\ 9004--9017, 2023.
+
+\bibitem{kadavath2022}
+S. Kadavath, T. Conerly, A. Askell, et al., ``Language models (mostly) know what they know,'' arXiv:2207.05221, 2022.
+
+\bibitem{hendrycks2020mmlu}
+D. Hendrycks, C. Burns, S. Basart, A. Zou, M. Mazeika, D. Song, and J. Steinhardt, ``Measuring massive multitask language understanding,'' arXiv:2009.03300, 2020.
+
+\bibitem{cobbe2021gsm8k}
+K. Cobbe, V. Kosaraju, M. Bavarian, et al., ``Training verifiers to solve math word problems,'' arXiv:2110.14168, 2021.
+
+\bibitem{clark2018arc}
+P. Clark, I. Cowhey, O. Etzioni, T. Khot, A. Sabharwal, C. Schoenick, and O. Tafjord, ``Think you have solved question answering? Try ARC, the AI2 Reasoning Challenge,'' arXiv:1803.05457, 2018.
+
+\bibitem{lin2022truthfulqa}
+S. Lin, J. Hilton, and O. Evans, ``TruthfulQA: Measuring how models mimic human falsehoods,'' in \textit{Proc.\ ACL}, arXiv:2109.07958, 2022.
+
+\bibitem{wang2024mmlupro}
+Y. Wang, X. Ma, G. Zhang, et al., ``MMLU-Pro: A more robust and challenging multi-task language understanding benchmark,'' in \textit{Proc.\ NeurIPS Datasets and Benchmarks}, arXiv:2406.01574, 2024.
+
+\bibitem{mihaylov2018openbookqa}
+T. Mihaylov, P. Clark, T. Khot, and A. Sabharwal, ``Can a suit of armor conduct electricity? A new dataset for open book question answering,'' in \textit{Proc.\ EMNLP}, arXiv:1809.02789, 2018.
+
+\bibitem{talmor2019csqa}
+A. Talmor, J. Herzig, N. Lourie, and J. Berant, ``CommonsenseQA: A question answering challenge targeting commonsense knowledge,'' in \textit{Proc.\ NAACL-HLT}, arXiv:1811.00937, 2019.
+
+\bibitem{hu2024routerbench}
+Q.~J. Hu, J. Bieker, X. Li, et al., ``RouterBench: A benchmark for multi-LLM routing system,'' arXiv:2403.12031, 2024.
+
+\bibitem{reimers2019sentencebert}
+N. Reimers and I. Gurevych, ``Sentence-BERT: Sentence embeddings using siamese BERT-networks,'' in \textit{Proc.\ EMNLP-IJCNLP}, pp.\ 3982--3992, 2019.
+
+\bibitem{wei2022cot}
+J. Wei, X. Wang, D. Schuurmans, et al., ``Chain-of-thought prompting elicits reasoning in large language models,'' in \textit{Proc.\ NeurIPS}, arXiv:2201.11903, 2022.
+
+\bibitem{sakota2024forc}
+M. Sakota, M. Peyrard, and H. Schutze, ``FORC: Fine-grained orchestration for LLM routing with contrastive learning,'' arXiv:2402.09997, 2024.
+
+\bibitem{feng2024graphrouter}
+T. Feng, Y. Shen, and J. You, ``GraphRouter: A graph-based router for LLM selections,'' arXiv:2410.03834, 2024.
+
+\bibitem{chan2023chateval}
+C.-M. Chan, W. Chen, Y. Su, et al., ``ChatEval: Towards better LLM-based evaluators through multi-agent debate,'' arXiv:2308.07201, 2023.
+
+\bibitem{lewis2020rag}
+P. Lewis, E. Perez, A. Piktus, et al., ``Retrieval-augmented generation for knowledge-intensive NLP tasks,'' in \textit{Proc.\ NeurIPS}, arXiv:2005.11401, 2020.
+
+\end{thebibliography}
+
+\end{document}

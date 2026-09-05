@@ -1,0 +1,3340 @@
+{
+  "pair_id": "pair4",
+  "benchmark": "arc",
+  "n_total": 100,
+  "cheap_a": "groq:allam-2-7b",
+  "cheap_b": "gemini:gemini-3.5-flash-lite",
+  "frontier": "groq:openai/gpt-oss-120b",
+  "results": [
+    {
+      "idx": 0,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. a lightning strike",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 7,
+          "latency_seconds": 3.766,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 44,
+          "tokens_out": 1,
+          "latency_seconds": 1.616,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 3.766,
+        "total_latency_seconds": 3.766
+      }
+    },
+    {
+      "idx": 1,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. switch.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 45,
+          "tokens_out": 6,
+          "latency_seconds": 0.147,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 37,
+          "tokens_out": 1,
+          "latency_seconds": 0.809,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.809,
+        "total_latency_seconds": 0.809
+      }
+    },
+    {
+      "idx": 2,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "The concentration of salt in estuary water is lowest near the mouth of the river when the river flow is high and the tide is high. This is because during high tide, more fresh water from the river enters the estuary, diluting the salt concentration. When the tide is low, less fresh water enters and more salt-rich seawater enters the estuary, increasing salt concentration. Therefore, the correct answer is D.",
+      "resp_b": "B",
+      "ans_a": "D",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 126,
+          "tokens_out": 89,
+          "latency_seconds": 0.205,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 114,
+          "tokens_out": 1,
+          "latency_seconds": 0.733,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 184,
+          "tokens_out": 40,
+          "latency_seconds": 0.461,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.733,
+        "total_latency_seconds": 1.195
+      }
+    },
+    {
+      "idx": 3,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. observation",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 63,
+          "tokens_out": 5,
+          "latency_seconds": 0.106,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 54,
+          "tokens_out": 1,
+          "latency_seconds": 0.776,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.776,
+        "total_latency_seconds": 0.776
+      }
+    },
+    {
+      "idx": 4,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "The safest way to watch an eclipse of the Sun is to cast an image through a pinhole onto a screen. This method is called projection and it prevents direct exposure to the Sun's harmful rays.\nThe answer is C.",
+      "resp_b": "C",
+      "ans_a": "A",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 86,
+          "tokens_out": 52,
+          "latency_seconds": 0.197,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 73,
+          "tokens_out": 1,
+          "latency_seconds": 0.773,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 138,
+          "tokens_out": 22,
+          "latency_seconds": 0.411,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.773,
+        "total_latency_seconds": 1.184
+      }
+    },
+    {
+      "idx": 5,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. burying",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 61,
+          "tokens_out": 6,
+          "latency_seconds": 0.105,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 48,
+          "tokens_out": 1,
+          "latency_seconds": 0.791,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.791,
+        "total_latency_seconds": 0.791
+      }
+    },
+    {
+      "idx": 6,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. the mass of Earth.",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 55,
+          "tokens_out": 9,
+          "latency_seconds": 0.148,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 46,
+          "tokens_out": 1,
+          "latency_seconds": 0.747,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.747,
+        "total_latency_seconds": 0.747
+      }
+    },
+    {
+      "idx": 7,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. deposition of material in the stream",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 61,
+          "tokens_out": 10,
+          "latency_seconds": 0.148,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 53,
+          "tokens_out": 1,
+          "latency_seconds": 0.766,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.766,
+        "total_latency_seconds": 0.766
+      }
+    },
+    {
+      "idx": 8,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. breaking down wastes",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 89,
+          "tokens_out": 8,
+          "latency_seconds": 0.145,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 76,
+          "tokens_out": 1,
+          "latency_seconds": 0.946,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.946,
+        "total_latency_seconds": 0.946
+      }
+    },
+    {
+      "idx": 9,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. It ate more food.",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 95,
+          "tokens_out": 9,
+          "latency_seconds": 0.15,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 82,
+          "tokens_out": 1,
+          "latency_seconds": 0.742,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.742,
+        "total_latency_seconds": 0.742
+      }
+    },
+    {
+      "idx": 10,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. a suggested meal plan.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 58,
+          "tokens_out": 9,
+          "latency_seconds": 0.16,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 51,
+          "tokens_out": 1,
+          "latency_seconds": 0.817,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.817,
+        "total_latency_seconds": 0.817
+      }
+    },
+    {
+      "idx": 11,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. the strongest source of gravity in the solar system.",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 77,
+          "tokens_out": 14,
+          "latency_seconds": 0.152,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 68,
+          "tokens_out": 1,
+          "latency_seconds": 0.8,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.8,
+        "total_latency_seconds": 0.8
+      }
+    },
+    {
+      "idx": 12,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. hide when threatened.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 61,
+          "tokens_out": 8,
+          "latency_seconds": 0.295,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 53,
+          "tokens_out": 1,
+          "latency_seconds": 0.946,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.946,
+        "total_latency_seconds": 0.946
+      }
+    },
+    {
+      "idx": 13,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "The question asks which reason makes using energy generated from wind better for air quality than burning fossil fuels. The correct answer is B because wind produces less pollution than fossil fuels. \nTherefore, the letter corresponding to this answer is B.",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 82,
+          "tokens_out": 50,
+          "latency_seconds": 0.183,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 71,
+          "tokens_out": 1,
+          "latency_seconds": 0.804,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.804,
+        "total_latency_seconds": 0.804
+      }
+    },
+    {
+      "idx": 14,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. dough bakes in an oven.",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 58,
+          "tokens_out": 11,
+          "latency_seconds": 0.149,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 50,
+          "tokens_out": 1,
+          "latency_seconds": 0.846,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.846,
+        "total_latency_seconds": 0.846
+      }
+    },
+    {
+      "idx": 15,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. 21\u00b0C",
+      "resp_b": "To find the median temperature for the four months, we first arrange the temperatures in ascending order:\n12, 18, 24, 31.\n\nSince there is an even number of data points (4), the median is the average of the two middle numbers (18 and 24):\n(18 + 24) / 2 = 42 / 2 = 21.\n\nB",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 88,
+          "tokens_out": 9,
+          "latency_seconds": 0.147,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 79,
+          "tokens_out": 92,
+          "latency_seconds": 1.097,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.097,
+        "total_latency_seconds": 1.097
+      }
+    },
+    {
+      "idx": 16,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. W is the softest of the four substances tested.",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 100,
+          "tokens_out": 15,
+          "latency_seconds": 0.149,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 85,
+          "tokens_out": 1,
+          "latency_seconds": 0.876,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.876,
+        "total_latency_seconds": 0.876
+      }
+    },
+    {
+      "idx": 17,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "B. length of its tail",
+      "resp_b": "C",
+      "ans_a": "B",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 62,
+          "tokens_out": 8,
+          "latency_seconds": 0.159,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 53,
+          "tokens_out": 1,
+          "latency_seconds": 1.092,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 121,
+          "tokens_out": 29,
+          "latency_seconds": 0.269,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.092,
+        "total_latency_seconds": 1.361
+      }
+    },
+    {
+      "idx": 18,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. frying an egg",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 50,
+          "tokens_out": 8,
+          "latency_seconds": 0.098,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 40,
+          "tokens_out": 1,
+          "latency_seconds": 0.832,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.832,
+        "total_latency_seconds": 0.832
+      }
+    },
+    {
+      "idx": 19,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "The primary cause of rainstorms is the cooling of air as it rises. This causes water vapor to condense into droplets, forming clouds. When these droplets become heavy enough, they fall to the ground as rain.\nSo the answer is B. Mountains direct moist air upward.",
+      "resp_b": "A",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 67,
+          "tokens_out": 62,
+          "latency_seconds": 0.461,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 56,
+          "tokens_out": 1,
+          "latency_seconds": 0.762,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 121,
+          "tokens_out": 48,
+          "latency_seconds": 0.47,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.762,
+        "total_latency_seconds": 1.233
+      }
+    },
+    {
+      "idx": 20,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "B. air masses combining to create a high-pressure area",
+      "resp_b": "D",
+      "ans_a": "B",
+      "ans_b": "D",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 103,
+          "tokens_out": 15,
+          "latency_seconds": 0.11,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 87,
+          "tokens_out": 1,
+          "latency_seconds": 0.736,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 154,
+          "tokens_out": 23,
+          "latency_seconds": 0.38,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.736,
+        "total_latency_seconds": 1.116
+      }
+    },
+    {
+      "idx": 21,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. NaCl + H_{2}O",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 64,
+          "tokens_out": 11,
+          "latency_seconds": 0.127,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 54,
+          "tokens_out": 1,
+          "latency_seconds": 0.738,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.738,
+        "total_latency_seconds": 0.738
+      }
+    },
+    {
+      "idx": 22,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "D. 83 331",
+      "resp_b": "To find the number of bundles needed, we can follow these steps:\n\n1. Calculate the number of squares in 2000 sq. ft. by dividing by 100: \n   $2000 \\div 100 = 20$ squares.\n2. Since each square requires 3 bundles (one-third of a square per bundle means 3 bundles per square), multiply the number of squares by 3: \n   $20 \\times 3 = 60$ bundles.\n3. To allow for waste and error as mentioned in the prompt, the engineer should order slightly more than the exact calculation. The closest option that provides a safe",
+      "ans_a": "D",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 146,
+          "tokens_out": 11,
+          "latency_seconds": 0.151,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 132,
+          "tokens_out": 146,
+          "latency_seconds": 1.52,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 189,
+          "tokens_out": 70,
+          "latency_seconds": 0.501,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.52,
+        "total_latency_seconds": 2.021
+      }
+    },
+    {
+      "idx": 23,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. biofuel energy",
+      "resp_b": "B",
+      "ans_a": "D",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 51,
+          "tokens_out": 8,
+          "latency_seconds": 0.13,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 37,
+          "tokens_out": 1,
+          "latency_seconds": 0.716,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 108,
+          "tokens_out": 42,
+          "latency_seconds": 0.424,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.716,
+        "total_latency_seconds": 1.14
+      }
+    },
+    {
+      "idx": 24,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 85,
+          "tokens_out": 3,
+          "latency_seconds": 0.116,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 77,
+          "tokens_out": 1,
+          "latency_seconds": 0.803,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.803,
+        "total_latency_seconds": 0.803
+      }
+    },
+    {
+      "idx": 25,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. to validate results",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 65,
+          "tokens_out": 7,
+          "latency_seconds": 0.147,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 56,
+          "tokens_out": 1,
+          "latency_seconds": 1.084,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.084,
+        "total_latency_seconds": 1.084
+      }
+    },
+    {
+      "idx": 26,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. severity of hurricanes per season",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 102,
+          "tokens_out": 11,
+          "latency_seconds": 0.155,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 80,
+          "tokens_out": 1,
+          "latency_seconds": 0.961,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.961,
+        "total_latency_seconds": 0.961
+      }
+    },
+    {
+      "idx": 27,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "D. metamorphosis",
+      "resp_b": "A",
+      "ans_a": "D",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 60,
+          "tokens_out": 8,
+          "latency_seconds": 0.152,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 44,
+          "tokens_out": 1,
+          "latency_seconds": 1.006,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 117,
+          "tokens_out": 54,
+          "latency_seconds": 0.541,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.006,
+        "total_latency_seconds": 1.547
+      }
+    },
+    {
+      "idx": 28,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "A child would not inherit a physical trait such as a dimple from one or both of its parents because dimples are caused by the way muscles and skin join together at the sides of the mouth. Dimples are considered to be a genetic variation or mutation, meaning they do not follow the usual pattern of inheritance from one or both parents. \n\nTherefore, the answer is D (dimples).",
+      "resp_b": "B",
+      "ans_a": "A",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 85,
+          "latency_seconds": 0.177,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 43,
+          "tokens_out": 1,
+          "latency_seconds": 1.045,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 110,
+          "tokens_out": 30,
+          "latency_seconds": 0.435,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.045,
+        "total_latency_seconds": 1.48
+      }
+    },
+    {
+      "idx": 29,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "The tinted lenses of sunglasses absorb UV rays from the Sun.\nSo the answer is A.",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 26,
+          "latency_seconds": 0.118,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 40,
+          "tokens_out": 1,
+          "latency_seconds": 0.806,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.806,
+        "total_latency_seconds": 0.806
+      }
+    },
+    {
+      "idx": 30,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "The correct answer is B. Filter paper used to filter water can safely be reused after an investigation. \nThe other options are not suitable for reuse due to the nature of the materials and the tasks they were used for:\nA. Glassware used to heat liquids may have residues or contaminants that should be disposed of properly before reuse.\nB. Paper towels used to soak up water can be reused for similar tasks, but should be disposed of if contaminated with chemicals or other hazardous materials.\nD. Powdered chemicals cleaned from a spill should be disposed of according to safety guidelines, as they may still pose a risk if not properly handled.",
+      "resp_b": "A",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 68,
+          "tokens_out": 142,
+          "latency_seconds": 0.247,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 54,
+          "tokens_out": 1,
+          "latency_seconds": 0.916,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 123,
+          "tokens_out": 19,
+          "latency_seconds": 0.484,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.916,
+        "total_latency_seconds": 1.4
+      }
+    },
+    {
+      "idx": 31,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "The characteristic that explains why powdered tea becomes a solution when mixed with water is:\nB. The tea spreads evenly through the water. \n\nWhen powdered tea is mixed with water, the tea particles dissolve and spread evenly throughout the water, forming a homogeneous mixture. This is why the solution is called a tea solution. The other options do not accurately describe the mixing process between tea and water:\n\nA. The odor is not a defining characteristic of a solution, as solutions can have various odors depending on the components mixed together.\nC. Separation of tea and water is not a characteristic of a solution, as solutions are homogeneous mixtures that remain mixed.\nD. Settling to the bottom is also",
+      "resp_b": "B",
+      "ans_a": "A",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 77,
+          "tokens_out": 150,
+          "latency_seconds": 0.207,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 65,
+          "tokens_out": 1,
+          "latency_seconds": 0.758,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 130,
+          "tokens_out": 21,
+          "latency_seconds": 0.47,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.758,
+        "total_latency_seconds": 1.228
+      }
+    },
+    {
+      "idx": 32,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "C. had unlimited financial resources.",
+      "resp_b": "A",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 125,
+          "tokens_out": 9,
+          "latency_seconds": 0.11,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 115,
+          "tokens_out": 1,
+          "latency_seconds": 0.748,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 179,
+          "tokens_out": 30,
+          "latency_seconds": 0.406,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.748,
+        "total_latency_seconds": 1.153
+      }
+    },
+    {
+      "idx": 33,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. throwing away aluminum cans",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 65,
+          "tokens_out": 9,
+          "latency_seconds": 0.107,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 56,
+          "tokens_out": 1,
+          "latency_seconds": 0.811,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.811,
+        "total_latency_seconds": 0.811
+      }
+    },
+    {
+      "idx": 34,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "C. winter",
+      "resp_b": "A",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 44,
+          "tokens_out": 5,
+          "latency_seconds": 0.152,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 35,
+          "tokens_out": 1,
+          "latency_seconds": 0.93,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 103,
+          "tokens_out": 29,
+          "latency_seconds": 0.498,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.93,
+        "total_latency_seconds": 1.428
+      }
+    },
+    {
+      "idx": 35,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. chemical energy into radiant energy",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 61,
+          "tokens_out": 10,
+          "latency_seconds": 0.1,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 51,
+          "tokens_out": 1,
+          "latency_seconds": 0.749,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.749,
+        "total_latency_seconds": 0.749
+      }
+    },
+    {
+      "idx": 36,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. piles of rocky debris",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 69,
+          "tokens_out": 10,
+          "latency_seconds": 0.152,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 52,
+          "tokens_out": 1,
+          "latency_seconds": 0.833,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.833,
+        "total_latency_seconds": 0.833
+      }
+    },
+    {
+      "idx": 37,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. improves the reliability of the results.",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 95,
+          "tokens_out": 11,
+          "latency_seconds": 0.147,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 87,
+          "tokens_out": 1,
+          "latency_seconds": 0.8,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.8,
+        "total_latency_seconds": 0.8
+      }
+    },
+    {
+      "idx": 38,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A simple machine makes work easier because using it ___. \nA. takes less force to move something heavy",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 62,
+          "tokens_out": 24,
+          "latency_seconds": 0.218,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 55,
+          "tokens_out": 1,
+          "latency_seconds": 0.733,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.733,
+        "total_latency_seconds": 0.733
+      }
+    },
+    {
+      "idx": 39,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. sodium, chromium, copper",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 62,
+          "tokens_out": 10,
+          "latency_seconds": 0.153,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 48,
+          "tokens_out": 1,
+          "latency_seconds": 0.775,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.775,
+        "total_latency_seconds": 0.775
+      }
+    },
+    {
+      "idx": 40,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. The needle is lining up with Earth's magnetic poles.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 109,
+          "tokens_out": 16,
+          "latency_seconds": 0.208,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 100,
+          "tokens_out": 1,
+          "latency_seconds": 1.011,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.011,
+        "total_latency_seconds": 1.011
+      }
+    },
+    {
+      "idx": 41,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "The letter that corresponds to the answer is C. Leopard's opening chant suggests that he is confident. \n\nIn chess, the Leopard's Opening is a tactical opening sequence that involves moving the pawn two squares forward on the e-file (to e4 or e5). While analyzing the opening chant, we can infer the character of the player based on their moves and strategies. In this case, moving the pawn two squares forward indicates a confident player who is willing to take risks and assert control over the board early on. Therefore, the most suitable answer is \"confident\" or C.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 46,
+          "tokens_out": 133,
+          "latency_seconds": 0.229,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 38,
+          "tokens_out": 1,
+          "latency_seconds": 0.886,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.886,
+        "total_latency_seconds": 0.886
+      }
+    },
+    {
+      "idx": 42,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. hot rock",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 51,
+          "tokens_out": 6,
+          "latency_seconds": 0.161,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 41,
+          "tokens_out": 1,
+          "latency_seconds": 0.773,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.773,
+        "total_latency_seconds": 0.773
+      }
+    },
+    {
+      "idx": 43,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "D. decomposers and herbivores",
+      "resp_b": "C",
+      "ans_a": "D",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 86,
+          "tokens_out": 11,
+          "latency_seconds": 0.141,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 66,
+          "tokens_out": 1,
+          "latency_seconds": 0.811,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 140,
+          "tokens_out": 178,
+          "latency_seconds": 0.714,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.811,
+        "total_latency_seconds": 1.525
+      }
+    },
+    {
+      "idx": 44,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. hunt for food.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 68,
+          "tokens_out": 8,
+          "latency_seconds": 0.103,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 54,
+          "tokens_out": 1,
+          "latency_seconds": 0.856,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.856,
+        "total_latency_seconds": 0.856
+      }
+    },
+    {
+      "idx": 45,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. a range of many wavelengths from long to very short.",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 81,
+          "tokens_out": 16,
+          "latency_seconds": 0.158,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 70,
+          "tokens_out": 1,
+          "latency_seconds": 0.76,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.76,
+        "total_latency_seconds": 0.76
+      }
+    },
+    {
+      "idx": 46,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. formation of fossil fuels",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 55,
+          "tokens_out": 8,
+          "latency_seconds": 0.148,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 45,
+          "tokens_out": 1,
+          "latency_seconds": 0.876,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.876,
+        "total_latency_seconds": 0.876
+      }
+    },
+    {
+      "idx": 47,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "D. reverse osmosis",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 115,
+          "tokens_out": 8,
+          "latency_seconds": 0.411,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 98,
+          "tokens_out": 1,
+          "latency_seconds": 0.84,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.84,
+        "total_latency_seconds": 0.84
+      }
+    },
+    {
+      "idx": 48,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "Watering plants and grass in the early morning is a way to conserve water because smaller amounts of water evaporate in the cool morning.\nThe answer is B.",
+      "resp_b": "B",
+      "ans_a": "A",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 89,
+          "tokens_out": 36,
+          "latency_seconds": 0.128,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 76,
+          "tokens_out": 1,
+          "latency_seconds": 0.781,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 142,
+          "tokens_out": 23,
+          "latency_seconds": 0.421,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.781,
+        "total_latency_seconds": 1.202
+      }
+    },
+    {
+      "idx": 49,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. It allows crops to be grown in drier climates.",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 106,
+          "tokens_out": 16,
+          "latency_seconds": 0.117,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 93,
+          "tokens_out": 1,
+          "latency_seconds": 0.722,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.722,
+        "total_latency_seconds": 0.722
+      }
+    },
+    {
+      "idx": 50,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. the scientific method.",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 54,
+          "tokens_out": 8,
+          "latency_seconds": 0.151,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 43,
+          "tokens_out": 1,
+          "latency_seconds": 0.786,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.786,
+        "total_latency_seconds": 0.786
+      }
+    },
+    {
+      "idx": 51,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. trees",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 38,
+          "tokens_out": 5,
+          "latency_seconds": 0.142,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 30,
+          "tokens_out": 1,
+          "latency_seconds": 0.852,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.852,
+        "total_latency_seconds": 0.852
+      }
+    },
+    {
+      "idx": 52,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. They are safer for the environment.",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 83,
+          "tokens_out": 11,
+          "latency_seconds": 0.154,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 76,
+          "tokens_out": 1,
+          "latency_seconds": 0.986,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.986,
+        "total_latency_seconds": 0.986
+      }
+    },
+    {
+      "idx": 53,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "D. Exothermic because energy is released.",
+      "resp_b": "To determine the correct statement, let's break down what is happening:\n\n1. **Phase Change:** The water droplets on the outside of the beaker are freezing. Freezing is a phase change from liquid to solid, which requires water to **release** thermal energy to its surroundings (the beaker).\n2. **Source of Energy Release:** Since the water is releasing energy *to* freeze, that energy must be coming from the chemical reaction inside the beaker. \n3. **Type of Reaction:** A chemical reaction that releases energy to its surroundings is classified as **exothermic**.\n\nTherefore, the reaction is exothermic because energy is released.\n\nD",
+      "ans_a": "D",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 95,
+          "tokens_out": 12,
+          "latency_seconds": 0.158,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 80,
+          "tokens_out": 133,
+          "latency_seconds": 1.244,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 151,
+          "tokens_out": 56,
+          "latency_seconds": 0.545,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.244,
+        "total_latency_seconds": 1.789
+      }
+    },
+    {
+      "idx": 54,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. to protect seeds",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 65,
+          "tokens_out": 7,
+          "latency_seconds": 0.103,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 55,
+          "tokens_out": 1,
+          "latency_seconds": 0.839,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.839,
+        "total_latency_seconds": 0.839
+      }
+    },
+    {
+      "idx": 55,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. use the same equipment and procedures.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 71,
+          "tokens_out": 11,
+          "latency_seconds": 0.151,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 64,
+          "tokens_out": 1,
+          "latency_seconds": 0.835,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.835,
+        "total_latency_seconds": 0.835
+      }
+    },
+    {
+      "idx": 56,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "A. uracil",
+      "resp_b": "C",
+      "ans_a": "A",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 49,
+          "tokens_out": 7,
+          "latency_seconds": 0.157,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 38,
+          "tokens_out": 1,
+          "latency_seconds": 0.7,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 109,
+          "tokens_out": 17,
+          "latency_seconds": 0.369,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.7,
+        "total_latency_seconds": 1.069
+      }
+    },
+    {
+      "idx": 57,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "The letter that corresponds to the correct statement is B. Plates are separating at El Cajon Pass.\nThis process, called subduction, causes the land to rise upwards.",
+      "resp_b": "A",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 118,
+          "tokens_out": 40,
+          "latency_seconds": 0.941,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 95,
+          "tokens_out": 1,
+          "latency_seconds": 0.94,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 162,
+          "tokens_out": 46,
+          "latency_seconds": 0.47,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.941,
+        "total_latency_seconds": 1.411
+      }
+    },
+    {
+      "idx": 58,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. the solution for one problem creating another problem.",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 86,
+          "tokens_out": 13,
+          "latency_seconds": 0.113,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 78,
+          "tokens_out": 1,
+          "latency_seconds": 0.993,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.993,
+        "total_latency_seconds": 0.993
+      }
+    },
+    {
+      "idx": 59,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. moisture on mirror after hot shower",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 58,
+          "tokens_out": 10,
+          "latency_seconds": 0.423,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 48,
+          "tokens_out": 1,
+          "latency_seconds": 0.812,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.812,
+        "total_latency_seconds": 0.812
+      }
+    },
+    {
+      "idx": 60,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. They both need energy to survive.",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 84,
+          "tokens_out": 11,
+          "latency_seconds": 0.114,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 75,
+          "tokens_out": 1,
+          "latency_seconds": 0.762,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.762,
+        "total_latency_seconds": 0.762
+      }
+    },
+    {
+      "idx": 61,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "A. 0.75 m/h",
+      "resp_b": "To find the average speed in meters per hour (m/h):\n\n1. **Calculate speed per minute:** \n   $$\\text{Speed} = \\frac{40\\text{ meters}}{30\\text{ minutes}} = \\frac{4}{3}\\text{ m/min}$$\n\n2. **Convert to meters per hour:** \n   $$\\frac{4}{3}\\text{ m/min} \\times 60\\text{ minutes/hour} = 4 \\times 20 = 80\\text{ m/h}$$\n\nC",
+      "ans_a": "A",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 105,
+          "tokens_out": 12,
+          "latency_seconds": 0.15,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 90,
+          "tokens_out": 122,
+          "latency_seconds": 0.977,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 147,
+          "tokens_out": 45,
+          "latency_seconds": 0.305,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.977,
+        "total_latency_seconds": 1.282
+      }
+    },
+    {
+      "idx": 62,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. nucleus",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 43,
+          "tokens_out": 5,
+          "latency_seconds": 0.1,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 36,
+          "tokens_out": 1,
+          "latency_seconds": 0.833,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.833,
+        "total_latency_seconds": 0.833
+      }
+    },
+    {
+      "idx": 63,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. ice forming on a lake describes water changing from liquid to solid, which is known as freezing or solidification. \n\nTherefore, the correct answer is \"ice forming on a lake\" and the letter is: A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 64,
+          "tokens_out": 49,
+          "latency_seconds": 0.178,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 51,
+          "tokens_out": 1,
+          "latency_seconds": 0.757,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.757,
+        "total_latency_seconds": 0.757
+      }
+    },
+    {
+      "idx": 64,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "Bacteria reproduce asexually, which means that a newly produced bacterium will inherit traits from just one parent. The answer is B. the same traits as the single parent.",
+      "resp_b": "B",
+      "ans_a": "A",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 79,
+          "tokens_out": 40,
+          "latency_seconds": 0.168,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 69,
+          "tokens_out": 1,
+          "latency_seconds": 0.796,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 139,
+          "tokens_out": 24,
+          "latency_seconds": 0.295,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.796,
+        "total_latency_seconds": 1.091
+      }
+    },
+    {
+      "idx": 65,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "A. Diversity will increase as the rate of predation decreases.",
+      "resp_b": "B",
+      "ans_a": "A",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 144,
+          "tokens_out": 16,
+          "latency_seconds": 0.112,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 126,
+          "tokens_out": 1,
+          "latency_seconds": 0.757,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 194,
+          "tokens_out": 36,
+          "latency_seconds": 0.496,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.757,
+        "total_latency_seconds": 1.252
+      }
+    },
+    {
+      "idx": 66,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "The amount of gravitational attraction between the Moon and an astronaut standing on its surface depends on the astronaut's distance from the center of the Moon and the astronaut's mass.\nSo the answer is B.",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 68,
+          "tokens_out": 44,
+          "latency_seconds": 0.125,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 61,
+          "tokens_out": 1,
+          "latency_seconds": 0.713,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.713,
+        "total_latency_seconds": 0.713
+      }
+    },
+    {
+      "idx": 67,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 106,
+          "tokens_out": 3,
+          "latency_seconds": 0.16,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 83,
+          "tokens_out": 1,
+          "latency_seconds": 0.848,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.848,
+        "total_latency_seconds": 0.848
+      }
+    },
+    {
+      "idx": 68,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. Both girls will stay in the same place.",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 104,
+          "tokens_out": 13,
+          "latency_seconds": 0.143,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 95,
+          "tokens_out": 1,
+          "latency_seconds": 0.881,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.881,
+        "total_latency_seconds": 0.881
+      }
+    },
+    {
+      "idx": 69,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. weight",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 62,
+          "tokens_out": 5,
+          "latency_seconds": 0.14,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 55,
+          "tokens_out": 1,
+          "latency_seconds": 0.724,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.724,
+        "total_latency_seconds": 0.724
+      }
+    },
+    {
+      "idx": 70,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. eyeglasses",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 50,
+          "tokens_out": 7,
+          "latency_seconds": 0.148,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 39,
+          "tokens_out": 1,
+          "latency_seconds": 0.813,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.813,
+        "total_latency_seconds": 0.813
+      }
+    },
+    {
+      "idx": 71,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "The adaptation of having a lot of fat helps the polar bear float in water. Fat is less dense than water, so a polar bear with more fat will float easier than one with less fat or no fat at all.\nIn conclusion, the answer is D.Fat helps the polar bear float in water.",
+      "resp_b": "D",
+      "ans_a": "A",
+      "ans_b": "D",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 98,
+          "tokens_out": 65,
+          "latency_seconds": 0.186,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 87,
+          "tokens_out": 1,
+          "latency_seconds": 0.811,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 151,
+          "tokens_out": 24,
+          "latency_seconds": 0.469,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.811,
+        "total_latency_seconds": 1.28
+      }
+    },
+    {
+      "idx": 72,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 65,
+          "tokens_out": 3,
+          "latency_seconds": 0.101,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 55,
+          "tokens_out": 1,
+          "latency_seconds": 0.682,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.682,
+        "total_latency_seconds": 0.682
+      }
+    },
+    {
+      "idx": 73,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. The oceans store and transport more heat than the continents.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 101,
+          "tokens_out": 18,
+          "latency_seconds": 0.154,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 82,
+          "tokens_out": 1,
+          "latency_seconds": 0.819,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.819,
+        "total_latency_seconds": 0.819
+      }
+    },
+    {
+      "idx": 74,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "The adaptation that shortens the time of a tadpole's metamorphosis would be most useful when tadpoles need to swim immediately (A). This is because tadpoles that undergo metamorphosis quickly can enter the water column and start feeding on plankton, allowing them to grow faster and become more successful at surviving and reproducing. \n\nThe other options do not directly relate to the need for tadpoles to swim or their survival chances. For example, limited water (B) or decreased predator numbers (C) might affect survival rates, but they do not directly relate to the urgency of swimming and feeding. Similarly, blending in with surroundings (D) is",
+      "resp_b": "B",
+      "ans_a": "A",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 98,
+          "tokens_out": 150,
+          "latency_seconds": 0.252,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 80,
+          "tokens_out": 1,
+          "latency_seconds": 0.736,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 151,
+          "tokens_out": 20,
+          "latency_seconds": 0.51,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.736,
+        "total_latency_seconds": 1.246
+      }
+    },
+    {
+      "idx": 75,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. conduction",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 71,
+          "tokens_out": 6,
+          "latency_seconds": 0.098,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 60,
+          "tokens_out": 1,
+          "latency_seconds": 0.954,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.954,
+        "total_latency_seconds": 0.954
+      }
+    },
+    {
+      "idx": 76,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. The energy an object has due to its position.",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 72,
+          "tokens_out": 14,
+          "latency_seconds": 0.152,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 65,
+          "tokens_out": 1,
+          "latency_seconds": 0.683,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.683,
+        "total_latency_seconds": 0.683
+      }
+    },
+    {
+      "idx": 77,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. heat.",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 51,
+          "tokens_out": 6,
+          "latency_seconds": 0.149,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 43,
+          "tokens_out": 1,
+          "latency_seconds": 0.973,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.973,
+        "total_latency_seconds": 0.973
+      }
+    },
+    {
+      "idx": 78,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. boulders weathering into gravel would require the longest period of observation as it is a slow process.",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 64,
+          "tokens_out": 25,
+          "latency_seconds": 0.157,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 48,
+          "tokens_out": 1,
+          "latency_seconds": 0.847,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.847,
+        "total_latency_seconds": 0.847
+      }
+    },
+    {
+      "idx": 79,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. Fewer young warblers will hatch in the spring.",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 116,
+          "tokens_out": 17,
+          "latency_seconds": 0.161,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 98,
+          "tokens_out": 1,
+          "latency_seconds": 0.937,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.937,
+        "total_latency_seconds": 0.937
+      }
+    },
+    {
+      "idx": 80,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. exists naturally in three states on Earth.",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 67,
+          "tokens_out": 12,
+          "latency_seconds": 0.147,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 59,
+          "tokens_out": 1,
+          "latency_seconds": 0.706,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.706,
+        "total_latency_seconds": 0.706
+      }
+    },
+    {
+      "idx": 81,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. joining of sperm and egg",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 57,
+          "tokens_out": 9,
+          "latency_seconds": 0.148,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 47,
+          "tokens_out": 1,
+          "latency_seconds": 0.701,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.701,
+        "total_latency_seconds": 0.701
+      }
+    },
+    {
+      "idx": 82,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "A. current wind conditions",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 67,
+          "tokens_out": 7,
+          "latency_seconds": 0.144,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 55,
+          "tokens_out": 1,
+          "latency_seconds": 0.873,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.873,
+        "total_latency_seconds": 0.873
+      }
+    },
+    {
+      "idx": 83,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. chemical energy",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 72,
+          "tokens_out": 6,
+          "latency_seconds": 0.144,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 63,
+          "tokens_out": 1,
+          "latency_seconds": 0.738,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.738,
+        "total_latency_seconds": 0.738
+      }
+    },
+    {
+      "idx": 84,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. repeat the investigation two more times",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 89,
+          "tokens_out": 10,
+          "latency_seconds": 0.146,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 82,
+          "tokens_out": 1,
+          "latency_seconds": 0.798,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.798,
+        "total_latency_seconds": 0.798
+      }
+    },
+    {
+      "idx": 85,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "When a dog sees a cat, a message travels from the dog's eyes to the dog's brain. The eyes are the first part of the visual system that captures light reflected from objects and sends information to the brain via nerves. \nSo the correct answer is A. Brain.",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 62,
+          "latency_seconds": 0.184,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 45,
+          "tokens_out": 1,
+          "latency_seconds": 1.053,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.053,
+        "total_latency_seconds": 1.053
+      }
+    },
+    {
+      "idx": 86,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. absorbed by the carpet.",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 97,
+          "tokens_out": 9,
+          "latency_seconds": 0.159,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 89,
+          "tokens_out": 1,
+          "latency_seconds": 0.833,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.833,
+        "total_latency_seconds": 0.833
+      }
+    },
+    {
+      "idx": 87,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. determine the masses of all the substances before and after the reaction",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 104,
+          "tokens_out": 16,
+          "latency_seconds": 0.171,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 92,
+          "tokens_out": 1,
+          "latency_seconds": 0.88,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.88,
+        "total_latency_seconds": 0.88
+      }
+    },
+    {
+      "idx": 88,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. coal",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 51,
+          "tokens_out": 5,
+          "latency_seconds": 0.147,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 42,
+          "tokens_out": 1,
+          "latency_seconds": 0.759,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.759,
+        "total_latency_seconds": 0.759
+      }
+    },
+    {
+      "idx": 89,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. The technology is environmentally friendly.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 108,
+          "tokens_out": 11,
+          "latency_seconds": 0.163,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 94,
+          "tokens_out": 1,
+          "latency_seconds": 0.76,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.76,
+        "total_latency_seconds": 0.76
+      }
+    },
+    {
+      "idx": 90,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. Velocity remains positive but acceleration becomes negative.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 132,
+          "tokens_out": 13,
+          "latency_seconds": 0.287,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 116,
+          "tokens_out": 1,
+          "latency_seconds": 0.79,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.79,
+        "total_latency_seconds": 0.79
+      }
+    },
+    {
+      "idx": 91,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A. balance",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 66,
+          "tokens_out": 5,
+          "latency_seconds": 0.171,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 56,
+          "tokens_out": 1,
+          "latency_seconds": 0.683,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.683,
+        "total_latency_seconds": 0.683
+      }
+    },
+    {
+      "idx": 92,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D. 18 (8A)",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 68,
+          "tokens_out": 11,
+          "latency_seconds": 0.163,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 59,
+          "tokens_out": 1,
+          "latency_seconds": 0.814,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.814,
+        "total_latency_seconds": 0.814
+      }
+    },
+    {
+      "idx": 93,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "The best way to measure the size of the leaves is to use a ruler.\nSo the answer is B.",
+      "resp_b": "B",
+      "ans_a": "A",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 75,
+          "tokens_out": 26,
+          "latency_seconds": 0.161,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 62,
+          "tokens_out": 1,
+          "latency_seconds": 0.741,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 131,
+          "tokens_out": 22,
+          "latency_seconds": 0.417,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.741,
+        "total_latency_seconds": 1.158
+      }
+    },
+    {
+      "idx": 94,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "The answer is C. The air friction on the ball supplies the upward force that makes the ball bounce. \nAir friction opposes the motion of the ball as it falls, and when the ball hits the ground, this force is converted into kinetic energy, causing the ball to rebound upward.",
+      "resp_b": "A",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 71,
+          "tokens_out": 64,
+          "latency_seconds": 0.143,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 62,
+          "tokens_out": 1,
+          "latency_seconds": 0.744,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 131,
+          "tokens_out": 16,
+          "latency_seconds": 0.457,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.744,
+        "total_latency_seconds": 1.201
+      }
+    },
+    {
+      "idx": 95,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. the number of protons",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 70,
+          "tokens_out": 9,
+          "latency_seconds": 0.104,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 61,
+          "tokens_out": 1,
+          "latency_seconds": 0.704,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.704,
+        "total_latency_seconds": 0.704
+      }
+    },
+    {
+      "idx": 96,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "A",
+      "resp_b": "D",
+      "ans_a": "A",
+      "ans_b": "D",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 98,
+          "tokens_out": 3,
+          "latency_seconds": 0.145,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 86,
+          "tokens_out": 1,
+          "latency_seconds": 0.917,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 151,
+          "tokens_out": 21,
+          "latency_seconds": 0.994,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.917,
+        "total_latency_seconds": 1.91
+      }
+    },
+    {
+      "idx": 97,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B. It decreases the amount of resources.",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 79,
+          "tokens_out": 11,
+          "latency_seconds": 0.111,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 72,
+          "tokens_out": 1,
+          "latency_seconds": 0.703,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.703,
+        "total_latency_seconds": 0.703
+      }
+    },
+    {
+      "idx": 98,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 80,
+          "tokens_out": 3,
+          "latency_seconds": 0.152,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 65,
+          "tokens_out": 1,
+          "latency_seconds": 0.686,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.686,
+        "total_latency_seconds": 0.686
+      }
+    },
+    {
+      "idx": 99,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C. carbohydrates.",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 69,
+          "tokens_out": 7,
+          "latency_seconds": 0.149,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 58,
+          "tokens_out": 1,
+          "latency_seconds": 0.734,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.734,
+        "total_latency_seconds": 0.734
+      }
+    }
+  ]
+}

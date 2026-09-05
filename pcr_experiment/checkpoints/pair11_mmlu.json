@@ -1,0 +1,180 @@
+{
+  "pair_id": "pair11",
+  "benchmark": "mmlu",
+  "n_total": 250,
+  "cheap_a": "groq:openai/gpt-oss-20b",
+  "cheap_b": "groq:qwen/qwen3.8-27b",
+  "frontier": "groq:openai/gpt-oss-120b",
+  "results": [
+    {
+      "idx": 0,
+      "domain": "college_physics",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "C",
+      "ans_a": "A",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 192,
+          "tokens_out": 175,
+          "latency_seconds": 43.917,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 136,
+          "tokens_out": 2,
+          "latency_seconds": 0.495,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 192,
+          "tokens_out": 165,
+          "latency_seconds": 0.763,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 43.917,
+        "total_latency_seconds": 44.681
+      }
+    },
+    {
+      "idx": 1,
+      "domain": "anatomy",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "D",
+      "ans_a": "B",
+      "ans_b": "D",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 145,
+          "tokens_out": 44,
+          "latency_seconds": 86.776,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 90,
+          "tokens_out": 2,
+          "latency_seconds": 0.492,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 145,
+          "tokens_out": 188,
+          "latency_seconds": 0.897,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 86.776,
+        "total_latency_seconds": 87.673
+      }
+    },
+    {
+      "idx": 2,
+      "domain": "high_school_statistics",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 244,
+          "tokens_out": 109,
+          "latency_seconds": 0.629,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 193,
+          "tokens_out": 2,
+          "latency_seconds": 0.341,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.629,
+        "total_latency_seconds": 0.629
+      }
+    },
+    {
+      "idx": 3,
+      "domain": "miscellaneous",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 121,
+          "tokens_out": 17,
+          "latency_seconds": 0.821,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 64,
+          "tokens_out": 2,
+          "latency_seconds": 1.645,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.645,
+        "total_latency_seconds": 1.645
+      }
+    },
+    {
+      "idx": 4,
+      "domain": "prehistory",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 163,
+          "tokens_out": 44,
+          "latency_seconds": 0.489,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 107,
+          "tokens_out": 2,
+          "latency_seconds": 0.276,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.489,
+        "total_latency_seconds": 0.489
+      }
+    }
+  ]
+}

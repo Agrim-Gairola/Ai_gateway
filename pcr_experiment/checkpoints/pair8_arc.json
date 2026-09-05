@@ -1,0 +1,4905 @@
+{
+  "pair_id": "pair8",
+  "benchmark": "arc",
+  "n_total": 150,
+  "cheap_a": "mistral:ministral-3b-latest",
+  "cheap_b": "mistral:ministral-8b-latest",
+  "frontier": "mistral:mistral-medium-latest",
+  "results": [
+    {
+      "idx": 0,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 44,
+          "tokens_out": 2,
+          "latency_seconds": 0.453,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 44,
+          "tokens_out": 2,
+          "latency_seconds": 0.413,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.453,
+        "total_latency_seconds": 0.453
+      }
+    },
+    {
+      "idx": 1,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 35,
+          "tokens_out": 2,
+          "latency_seconds": 0.354,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 35,
+          "tokens_out": 2,
+          "latency_seconds": 0.402,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.402,
+        "total_latency_seconds": 0.402
+      }
+    },
+    {
+      "idx": 2,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 116,
+          "tokens_out": 2,
+          "latency_seconds": 0.356,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 116,
+          "tokens_out": 2,
+          "latency_seconds": 0.4,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.4,
+        "total_latency_seconds": 0.4
+      }
+    },
+    {
+      "idx": 3,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 55,
+          "tokens_out": 2,
+          "latency_seconds": 0.383,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 55,
+          "tokens_out": 2,
+          "latency_seconds": 0.334,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.383,
+        "total_latency_seconds": 0.383
+      }
+    },
+    {
+      "idx": 4,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 73,
+          "tokens_out": 2,
+          "latency_seconds": 0.372,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 73,
+          "tokens_out": 2,
+          "latency_seconds": 0.464,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.464,
+        "total_latency_seconds": 0.464
+      }
+    },
+    {
+      "idx": 5,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 52,
+          "tokens_out": 2,
+          "latency_seconds": 0.351,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 52,
+          "tokens_out": 2,
+          "latency_seconds": 0.369,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.369,
+        "total_latency_seconds": 0.369
+      }
+    },
+    {
+      "idx": 6,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 44,
+          "tokens_out": 2,
+          "latency_seconds": 0.367,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 44,
+          "tokens_out": 2,
+          "latency_seconds": 0.562,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.562,
+        "total_latency_seconds": 0.562
+      }
+    },
+    {
+      "idx": 7,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.405,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.421,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.421,
+        "total_latency_seconds": 0.421
+      }
+    },
+    {
+      "idx": 8,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "C",
+      "resp_b": "B",
+      "ans_a": "C",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 77,
+          "tokens_out": 2,
+          "latency_seconds": 0.343,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 77,
+          "tokens_out": 2,
+          "latency_seconds": 0.395,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 89,
+          "tokens_out": 2,
+          "latency_seconds": 0.635,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.395,
+        "total_latency_seconds": 1.031
+      }
+    },
+    {
+      "idx": 9,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 81,
+          "tokens_out": 2,
+          "latency_seconds": 0.418,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 81,
+          "tokens_out": 2,
+          "latency_seconds": 0.379,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.418,
+        "total_latency_seconds": 0.418
+      }
+    },
+    {
+      "idx": 10,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 49,
+          "tokens_out": 2,
+          "latency_seconds": 0.342,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 49,
+          "tokens_out": 2,
+          "latency_seconds": 0.396,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.396,
+        "total_latency_seconds": 0.396
+      }
+    },
+    {
+      "idx": 11,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 67,
+          "tokens_out": 2,
+          "latency_seconds": 0.63,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 67,
+          "tokens_out": 2,
+          "latency_seconds": 0.63,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.63,
+        "total_latency_seconds": 0.63
+      }
+    },
+    {
+      "idx": 12,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 51,
+          "tokens_out": 2,
+          "latency_seconds": 0.548,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 51,
+          "tokens_out": 2,
+          "latency_seconds": 0.33,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.548,
+        "total_latency_seconds": 0.548
+      }
+    },
+    {
+      "idx": 13,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 72,
+          "tokens_out": 2,
+          "latency_seconds": 0.398,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 72,
+          "tokens_out": 2,
+          "latency_seconds": 0.347,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.398,
+        "total_latency_seconds": 0.398
+      }
+    },
+    {
+      "idx": 14,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 49,
+          "tokens_out": 2,
+          "latency_seconds": 0.344,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 49,
+          "tokens_out": 2,
+          "latency_seconds": 0.52,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.52,
+        "total_latency_seconds": 0.52
+      }
+    },
+    {
+      "idx": 15,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 74,
+          "tokens_out": 2,
+          "latency_seconds": 0.489,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 74,
+          "tokens_out": 2,
+          "latency_seconds": 0.398,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.489,
+        "total_latency_seconds": 0.489
+      }
+    },
+    {
+      "idx": 16,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "B",
+      "resp_b": "A",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 84,
+          "tokens_out": 2,
+          "latency_seconds": 0.385,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 84,
+          "tokens_out": 2,
+          "latency_seconds": 0.405,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 96,
+          "tokens_out": 2,
+          "latency_seconds": 0.389,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.405,
+        "total_latency_seconds": 0.794
+      }
+    },
+    {
+      "idx": 17,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.347,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.463,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.463,
+        "total_latency_seconds": 0.463
+      }
+    },
+    {
+      "idx": 18,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 41,
+          "tokens_out": 2,
+          "latency_seconds": 0.388,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 41,
+          "tokens_out": 2,
+          "latency_seconds": 0.388,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.388,
+        "total_latency_seconds": 0.388
+      }
+    },
+    {
+      "idx": 19,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 54,
+          "tokens_out": 2,
+          "latency_seconds": 0.377,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 54,
+          "tokens_out": 2,
+          "latency_seconds": 0.474,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.474,
+        "total_latency_seconds": 0.474
+      }
+    },
+    {
+      "idx": 20,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 92,
+          "tokens_out": 2,
+          "latency_seconds": 0.349,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 92,
+          "tokens_out": 2,
+          "latency_seconds": 0.357,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.357,
+        "total_latency_seconds": 0.357
+      }
+    },
+    {
+      "idx": 21,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 55,
+          "tokens_out": 2,
+          "latency_seconds": 0.456,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 55,
+          "tokens_out": 2,
+          "latency_seconds": 0.352,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.456,
+        "total_latency_seconds": 0.456
+      }
+    },
+    {
+      "idx": 22,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "B",
+      "resp_b": "C",
+      "ans_a": "B",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 134,
+          "tokens_out": 2,
+          "latency_seconds": 0.357,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 134,
+          "tokens_out": 2,
+          "latency_seconds": 0.569,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 146,
+          "tokens_out": 2,
+          "latency_seconds": 0.437,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.569,
+        "total_latency_seconds": 1.007
+      }
+    },
+    {
+      "idx": 23,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 42,
+          "tokens_out": 2,
+          "latency_seconds": 0.366,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 42,
+          "tokens_out": 2,
+          "latency_seconds": 0.618,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.618,
+        "total_latency_seconds": 0.618
+      }
+    },
+    {
+      "idx": 24,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 74,
+          "tokens_out": 2,
+          "latency_seconds": 0.331,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 74,
+          "tokens_out": 2,
+          "latency_seconds": 0.51,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.51,
+        "total_latency_seconds": 0.51
+      }
+    },
+    {
+      "idx": 25,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 57,
+          "tokens_out": 2,
+          "latency_seconds": 0.384,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 57,
+          "tokens_out": 2,
+          "latency_seconds": 0.348,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.384,
+        "total_latency_seconds": 0.384
+      }
+    },
+    {
+      "idx": 26,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 88,
+          "tokens_out": 2,
+          "latency_seconds": 0.446,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 88,
+          "tokens_out": 2,
+          "latency_seconds": 0.381,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.446,
+        "total_latency_seconds": 0.446
+      }
+    },
+    {
+      "idx": 27,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "D",
+      "resp_b": "A",
+      "ans_a": "D",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 48,
+          "tokens_out": 2,
+          "latency_seconds": 0.453,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 48,
+          "tokens_out": 2,
+          "latency_seconds": 0.34,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 60,
+          "tokens_out": 2,
+          "latency_seconds": 0.42,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.453,
+        "total_latency_seconds": 0.873
+      }
+    },
+    {
+      "idx": 28,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "D",
+      "resp_b": "B",
+      "ans_a": "D",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 44,
+          "tokens_out": 2,
+          "latency_seconds": 0.529,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 44,
+          "tokens_out": 2,
+          "latency_seconds": 0.348,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.389,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.529,
+        "total_latency_seconds": 0.918
+      }
+    },
+    {
+      "idx": 29,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 42,
+          "tokens_out": 2,
+          "latency_seconds": 0.366,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 42,
+          "tokens_out": 2,
+          "latency_seconds": 0.372,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.372,
+        "total_latency_seconds": 0.372
+      }
+    },
+    {
+      "idx": 30,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 58,
+          "tokens_out": 2,
+          "latency_seconds": 0.366,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 58,
+          "tokens_out": 2,
+          "latency_seconds": 3.963,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 3.963,
+        "total_latency_seconds": 3.963
+      }
+    },
+    {
+      "idx": 31,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 64,
+          "tokens_out": 2,
+          "latency_seconds": 0.403,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 64,
+          "tokens_out": 2,
+          "latency_seconds": 0.456,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.456,
+        "total_latency_seconds": 0.456
+      }
+    },
+    {
+      "idx": 32,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "B",
+      "resp_b": "A",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 113,
+          "tokens_out": 2,
+          "latency_seconds": 0.356,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 113,
+          "tokens_out": 2,
+          "latency_seconds": 0.573,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 125,
+          "tokens_out": 2,
+          "latency_seconds": 0.749,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.573,
+        "total_latency_seconds": 1.322
+      }
+    },
+    {
+      "idx": 33,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.499,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.495,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.499,
+        "total_latency_seconds": 0.499
+      }
+    },
+    {
+      "idx": 34,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 35,
+          "tokens_out": 2,
+          "latency_seconds": 0.616,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 35,
+          "tokens_out": 2,
+          "latency_seconds": 0.325,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.616,
+        "total_latency_seconds": 0.616
+      }
+    },
+    {
+      "idx": 35,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.33,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.44,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.44,
+        "total_latency_seconds": 0.44
+      }
+    },
+    {
+      "idx": 36,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.471,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.373,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.471,
+        "total_latency_seconds": 0.471
+      }
+    },
+    {
+      "idx": 37,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 85,
+          "tokens_out": 2,
+          "latency_seconds": 0.67,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 85,
+          "tokens_out": 2,
+          "latency_seconds": 0.598,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.67,
+        "total_latency_seconds": 0.67
+      }
+    },
+    {
+      "idx": 38,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 55,
+          "tokens_out": 2,
+          "latency_seconds": 0.501,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 55,
+          "tokens_out": 2,
+          "latency_seconds": 0.495,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.501,
+        "total_latency_seconds": 0.501
+      }
+    },
+    {
+      "idx": 39,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 48,
+          "tokens_out": 2,
+          "latency_seconds": 0.391,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 48,
+          "tokens_out": 2,
+          "latency_seconds": 0.468,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.468,
+        "total_latency_seconds": 0.468
+      }
+    },
+    {
+      "idx": 40,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 98,
+          "tokens_out": 2,
+          "latency_seconds": 0.357,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 98,
+          "tokens_out": 2,
+          "latency_seconds": 0.325,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.357,
+        "total_latency_seconds": 0.357
+      }
+    },
+    {
+      "idx": 41,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 35,
+          "tokens_out": 2,
+          "latency_seconds": 0.333,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 35,
+          "tokens_out": 2,
+          "latency_seconds": 0.327,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.333,
+        "total_latency_seconds": 0.333
+      }
+    },
+    {
+      "idx": 42,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 42,
+          "tokens_out": 2,
+          "latency_seconds": 0.36,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 42,
+          "tokens_out": 2,
+          "latency_seconds": 0.386,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.386,
+        "total_latency_seconds": 0.386
+      }
+    },
+    {
+      "idx": 43,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "A",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 70,
+          "tokens_out": 2,
+          "latency_seconds": 0.33,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 70,
+          "tokens_out": 2,
+          "latency_seconds": 0.324,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 82,
+          "tokens_out": 2,
+          "latency_seconds": 0.504,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.33,
+        "total_latency_seconds": 0.834
+      }
+    },
+    {
+      "idx": 44,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "A",
+      "resp_b": "C",
+      "ans_a": "A",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 58,
+          "tokens_out": 2,
+          "latency_seconds": 0.44,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 58,
+          "tokens_out": 2,
+          "latency_seconds": 0.386,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 70,
+          "tokens_out": 2,
+          "latency_seconds": 0.509,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.44,
+        "total_latency_seconds": 0.949
+      }
+    },
+    {
+      "idx": 45,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 69,
+          "tokens_out": 2,
+          "latency_seconds": 0.418,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 69,
+          "tokens_out": 2,
+          "latency_seconds": 0.536,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.536,
+        "total_latency_seconds": 0.536
+      }
+    },
+    {
+      "idx": 46,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 45,
+          "tokens_out": 2,
+          "latency_seconds": 0.417,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 45,
+          "tokens_out": 2,
+          "latency_seconds": 0.445,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.445,
+        "total_latency_seconds": 0.445
+      }
+    },
+    {
+      "idx": 47,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "D",
+      "resp_b": "B",
+      "ans_a": "D",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 101,
+          "tokens_out": 2,
+          "latency_seconds": 0.49,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 101,
+          "tokens_out": 2,
+          "latency_seconds": 0.332,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 113,
+          "tokens_out": 2,
+          "latency_seconds": 0.488,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.49,
+        "total_latency_seconds": 0.977
+      }
+    },
+    {
+      "idx": 48,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 76,
+          "tokens_out": 2,
+          "latency_seconds": 0.44,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 76,
+          "tokens_out": 2,
+          "latency_seconds": 0.395,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.44,
+        "total_latency_seconds": 0.44
+      }
+    },
+    {
+      "idx": 49,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 93,
+          "tokens_out": 2,
+          "latency_seconds": 0.326,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 93,
+          "tokens_out": 2,
+          "latency_seconds": 0.382,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.382,
+        "total_latency_seconds": 0.382
+      }
+    },
+    {
+      "idx": 50,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 41,
+          "tokens_out": 2,
+          "latency_seconds": 1.2,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 41,
+          "tokens_out": 2,
+          "latency_seconds": 0.601,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.2,
+        "total_latency_seconds": 1.2
+      }
+    },
+    {
+      "idx": 51,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 30,
+          "tokens_out": 2,
+          "latency_seconds": 0.425,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 30,
+          "tokens_out": 2,
+          "latency_seconds": 0.334,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.425,
+        "total_latency_seconds": 0.425
+      }
+    },
+    {
+      "idx": 52,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 73,
+          "tokens_out": 2,
+          "latency_seconds": 0.413,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 73,
+          "tokens_out": 2,
+          "latency_seconds": 0.35,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.413,
+        "total_latency_seconds": 0.413
+      }
+    },
+    {
+      "idx": 53,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 83,
+          "tokens_out": 2,
+          "latency_seconds": 0.381,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 83,
+          "tokens_out": 2,
+          "latency_seconds": 0.429,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.429,
+        "total_latency_seconds": 0.429
+      }
+    },
+    {
+      "idx": 54,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.453,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.383,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.453,
+        "total_latency_seconds": 0.453
+      }
+    },
+    {
+      "idx": 55,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.343,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.375,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.375,
+        "total_latency_seconds": 0.375
+      }
+    },
+    {
+      "idx": 56,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "B",
+      "resp_b": "C",
+      "ans_a": "B",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 40,
+          "tokens_out": 2,
+          "latency_seconds": 0.358,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 40,
+          "tokens_out": 2,
+          "latency_seconds": 0.478,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 52,
+          "tokens_out": 2,
+          "latency_seconds": 0.417,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.478,
+        "total_latency_seconds": 0.895
+      }
+    },
+    {
+      "idx": 57,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 103,
+          "tokens_out": 2,
+          "latency_seconds": 0.453,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 103,
+          "tokens_out": 2,
+          "latency_seconds": 0.355,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.453,
+        "total_latency_seconds": 0.453
+      }
+    },
+    {
+      "idx": 58,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 76,
+          "tokens_out": 2,
+          "latency_seconds": 0.45,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 76,
+          "tokens_out": 2,
+          "latency_seconds": 0.343,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.45,
+        "total_latency_seconds": 0.45
+      }
+    },
+    {
+      "idx": 59,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 48,
+          "tokens_out": 2,
+          "latency_seconds": 0.399,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 48,
+          "tokens_out": 2,
+          "latency_seconds": 0.402,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.402,
+        "total_latency_seconds": 0.402
+      }
+    },
+    {
+      "idx": 60,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 73,
+          "tokens_out": 2,
+          "latency_seconds": 0.692,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 73,
+          "tokens_out": 2,
+          "latency_seconds": 0.487,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.692,
+        "total_latency_seconds": 0.692
+      }
+    },
+    {
+      "idx": 61,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 86,
+          "tokens_out": 2,
+          "latency_seconds": 0.352,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 86,
+          "tokens_out": 2,
+          "latency_seconds": 0.502,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.502,
+        "total_latency_seconds": 0.502
+      }
+    },
+    {
+      "idx": 62,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 37,
+          "tokens_out": 2,
+          "latency_seconds": 0.405,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 37,
+          "tokens_out": 2,
+          "latency_seconds": 0.344,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.405,
+        "total_latency_seconds": 0.405
+      }
+    },
+    {
+      "idx": 63,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.352,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.603,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.603,
+        "total_latency_seconds": 0.603
+      }
+    },
+    {
+      "idx": 64,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 71,
+          "tokens_out": 2,
+          "latency_seconds": 0.413,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 71,
+          "tokens_out": 2,
+          "latency_seconds": 0.368,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.413,
+        "total_latency_seconds": 0.413
+      }
+    },
+    {
+      "idx": 65,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "D",
+      "resp_b": "B",
+      "ans_a": "D",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 127,
+          "tokens_out": 2,
+          "latency_seconds": 0.415,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 127,
+          "tokens_out": 2,
+          "latency_seconds": 0.335,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 139,
+          "tokens_out": 2,
+          "latency_seconds": 0.473,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.415,
+        "total_latency_seconds": 0.888
+      }
+    },
+    {
+      "idx": 66,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 57,
+          "tokens_out": 2,
+          "latency_seconds": 0.432,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 57,
+          "tokens_out": 2,
+          "latency_seconds": 0.415,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.432,
+        "total_latency_seconds": 0.432
+      }
+    },
+    {
+      "idx": 67,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 83,
+          "tokens_out": 2,
+          "latency_seconds": 0.391,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 83,
+          "tokens_out": 2,
+          "latency_seconds": 0.362,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.391,
+        "total_latency_seconds": 0.391
+      }
+    },
+    {
+      "idx": 68,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 92,
+          "tokens_out": 2,
+          "latency_seconds": 0.365,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 92,
+          "tokens_out": 2,
+          "latency_seconds": 0.386,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.386,
+        "total_latency_seconds": 0.386
+      }
+    },
+    {
+      "idx": 69,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 55,
+          "tokens_out": 2,
+          "latency_seconds": 0.383,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 55,
+          "tokens_out": 2,
+          "latency_seconds": 0.378,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.383,
+        "total_latency_seconds": 0.383
+      }
+    },
+    {
+      "idx": 70,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 41,
+          "tokens_out": 2,
+          "latency_seconds": 0.38,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 41,
+          "tokens_out": 2,
+          "latency_seconds": 0.425,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.425,
+        "total_latency_seconds": 0.425
+      }
+    },
+    {
+      "idx": 71,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 86,
+          "tokens_out": 2,
+          "latency_seconds": 0.475,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 86,
+          "tokens_out": 2,
+          "latency_seconds": 0.408,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.475,
+        "total_latency_seconds": 0.475
+      }
+    },
+    {
+      "idx": 72,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 57,
+          "tokens_out": 2,
+          "latency_seconds": 0.404,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 57,
+          "tokens_out": 2,
+          "latency_seconds": 0.352,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.404,
+        "total_latency_seconds": 0.404
+      }
+    },
+    {
+      "idx": 73,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 79,
+          "tokens_out": 2,
+          "latency_seconds": 0.484,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 79,
+          "tokens_out": 2,
+          "latency_seconds": 0.372,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.484,
+        "total_latency_seconds": 0.484
+      }
+    },
+    {
+      "idx": 74,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 82,
+          "tokens_out": 2,
+          "latency_seconds": 0.465,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 82,
+          "tokens_out": 2,
+          "latency_seconds": 0.469,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.469,
+        "total_latency_seconds": 0.469
+      }
+    },
+    {
+      "idx": 75,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 61,
+          "tokens_out": 2,
+          "latency_seconds": 0.393,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 61,
+          "tokens_out": 2,
+          "latency_seconds": 0.35,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.393,
+        "total_latency_seconds": 0.393
+      }
+    },
+    {
+      "idx": 76,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.553,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.395,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.553,
+        "total_latency_seconds": 0.553
+      }
+    },
+    {
+      "idx": 77,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 41,
+          "tokens_out": 2,
+          "latency_seconds": 0.435,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 41,
+          "tokens_out": 2,
+          "latency_seconds": 0.498,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.498,
+        "total_latency_seconds": 0.498
+      }
+    },
+    {
+      "idx": 78,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.413,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.435,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.435,
+        "total_latency_seconds": 0.435
+      }
+    },
+    {
+      "idx": 79,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 99,
+          "tokens_out": 2,
+          "latency_seconds": 0.489,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 99,
+          "tokens_out": 2,
+          "latency_seconds": 0.351,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.489,
+        "total_latency_seconds": 0.489
+      }
+    },
+    {
+      "idx": 80,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 58,
+          "tokens_out": 2,
+          "latency_seconds": 0.387,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 58,
+          "tokens_out": 2,
+          "latency_seconds": 0.417,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.417,
+        "total_latency_seconds": 0.417
+      }
+    },
+    {
+      "idx": 81,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 47,
+          "tokens_out": 2,
+          "latency_seconds": 0.387,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 47,
+          "tokens_out": 2,
+          "latency_seconds": 0.38,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.387,
+        "total_latency_seconds": 0.387
+      }
+    },
+    {
+      "idx": 82,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.412,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.384,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.412,
+        "total_latency_seconds": 0.412
+      }
+    },
+    {
+      "idx": 83,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 64,
+          "tokens_out": 2,
+          "latency_seconds": 0.355,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 64,
+          "tokens_out": 2,
+          "latency_seconds": 0.389,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.389,
+        "total_latency_seconds": 0.389
+      }
+    },
+    {
+      "idx": 84,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "B",
+      "ans_a": "D",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 82,
+          "tokens_out": 2,
+          "latency_seconds": 0.721,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 82,
+          "tokens_out": 2,
+          "latency_seconds": 0.364,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 94,
+          "tokens_out": 2,
+          "latency_seconds": 0.499,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.721,
+        "total_latency_seconds": 1.22
+      }
+    },
+    {
+      "idx": 85,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 45,
+          "tokens_out": 2,
+          "latency_seconds": 0.456,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 45,
+          "tokens_out": 2,
+          "latency_seconds": 0.394,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.456,
+        "total_latency_seconds": 0.456
+      }
+    },
+    {
+      "idx": 86,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 88,
+          "tokens_out": 2,
+          "latency_seconds": 0.366,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 88,
+          "tokens_out": 2,
+          "latency_seconds": 0.343,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.366,
+        "total_latency_seconds": 0.366
+      }
+    },
+    {
+      "idx": 87,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 96,
+          "tokens_out": 2,
+          "latency_seconds": 0.463,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 96,
+          "tokens_out": 2,
+          "latency_seconds": 0.327,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.463,
+        "total_latency_seconds": 0.463
+      }
+    },
+    {
+      "idx": 88,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 43,
+          "tokens_out": 2,
+          "latency_seconds": 0.383,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 43,
+          "tokens_out": 2,
+          "latency_seconds": 0.34,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.383,
+        "total_latency_seconds": 0.383
+      }
+    },
+    {
+      "idx": 89,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 92,
+          "tokens_out": 2,
+          "latency_seconds": 0.382,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 92,
+          "tokens_out": 2,
+          "latency_seconds": 0.455,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.455,
+        "total_latency_seconds": 0.455
+      }
+    },
+    {
+      "idx": 90,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 118,
+          "tokens_out": 2,
+          "latency_seconds": 0.399,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 118,
+          "tokens_out": 2,
+          "latency_seconds": 0.336,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.399,
+        "total_latency_seconds": 0.399
+      }
+    },
+    {
+      "idx": 91,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 57,
+          "tokens_out": 2,
+          "latency_seconds": 0.412,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 57,
+          "tokens_out": 2,
+          "latency_seconds": 0.399,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.412,
+        "total_latency_seconds": 0.412
+      }
+    },
+    {
+      "idx": 92,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.459,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.417,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.459,
+        "total_latency_seconds": 0.459
+      }
+    },
+    {
+      "idx": 93,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 63,
+          "tokens_out": 2,
+          "latency_seconds": 0.417,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 63,
+          "tokens_out": 2,
+          "latency_seconds": 0.446,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.446,
+        "total_latency_seconds": 0.446
+      }
+    },
+    {
+      "idx": 94,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 64,
+          "tokens_out": 2,
+          "latency_seconds": 0.43,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 64,
+          "tokens_out": 2,
+          "latency_seconds": 0.523,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.523,
+        "total_latency_seconds": 0.523
+      }
+    },
+    {
+      "idx": 95,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 61,
+          "tokens_out": 2,
+          "latency_seconds": 0.467,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 61,
+          "tokens_out": 2,
+          "latency_seconds": 0.402,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.467,
+        "total_latency_seconds": 0.467
+      }
+    },
+    {
+      "idx": 96,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 83,
+          "tokens_out": 2,
+          "latency_seconds": 0.392,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 83,
+          "tokens_out": 2,
+          "latency_seconds": 0.424,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.424,
+        "total_latency_seconds": 0.424
+      }
+    },
+    {
+      "idx": 97,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 69,
+          "tokens_out": 2,
+          "latency_seconds": 0.354,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 69,
+          "tokens_out": 2,
+          "latency_seconds": 0.363,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.363,
+        "total_latency_seconds": 0.363
+      }
+    },
+    {
+      "idx": 98,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.699,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.417,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.699,
+        "total_latency_seconds": 0.699
+      }
+    },
+    {
+      "idx": 99,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.38,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.466,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.466,
+        "total_latency_seconds": 0.466
+      }
+    },
+    {
+      "idx": 100,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 93,
+          "tokens_out": 2,
+          "latency_seconds": 0.379,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 93,
+          "tokens_out": 2,
+          "latency_seconds": 0.338,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.379,
+        "total_latency_seconds": 0.379
+      }
+    },
+    {
+      "idx": 101,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 69,
+          "tokens_out": 2,
+          "latency_seconds": 0.372,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 69,
+          "tokens_out": 2,
+          "latency_seconds": 0.431,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.431,
+        "total_latency_seconds": 0.431
+      }
+    },
+    {
+      "idx": 102,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 50,
+          "tokens_out": 2,
+          "latency_seconds": 0.34,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 50,
+          "tokens_out": 2,
+          "latency_seconds": 0.49,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.49,
+        "total_latency_seconds": 0.49
+      }
+    },
+    {
+      "idx": 103,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 86,
+          "tokens_out": 2,
+          "latency_seconds": 0.468,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 86,
+          "tokens_out": 2,
+          "latency_seconds": 0.435,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.468,
+        "total_latency_seconds": 0.468
+      }
+    },
+    {
+      "idx": 104,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 80,
+          "tokens_out": 2,
+          "latency_seconds": 0.512,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 80,
+          "tokens_out": 2,
+          "latency_seconds": 0.347,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.512,
+        "total_latency_seconds": 0.512
+      }
+    },
+    {
+      "idx": 105,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 30,
+          "tokens_out": 2,
+          "latency_seconds": 0.443,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 30,
+          "tokens_out": 2,
+          "latency_seconds": 0.419,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.443,
+        "total_latency_seconds": 0.443
+      }
+    },
+    {
+      "idx": 106,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 67,
+          "tokens_out": 2,
+          "latency_seconds": 0.464,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 67,
+          "tokens_out": 2,
+          "latency_seconds": 0.345,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.464,
+        "total_latency_seconds": 0.464
+      }
+    },
+    {
+      "idx": 107,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 1.172,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.48,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.172,
+        "total_latency_seconds": 1.172
+      }
+    },
+    {
+      "idx": 108,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 50,
+          "tokens_out": 2,
+          "latency_seconds": 0.41,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 50,
+          "tokens_out": 2,
+          "latency_seconds": 0.446,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.446,
+        "total_latency_seconds": 0.446
+      }
+    },
+    {
+      "idx": 109,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 57,
+          "tokens_out": 2,
+          "latency_seconds": 0.618,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 57,
+          "tokens_out": 2,
+          "latency_seconds": 0.701,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.701,
+        "total_latency_seconds": 0.701
+      }
+    },
+    {
+      "idx": 110,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 82,
+          "tokens_out": 2,
+          "latency_seconds": 0.389,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 82,
+          "tokens_out": 2,
+          "latency_seconds": 0.372,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.389,
+        "total_latency_seconds": 0.389
+      }
+    },
+    {
+      "idx": 111,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 87,
+          "tokens_out": 2,
+          "latency_seconds": 0.345,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 87,
+          "tokens_out": 2,
+          "latency_seconds": 0.323,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.345,
+        "total_latency_seconds": 0.345
+      }
+    },
+    {
+      "idx": 112,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 90,
+          "tokens_out": 2,
+          "latency_seconds": 0.377,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 90,
+          "tokens_out": 2,
+          "latency_seconds": 0.346,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.377,
+        "total_latency_seconds": 0.377
+      }
+    },
+    {
+      "idx": 113,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 61,
+          "tokens_out": 2,
+          "latency_seconds": 0.388,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 61,
+          "tokens_out": 2,
+          "latency_seconds": 0.481,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.481,
+        "total_latency_seconds": 0.481
+      }
+    },
+    {
+      "idx": 114,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "B",
+      "resp_b": "A",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 85,
+          "tokens_out": 2,
+          "latency_seconds": 0.421,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 85,
+          "tokens_out": 2,
+          "latency_seconds": 0.399,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 97,
+          "tokens_out": 2,
+          "latency_seconds": 0.418,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.421,
+        "total_latency_seconds": 0.839
+      }
+    },
+    {
+      "idx": 115,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 90,
+          "tokens_out": 2,
+          "latency_seconds": 0.412,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 90,
+          "tokens_out": 2,
+          "latency_seconds": 0.392,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.412,
+        "total_latency_seconds": 0.412
+      }
+    },
+    {
+      "idx": 116,
+      "domain": "arc_challenge",
+      "gold": "2",
+      "resp_a": "2",
+      "resp_b": "B",
+      "ans_a": null,
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 76,
+          "tokens_out": 2,
+          "latency_seconds": 0.505,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 76,
+          "tokens_out": 2,
+          "latency_seconds": 0.351,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 88,
+          "tokens_out": 2,
+          "latency_seconds": 0.496,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.505,
+        "total_latency_seconds": 1.001
+      }
+    },
+    {
+      "idx": 117,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 48,
+          "tokens_out": 2,
+          "latency_seconds": 0.472,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 48,
+          "tokens_out": 2,
+          "latency_seconds": 0.335,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.472,
+        "total_latency_seconds": 0.472
+      }
+    },
+    {
+      "idx": 118,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 34,
+          "tokens_out": 2,
+          "latency_seconds": 0.506,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 34,
+          "tokens_out": 2,
+          "latency_seconds": 0.406,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.506,
+        "total_latency_seconds": 0.506
+      }
+    },
+    {
+      "idx": 119,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 37,
+          "tokens_out": 2,
+          "latency_seconds": 0.902,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 37,
+          "tokens_out": 2,
+          "latency_seconds": 0.711,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.902,
+        "total_latency_seconds": 0.902
+      }
+    },
+    {
+      "idx": 120,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 70,
+          "tokens_out": 2,
+          "latency_seconds": 0.424,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 70,
+          "tokens_out": 2,
+          "latency_seconds": 0.368,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.424,
+        "total_latency_seconds": 0.424
+      }
+    },
+    {
+      "idx": 121,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 47,
+          "tokens_out": 2,
+          "latency_seconds": 0.415,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 47,
+          "tokens_out": 2,
+          "latency_seconds": 0.405,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.415,
+        "total_latency_seconds": 0.415
+      }
+    },
+    {
+      "idx": 122,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.558,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.526,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.558,
+        "total_latency_seconds": 0.558
+      }
+    },
+    {
+      "idx": 123,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 61,
+          "tokens_out": 2,
+          "latency_seconds": 0.386,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 61,
+          "tokens_out": 2,
+          "latency_seconds": 0.688,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.688,
+        "total_latency_seconds": 0.688
+      }
+    },
+    {
+      "idx": 124,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 59,
+          "tokens_out": 2,
+          "latency_seconds": 0.423,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 59,
+          "tokens_out": 2,
+          "latency_seconds": 0.385,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.423,
+        "total_latency_seconds": 0.423
+      }
+    },
+    {
+      "idx": 125,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 50,
+          "tokens_out": 2,
+          "latency_seconds": 0.41,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 50,
+          "tokens_out": 2,
+          "latency_seconds": 0.944,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.944,
+        "total_latency_seconds": 0.944
+      }
+    },
+    {
+      "idx": 126,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 94,
+          "tokens_out": 2,
+          "latency_seconds": 0.415,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 94,
+          "tokens_out": 2,
+          "latency_seconds": 0.444,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.444,
+        "total_latency_seconds": 0.444
+      }
+    },
+    {
+      "idx": 127,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 63,
+          "tokens_out": 2,
+          "latency_seconds": 0.431,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 63,
+          "tokens_out": 2,
+          "latency_seconds": 0.386,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.431,
+        "total_latency_seconds": 0.431
+      }
+    },
+    {
+      "idx": 128,
+      "domain": "arc_challenge",
+      "gold": "4",
+      "resp_a": "4",
+      "resp_b": "C",
+      "ans_a": null,
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 54,
+          "tokens_out": 2,
+          "latency_seconds": 0.409,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 54,
+          "tokens_out": 2,
+          "latency_seconds": 0.611,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 66,
+          "tokens_out": 2,
+          "latency_seconds": 0.409,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.611,
+        "total_latency_seconds": 1.02
+      }
+    },
+    {
+      "idx": 129,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 51,
+          "tokens_out": 2,
+          "latency_seconds": 0.481,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 51,
+          "tokens_out": 2,
+          "latency_seconds": 0.334,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.481,
+        "total_latency_seconds": 0.481
+      }
+    },
+    {
+      "idx": 130,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 49,
+          "tokens_out": 2,
+          "latency_seconds": 0.534,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 49,
+          "tokens_out": 2,
+          "latency_seconds": 0.445,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.534,
+        "total_latency_seconds": 0.534
+      }
+    },
+    {
+      "idx": 131,
+      "domain": "arc_challenge",
+      "gold": "4",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 35,
+          "tokens_out": 2,
+          "latency_seconds": 0.348,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 35,
+          "tokens_out": 2,
+          "latency_seconds": 0.5,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.5,
+        "total_latency_seconds": 0.5
+      }
+    },
+    {
+      "idx": 132,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 70,
+          "tokens_out": 2,
+          "latency_seconds": 0.387,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 70,
+          "tokens_out": 2,
+          "latency_seconds": 0.397,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.397,
+        "total_latency_seconds": 0.397
+      }
+    },
+    {
+      "idx": 133,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 47,
+          "tokens_out": 2,
+          "latency_seconds": 0.474,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 47,
+          "tokens_out": 2,
+          "latency_seconds": 0.556,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.556,
+        "total_latency_seconds": 0.556
+      }
+    },
+    {
+      "idx": 134,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 52,
+          "tokens_out": 2,
+          "latency_seconds": 0.477,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 52,
+          "tokens_out": 2,
+          "latency_seconds": 0.391,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.477,
+        "total_latency_seconds": 0.477
+      }
+    },
+    {
+      "idx": 135,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 65,
+          "tokens_out": 2,
+          "latency_seconds": 0.414,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 65,
+          "tokens_out": 2,
+          "latency_seconds": 0.35,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.414,
+        "total_latency_seconds": 0.414
+      }
+    },
+    {
+      "idx": 136,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 121,
+          "tokens_out": 2,
+          "latency_seconds": 0.355,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 121,
+          "tokens_out": 2,
+          "latency_seconds": 0.422,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.422,
+        "total_latency_seconds": 0.422
+      }
+    },
+    {
+      "idx": 137,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "D",
+      "resp_b": "A",
+      "ans_a": "D",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 54,
+          "tokens_out": 2,
+          "latency_seconds": 0.376,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 54,
+          "tokens_out": 2,
+          "latency_seconds": 0.531,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 66,
+          "tokens_out": 2,
+          "latency_seconds": 0.411,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.531,
+        "total_latency_seconds": 0.942
+      }
+    },
+    {
+      "idx": 138,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 58,
+          "tokens_out": 2,
+          "latency_seconds": 0.403,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 58,
+          "tokens_out": 2,
+          "latency_seconds": 0.38,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.403,
+        "total_latency_seconds": 0.403
+      }
+    },
+    {
+      "idx": 139,
+      "domain": "arc_challenge",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 73,
+          "tokens_out": 2,
+          "latency_seconds": 0.488,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 73,
+          "tokens_out": 2,
+          "latency_seconds": 0.554,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.554,
+        "total_latency_seconds": 0.554
+      }
+    },
+    {
+      "idx": 140,
+      "domain": "arc_challenge",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 86,
+          "tokens_out": 2,
+          "latency_seconds": 0.435,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 86,
+          "tokens_out": 2,
+          "latency_seconds": 0.441,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.441,
+        "total_latency_seconds": 0.441
+      }
+    },
+    {
+      "idx": 141,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 49,
+          "tokens_out": 2,
+          "latency_seconds": 0.42,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 49,
+          "tokens_out": 2,
+          "latency_seconds": 0.374,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.42,
+        "total_latency_seconds": 0.42
+      }
+    },
+    {
+      "idx": 142,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "D",
+      "resp_b": "A",
+      "ans_a": "D",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 52,
+          "tokens_out": 2,
+          "latency_seconds": 0.428,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 52,
+          "tokens_out": 2,
+          "latency_seconds": 0.338,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 64,
+          "tokens_out": 2,
+          "latency_seconds": 0.514,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.428,
+        "total_latency_seconds": 0.942
+      }
+    },
+    {
+      "idx": 143,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 79,
+          "tokens_out": 2,
+          "latency_seconds": 0.489,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 79,
+          "tokens_out": 2,
+          "latency_seconds": 0.399,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.489,
+        "total_latency_seconds": 0.489
+      }
+    },
+    {
+      "idx": 144,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 43,
+          "tokens_out": 2,
+          "latency_seconds": 0.381,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 43,
+          "tokens_out": 2,
+          "latency_seconds": 0.5,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.5,
+        "total_latency_seconds": 0.5
+      }
+    },
+    {
+      "idx": 145,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 74,
+          "tokens_out": 2,
+          "latency_seconds": 0.364,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 74,
+          "tokens_out": 2,
+          "latency_seconds": 0.397,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.397,
+        "total_latency_seconds": 0.397
+      }
+    },
+    {
+      "idx": 146,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 65,
+          "tokens_out": 2,
+          "latency_seconds": 0.364,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 65,
+          "tokens_out": 2,
+          "latency_seconds": 0.375,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.375,
+        "total_latency_seconds": 0.375
+      }
+    },
+    {
+      "idx": 147,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "B",
+      "resp_b": "D",
+      "ans_a": "B",
+      "ans_b": "D",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 77,
+          "tokens_out": 2,
+          "latency_seconds": 0.411,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 77,
+          "tokens_out": 2,
+          "latency_seconds": 0.406,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 89,
+          "tokens_out": 2,
+          "latency_seconds": 0.407,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.411,
+        "total_latency_seconds": 0.818
+      }
+    },
+    {
+      "idx": 148,
+      "domain": "arc_challenge",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "B",
+      "ans_a": "D",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 69,
+          "tokens_out": 2,
+          "latency_seconds": 0.418,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 69,
+          "tokens_out": 2,
+          "latency_seconds": 0.387,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 81,
+          "tokens_out": 2,
+          "latency_seconds": 0.418,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.418,
+        "total_latency_seconds": 0.836
+      }
+    },
+    {
+      "idx": 149,
+      "domain": "arc_challenge",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.381,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.476,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.476,
+        "total_latency_seconds": 0.476
+      }
+    }
+  ]
+}

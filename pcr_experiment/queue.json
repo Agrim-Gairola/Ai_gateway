@@ -1,0 +1,80 @@
+[
+  {
+    "kind": "pcr2",
+    "pair": "pair11",
+    "benchmark": "arc",
+    "n": 150
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair10",
+    "benchmark": "mmlu_pro",
+    "n": 150
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair3",
+    "benchmark": "truthfulqa",
+    "n": 150
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair11",
+    "benchmark": "mmlu_pro",
+    "n": 150
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair3",
+    "benchmark": "mmlu_pro",
+    "n": 150
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair10",
+    "benchmark": "openbookqa",
+    "n": 200
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair10",
+    "benchmark": "commonsenseqa",
+    "n": 200
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair11",
+    "benchmark": "openbookqa",
+    "n": 200
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair3",
+    "benchmark": "openbookqa",
+    "n": 200
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair3",
+    "benchmark": "commonsenseqa",
+    "n": 200
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair11",
+    "benchmark": "commonsenseqa",
+    "n": 200
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair10",
+    "benchmark": "mmlu",
+    "n": 250
+  },
+  {
+    "kind": "pcr2",
+    "pair": "pair11",
+    "benchmark": "mmlu",
+    "n": 250
+  }
+]

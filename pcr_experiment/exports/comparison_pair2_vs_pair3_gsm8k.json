@@ -1,0 +1,69 @@
+{
+  "benchmark": "gsm8k",
+  "left_pair": "pair2",
+  "right_pair": "pair3",
+  "left_n": 150,
+  "right_n": 150,
+  "metrics": [
+    {
+      "metric": "agreement",
+      "left": 0.5133333333333333,
+      "right": 0.78,
+      "difference": -0.2666666666666667
+    },
+    {
+      "metric": "escalation",
+      "left": 0.4866666666666667,
+      "right": 0.22,
+      "difference": 0.2666666666666667
+    },
+    {
+      "metric": "accuracy_when_agreed",
+      "left": 0.974025974025974,
+      "right": 0.9572649572649573,
+      "difference": 0.01676101676101671
+    },
+    {
+      "metric": "c_hall",
+      "left": 0.025974025974025976,
+      "right": 0.042735042735042736,
+      "difference": -0.01676101676101676
+    },
+    {
+      "metric": "pcr_accuracy",
+      "left": 0.8866666666666667,
+      "right": 0.8933333333333333,
+      "difference": -0.006666666666666599
+    },
+    {
+      "metric": "cheap_a",
+      "left": 0.5333333333333333,
+      "right": 0.7866666666666666,
+      "difference": -0.2533333333333333
+    },
+    {
+      "metric": "cheap_b",
+      "left": 0.8266666666666667,
+      "right": 0.8133333333333334,
+      "difference": 0.013333333333333308
+    },
+    {
+      "metric": "frontier_on_disagreement",
+      "left": 0.7945205479452054,
+      "right": 0.6666666666666666,
+      "difference": 0.1278538812785388
+    }
+  ],
+  "bootstrap": {
+    "c_hall_difference": -0.01676101676101676,
+    "c_hall_difference_95_ci": [
+      -0.06722689075630252,
+      0.035866326096211154
+    ],
+    "pcr_accuracy_difference": -0.006666666666666599,
+    "pcr_accuracy_difference_95_ci": [
+      -0.07999999999999996,
+      0.06666666666666665
+    ]
+  }
+}

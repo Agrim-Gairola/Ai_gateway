@@ -1,0 +1,42 @@
+{
+  "pair_id": "pair8",
+  "benchmark": "mmlu",
+  "n_total": 250,
+  "cheap_a": "mistral:ministral-3b-latest",
+  "cheap_b": "mistral:ministral-8b-latest",
+  "frontier": "mistral:mistral-medium-latest",
+  "results": [
+    {
+      "idx": 0,
+      "domain": "college_physics",
+      "gold": "A",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 128,
+          "tokens_out": 2,
+          "latency_seconds": 0.476,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 128,
+          "tokens_out": 2,
+          "latency_seconds": 0.431,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.476,
+        "total_latency_seconds": 0.476
+      }
+    }
+  ]
+}

@@ -1,0 +1,487 @@
+{
+  "gpt-oss-20b": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-20b",
+    "family": "gpt-oss",
+    "cells": {
+      "arc_n80": {
+        "n": 80,
+        "accuracy": 0.9625,
+        "unparsed": 0,
+        "latency_mean": 1.813,
+        "latency_p90": 2.649,
+        "tokens_out_mean": 39.5
+      },
+      "mmlu_pro_n80": {
+        "n": 80,
+        "accuracy": 0.65,
+        "unparsed": 2,
+        "latency_mean": 2.919,
+        "latency_p90": 5.769,
+        "tokens_out_mean": 123.2
+      },
+      "truthfulqa_n80": {
+        "n": 80,
+        "accuracy": 0.7125,
+        "unparsed": 0,
+        "latency_mean": 0.71,
+        "latency_p90": 2.456,
+        "tokens_out_mean": 46.8
+      },
+      "mmlu_n80": {
+        "n": 80,
+        "accuracy": 0.825,
+        "unparsed": 0,
+        "latency_mean": 1.102,
+        "latency_p90": 2.553,
+        "tokens_out_mean": 63.0
+      }
+    }
+  },
+  "qwen3.6-27b": {
+    "provider": "groq",
+    "model": "qwen/qwen3.6-27b",
+    "family": "qwen",
+    "cells": {
+      "arc_n80": {
+        "n": 80,
+        "accuracy": 0.9625,
+        "unparsed": 0,
+        "latency_mean": 1.455,
+        "latency_p90": 2.398,
+        "tokens_out_mean": 2
+      },
+      "mmlu_pro_n80": {
+        "n": 80,
+        "accuracy": 0.6375,
+        "unparsed": 0,
+        "latency_mean": 2.228,
+        "latency_p90": 2.35,
+        "tokens_out_mean": 2
+      },
+      "truthfulqa_n80": {
+        "n": 80,
+        "accuracy": 0.8125,
+        "unparsed": 0,
+        "latency_mean": 2.182,
+        "latency_p90": 2.353,
+        "tokens_out_mean": 2
+      },
+      "mmlu_n80": {
+        "n": 80,
+        "accuracy": 0.825,
+        "unparsed": 0,
+        "latency_mean": 1.409,
+        "latency_p90": 2.229,
+        "tokens_out_mean": 2
+      }
+    }
+  },
+  "qwen3.8-27b": {
+    "provider": "groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "qwen",
+    "cells": {
+      "arc_n80": {
+        "n": 80,
+        "accuracy": 0.95,
+        "unparsed": 0,
+        "latency_mean": 1.639,
+        "latency_p90": 2.585,
+        "tokens_out_mean": 2
+      },
+      "mmlu_pro_n80": {
+        "n": 80,
+        "accuracy": 0.6375,
+        "unparsed": 0,
+        "latency_mean": 2.371,
+        "latency_p90": 2.702,
+        "tokens_out_mean": 2
+      },
+      "truthfulqa_n80": {
+        "n": 80,
+        "accuracy": 0.8375,
+        "unparsed": 0,
+        "latency_mean": 2.459,
+        "latency_p90": 3.027,
+        "tokens_out_mean": 2
+      },
+      "mmlu_n80": {
+        "n": 80,
+        "accuracy": 0.8625,
+        "unparsed": 0,
+        "latency_mean": 1.455,
+        "latency_p90": 2.367,
+        "tokens_out_mean": 2
+      }
+    }
+  },
+  "allam-2-7b": {
+    "provider": "groq",
+    "model": "allam-2-7b",
+    "family": "allam",
+    "cells": {
+      "arc_n80": {
+        "n": 80,
+        "accuracy": 0.75,
+        "unparsed": 0,
+        "latency_mean": 1.509,
+        "latency_p90": 2.512,
+        "tokens_out_mean": 23.1
+      },
+      "mmlu_pro_n80": {
+        "n": 80,
+        "accuracy": 0.35,
+        "unparsed": 4,
+        "latency_mean": 2.255,
+        "latency_p90": 2.667,
+        "tokens_out_mean": 32.2
+      },
+      "truthfulqa_n80": {
+        "n": 80,
+        "accuracy": 0.3375,
+        "unparsed": 0,
+        "latency_mean": 2.298,
+        "latency_p90": 2.613,
+        "tokens_out_mean": 24.9
+      },
+      "mmlu_n80": {
+        "n": 80,
+        "accuracy": 0.6,
+        "unparsed": 0,
+        "latency_mean": 1.373,
+        "latency_p90": 2.247,
+        "tokens_out_mean": 11.8
+      }
+    }
+  },
+  "ministral-8b": {
+    "provider": "mistral",
+    "model": "ministral-8b-latest",
+    "family": "mistral",
+    "cells": {
+      "arc_n80": {
+        "n": 80,
+        "accuracy": 0.9125,
+        "unparsed": 0,
+        "latency_mean": 0.5,
+        "latency_p90": 0.733,
+        "tokens_out_mean": 2
+      },
+      "mmlu_pro_n80": {
+        "n": 80,
+        "accuracy": 0.4625,
+        "unparsed": 0,
+        "latency_mean": 0.525,
+        "latency_p90": 0.737,
+        "tokens_out_mean": 5.4
+      },
+      "truthfulqa_n80": {
+        "n": 80,
+        "accuracy": 0.55,
+        "unparsed": 0,
+        "latency_mean": 0.462,
+        "latency_p90": 0.642,
+        "tokens_out_mean": 2
+      },
+      "mmlu_n80": {
+        "n": 80,
+        "accuracy": 0.675,
+        "unparsed": 0,
+        "latency_mean": 0.516,
+        "latency_p90": 0.55,
+        "tokens_out_mean": 2
+      }
+    }
+  },
+  "ministral-14b": {
+    "provider": "mistral",
+    "model": "ministral-14b-latest",
+    "family": "mistral",
+    "cells": {
+      "arc_n80": {
+        "n": 80,
+        "accuracy": 0.8625,
+        "unparsed": 0,
+        "latency_mean": 0.437,
+        "latency_p90": 0.574,
+        "tokens_out_mean": 2
+      },
+      "mmlu_pro_n80": {
+        "n": 80,
+        "accuracy": 0.4875,
+        "unparsed": 0,
+        "latency_mean": 0.414,
+        "latency_p90": 0.51,
+        "tokens_out_mean": 2.5
+      },
+      "truthfulqa_n80": {
+        "n": 80,
+        "accuracy": 0.6,
+        "unparsed": 0,
+        "latency_mean": 0.426,
+        "latency_p90": 0.539,
+        "tokens_out_mean": 2
+      },
+      "mmlu_n80": {
+        "n": 80,
+        "accuracy": 0.7125,
+        "unparsed": 0,
+        "latency_mean": 0.402,
+        "latency_p90": 0.488,
+        "tokens_out_mean": 2.0
+      }
+    }
+  },
+  "mistral-small": {
+    "provider": "mistral",
+    "model": "mistral-small-latest",
+    "family": "mistral",
+    "cells": {
+      "arc_n80": {
+        "error": "Mistral call failed after 5 retries: mistral-small-latest"
+      },
+      "mmlu_pro_n80": {
+        "error": "Mistral call failed after 5 retries: mistral-small-latest"
+      },
+      "truthfulqa_n80": {
+        "error": "Mistral call failed after 5 retries: mistral-small-latest"
+      },
+      "mmlu_n80": {
+        "error": "Mistral call failed after 5 retries: mistral-small-latest"
+      }
+    }
+  },
+  "gemini-flash-lite": {
+    "provider": "gemini",
+    "model": "gemini-flash-lite-latest",
+    "family": "gemini",
+    "cells": {
+      "arc_n80": {
+        "n": 80,
+        "accuracy": 0.9625,
+        "unparsed": 0,
+        "latency_mean": 10.828,
+        "latency_p90": 22.115,
+        "tokens_out_mean": 6.8
+      },
+      "mmlu_pro_n80": {
+        "n": 80,
+        "accuracy": 0.5875,
+        "unparsed": 3,
+        "latency_mean": 14.002,
+        "latency_p90": 22.346,
+        "tokens_out_mean": 87.7
+      },
+      "truthfulqa_n80": {
+        "n": 80,
+        "accuracy": 0.8625,
+        "unparsed": 0,
+        "latency_mean": 12.04,
+        "latency_p90": 19.797,
+        "tokens_out_mean": 7.6
+      },
+      "mmlu_n80": {
+        "n": 80,
+        "accuracy": 0.8,
+        "unparsed": 0,
+        "latency_mean": 2.756,
+        "latency_p90": 11.601,
+        "tokens_out_mean": 35.1
+      }
+    }
+  },
+  "gemini-flash": {
+    "provider": "gemini",
+    "model": "gemini-flash-latest",
+    "family": "gemini",
+    "cells": {
+      "arc_n80": {
+        "error": "Gemini call failed after 5 retries: gemini-flash-latest"
+      },
+      "mmlu_pro_n80": {
+        "error": "Gemini call failed after 5 retries: gemini-flash-latest"
+      },
+      "truthfulqa_n80": {
+        "error": "Gemini call failed after 5 retries: gemini-flash-latest"
+      },
+      "mmlu_n80": {
+        "error": "Gemini call failed after 5 retries: gemini-flash-latest"
+      }
+    }
+  },
+  "gpt-oss-120b": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "gpt-oss-FRONTIER",
+    "cells": {
+      "arc_n80": {
+        "n": 80,
+        "accuracy": 0.95,
+        "unparsed": 0,
+        "latency_mean": 0.919,
+        "latency_p90": 2.498,
+        "tokens_out_mean": 35.3
+      },
+      "mmlu_pro_n80": {
+        "n": 80,
+        "accuracy": 0.7125,
+        "unparsed": 2,
+        "latency_mean": 1.495,
+        "latency_p90": 4.181,
+        "tokens_out_mean": 130.0
+      },
+      "truthfulqa_n80": {
+        "n": 80,
+        "accuracy": 0.7875,
+        "unparsed": 1,
+        "latency_mean": 1.229,
+        "latency_p90": 2.576,
+        "tokens_out_mean": 42.0
+      },
+      "mmlu_n80": {
+        "n": 80,
+        "accuracy": 0.825,
+        "unparsed": 0,
+        "latency_mean": 1.07,
+        "latency_p90": 2.526,
+        "tokens_out_mean": 60.2
+      }
+    }
+  },
+  "mistral-medium": {
+    "provider": "mistral",
+    "model": "mistral-medium-latest",
+    "family": "mistral-FRONTIER",
+    "cells": {
+      "arc_n80": {
+        "error": "Mistral call failed after 5 retries: mistral-medium-latest"
+      },
+      "mmlu_pro_n80": {
+        "error": "Mistral call failed after 5 retries: mistral-medium-latest"
+      },
+      "truthfulqa_n80": {
+        "error": "Mistral call failed after 5 retries: mistral-medium-latest"
+      },
+      "mmlu_n80": {
+        "error": "Mistral call failed after 5 retries: mistral-medium-latest"
+      }
+    }
+  },
+  "gpt-oss-safeguard-20b": {
+    "provider": "groq",
+    "model": "openai/gpt-oss-safeguard-20b",
+    "family": "gpt-oss",
+    "cells": {
+      "arc_n80": {
+        "n": 80,
+        "accuracy": 0.9375,
+        "unparsed": 0,
+        "latency_mean": 1.445,
+        "latency_p90": 2.376,
+        "tokens_out_mean": 47.5
+      },
+      "mmlu_n80": {
+        "n": 80,
+        "accuracy": 0.85,
+        "unparsed": 0,
+        "latency_mean": 2.245,
+        "latency_p90": 2.442,
+        "tokens_out_mean": 87.6
+      },
+      "mmlu_pro_n80": {
+        "n": 80,
+        "accuracy": 0.6375,
+        "unparsed": 2,
+        "latency_mean": 2.502,
+        "latency_p90": 5.16,
+        "tokens_out_mean": 178.9
+      },
+      "truthfulqa_n80": {
+        "n": 80,
+        "accuracy": 0.75,
+        "unparsed": 0,
+        "latency_mean": 2.131,
+        "latency_p90": 2.398,
+        "tokens_out_mean": 66.8
+      }
+    }
+  },
+  "magistral-small": {
+    "provider": "mistral",
+    "model": "magistral-small-latest",
+    "family": "mistral",
+    "cells": {
+      "arc_n80": {
+        "error": "Mistral call failed after 5 retries: magistral-small-latest"
+      },
+      "mmlu_n80": {
+        "error": "Mistral call failed after 5 retries: magistral-small-latest"
+      },
+      "mmlu_pro_n80": {
+        "error": "Mistral call failed after 5 retries: magistral-small-latest"
+      },
+      "truthfulqa_n80": {
+        "error": "Mistral call failed after 5 retries: magistral-small-latest"
+      }
+    }
+  },
+  "ministral-3b": {
+    "provider": "mistral",
+    "model": "ministral-3b-latest",
+    "family": "mistral",
+    "cells": {
+      "arc_n80": {
+        "n": 80,
+        "accuracy": 0.8,
+        "unparsed": 0,
+        "latency_mean": 0.393,
+        "latency_p90": 0.52,
+        "tokens_out_mean": 2
+      },
+      "mmlu_n80": {
+        "n": 80,
+        "accuracy": 0.5,
+        "unparsed": 2,
+        "latency_mean": 0.411,
+        "latency_p90": 0.496,
+        "tokens_out_mean": 8.3
+      },
+      "mmlu_pro_n80": {
+        "n": 80,
+        "accuracy": 0.425,
+        "unparsed": 0,
+        "latency_mean": 0.448,
+        "latency_p90": 0.494,
+        "tokens_out_mean": 18.0
+      },
+      "truthfulqa_n80": {
+        "n": 80,
+        "accuracy": 0.4375,
+        "unparsed": 0,
+        "latency_mean": 0.376,
+        "latency_p90": 0.444,
+        "tokens_out_mean": 2
+      }
+    }
+  },
+  "gemini-2.5-flash": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash",
+    "family": "gemini",
+    "cells": {
+      "arc_n80": {
+        "error": "Gemini call failed after 5 retries: gemini-2.5-flash"
+      },
+      "mmlu_n80": {
+        "error": "Gemini call failed after 5 retries: gemini-2.5-flash"
+      },
+      "mmlu_pro_n80": {
+        "error": "Gemini call failed after 5 retries: gemini-2.5-flash"
+      },
+      "truthfulqa_n80": {
+        "error": "Gemini call failed after 5 retries: gemini-2.5-flash"
+      }
+    }
+  }
+}

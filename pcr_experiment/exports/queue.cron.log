@@ -1,0 +1,4 @@
+[2026-09-04 09:42:12Z] === queue pass start (11 jobs) ===
+[2026-09-04 09:42:12Z] solo_sweep:arc+mmlu+mmlu_pro+truthfulqa:n80: running (status was deferred, attempts 0)
+[2026-09-05 14:16:27Z] === queue pass start (30 jobs) ===
+[2026-09-05 14:16:27Z] solo_sweep:arc+mmlu+mmlu_pro+truthfulqa:n80: running (status was deferred, attempts 0)

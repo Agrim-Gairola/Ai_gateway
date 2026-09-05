@@ -1,0 +1,356 @@
+[2026-09-04 17:59:09Z] === queue pass start (30 jobs) ===
+[2026-09-04 17:59:09Z] solo_sweep:arc+mmlu+mmlu_pro+truthfulqa:n80: running (status was deferred, attempts 0)
+[2026-09-04 18:12:01Z]   DEFERRED (rate-limited). tail: 
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+[2026-09-04 18:12:06Z] pcr2:pair8:mmlu: running (status was pending, attempts 0)
+[2026-09-04 18:13:06Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 18:13:11Z] pcr2:pair8:openbookqa: running (status was pending, attempts 0)
+[2026-09-04 18:14:33Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 18:14:38Z] pcr2:pair8:commonsenseqa: running (status was pending, attempts 0)
+[2026-09-04 18:15:50Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 18:15:55Z] pcr2:pair8:gsm8k: running (status was pending, attempts 0)
+[2026-09-04 18:16:48Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 18:16:53Z] pcr2:pair9:mmlu: running (status was pending, attempts 0)
+[2026-09-04 18:18:02Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 18:18:07Z] pcr2:pair9:openbookqa: running (status was pending, attempts 0)
+[2026-09-04 18:21:55Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 18:22:00Z] pcr2:pair9:commonsenseqa: running (status was pending, attempts 0)
+[2026-09-04 18:30:06Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 18:30:11Z] pcr2:pair9:gsm8k: running (status was pending, attempts 0)
+[2026-09-04 18:31:27Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 18:31:32Z] pcr2:pair7:gsm8k: running (status was pending, attempts 0)
+[2026-09-04 18:45:11Z]   ok (rc=0)
+[2026-09-04 18:45:16Z] pcr2:pair6:openbookqa: running (status was pending, attempts 0)
+[2026-09-04 18:46:23Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-small-latest
+[2026-09-04 18:46:28Z] pcr2:pair10:truthfulqa: running (status was deferred, attempts 0)
+[2026-09-04 18:59:45Z]   ok (rc=0)
+[2026-09-04 18:59:50Z] pcr2:pair11:truthfulqa: running (status was deferred, attempts 0)
+[2026-09-04 19:13:22Z]   ok (rc=0)
+[2026-09-04 19:13:27Z] pcr2:pair10:mmlu_pro: running (status was deferred, attempts 0)
+[2026-09-04 19:15:53Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:15:58Z] pcr2:pair11:arc: running (status was deferred, attempts 0)
+[2026-09-04 19:17:02Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:17:07Z] pcr2:pair11:mmlu_pro: running (status was deferred, attempts 0)
+[2026-09-04 19:19:19Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:19:24Z] pcr2:pair3:truthfulqa: running (status was pending, attempts 0)
+[2026-09-04 19:21:12Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:21:17Z] pcr2:pair3:mmlu_pro: running (status was pending, attempts 0)
+[2026-09-04 19:23:46Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:23:51Z] pcr2:pair6:gsm8k: running (status was pending, attempts 0)
+[2026-09-04 19:24:58Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-small-latest
+[2026-09-04 19:25:03Z] pcr2:pair10:gsm8k: running (status was pending, attempts 0)
+[2026-09-04 19:27:45Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:27:50Z] pcr2:pair11:gsm8k: running (status was pending, attempts 0)
+[2026-09-04 19:28:54Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:28:59Z] pcr2:pair3:openbookqa: running (status was pending, attempts 0)
+[2026-09-04 19:30:52Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:30:57Z] pcr2:pair3:commonsenseqa: running (status was pending, attempts 0)
+[2026-09-04 19:32:23Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:32:28Z] pcr2:pair6:commonsenseqa: running (status was pending, attempts 0)
+[2026-09-04 19:33:35Z]   ERROR (rc=1). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-small-latest
+[2026-09-04 19:33:40Z] pcr2:pair10:openbookqa: running (status was pending, attempts 0)
+[2026-09-04 19:39:57Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:40:02Z] pcr2:pair10:commonsenseqa: running (status was pending, attempts 0)
+[2026-09-04 19:45:47Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:45:52Z] pcr2:pair11:openbookqa: running (status was pending, attempts 0)
+[2026-09-04 19:49:54Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:49:59Z] pcr2:pair11:commonsenseqa: running (status was pending, attempts 0)
+[2026-09-04 19:51:56Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:52:01Z] pcr2:pair10:mmlu: running (status was deferred, attempts 0)
+[2026-09-04 19:56:46Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 19:56:51Z] pcr2:pair11:mmlu: running (status was deferred, attempts 0)
+[2026-09-04 20:00:16Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:02:09Z] rebuilt exports/figures
+
+=====================================================================
+QUEUE STATUS
+=====================================================================
+  solo_sweep:arc+mmlu+mmlu_pro+truthfulqa:n80   deferred   
+  pcr2:pair8:mmlu                               error      attempts=1
+  pcr2:pair8:openbookqa                         error      attempts=1
+  pcr2:pair8:commonsenseqa                      error      attempts=1
+  pcr2:pair8:gsm8k                              error      attempts=1
+  pcr2:pair9:mmlu                               error      attempts=1
+  pcr2:pair9:openbookqa                         error      attempts=1
+  pcr2:pair9:commonsenseqa                      error      attempts=1
+  pcr2:pair9:gsm8k                              error      attempts=1
+  pcr2:pair7:gsm8k                              done       
+  pcr2:pair6:openbookqa                         error      attempts=1
+  pcr2:pair10:truthfulqa                        done       
+  pcr2:pair11:truthfulqa                        done       
+  pcr2:pair10:mmlu_pro                          deferred   
+  pcr2:pair11:arc                               deferred   
+  pcr2:pair11:mmlu_pro                          deferred   
+  pcr2:pair3:truthfulqa                         deferred   
+  pcr2:pair3:mmlu_pro                           deferred   
+  pcr2:pair6:gsm8k                              error      attempts=1
+  pcr2:pair10:gsm8k                             deferred   
+  pcr2:pair11:gsm8k                             deferred   
+  pcr2:pair3:openbookqa                         deferred   
+  pcr2:pair3:commonsenseqa                      deferred   
+  pcr2:pair6:commonsenseqa                      error      attempts=1
+  pcr2:pair10:openbookqa                        deferred   
+  pcr2:pair10:commonsenseqa                     deferred   
+  pcr2:pair11:openbookqa                        deferred   
+  pcr2:pair11:commonsenseqa                     deferred   
+  pcr2:pair10:mmlu                              deferred   
+  pcr2:pair11:mmlu                              deferred   
+---------------------------------------------------------------------
+  deferred=16  done=3  error=11
+[2026-09-04 20:02:09Z] === queue pass done. {'deferred': 16, 'error': 11, 'done': 3} ===
+CONSISTENCY QUEUE PASS DONE Sat Sep  5 01:32:09 IST 2026
+[2026-09-04 20:08:01Z] === queue pass start (30 jobs) ===
+[2026-09-04 20:08:01Z] solo_sweep:arc+mmlu+mmlu_pro+truthfulqa:n80: running (status was deferred, attempts 0)
+[2026-09-04 20:20:19Z]   DEFERRED (rate-limited). tail: 
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+[2026-09-04 20:20:24Z] pcr2:pair10:mmlu_pro: running (status was deferred, attempts 0)
+[2026-09-04 20:23:27Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:23:32Z] pcr2:pair11:arc: running (status was deferred, attempts 0)
+[2026-09-04 20:39:28Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:39:33Z] pcr2:pair11:mmlu_pro: running (status was deferred, attempts 0)
+[2026-09-04 20:40:40Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:40:45Z] pcr2:pair3:truthfulqa: running (status was deferred, attempts 0)
+[2026-09-04 20:42:56Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:43:01Z] pcr2:pair3:mmlu_pro: running (status was deferred, attempts 0)
+[2026-09-04 20:44:11Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:44:16Z] pcr2:pair10:gsm8k: running (status was deferred, attempts 0)
+[2026-09-04 20:45:36Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:45:41Z] pcr2:pair11:gsm8k: running (status was deferred, attempts 0)
+[2026-09-04 20:46:44Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:46:49Z] pcr2:pair3:openbookqa: running (status was deferred, attempts 0)
+[2026-09-04 20:49:57Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:50:02Z] pcr2:pair3:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-04 20:53:24Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:53:29Z] pcr2:pair10:openbookqa: running (status was deferred, attempts 0)
+[2026-09-04 20:57:03Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 20:57:08Z] pcr2:pair10:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-04 21:00:34Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 21:00:39Z] pcr2:pair11:openbookqa: running (status was deferred, attempts 0)
+[2026-09-04 21:04:00Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 21:04:05Z] pcr2:pair11:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-04 21:05:54Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 21:05:59Z] pcr2:pair10:mmlu: running (status was deferred, attempts 0)
+[2026-09-04 21:09:12Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 21:09:17Z] pcr2:pair11:mmlu: running (status was deferred, attempts 0)
+[2026-09-04 21:11:41Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-04 21:11:46Z] pcr2:pair8:mmlu: running (status was pending, attempts 0)
+[2026-09-04 21:12:52Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 21:12:57Z] pcr2:pair8:openbookqa: running (status was pending, attempts 0)
+[2026-09-04 21:13:56Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 21:14:01Z] pcr2:pair8:commonsenseqa: running (status was pending, attempts 0)
+[2026-09-04 21:14:53Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 21:14:58Z] pcr2:pair8:gsm8k: running (status was pending, attempts 0)
+[2026-09-04 21:15:53Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 21:15:58Z] pcr2:pair9:mmlu: running (status was pending, attempts 0)
+[2026-09-04 21:16:53Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 21:16:58Z] pcr2:pair9:openbookqa: running (status was pending, attempts 0)
+[2026-09-04 21:17:53Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 21:17:58Z] pcr2:pair9:commonsenseqa: running (status was pending, attempts 0)
+[2026-09-04 21:20:06Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 21:20:11Z] pcr2:pair9:gsm8k: running (status was pending, attempts 0)
+[2026-09-04 21:21:08Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-medium-latest
+[2026-09-04 21:21:13Z] pcr2:pair6:openbookqa: running (status was pending, attempts 0)
+[2026-09-04 21:22:07Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-small-latest
+[2026-09-04 21:22:12Z] pcr2:pair6:gsm8k: running (status was pending, attempts 0)
+[2026-09-04 21:23:04Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-small-latest
+[2026-09-04 21:23:09Z] pcr2:pair6:commonsenseqa: running (status was pending, attempts 0)
+[2026-09-04 21:24:03Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 313, in call_mistral
+    raise RuntimeError(f"Mistral call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Mistral call failed after 5 retries: mistral-small-latest
+[2026-09-04 21:25:17Z] rebuilt exports/figures
+
+=====================================================================
+QUEUE STATUS
+=====================================================================
+  solo_sweep:arc+mmlu+mmlu_pro+truthfulqa:n80   deferred   
+  pcr2:pair7:gsm8k                              done       
+  pcr2:pair10:truthfulqa                        done       
+  pcr2:pair11:truthfulqa                        done       
+  pcr2:pair10:mmlu_pro                          deferred   
+  pcr2:pair11:arc                               deferred   
+  pcr2:pair11:mmlu_pro                          deferred   
+  pcr2:pair3:truthfulqa                         deferred   
+  pcr2:pair3:mmlu_pro                           deferred   
+  pcr2:pair10:gsm8k                             deferred   
+  pcr2:pair11:gsm8k                             deferred   
+  pcr2:pair3:openbookqa                         deferred   
+  pcr2:pair3:commonsenseqa                      deferred   
+  pcr2:pair10:openbookqa                        deferred   
+  pcr2:pair10:commonsenseqa                     deferred   
+  pcr2:pair11:openbookqa                        deferred   
+  pcr2:pair11:commonsenseqa                     deferred   
+  pcr2:pair10:mmlu                              deferred   
+  pcr2:pair11:mmlu                              deferred   
+  pcr2:pair8:mmlu                               deferred   
+  pcr2:pair8:openbookqa                         deferred   
+  pcr2:pair8:commonsenseqa                      deferred   
+  pcr2:pair8:gsm8k                              deferred   
+  pcr2:pair9:mmlu                               deferred   
+  pcr2:pair9:openbookqa                         deferred   
+  pcr2:pair9:commonsenseqa                      deferred   
+  pcr2:pair9:gsm8k                              deferred   
+  pcr2:pair6:openbookqa                         deferred   
+  pcr2:pair6:gsm8k                              deferred   
+  pcr2:pair6:commonsenseqa                      deferred   
+---------------------------------------------------------------------
+  deferred=27  done=3
+[2026-09-04 21:25:17Z] === queue pass done. {'deferred': 27, 'done': 3} ===
+CONSISTENCY QUEUE PASS 2 DONE Sat Sep  5 02:55:17 IST 2026

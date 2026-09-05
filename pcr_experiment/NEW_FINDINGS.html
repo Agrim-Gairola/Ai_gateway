@@ -1,0 +1,458 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PCR Focused-Wave Findings</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#f6f7f9; --surface:#ffffff; --surface-2:#f0f2f5;
+    --ink:#191d24; --ink-soft:#5f6875; --rule:#e2e6ec; --rule-strong:#cdd4dd;
+    --accent:#3a6ea5; --accent-soft:#e7eef6; --flag:#a95a2c; --flag-soft:#f5e9e0;
+    --sig:#3f7d58;
+    --shadow:0 1px 2px rgba(20,30,45,.04),0 8px 24px -12px rgba(20,30,45,.10);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --ground:#121519; --surface:#1a1e25; --surface-2:#22272f;
+      --ink:#e7eaef; --ink-soft:#98a2b0; --rule:#2a303a; --rule-strong:#3a414d;
+      --accent:#6ea3d6; --accent-soft:#1f2c3a; --flag:#d98a56; --flag-soft:#33261d;
+      --sig:#63ab81;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#121519; --surface:#1a1e25; --surface-2:#22272f;
+    --ink:#e7eaef; --ink-soft:#98a2b0; --rule:#2a303a; --rule-strong:#3a414d;
+    --accent:#6ea3d6; --accent-soft:#1f2c3a; --flag:#d98a56; --flag-soft:#33261d;
+    --sig:#63ab81;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.55);
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:"Newsreader",Georgia,"Times New Roman",serif;
+    font-size:19px;line-height:1.62;font-weight:400;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:52rem;margin:0 auto;padding:clamp(1.5rem,4vw,4.5rem) clamp(1.1rem,4vw,2.5rem) 5rem}
+  h1,h2,h3,.eyebrow,th,.k,.metao{font-family:"Archivo",system-ui,sans-serif}
+  h1{font-weight:800;font-size:clamp(2rem,5vw,3rem);line-height:1.06;letter-spacing:-.02em;margin:.2rem 0 .6rem;text-wrap:balance}
+  .lede{font-size:1.22rem;color:var(--ink-soft);max-width:40rem;line-height:1.5;margin:0 0 1.8rem}
+  h2{font-weight:700;font-size:clamp(1.4rem,3.2vw,1.85rem);letter-spacing:-.015em;line-height:1.15;margin:0 0 .5rem;text-wrap:balance}
+  h3{font-weight:600;font-size:1rem;letter-spacing:.02em;margin:1.7rem 0 .5rem;color:var(--accent)}
+  p{margin:0 0 1.05rem}
+  a{color:var(--accent);text-underline-offset:2px}
+  strong{font-weight:600}
+  .eyebrow{display:flex;align-items:baseline;gap:.7rem;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+  .eyebrow .num{font-size:.8rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  header.doc{border-bottom:1px solid var(--rule);padding-bottom:1.6rem;margin-bottom:2.4rem}
+  .kicker{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.78rem;letter-spacing:.03em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:1rem}
+  .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:.1rem 1.4rem;margin-top:1.4rem;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.8rem}
+  .meta div{padding:.5rem 0;border-top:1px solid var(--rule)}
+  .meta .k{display:block;color:var(--ink-soft);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.15rem}
+  .meta .v{color:var(--ink);font-variant-numeric:tabular-nums}
+  .callout{background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--ink-soft);border-radius:0 7px 7px 0;padding:.7rem 1rem;font-size:.9rem;color:var(--ink-soft);margin:1.2rem 0 0}
+  section{margin:3.2rem 0}
+  .takeaway{border-left:3px solid var(--accent);background:var(--accent-soft);padding:.85rem 1.1rem;margin:0 0 1.3rem;font-size:1.06rem;line-height:1.5;border-radius:0 5px 5px 0}
+  .takeaway.flag{border-left-color:var(--flag);background:var(--flag-soft)}
+  .twrap{overflow-x:auto;margin:1.4rem 0 1.5rem;border:1px solid var(--rule);border-radius:9px;box-shadow:var(--shadow);background:var(--surface)}
+  table{border-collapse:collapse;width:100%;font-family:"Archivo",system-ui,sans-serif;font-size:.85rem}
+  th,td{padding:.58rem .8rem;text-align:right;white-space:nowrap}
+  th:first-child,td:first-child{text-align:left;white-space:normal}
+  thead th{font-weight:600;font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--rule-strong);background:var(--surface-2)}
+  tbody td{border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr.em td{background:var(--surface-2);font-weight:600}
+  tbody tr.ref td{color:var(--ink-soft)}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.92em}
+  .sig{color:var(--sig);font-weight:600}
+  .null{color:var(--ink-soft)}
+  .neg{color:var(--flag);font-weight:600}
+  caption{caption-side:bottom;text-align:left;color:var(--ink-soft);font-size:.78rem;font-family:"Archivo",sans-serif;padding:.7rem .8rem;line-height:1.45}
+  figure{margin:1.6rem 0 1.4rem}
+  .chart{background:var(--surface);border:1px solid var(--rule);border-radius:11px;padding:1.2rem 1.1rem .9rem;box-shadow:var(--shadow)}
+  .chart h3{margin:.1rem 0 .9rem;font-family:"Archivo",sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.01em;color:var(--ink)}
+  .chart svg{display:block;width:100%;height:auto;overflow:visible}
+  .clab{font-family:"IBM Plex Mono",monospace;font-size:11px;fill:var(--ink-soft)}
+  .cval{font-family:"IBM Plex Mono",monospace;font-size:11px;fill:var(--ink);font-weight:500}
+  .ctitle{font-family:"Archivo",sans-serif;font-size:11px;fill:var(--ink-soft);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  figcaption{color:var(--ink-soft);font-size:.8rem;font-family:"Archivo",sans-serif;margin-top:.6rem;line-height:1.45}
+  .legend{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin:.2rem 0 .9rem;font-family:"Archivo",sans-serif;font-size:.78rem;color:var(--ink-soft)}
+  .legend span{display:inline-flex;align-items:center;gap:.4rem}
+  .sw{width:11px;height:11px;border-radius:3px;flex:none}
+  ul.tight{margin:.2rem 0 1.1rem;padding-left:1.2rem}
+  ul.tight li{margin:.3rem 0}
+  .grid2{display:grid;grid-template-columns:1fr;gap:1.4rem}
+  @media(min-width:44rem){.grid2{grid-template-columns:1fr 1fr}}
+  .panel{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:1.1rem 1.2rem;box-shadow:var(--shadow)}
+  .panel h3{margin-top:0;color:var(--ink)}
+  footer{margin-top:4rem;padding-top:1.6rem;border-top:1px solid var(--rule);color:var(--ink-soft);font-size:.82rem}
+  footer .manifest{font-family:"IBM Plex Mono",monospace;font-size:.75rem;line-height:1.7;white-space:pre-wrap;background:var(--surface);border:1px solid var(--rule);border-radius:9px;padding:1rem 1.1rem;margin:.8rem 0;overflow-x:auto}
+  hr{border:none;border-top:1px solid var(--rule);margin:2.6rem 0}
+</style>
+</head><body>
+
+<div class="wrap">
+
+<header class="doc">
+  <div class="kicker">Parallel Consensus Routing &middot; experimental supplement</div>
+  <h1>Coordinated hallucination scales with question difficulty, not model family</h1>
+  <p class="lede">Three focused waves add four benchmarks and four model pairs to the PCR study.
+  Five findings, 24 of 26 target cells complete, total additional spend&nbsp;$0.</p>
+  <div class="meta">
+    <div><span class="k">Date</span><span class="v">2026-09-03</span></div>
+    <div><span class="k">New benchmarks</span><span class="v">TruthfulQA, MMLU-Pro, OpenBookQA, CommonsenseQA</span></div>
+    <div><span class="k">New pairs</span><span class="v">pair6, pair7, pair8, pair9</span></div>
+    <div><span class="k">Family pairs</span><span class="v">7 &middot; 4 families</span></div>
+    <div><span class="k">Benchmarks</span><span class="v">6</span></div>
+    <div><span class="k">Bootstrap iters</span><span class="v">10,000</span></div>
+  </div>
+  <div class="callout">Two cross-family cells (<span class="mono">pair6/openbookqa</span> 192/200,
+  <span class="mono">pair6/commonsenseqa</span> 16/200) were cut off by the <span class="mono">gpt-oss-20b</span>
+  200k&nbsp;tokens/day Groq cap; they resume with the same command after the daily reset.</div>
+</header>
+
+<section>
+  <h2 style="color:var(--ink)">Setup</h2>
+  <p>The original paper characterised coordinated hallucination (C-Hall) &mdash; two cheap models
+  agreeing on the same wrong answer &mdash; as a split between <em>knowledge</em> (&asymp;9%) and
+  <em>math</em> (31.8%). The 20&nbsp;August report then asked whether <em>model-family relatedness</em>
+  drives C-Hall, and found the pairwise differences indistinguishable from zero at N&nbsp;=&nbsp;500/pair.</p>
+  <p>This work adds four benchmarks &mdash; <strong>TruthfulQA</strong> (adversarial misconceptions),
+  <strong>MMLU-Pro</strong> (harder, up to 10 options), <strong>OpenBookQA</strong> and
+  <strong>CommonsenseQA</strong> &mdash; and four capability-matched pairs, each holding its frontier
+  constant so family relatedness is the only manipulated variable:</p>
+  <div class="twrap"><table>
+    <thead><tr><th>Pair</th><th>Condition</th><th>Cheap A + Cheap B</th><th>Frontier</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">pair6</td><td>cross-family</td><td class="mono">gpt-oss-20b + mistral-small</td><td class="mono">gpt-oss-120b</td></tr>
+      <tr><td class="mono">pair7</td><td>within-family</td><td class="mono">qwen3.8-27b + qwen3.6-27b</td><td class="mono">gpt-oss-120b</td></tr>
+      <tr><td class="mono">pair8</td><td>within-family (non-Groq)</td><td class="mono">ministral-3b + ministral-8b</td><td class="mono">mistral-medium</td></tr>
+      <tr><td class="mono">pair9</td><td>cross-family (non-Groq)</td><td class="mono">ministral-8b + gemini-flash-lite</td><td class="mono">mistral-medium</td></tr>
+    </tbody>
+  </table></div>
+  <p>The family comparison now spans <strong>7 pilot pairs across 4 model families</strong> (gpt-oss,
+  Qwen, Mistral, plus cross-family mixes) on six benchmarks.</p>
+</section>
+
+<hr>
+
+<section>
+  <div class="eyebrow"><span class="num">01</span><span>Generalisation</span></div>
+  <h2 style="color:var(--ink)">Coordinated hallucination scales with benchmark difficulty, not task type</h2>
+  <div class="takeaway flag">Across six knowledge benchmarks, C-Hall climbs smoothly with question
+  difficulty &mdash; from <strong>2% to ~30%</strong> &mdash; with no change in task type. MMLU-Pro
+  matches the paper&rsquo;s GSM8K figure on a plain letter task with no extraction ambiguity.</div>
+
+  <figure>
+    <div class="chart">
+      <h3>Mean C-Hall rate on agreed questions, by benchmark (all pairs)</h3>
+      <svg viewBox="0 0 620 262" role="img" aria-label="Mean C-Hall rate by benchmark, ascending">
+        <g class="clab">
+          <line x1="150" y1="10" x2="150" y2="210" stroke="var(--rule-strong)"/>
+          <line x1="313" y1="10" x2="313" y2="210" stroke="var(--rule)"/>
+          <line x1="476" y1="10" x2="476" y2="210" stroke="var(--rule)"/>
+          <line x1="150" y1="210" x2="600" y2="210" stroke="var(--rule-strong)"/>
+          <text x="150" y="228" text-anchor="middle">0%</text>
+          <text x="313" y="228" text-anchor="middle">15%</text>
+          <text x="476" y="228" text-anchor="middle">30%</text>
+        </g>
+        <g>
+          <text class="clab" x="140" y="30" text-anchor="end">OpenBookQA</text>
+          <rect x="150" y="21" width="22"  height="12" rx="2" fill="var(--accent)"/>
+          <text class="cval" x="180" y="31">2%</text>
+          <text class="clab" x="140" y="61" text-anchor="end">ARC</text>
+          <rect x="150" y="52" width="42"  height="12" rx="2" fill="var(--accent)"/>
+          <text class="cval" x="200" y="62">4%</text>
+          <text class="clab" x="140" y="92" text-anchor="end">CommonsenseQA</text>
+          <rect x="150" y="83" width="77"  height="12" rx="2" fill="var(--accent)"/>
+          <text class="cval" x="235" y="93">7%</text>
+          <text class="clab" x="140" y="123" text-anchor="end">MMLU</text>
+          <rect x="150" y="114" width="103" height="12" rx="2" fill="var(--accent)"/>
+          <text class="cval" x="261" y="124">10%</text>
+          <text class="clab" x="140" y="154" text-anchor="end">TruthfulQA</text>
+          <rect x="150" y="145" width="230" height="12" rx="2" fill="var(--flag)"/>
+          <text class="cval" x="388" y="155">21%</text>
+          <text class="clab" x="140" y="185" text-anchor="end">MMLU-Pro</text>
+          <rect x="150" y="176" width="321" height="12" rx="2" fill="var(--flag)"/>
+          <text class="cval" x="479" y="186">30%</text>
+        </g>
+        <text class="ctitle" x="150" y="252">agreed-answer error rate &mdash; higher = more silent failures</text>
+      </svg>
+    </div>
+    <figcaption>On the capability-matched pairs (pair6/pair7) MMLU-Pro C-Hall is ~27% &mdash; a letter
+    task, 256-token budget, &lt;3% unparsed &mdash; so it is not an artefact of a truncated answer budget
+    (cf. Finding&nbsp;5). Wave-3&rsquo;s mismatched pairs sit even higher (Finding&nbsp;3c), which is a
+    <em>pair</em>-quality effect, but they still land on the same rising ladder.</figcaption>
+  </figure>
+
+  <p><strong>Consequence for the paper.</strong> The prerequisite for safe PCR is not
+  &ldquo;task-type (knowledge vs math) awareness&rdquo; but <strong>difficulty / reliability-tier
+  awareness</strong>. The domain-calibrated threshold mechanism the paper proposes for MMLU domains
+  needs to generalise to a <em>difficulty</em>-calibrated one. This widens the paper&rsquo;s central
+  safety argument rather than contradicting it.</p>
+</section>
+
+<section>
+  <div class="eyebrow"><span class="num">02</span><span>Boundary condition</span></div>
+  <h2 style="color:var(--ink)">On frontier-hard benchmarks, PCR&rsquo;s accuracy looks fine while its safety breaks</h2>
+  <div class="takeaway">On MMLU-Pro the frontier is no more accurate on the disagreed tail (~72%) than
+  the cheap consensus is on the agreed set (~73%). PCR still shows a +7&ndash;11&nbsp;pp accuracy gain
+  &mdash; but purely from consensus routing, and ~27% of the &ldquo;trusted&rdquo; answers are wrong.</div>
+  <div class="twrap">
+    <table>
+      <caption>&ldquo;PCR gain&rdquo; = overall PCR &minus; the stronger cheap model&rsquo;s solo accuracy.
+      Reference MMLU rows in grey.</caption>
+      <thead><tr><th>Cell</th><th>acc &#124; agreed</th><th>frontier &#124; disagreed</th><th>overall PCR</th><th>best cheap</th><th>PCR gain</th><th>C-Hall (trusted)</th></tr></thead>
+      <tbody>
+        <tr><td>pair7 / MMLU-Pro</td><td>74.1%</td><td>70.7%</td><td>72.7%</td><td>62.0%</td><td>+10.7 pp</td><td class="neg">25.9%</td></tr>
+        <tr><td>pair6 / MMLU-Pro</td><td>72.7%</td><td>72.6%</td><td>72.7%</td><td>65.3%</td><td>+7.3 pp</td><td class="neg">27.3%</td></tr>
+        <tr><td>pair7 / TruthfulQA</td><td>85.7%</td><td>64.7%</td><td>83.3%</td><td>81.3%</td><td>+2.0 pp</td><td class="neg">14.3%</td></tr>
+        <tr><td>pair6 / TruthfulQA</td><td>80.2%</td><td>65.8%</td><td>76.0%</td><td>72.7%</td><td>+3.3 pp</td><td class="neg">19.8%</td></tr>
+        <tr class="ref"><td>pair7 / MMLU</td><td>88.7%</td><td>88.7%</td><td>84.0%</td><td>83.2%</td><td>+0.8 pp</td><td>11.3%</td></tr>
+        <tr class="ref"><td>pair6 / MMLU</td><td>90.8%</td><td>84.0%</td><td>85.6%</td><td>80.4%</td><td>+5.2 pp</td><td>9.2%</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>PCR&rsquo;s +7&ndash;11&nbsp;pp gain on MMLU-Pro comes from <em>consensus routing</em> (trusting
+  agreement filters to the easier questions), not from the frontier fixing the hard ones. PCR passes
+  the accuracy check and fails the safety check on the same benchmark at the same time. On the
+  <em>easy</em> benchmarks the opposite limit holds: the cheap models are already near ceiling, so PCR
+  gain is &asymp;0. PCR&rsquo;s real value band is the middle (MMLU-like); the paper&rsquo;s
+  &ldquo;super-frontier&rdquo; MMLU result (+13.2&nbsp;pp) is a best case, not a general one.</p>
+</section>
+
+<section>
+  <div class="eyebrow"><span class="num">03</span><span>Hypothesis test</span></div>
+  <h2 style="color:var(--ink)">Family relatedness: robust on agreement, null on coordinated hallucination &mdash; and the binding constraint is capability matching</h2>
+  <div class="takeaway">Same-family cheap pairs agree more often (per-benchmark gaps +11 to +21&nbsp;pp),
+  but that extra agreement is <strong>not</strong> disproportionately wrong: the C-Hall gap is
+  +2.1&nbsp;pp, 95% CI&nbsp;[&minus;2.6,&nbsp;+6.2], in every properly capability-matched comparison.</div>
+
+  <h3>3a &nbsp; Agreement rate &mdash; within-family pairs agree more</h3>
+  <p>Bootstrap 95% CIs on the (within &minus; cross) gap: ARC <strong>+11.3&nbsp;pp</strong> [+7.9, +14.6],
+  OpenBookQA <strong>+11.7</strong> [+5.5, +17.8], TruthfulQA <strong>+14.7</strong> [+6.0, +23.3],
+  MMLU-Pro <strong>+20.7</strong> [+10.0, +31.3], GSM8K <strong>+43.9</strong> [+36.3, +51.2] &mdash; all
+  exclude zero. MMLU is the exception (&minus;3.0&nbsp;pp, spans 0). The conservative pair-level pool
+  (3 within vs 4 cross pairs, each one draw) is <strong>+10.6&nbsp;pp, CI [&minus;2.3, +24.7]</strong>
+  &mdash; real per-benchmark, marginal when each pair counts once.</p>
+
+  <h3>3b &nbsp; Coordinated hallucination &mdash; no effect in any matched comparison</h3>
+  <figure>
+    <div class="chart">
+      <h3>Within-family &minus; cross-family gap, with 95% bootstrap CI</h3>
+      <div class="legend">
+        <span><span class="sw" style="background:var(--ink)"></span>CI excludes 0</span>
+        <span><span class="sw" style="background:var(--rule-strong)"></span>CI spans 0 (no detectable effect)</span>
+      </div>
+      <svg viewBox="0 0 640 352" role="img" aria-label="Forest plot of within minus cross family gaps">
+        <g class="clab">
+          <line x1="169" y1="22" x2="169" y2="286" stroke="var(--rule)"/>
+          <line x1="311" y1="22" x2="311" y2="300" stroke="var(--ink-soft)" stroke-dasharray="3 3"/>
+          <line x1="453" y1="22" x2="453" y2="286" stroke="var(--rule)"/>
+          <line x1="595" y1="22" x2="595" y2="286" stroke="var(--rule)"/>
+          <text x="169" y="316" text-anchor="middle">&minus;25</text>
+          <text x="311" y="316" text-anchor="middle">0</text>
+          <text x="453" y="316" text-anchor="middle">+25</text>
+          <text x="595" y="316" text-anchor="middle">+50</text>
+          <text class="ctitle" x="311" y="336" text-anchor="middle">gap in percentage points</text>
+        </g>
+        <text class="ctitle" x="8" y="18">Agreement rate</text>
+        <g>
+          <text class="clab" x="132" y="39" text-anchor="end">ARC</text>
+          <line x1="356" y1="35" x2="394" y2="35" stroke="var(--ink)" stroke-width="2"/>
+          <circle cx="375" cy="35" r="4.5" fill="var(--ink)"/>
+          <text class="clab" x="132" y="61" text-anchor="end">OpenBookQA</text>
+          <line x1="342" y1="57" x2="412" y2="57" stroke="var(--ink)" stroke-width="2"/>
+          <circle cx="378" cy="57" r="4.5" fill="var(--ink)"/>
+          <text class="clab" x="132" y="83" text-anchor="end">MMLU</text>
+          <line x1="268" y1="79" x2="321" y2="79" stroke="var(--rule-strong)" stroke-width="2"/>
+          <circle cx="294" cy="79" r="4.5" fill="var(--rule-strong)"/>
+          <text class="clab" x="132" y="105" text-anchor="end">TruthfulQA</text>
+          <line x1="345" y1="101" x2="444" y2="101" stroke="var(--ink)" stroke-width="2"/>
+          <circle cx="395" cy="101" r="4.5" fill="var(--ink)"/>
+          <text class="clab" x="132" y="127" text-anchor="end">MMLU-Pro</text>
+          <line x1="368" y1="123" x2="489" y2="123" stroke="var(--ink)" stroke-width="2"/>
+          <circle cx="429" cy="123" r="4.5" fill="var(--ink)"/>
+          <text class="clab" x="132" y="149" text-anchor="end">ALL (bal.)</text>
+          <line x1="298" y1="145" x2="452" y2="145" stroke="var(--rule-strong)" stroke-width="2.5"/>
+          <circle cx="371" cy="145" r="5" fill="var(--rule-strong)"/>
+        </g>
+        <text class="ctitle" x="8" y="188">Coordinated hallucination</text>
+        <g>
+          <text class="clab" x="132" y="209" text-anchor="end">ARC</text>
+          <line x1="307" y1="205" x2="332" y2="205" stroke="var(--rule-strong)" stroke-width="2"/>
+          <circle cx="319" cy="205" r="4.5" fill="var(--rule-strong)"/>
+          <text class="clab" x="132" y="231" text-anchor="end">MMLU</text>
+          <line x1="295" y1="227" x2="337" y2="227" stroke="var(--rule-strong)" stroke-width="2"/>
+          <circle cx="316" cy="227" r="4.5" fill="var(--rule-strong)"/>
+          <text class="clab" x="132" y="253" text-anchor="end">TruthfulQA</text>
+          <line x1="225" y1="249" x2="334" y2="249" stroke="var(--rule-strong)" stroke-width="2"/>
+          <circle cx="280" cy="249" r="4.5" fill="var(--rule-strong)"/>
+          <text class="clab" x="132" y="275" text-anchor="end">MMLU-Pro</text>
+          <line x1="229" y1="271" x2="377" y2="271" stroke="var(--rule-strong)" stroke-width="2"/>
+          <circle cx="304" cy="271" r="4.5" fill="var(--rule-strong)"/>
+          <text class="clab" x="132" y="297" text-anchor="end">ALL (bal.)</text>
+          <line x1="296" y1="293" x2="346" y2="293" stroke="var(--rule-strong)" stroke-width="2.5"/>
+          <circle cx="323" cy="293" r="5" fill="var(--rule-strong)"/>
+        </g>
+      </svg>
+    </div>
+    <figcaption>Question-level bootstrap, 10,000 iterations; TruthfulQA / MMLU-Pro use only the
+    capability-matched pairs (pair7 within, pair6 cross). GSM8K agreement (+43.9&nbsp;pp) is off-scale
+    and omitted. Every C-Hall gap straddles zero; the agreement gap is significant per-benchmark and
+    marginal in the conservative pair-level pool.</figcaption>
+  </figure>
+  <p>Within-family cheap models agree substantially more, <strong>but that extra agreement is not
+  disproportionately wrong.</strong> The intuitive &ldquo;same training family &rArr; they hallucinate
+  together&rdquo; hypothesis is <strong>not supported</strong> by any properly matched comparison. What
+  drives C-Hall is the <strong>benchmark</strong> (Finding&nbsp;1), not the family relationship.</p>
+
+  <h3>3c &nbsp; Why this is hard to test &mdash; capability matching is the binding constraint</h3>
+  <p>Wave&nbsp;3 was meant to break the &ldquo;within-family = Groq-hosted&rdquo; confound with a
+  non-Groq Mistral within-family pair (pair8). It produced a striking-looking result &mdash; then
+  undercut it:</p>
+  <div class="twrap">
+    <table>
+      <caption>Wave-3 hard-benchmark cells. The two cheap models&rsquo; solo accuracies differ by far
+      more than the report&rsquo;s &plusmn;2&ndash;3&nbsp;pp matching criterion.</caption>
+      <thead><tr><th>Pair / benchmark</th><th>C-Hall</th><th>cheap-A solo</th><th>cheap-B solo</th><th>solo gap</th></tr></thead>
+      <tbody>
+        <tr><td>pair8 (within) / TruthfulQA</td><td class="neg">38.6%</td><td>43.3%</td><td>60.0%</td><td class="neg">&minus;16.7 pp</td></tr>
+        <tr><td>pair8 (within) / MMLU-Pro</td><td class="neg">43.0%</td><td>36.7%</td><td>44.0%</td><td>&minus;7.3 pp</td></tr>
+        <tr><td>pair9 (cross) / TruthfulQA</td><td>12.2%</td><td>60.0%</td><td>84.0%</td><td class="neg">&minus;24.0 pp</td></tr>
+        <tr><td>pair9 (cross) / MMLU-Pro</td><td>21.7%</td><td>43.3%</td><td>61.3%</td><td class="neg">&minus;18.0 pp</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>At face value pair8&rsquo;s 38&ndash;43% C-Hall vs pair9&rsquo;s 12&ndash;22% is a <em>large</em>
+  within-family effect. But the last column kills it: <span class="mono">ministral-3b</span> is simply
+  weak (37% on MMLU-Pro); when it &ldquo;agrees&rdquo; with <span class="mono">ministral-8b</span> it is
+  often because both defaulted to the same plausible-but-wrong answer &mdash; a skill gap, not shared
+  family blind spots, the same failure mode that got <span class="mono">pair2/gsm8k</span> excluded.
+  Those four cells are excluded from the family pooling; the closer ARC cells are kept.</p>
+  <p><strong>This is itself a methods finding.</strong> The family hypothesis cannot be tested with
+  off-the-shelf same-series small-model pairs &mdash; a 3B&nbsp;+&nbsp;8B pair is systematically
+  mismatched. It needs two same-family models within ~3&nbsp;pp solo accuracy on the target benchmark
+  (<span class="mono">qwen3.6</span>&thinsp;/&thinsp;<span class="mono">qwen3.8</span>, &minus;0.5 to
+  +2&nbsp;pp, is the only qualifying pair on the hard benchmarks). Until more exist, the honest answer
+  to &ldquo;does family relatedness cause coordinated hallucination&rdquo; is <strong>no evidence that
+  it does, from the one clean test available.</strong></p>
+</section>
+
+<section>
+  <div class="eyebrow"><span class="num">04</span><span>Operational</span></div>
+  <h2 style="color:var(--ink)">Measured cost and latency &mdash; the saving tracks the escalation rate</h2>
+  <div class="takeaway">PCR cuts cost 60&ndash;72% versus always-frontier when escalation is low
+  (&le;12%), ~40% at ~28%, and ~10% once a benchmark is hard enough to push escalation past 50%.
+  The paper&rsquo;s 94.7% figure is MMLU-with-domain-calibration specific.</div>
+  <div class="twrap">
+    <table>
+      <caption>From per-call instrumentation (20 cells; representative rows). Dollar figures apply
+      public list prices to measured token counts; the runs were free-tier. &ldquo;vs cascade&rdquo; =
+      serial-cascade latency &divide; PCR latency.</caption>
+      <thead><tr><th>Cell</th><th>escalation</th><th>$/1k&nbsp;PCR</th><th>$/1k&nbsp;always-frontier</th><th>cost cut</th><th>PCR latency</th><th>vs cascade</th></tr></thead>
+      <tbody>
+        <tr><td>pair7 / OpenBookQA</td><td>5.0%</td><td>$0.028</td><td>$0.100</td><td class="sig">72%</td><td>0.49 s</td><td>1.33&times;</td></tr>
+        <tr><td>pair7 / CommonsenseQA</td><td>8.5%</td><td>$0.032</td><td>$0.104</td><td class="sig">69%</td><td>0.55 s</td><td>1.27&times;</td></tr>
+        <tr><td>pair7 / ARC</td><td>4.0%</td><td>$0.036</td><td>$0.108</td><td class="sig">66%</td><td>0.40 s</td><td>1.34&times;</td></tr>
+        <tr><td>pair7 / MMLU</td><td>11.6%</td><td>$0.072</td><td>$0.169</td><td>57%</td><td>0.53 s</td><td>1.28&times;</td></tr>
+        <tr><td>pair6 / MMLU</td><td>26.4%</td><td>$0.094</td><td>$0.163</td><td>42%</td><td>0.74 s</td><td>1.59&times;</td></tr>
+        <tr><td>pair6 / MMLU-Pro</td><td>48.7%</td><td>$0.216</td><td>$0.273</td><td>21%</td><td>1.15 s</td><td>1.40&times;</td></tr>
+        <tr><td>pair8 / MMLU-Pro</td><td>47.3%</td><td>$0.135</td><td>$0.148</td><td class="neg">9%</td><td>1.11 s</td><td>1.43&times;</td></tr>
+        <tr><td>pair4 / GSM8K</td><td>65.9%</td><td>$0.120</td><td>$0.134</td><td class="neg">11%</td><td>1.65 s</td><td>1.16&times;</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Second nuance: PCR is <strong>1.2&ndash;1.7&times; faster than a serial cascade</strong> (validating
+  the paper&rsquo;s latency claim) <strong>but not faster than always-frontier</strong> on Groq&rsquo;s
+  LPU &mdash; a single <span class="mono">gpt-oss-120b</span> call is ~0.5&nbsp;s, while PCR pays
+  <span class="mono">max(cheap_a, cheap_b)</span> plus a frontier call on escalations. PCR&rsquo;s latency
+  advantage is architectural (versus cascading), not absolute. The Mistral-stack pair8/pair9 latencies
+  are noisier (some Gemini calls ran 3&ndash;8&nbsp;s) and are indicative only.</p>
+</section>
+
+<section>
+  <div class="eyebrow"><span class="num">05</span><span>Caveat &mdash; not re-run</span></div>
+  <h2 style="color:var(--ink)">The GSM8K 31.8% C-Hall figure looks answer-budget-sensitive</h2>
+  <div class="takeaway">Every post-instrumentation GSM8K run shows C-Hall 2.6&ndash;4.3% and
+  accuracy-when-agreed 95&ndash;97%, against the paper&rsquo;s 31.8% / 24.3%. Likely the 12-token answer
+  budget truncated multi-step solutions before the final number.</div>
+  <p>With a 12-token cap a worked solution is cut off mid-calculation and <span class="mono">extract_number()</span>
+  returns an <em>intermediate</em> value, inflating apparent disagreement and C-Hall. The current pipeline
+  uses 300 tokens. This does <strong>not</strong> weaken the safety thesis &mdash; MMLU-Pro (Finding&nbsp;1)
+  shows a genuine ~27% C-Hall on a letter task with an adequate budget &mdash; but the specific 31.8%
+  number should carry a caveat or be re-established with a controlled 12-vs-300 token A/B before being
+  cited as-is.</p>
+</section>
+
+<hr>
+
+<section>
+  <h2 style="color:var(--ink)">Methods delta &amp; limitations</h2>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Methods delta</h3>
+      <ul class="tight">
+        <li><strong>TruthfulQA</strong> MC1, validation split: the one true option + up to 5 sampled
+        distractors (&le;6 total), shuffled per-question so the answer isn&rsquo;t fixed at A.</li>
+        <li><strong>MMLU-Pro</strong> test split: options A&ndash;J, dataset <span class="mono">category</span>
+        kept as domain. 0&ndash;5 of 150&ndash;250 cheap responses per cell were empty after retries and
+        count as disagreement.</li>
+        <li><strong>OpenBookQA</strong> / <strong>CommonsenseQA</strong>: standard A&ndash;D / A&ndash;E
+        letter tasks (CommonsenseQA validation split).</li>
+        <li>Letter extraction generalised to A&ndash;J with an ordered fallback.</li>
+        <li>Cheap token budget 256 for the new MC benchmarks and MMLU on the new pairs. Historical
+        pair2/pair3 MMLU used 20/40 and is not re-run.</li>
+        <li>Frontiers: <span class="mono">gpt-oss-120b</span> on pair6/pair7;
+        <span class="mono">mistral-medium-latest</span> on pair8/pair9
+        (<span class="mono">mistral-large-latest</span> returned 403 <span class="mono">tier_not_allowed</span>
+        on the free tier).</li>
+        <li>Capability-mismatch exclusions from family pooling: <span class="mono">pair2/gsm8k</span>,
+        <span class="mono">pair8/{truthfulqa,mmlu_pro}</span>,
+        <span class="mono">pair9/{truthfulqa,mmlu_pro}</span> &mdash; shown in the per-cell tables,
+        excluded from the grand family means.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Limitations</h3>
+      <ul class="tight">
+        <li><strong>Pilot N</strong> (150&ndash;300 per cell); per-benchmark C-Hall CIs are &plusmn;3&ndash;14 pp.</li>
+        <li><strong>The Groq-hosting confound is only partly addressed.</strong> Wave&nbsp;3 added a
+        non-Groq within-family pair (pair8), but it is capability-mismatched, so the only <em>clean</em>
+        within-family evidence is still pair7 (<span class="mono">qwen3.6</span> /
+        <span class="mono">qwen3.8</span>), which is Groq-hosted. A capability-matched, non-Groq
+        within-family pair remains the key missing replicate.</li>
+        <li>One frontier per matched pair-set; Finding&nbsp;2 is specific to
+        <span class="mono">gpt-oss-120b</span>.</li>
+        <li>TruthfulQA reduced to 6 options for comparability; absolute C-Hall would shift with the full
+        MC1 set.</li>
+        <li><span class="mono">pair6/commonsenseqa</span> (16/200) and the last 8 of
+        <span class="mono">pair6/openbookqa</span> are unfinished &mdash; blocked on the
+        <span class="mono">gpt-oss-20b</span> daily token cap.</li>
+        <li><span class="mono">sentence-transformers</span> failed to load, so cosine similarity is null
+        for the new runs &mdash; the paper&rsquo;s own sweep shows binary agreement carries the signal.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>All analysis regenerates from checkpoints with <span class="mono">python -m pcr_experiment.make_figures</span>.</p>
+  <div class="manifest">pcr_experiment/
+  pcr_runner.py             + 4 benchmark loaders; A-J extraction; mmlu budget 20->256; crash-safe checkpoints
+  pcr_config.py             + pair6/7 (Groq matched pair); pair8/9 (non-Groq matched pair)
+  family_significance.py    NEW  bootstrap CI on within-vs-cross gap, mismatch-aware
+  cost_latency_analysis.py  NEW  measured $/1k and latency
+  make_figures.py           NEW  regenerates exports + 6 PNG figures
+  findings_digest.py        NEW  one-screen number dump
+  NEW_FINDINGS.md / .html   this supplement
+  checkpoints/pair6..9_*.json                       raw data (24 complete cells)
+    pair6_commonsenseqa.json.partial16              parked, resume after Groq reset
+  exports/                  pooled_analysis.json  family_significance.json  cost_latency_analysis.json
+  exports/figures/          fig1..fig6 .png</div>
+</footer>
+
+</div>
+</body></html>

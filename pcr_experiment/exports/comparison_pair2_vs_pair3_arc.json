@@ -1,0 +1,69 @@
+{
+  "benchmark": "arc",
+  "left_pair": "pair2",
+  "right_pair": "pair3",
+  "left_n": 100,
+  "right_n": 100,
+  "metrics": [
+    {
+      "metric": "agreement",
+      "left": 0.75,
+      "right": 0.88,
+      "difference": -0.13
+    },
+    {
+      "metric": "escalation",
+      "left": 0.25,
+      "right": 0.12,
+      "difference": 0.13
+    },
+    {
+      "metric": "accuracy_when_agreed",
+      "left": 0.92,
+      "right": 0.9204545454545454,
+      "difference": -0.0004545454545453742
+    },
+    {
+      "metric": "c_hall",
+      "left": 0.08,
+      "right": 0.07954545454545454,
+      "difference": 0.00045454545454545747
+    },
+    {
+      "metric": "pcr_accuracy",
+      "left": 0.91,
+      "right": 0.92,
+      "difference": -0.010000000000000009
+    },
+    {
+      "metric": "cheap_a",
+      "left": 0.72,
+      "right": 0.83,
+      "difference": -0.10999999999999999
+    },
+    {
+      "metric": "cheap_b",
+      "left": 0.9,
+      "right": 0.91,
+      "difference": -0.010000000000000009
+    },
+    {
+      "metric": "frontier_on_disagreement",
+      "left": 0.88,
+      "right": 0.9166666666666666,
+      "difference": -0.036666666666666625
+    }
+  ],
+  "bootstrap": {
+    "c_hall_difference": 0.00045454545454545747,
+    "c_hall_difference_95_ci": [
+      -0.08119099491648511,
+      0.08623321123321123
+    ],
+    "pcr_accuracy_difference": -0.010000000000000009,
+    "pcr_accuracy_difference_95_ci": [
+      -0.08999999999999997,
+      0.06999999999999995
+    ]
+  }
+}

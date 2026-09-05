@@ -1,0 +1,76 @@
+[2026-09-03 20:29:10Z] === queue pass start (11 jobs) ===
+[2026-09-03 20:29:10Z] solo_sweep:arc+mmlu+mmlu_pro+truthfulqa:n80: running (status was pending, attempts 0)
+[2026-09-03 21:54:00Z]   DEFERRED (rate-limited). tail: 
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+[2026-09-03 21:54:05Z] pcr3:mmlu_pro: running (status was pending, attempts 0)
+[2026-09-03 21:56:50Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-03 21:56:55Z] pcr3:truthfulqa: running (status was pending, attempts 0)
+[2026-09-03 21:58:08Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-03 21:58:13Z] pcr2:pair10:arc: running (status was pending, attempts 0)
+[2026-09-03 22:01:17Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-03 22:01:22Z] pcr2:pair10:mmlu: running (status was pending, attempts 0)
+[2026-09-03 22:02:19Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-03 22:02:24Z] pcr2:pair10:mmlu_pro: running (status was pending, attempts 0)
+[2026-09-03 22:04:15Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-03 22:04:20Z] pcr2:pair10:truthfulqa: running (status was pending, attempts 0)
+[2026-09-03 22:06:41Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-03 22:06:46Z] pcr2:pair11:arc: running (status was pending, attempts 0)
+[2026-09-03 22:08:39Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-03 22:08:44Z] pcr2:pair11:mmlu: running (status was pending, attempts 0)
+[2026-09-03 22:10:34Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-03 22:10:39Z] pcr2:pair11:mmlu_pro: running (status was pending, attempts 0)
+[2026-09-03 22:15:34Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-03 22:15:39Z] pcr2:pair11:truthfulqa: running (status was pending, attempts 0)
+[2026-09-03 22:18:28Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-03 22:20:01Z] rebuilt exports/figures
+
+=====================================================================
+QUEUE STATUS
+=====================================================================
+  solo_sweep:arc+mmlu+mmlu_pro+truthfulqa:n80   deferred   
+  pcr3:mmlu_pro                                 deferred   
+  pcr3:truthfulqa                               deferred   
+  pcr2:pair10:arc                               deferred   
+  pcr2:pair10:mmlu                              deferred   
+  pcr2:pair10:mmlu_pro                          deferred   
+  pcr2:pair10:truthfulqa                        deferred   
+  pcr2:pair11:arc                               deferred   
+  pcr2:pair11:mmlu                              deferred   
+  pcr2:pair11:mmlu_pro                          deferred   
+  pcr2:pair11:truthfulqa                        deferred   
+---------------------------------------------------------------------
+  deferred=11
+[2026-09-03 22:20:01Z] === queue pass done. {'deferred': 11} ===
+QUEUE MANUAL PASS DONE Fri Sep  4 03:50:01 IST 2026

@@ -1,0 +1,5215 @@
+{
+  "pair_id": "pair9",
+  "benchmark": "mmlu_pro",
+  "n_total": 150,
+  "cheap_a": "mistral:ministral-8b-latest",
+  "cheap_b": "gemini:gemini-flash-lite-latest",
+  "frontier": "mistral:mistral-medium-latest",
+  "results": [
+    {
+      "idx": 0,
+      "domain": "physics",
+      "gold": "A",
+      "resp_a": "E",
+      "resp_b": "E",
+      "ans_a": "E",
+      "ans_b": "E",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 160,
+          "tokens_out": 2,
+          "latency_seconds": 1.655,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 150,
+          "tokens_out": 1,
+          "latency_seconds": 1.145,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.655,
+        "total_latency_seconds": 1.655
+      }
+    },
+    {
+      "idx": 1,
+      "domain": "health",
+      "gold": "E",
+      "resp_a": "E",
+      "resp_b": "E",
+      "ans_a": "E",
+      "ans_b": "E",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 181,
+          "tokens_out": 2,
+          "latency_seconds": 0.474,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 185,
+          "tokens_out": 1,
+          "latency_seconds": 0.783,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.783,
+        "total_latency_seconds": 0.783
+      }
+    },
+    {
+      "idx": 2,
+      "domain": "math",
+      "gold": "B",
+      "resp_a": "C",
+      "resp_b": "To solve the system of equations using Cramer's rule:\n1. $2x + 3y = 10$\n2. $4x + 4y = 12$\n\nFirst, find the determinant of the coefficient matrix ($D$):\n$$D = \\begin{vmatrix} 2 & 3 \\\\ 4 & 4 \\end{vmatrix} = (2)(4) - (3)(4) = 8 - 12 = -4$$\n\nNext, find the determinant for $x$ ($D_x$) by replacing the first column with the constants:\n$$D_x = \\begin{vmatrix} 10 & 3 \\\\ 12 & 4 \\end{vmatrix} = (10)(4) - (3)(12) = 40 - 36 = 4$$\n\nThen, find $x$:\n$$x = \\frac{D_x}{D} = \\frac{4}{-4} = -1$$\n\nNext, find the determinant for $y$ ($D_y$) by replacing the second column with the constants:\n$$D_y = \\begin{",
+      "ans_a": "C",
+      "ans_b": "D",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 142,
+          "tokens_out": 2,
+          "latency_seconds": 0.781,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 151,
+          "tokens_out": 252,
+          "latency_seconds": 1.404,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 154,
+          "tokens_out": 2,
+          "latency_seconds": 0.484,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.404,
+        "total_latency_seconds": 1.888
+      }
+    },
+    {
+      "idx": 3,
+      "domain": "history",
+      "gold": "I",
+      "resp_a": "I",
+      "resp_b": "I",
+      "ans_a": "I",
+      "ans_b": "I",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 526,
+          "tokens_out": 2,
+          "latency_seconds": 0.376,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 515,
+          "tokens_out": 1,
+          "latency_seconds": 0.671,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.671,
+        "total_latency_seconds": 0.671
+      }
+    },
+    {
+      "idx": 4,
+      "domain": "economics",
+      "gold": "E",
+      "resp_a": "E",
+      "resp_b": "E",
+      "ans_a": "E",
+      "ans_b": "E",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 128,
+          "tokens_out": 2,
+          "latency_seconds": 0.415,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 134,
+          "tokens_out": 1,
+          "latency_seconds": 0.861,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.861,
+        "total_latency_seconds": 0.861
+      }
+    },
+    {
+      "idx": 5,
+      "domain": "math",
+      "gold": "H",
+      "resp_a": "H",
+      "resp_b": "To find the value of the expression, we can look at the well-known Fourier series expansion for $\\ln\\left(2\\cos\\left(\\frac{x}{2}\\right)\\right)$ for $-\\pi < x < \\pi$:\n\n$$\\sum_{n=1}^{\\infty} (-1)^{n-1} \\frac{\\cos(nx)}{n} = \\ln\\left(2\\cos\\left(\\frac{x}{2}\\right)\\right)$$\n\nSince both the numerator and the denominator are equal, their ratio is identically $1$ for all $x$ in the given interval.\n\nH",
+      "ans_a": "H",
+      "ans_b": "H",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 145,
+          "tokens_out": 2,
+          "latency_seconds": 0.759,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 141,
+          "tokens_out": 128,
+          "latency_seconds": 1.796,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.796,
+        "total_latency_seconds": 1.796
+      }
+    },
+    {
+      "idx": 6,
+      "domain": "engineering",
+      "gold": "D",
+      "resp_a": "C",
+      "resp_b": "To determine the anticipated hull speed for the prototype, we use the Froude number similitude, which governs ship model testing. The Froude number ($Fr$) is defined as:\n\n$$Fr = \\frac{V}{\\sqrt{gL}}$$\n\nFor dynamic similarity between the model and the prototype, their Froude numbers must be equal:\n\n$$\\frac{V_m}{\\sqrt{gL_m}} = \\frac{V_p}{\\sqrt{gL_p}}$$\n\nSolving for the prototype speed ($V_p$):\n\n$$V_p = V_m \\sqrt{\\frac{L_p}{L_m}}$$\n\nGiven:\n- Model length, $L_m = 3\\text{ m}$\n- Prototype length, $L_p = 300\\text{ m}$\n- Model speed, $V_m = 1.4\\text{ m/s}$\n\nSubstitute the values into the equation:\n\n$$V_p = 1.4 \\times \\sqrt{\\frac{300}{3}} = 1.4 \\times \\sqrt{100} = 1.4 \\times 10 =",
+      "ans_a": "C",
+      "ans_b": null,
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 177,
+          "tokens_out": 2,
+          "latency_seconds": 0.416,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 187,
+          "tokens_out": 252,
+          "latency_seconds": 1.306,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 189,
+          "tokens_out": 2,
+          "latency_seconds": 0.644,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.306,
+        "total_latency_seconds": 1.95
+      }
+    },
+    {
+      "idx": 7,
+      "domain": "engineering",
+      "gold": "H",
+      "resp_a": "D",
+      "resp_b": "To determine the correct decisions, we use the Bayes' decision rule for minimum risk.\n\nGiven:\n- $P(x_1) = 0.8$, which implies $P(x_2) = 1 - 0.8 = 0.2$.\n- $P(y_1|x_1) = 0.8$, so $P(y_2|x_1) = 1 - 0.8 = 0.2$.\n- $P(y_2|x_2) = 0.6$, so $P(y_1|x_2) = 1 - 0.6 = 0.4$.\n- Costs: $c(d_1|x_2) = 2c(d_2|x_1)$. Let $c(d_2|x_1) = C$, so $c(d_1|x_2) = 2C$.\n\nWe compute the joint probabilities $P(y, x) = P(y|x)P(x)$:\n- $P(y_1, x_1) = P(y_1|",
+      "ans_a": "D",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 379,
+          "tokens_out": 2,
+          "latency_seconds": 0.417,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 392,
+          "tokens_out": 252,
+          "latency_seconds": 1.413,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 391,
+          "tokens_out": 2,
+          "latency_seconds": 0.443,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.413,
+        "total_latency_seconds": 1.856
+      }
+    },
+    {
+      "idx": 8,
+      "domain": "business",
+      "gold": "F",
+      "resp_a": "B",
+      "resp_b": "To find the list price and net price, we can use the single equivalent discount rate for chain discounts of 30% and 10%.\n\n1. Calculate the net price factor:\n   $(1 - 0.30) \\times (1 - 0.10) = 0.70 \\times 0.90 = 0.63$\n\n2. The total discount rate is:\n   $1 - 0.63 = 0.37$ (or 37%)\n\n3. Since the discount amount is given as $248.40 and represents 37% of the list price ($L$):\n   $0.37 \\times L = 248.40$\n   $L = \\frac{248.40}{0.37} \\approx 671.35$\n\n4. Calculate the net price ($N$):\n   $N = L \\times 0.63 = 671.35 \\times 0.63 \\approx 422.95$\n\nMatching this with the given options:\nList",
+      "ans_a": "B",
+      "ans_b": null,
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "F",
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 302,
+          "tokens_out": 2,
+          "latency_seconds": 0.565,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 302,
+          "tokens_out": 252,
+          "latency_seconds": 1.412,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 314,
+          "tokens_out": 2,
+          "latency_seconds": 0.525,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.412,
+        "total_latency_seconds": 1.937
+      }
+    },
+    {
+      "idx": 9,
+      "domain": "economics",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 224,
+          "tokens_out": 2,
+          "latency_seconds": 0.491,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 220,
+          "tokens_out": 1,
+          "latency_seconds": 0.683,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.683,
+        "total_latency_seconds": 0.683
+      }
+    },
+    {
+      "idx": 10,
+      "domain": "economics",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 143,
+          "tokens_out": 2,
+          "latency_seconds": 0.378,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 151,
+          "tokens_out": 1,
+          "latency_seconds": 0.791,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.791,
+        "total_latency_seconds": 0.791
+      }
+    },
+    {
+      "idx": 11,
+      "domain": "physics",
+      "gold": "D",
+      "resp_a": "B",
+      "resp_b": "To find the mean translational kinetic energy of a single ideal gas molecule at room temperature (assuming standard temperature $T = 298.15\\text{ K}$ or generally $T \\approx 300\\text{ K}$), we use the equipartition theorem:\n\n$$\\bar{K} = \\frac{3}{2} k_B T$$\n\nAt room temperature ($T \\approx 300\\text{ K}$), the thermal energy $k_B T \\approx 0.0257\\text{ eV}$.\nThus, \n$$\\bar{K} = \\frac{3}{2} (0.0257\\text{ eV}) \\approx 0.0385\\text{ eV}$$\n\nMatching this with the given options:\nD",
+      "ans_a": "B",
+      "ans_b": "D",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 105,
+          "tokens_out": 2,
+          "latency_seconds": 0.557,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 104,
+          "tokens_out": 171,
+          "latency_seconds": 1.253,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 117,
+          "tokens_out": 2,
+          "latency_seconds": 0.475,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.253,
+        "total_latency_seconds": 1.728
+      }
+    },
+    {
+      "idx": 12,
+      "domain": "business",
+      "gold": "B",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 97,
+          "tokens_out": 2,
+          "latency_seconds": 0.429,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 89,
+          "tokens_out": 1,
+          "latency_seconds": 0.886,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.886,
+        "total_latency_seconds": 0.886
+      }
+    },
+    {
+      "idx": 13,
+      "domain": "psychology",
+      "gold": "G",
+      "resp_a": "C",
+      "resp_b": "G",
+      "ans_a": "C",
+      "ans_b": "G",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 100,
+          "tokens_out": 2,
+          "latency_seconds": 0.531,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 96,
+          "tokens_out": 1,
+          "latency_seconds": 0.751,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 112,
+          "tokens_out": 2,
+          "latency_seconds": 0.431,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.751,
+        "total_latency_seconds": 1.182
+      }
+    },
+    {
+      "idx": 14,
+      "domain": "history",
+      "gold": "C",
+      "resp_a": "F",
+      "resp_b": "C",
+      "ans_a": "F",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 509,
+          "tokens_out": 2,
+          "latency_seconds": 0.684,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 542,
+          "tokens_out": 1,
+          "latency_seconds": 2.29,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 521,
+          "tokens_out": 2,
+          "latency_seconds": 0.537,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 2.29,
+        "total_latency_seconds": 2.827
+      }
+    },
+    {
+      "idx": 15,
+      "domain": "engineering",
+      "gold": "D",
+      "resp_a": "A",
+      "resp_b": "To find the required key length, we use the standard formulas for shear and crushing (compression) failure of a rectangular key.\n\nGiven:\n- Torque, $T = 7500 \\text{ in.-lb.}$\n- Shaft diameter, $d = 2 \\text{ in.}$\n- Radius, $r = d / 2 = 1 \\text{ in.}$\n- Shear stress limit, $\\tau = 8500 \\text{ psi}$\n- Compression stress limit, $\\sigma_c = 16,500 \\text{ psi}$\n\nThe force acting at the shaft surface is:\n$F = \\frac{T}{r} = \\frac{7500}{1} = 7500 \\text{ lb}$\n\n**For Shear Failure:**\n$F = A_s \\cdot \\tau = (w \\cdot L) \\cdot \\tau$\n$L = \\frac{F}{w \\cdot \\tau}$\n\n**For Compression (Crushing) Failure:**\n$F = A_c \\cdot \\sigma_c = \\left(\\frac{t}{2} \\cdot L\\right) \\cdot \\",
+      "ans_a": "A",
+      "ans_b": "F",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 352,
+          "tokens_out": 2,
+          "latency_seconds": 0.364,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 350,
+          "tokens_out": 252,
+          "latency_seconds": 1.454,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 364,
+          "tokens_out": 2,
+          "latency_seconds": 0.5,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.454,
+        "total_latency_seconds": 1.954
+      }
+    },
+    {
+      "idx": 16,
+      "domain": "other",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 192,
+          "tokens_out": 2,
+          "latency_seconds": 0.508,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 182,
+          "tokens_out": 1,
+          "latency_seconds": 0.916,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.916,
+        "total_latency_seconds": 0.916
+      }
+    },
+    {
+      "idx": 17,
+      "domain": "health",
+      "gold": "H",
+      "resp_a": "F",
+      "resp_b": "F",
+      "ans_a": "F",
+      "ans_b": "F",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 207,
+          "tokens_out": 2,
+          "latency_seconds": 0.341,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 203,
+          "tokens_out": 1,
+          "latency_seconds": 0.693,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.693,
+        "total_latency_seconds": 0.693
+      }
+    },
+    {
+      "idx": 18,
+      "domain": "philosophy",
+      "gold": "I",
+      "resp_a": "I",
+      "resp_b": "J",
+      "ans_a": "I",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "I",
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 68,
+          "tokens_out": 2,
+          "latency_seconds": 0.464,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 79,
+          "tokens_out": 1,
+          "latency_seconds": 0.794,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 80,
+          "tokens_out": 2,
+          "latency_seconds": 0.465,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.794,
+        "total_latency_seconds": 1.259
+      }
+    },
+    {
+      "idx": 19,
+      "domain": "other",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 137,
+          "tokens_out": 2,
+          "latency_seconds": 0.492,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 126,
+          "tokens_out": 1,
+          "latency_seconds": 0.78,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.78,
+        "total_latency_seconds": 0.78
+      }
+    },
+    {
+      "idx": 20,
+      "domain": "computer science",
+      "gold": "H",
+      "resp_a": "B",
+      "resp_b": "To find the total storage required:\n- Books: $3 \\times 10^6$\n- Pages per book: $4 \\times 10^2$\n- Lines per page: $5 \\times 10^1$\n- Words per line: $1 \\times 10^1$\n- Characters per word: $5$ bytes\n\nTotal bytes = $3 \\times 10^6 \\times 400 \\times 50 \\times 10 \\times 5$ \n= $3000000 \\times 400 \\times 500 \\times 5$\n= $3 \\times 10^6 \\times 4 \\times 10^2 \\times 5 \\times 10^2 \\times 5$\n= $300 \\times 10^{10}$ bytes \n= $3 \\times 10^{12}$ bytes (3 Terabytes).\n\nH",
+      "ans_a": "B",
+      "ans_b": "H",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 325,
+          "tokens_out": 2,
+          "latency_seconds": 0.531,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 328,
+          "tokens_out": 217,
+          "latency_seconds": 1.379,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 337,
+          "tokens_out": 2,
+          "latency_seconds": 0.444,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.379,
+        "total_latency_seconds": 1.822
+      }
+    },
+    {
+      "idx": 21,
+      "domain": "economics",
+      "gold": "F",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 233,
+          "tokens_out": 2,
+          "latency_seconds": 0.765,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 237,
+          "tokens_out": 1,
+          "latency_seconds": 0.804,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.804,
+        "total_latency_seconds": 0.804
+      }
+    },
+    {
+      "idx": 22,
+      "domain": "business",
+      "gold": "I",
+      "resp_a": "B",
+      "resp_b": "To find the correct option, let's calculate each of the required values based on the given data:\n\n1. **Given Data:**\n   * **Current Assets:**\n     * Cash = $22,150\n     * Marketable Securities = $16,000\n     * Accounts Receivable = $30,450\n     * Inventories = $25,000\n     * **Total Current Assets** = $22,150 + $16,000 + $30,450 + $25,000 = $93,600\n   * **Current Liabilities:**\n     * Accounts Payable = $28,500\n     * Notes Payable = $20,000\n     * Other Bills Payable = $10,000\n     * **Total Current Liabilities** = $28,500 + $20,000 + $10,000 = $58,500\n\n2. **Calculations:**\n   * **a) Current Ratio:**\n     $$\\text{Current Ratio} = \\frac{\\text{",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 442,
+          "tokens_out": 2,
+          "latency_seconds": 0.417,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 434,
+          "tokens_out": 252,
+          "latency_seconds": 1.393,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 454,
+          "tokens_out": 2,
+          "latency_seconds": 0.483,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.393,
+        "total_latency_seconds": 1.875
+      }
+    },
+    {
+      "idx": 23,
+      "domain": "computer science",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "To determine which attacks TLS protects against under the given assumptions:\n\n1. **An attacker replaying bytes that a client sent earlier:** TLS uses sequence numbers in the record layer (or AEAD nonces/counters) specifically to prevent replay attacks within an established session. Therefore, TLS protects against this. (True)\n2. **An attacker impersonating the server:** The client checked the server certificate during the handshake, and the cryptography and server keys are secure. Therefore, an attacker cannot impersonate the server. (True)\n\nBoth statements are true.\n\nA",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 233,
+          "tokens_out": 2,
+          "latency_seconds": 0.379,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 232,
+          "tokens_out": 115,
+          "latency_seconds": 1.154,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.154,
+        "total_latency_seconds": 1.154
+      }
+    },
+    {
+      "idx": 24,
+      "domain": "engineering",
+      "gold": "E",
+      "resp_a": "A",
+      "resp_b": "E",
+      "ans_a": "A",
+      "ans_b": "E",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "E",
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 231,
+          "tokens_out": 2,
+          "latency_seconds": 0.581,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 231,
+          "tokens_out": 1,
+          "latency_seconds": 0.778,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 243,
+          "tokens_out": 2,
+          "latency_seconds": 0.431,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.778,
+        "total_latency_seconds": 1.209
+      }
+    },
+    {
+      "idx": 25,
+      "domain": "biology",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 399,
+          "tokens_out": 2,
+          "latency_seconds": 0.517,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 407,
+          "tokens_out": 1,
+          "latency_seconds": 0.791,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.791,
+        "total_latency_seconds": 0.791
+      }
+    },
+    {
+      "idx": 26,
+      "domain": "computer science",
+      "gold": "E",
+      "resp_a": "E",
+      "resp_b": "G",
+      "ans_a": "E",
+      "ans_b": "G",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 203,
+          "tokens_out": 2,
+          "latency_seconds": 0.815,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 222,
+          "tokens_out": 1,
+          "latency_seconds": 0.822,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 215,
+          "tokens_out": 2,
+          "latency_seconds": 0.459,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.822,
+        "total_latency_seconds": 1.281
+      }
+    },
+    {
+      "idx": 27,
+      "domain": "health",
+      "gold": "H",
+      "resp_a": "H",
+      "resp_b": "H",
+      "ans_a": "H",
+      "ans_b": "H",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 86,
+          "tokens_out": 2,
+          "latency_seconds": 0.402,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 82,
+          "tokens_out": 1,
+          "latency_seconds": 0.755,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.755,
+        "total_latency_seconds": 0.755
+      }
+    },
+    {
+      "idx": 28,
+      "domain": "law",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 309,
+          "tokens_out": 2,
+          "latency_seconds": 0.389,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 319,
+          "tokens_out": 1,
+          "latency_seconds": 0.831,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.831,
+        "total_latency_seconds": 0.831
+      }
+    },
+    {
+      "idx": 29,
+      "domain": "law",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 376,
+          "tokens_out": 2,
+          "latency_seconds": 0.46,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 384,
+          "tokens_out": 1,
+          "latency_seconds": 0.82,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.82,
+        "total_latency_seconds": 0.82
+      }
+    },
+    {
+      "idx": 30,
+      "domain": "psychology",
+      "gold": "G",
+      "resp_a": "G",
+      "resp_b": "G",
+      "ans_a": "G",
+      "ans_b": "G",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 125,
+          "tokens_out": 2,
+          "latency_seconds": 0.463,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 121,
+          "tokens_out": 1,
+          "latency_seconds": 0.811,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.811,
+        "total_latency_seconds": 0.811
+      }
+    },
+    {
+      "idx": 31,
+      "domain": "law",
+      "gold": "A",
+      "resp_a": "C",
+      "resp_b": "H",
+      "ans_a": "C",
+      "ans_b": "H",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "E",
+      "final_ans": "E",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 145,
+          "tokens_out": 2,
+          "latency_seconds": 0.395,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 148,
+          "tokens_out": 1,
+          "latency_seconds": 0.789,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 157,
+          "tokens_out": 2,
+          "latency_seconds": 0.552,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.789,
+        "total_latency_seconds": 1.341
+      }
+    },
+    {
+      "idx": 32,
+      "domain": "other",
+      "gold": "I",
+      "resp_a": "I",
+      "resp_b": "I",
+      "ans_a": "I",
+      "ans_b": "I",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 192,
+          "tokens_out": 2,
+          "latency_seconds": 0.507,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 187,
+          "tokens_out": 1,
+          "latency_seconds": 0.771,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.771,
+        "total_latency_seconds": 0.771
+      }
+    },
+    {
+      "idx": 33,
+      "domain": "philosophy",
+      "gold": "A",
+      "resp_a": "B",
+      "resp_b": "A",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 150,
+          "tokens_out": 2,
+          "latency_seconds": 0.437,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 156,
+          "tokens_out": 1,
+          "latency_seconds": 0.784,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 162,
+          "tokens_out": 2,
+          "latency_seconds": 0.421,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.784,
+        "total_latency_seconds": 1.204
+      }
+    },
+    {
+      "idx": 34,
+      "domain": "math",
+      "gold": "H",
+      "resp_a": "C",
+      "resp_b": "To find the value of $P'(2) + P''(2)$ for the polynomial $P(x) = x^5 - 2x^4 + 4x^3 - x^2 - 7x + 5$:\n\n1. First, find the first derivative $P'(x)$ and second derivative $P''(x)$:\n   $P'(x) = 5x^4 - 8x^3 + 12x^2 - 2x - 7$\n   $P''(x) = 20x^3 - 24x^2 + 24x - 2$\n\n2. Evaluate $P'(2)$ and $P''(2)$ at $x = 2$:\n   $P'(2) = 5(2)^4 - 8(2)^3 + 12(2)^2 - 2(2) - 7$\n   $P'(2) = 5(16) - 8(8) + 12(4) - 4 - 7$\n   $P'(2) = 80 - 64 + 48 -",
+      "ans_a": "C",
+      "ans_b": null,
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 148,
+          "tokens_out": 2,
+          "latency_seconds": 0.771,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 147,
+          "tokens_out": 252,
+          "latency_seconds": 1.204,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 160,
+          "tokens_out": 2,
+          "latency_seconds": 0.411,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.204,
+        "total_latency_seconds": 1.615
+      }
+    },
+    {
+      "idx": 35,
+      "domain": "chemistry",
+      "gold": "J",
+      "resp_a": "B",
+      "resp_b": "To find the standard enthalpy of reaction ($\\Delta_{\\mathrm{r}} H^{\\ominus}$) from the standard internal energy of reaction ($\\Delta_{\\mathrm{r}} U^{\\ominus}$), we use the relation:\n\n$$\\Delta_{\\mathrm{r}} H^{\\ominus} = \\Delta_{\\mathrm{r}} U^{\\ominus} + \\Delta n_{\\text{gas}} R T$$\n\nFor the given reaction:\n$$\\mathrm{C}_2\\mathrm{H}_5\\mathrm{OH}(\\mathrm{l}) + 3\\mathrm{O}_2(\\mathrm{~g}) \\rightarrow 2\\mathrm{CO}_2(\\mathrm{~g}) + 3\\mathrm{H}_2\\mathrm{O}(\\mathrm{g})$$\n\nThe change in the number of moles of gas ($\\Delta n_{\\text{gas}}$) is:\n$$\\Delta n_{\\text{gas}} = n_{\\text{products (gas)}} - n_{\\text{reactants (gas)}} = (2 + 3) - 3 = 2$$\n\nGiven:\n- $\\Delta_{\\mathrm{r}} U^{\\ominus} = -1373 \\text{ kJ mol}^{-1} = -137",
+      "ans_a": "B",
+      "ans_b": "G",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 318,
+          "tokens_out": 2,
+          "latency_seconds": 0.391,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 302,
+          "tokens_out": 252,
+          "latency_seconds": 1.382,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 330,
+          "tokens_out": 500,
+          "latency_seconds": 3.532,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.382,
+        "total_latency_seconds": 4.915
+      }
+    },
+    {
+      "idx": 36,
+      "domain": "economics",
+      "gold": "H",
+      "resp_a": "C",
+      "resp_b": "To determine the correct answer, let's break down the scenario step-by-step:\n\n1. **Fed Open Market Operation:** The Fed buys $1 million in Treasury securities from commercial banks. This injects $1 million of reserves into the banking system.\n2. **Money Multiplier:** With a reserve ratio ($rr$) of 10 percent (0.10), the potential money multiplier is $\\frac{1}{rr} = \\frac{1}{0.10} = 10$.\n3. **Change in Money Supply:** The total potential increase in the money supply is the initial injection multiplied by the money multiplier: $\\$1\\text{ million} \\times 10 = \\$10\\text{ million increase}$.\n4. **Money Demand and Interest Rates:** The prompt states that money demand is **perfectly elastic** (represented by a horizontal liquidity preference curve). When money demand is perfectly elastic, an increase in the money supply does not lower the interest rate; the interest rate remains stuck at its floor (liquidity trap). \n5. **Aggregate Demand (AD):** Since the interest rate does not fall, investment does not increase, and therefore Aggregate Demand (AD)",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 234,
+          "tokens_out": 2,
+          "latency_seconds": 0.813,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 242,
+          "tokens_out": 252,
+          "latency_seconds": 2.072,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 246,
+          "tokens_out": 2,
+          "latency_seconds": 0.509,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 2.072,
+        "total_latency_seconds": 2.581
+      }
+    },
+    {
+      "idx": 37,
+      "domain": "physics",
+      "gold": "D",
+      "resp_a": "C",
+      "resp_b": "To find the required speed $v$, we can use the principle of conservation of energy, assuming all the kinetic energy of the bullet is converted into internal thermal energy upon impact:\n\n$$\\frac{1}{2}mv^2 = mc(T_1 - T_0) + mq$$\n\nDividing both sides by the mass $m$:\n\n$$\\frac{1}{2}v^2 = c(T_1 - T_0) + q$$\n\n$v = \\sqrt{2[c(T_1 - T_0) + q]}$\n\nGiven:\n- $c = 0.03 \\text{ cal g}^{-1}\\text{K}^{-1}$\n- $T_1 - T_0 = 700\\text{ K} - 300\\text{ K} = 400\\text{ K}$\n- $q = 5 \\text{ cal g}^{-1}$\n\nConvert calories to Joules ($1 \\text{ cal} \\approx 4.184 \\text{ J}$), or use the standard conversion $1 \\text{ cal} = 4.186 \\text{ J}$ and",
+      "ans_a": "C",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 184,
+          "tokens_out": 2,
+          "latency_seconds": 0.517,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 193,
+          "tokens_out": 252,
+          "latency_seconds": 1.656,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 196,
+          "tokens_out": 2,
+          "latency_seconds": 0.743,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.656,
+        "total_latency_seconds": 2.399
+      }
+    },
+    {
+      "idx": 38,
+      "domain": "other",
+      "gold": "F",
+      "resp_a": "F",
+      "resp_b": "Based on the astronomical start of spring (the vernal equinox, which typically falls around March 19\u201321) and standard multiple-choice conventions where March 21 is most commonly taught as the traditional date:\n\nF",
+      "ans_a": "F",
+      "ans_b": "F",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 93,
+          "tokens_out": 2,
+          "latency_seconds": 0.479,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 97,
+          "tokens_out": 48,
+          "latency_seconds": 0.938,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.938,
+        "total_latency_seconds": 0.938
+      }
+    },
+    {
+      "idx": 39,
+      "domain": "history",
+      "gold": "G",
+      "resp_a": "E",
+      "resp_b": "E",
+      "ans_a": "E",
+      "ans_b": "E",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 260,
+          "tokens_out": 2,
+          "latency_seconds": 0.407,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 254,
+          "tokens_out": 1,
+          "latency_seconds": 0.893,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.893,
+        "total_latency_seconds": 0.893
+      }
+    },
+    {
+      "idx": 40,
+      "domain": "business",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 157,
+          "tokens_out": 2,
+          "latency_seconds": 0.552,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 139,
+          "tokens_out": 1,
+          "latency_seconds": 1.225,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.225,
+        "total_latency_seconds": 1.225
+      }
+    },
+    {
+      "idx": 41,
+      "domain": "biology",
+      "gold": "E",
+      "resp_a": "E",
+      "resp_b": "E",
+      "ans_a": "E",
+      "ans_b": "E",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 155,
+          "tokens_out": 2,
+          "latency_seconds": 0.635,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 151,
+          "tokens_out": 1,
+          "latency_seconds": 0.652,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.652,
+        "total_latency_seconds": 0.652
+      }
+    },
+    {
+      "idx": 42,
+      "domain": "engineering",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "To find the rate of heat transfer per unit length of the pipe, we use the forced convection correlation for air flowing across a circular cylinder.\n\n1. **Evaluate air properties at the film temperature ($T_f$):**\n   $$T_f = \\frac{T_s + T_\\infty}{2} = \\frac{90^\\circ\\text{F} + 75^\\circ\\text{F}}{2} = 82.5^\\circ\\text{F} \\approx 542.5\\text{ R}$$\n   \n   At this temperature (approx. $540\\text{ R}$ or $28^\\circ\\text{C}$):\n   * Thermal conductivity ($k$) $\\approx 0.0152\\text{ Btu/hr}\\cdot\\text{ft}\\cdot^\\circ\\text{F}$\n   * Kinematic viscosity ($\\nu$) $\\approx 1.62 \\times 10^{-4}\\text{ ft}^2/\\text{s}$\n   * Prandtl number ($\\Pr$) $\\approx 0.707$\n\n2. **Calculate the Reynolds number ($Re_D$):",
+      "ans_a": "C",
+      "ans_b": "F",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 199,
+          "tokens_out": 2,
+          "latency_seconds": 0.382,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 189,
+          "tokens_out": 252,
+          "latency_seconds": 1.426,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 211,
+          "tokens_out": 2,
+          "latency_seconds": 0.537,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.426,
+        "total_latency_seconds": 1.963
+      }
+    },
+    {
+      "idx": 43,
+      "domain": "psychology",
+      "gold": "I",
+      "resp_a": "I",
+      "resp_b": "I",
+      "ans_a": "I",
+      "ans_b": "I",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 330,
+          "tokens_out": 2,
+          "latency_seconds": 0.941,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 331,
+          "tokens_out": 1,
+          "latency_seconds": 0.742,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.941,
+        "total_latency_seconds": 0.941
+      }
+    },
+    {
+      "idx": 44,
+      "domain": "business",
+      "gold": "I",
+      "resp_a": "D",
+      "resp_b": "To find the proceeds of the discounted note, we can follow these steps:\n\n1. **Calculate the maturity value of the note:**\n   - Principal ($P$) = $1,500\n   - Interest rate ($r_1$) = 6% = 0.06\n   - Time ($t_1$) = 6 months = $\\frac{6}{12}$ years = 0.5 years\n   - Interest ($I$) = $P \\times r_1 \\times t_1 = 1,500 \\times 0.06 \\times 0.5 = \\$45$\n   - Maturity Value ($MV$) = Principal + Interest = $1,500 + 45 = \\$1,545$\n\n2. **Determine the maturity date of the note:**\n   - Dated May 17, 1976, plus 6 months = November 17, 1976.\n\n3. **Calculate the discount period (time the bank holds the note before maturity):**\n   - Discount date: September 22, 1976.\n   - Days remaining in September",
+      "ans_a": "D",
+      "ans_b": "I",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "E",
+      "final_ans": "E",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 183,
+          "tokens_out": 2,
+          "latency_seconds": 0.377,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 183,
+          "tokens_out": 252,
+          "latency_seconds": 1.344,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 195,
+          "tokens_out": 2,
+          "latency_seconds": 0.555,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.344,
+        "total_latency_seconds": 1.9
+      }
+    },
+    {
+      "idx": 45,
+      "domain": "physics",
+      "gold": "I",
+      "resp_a": "C",
+      "resp_b": "To find the position where the net electrostatic force on particle 3 is zero, particle 3 must be placed where the magnitudes of the forces from particle 1 and particle 2 are equal and opposite in direction.\n\nLet particle 1 ($q_1 = -5.00q$) be at $x = 0$ and particle 2 ($q_2 = +2.00q$) be at $x = L$. \nSince the charges have opposite signs, particle 3 must be placed outside the interval between 1 and 2, closer to the smaller magnitude charge (particle 2, at $x > L$).\n\nLet the position of particle 3 be $x$. The distance from particle 1 is $x$, and the distance from particle 2 is $x - L$.\n\nSetting the magnitudes of the forces equal:\n$$\\frac{k |q_1| |q_3|}{x^2} = \\frac{k |q_2| |q_3|}{(x - L)^2}$$\n\nSubstitute the values of the charges:\n$$\\frac{5.00q}{x^2} = \\frac{2.00q}{(x -",
+      "ans_a": "C",
+      "ans_b": null,
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "F",
+      "final_ans": "F",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 216,
+          "tokens_out": 2,
+          "latency_seconds": 0.352,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 224,
+          "tokens_out": 252,
+          "latency_seconds": 1.568,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 228,
+          "tokens_out": 500,
+          "latency_seconds": 3.799,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.568,
+        "total_latency_seconds": 5.367
+      }
+    },
+    {
+      "idx": 46,
+      "domain": "biology",
+      "gold": "I",
+      "resp_a": "I",
+      "resp_b": "I",
+      "ans_a": "I",
+      "ans_b": "I",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 290,
+          "tokens_out": 2,
+          "latency_seconds": 0.64,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 300,
+          "tokens_out": 1,
+          "latency_seconds": 0.769,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.769,
+        "total_latency_seconds": 0.769
+      }
+    },
+    {
+      "idx": 47,
+      "domain": "economics",
+      "gold": "I",
+      "resp_a": "I",
+      "resp_b": "I",
+      "ans_a": "I",
+      "ans_b": "I",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 194,
+          "tokens_out": 2,
+          "latency_seconds": 4.143,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 196,
+          "tokens_out": 1,
+          "latency_seconds": 0.739,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 4.143,
+        "total_latency_seconds": 4.143
+      }
+    },
+    {
+      "idx": 48,
+      "domain": "philosophy",
+      "gold": "G",
+      "resp_a": "G",
+      "resp_b": "G",
+      "ans_a": "G",
+      "ans_b": "G",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 143,
+          "tokens_out": 2,
+          "latency_seconds": 0.904,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 142,
+          "tokens_out": 1,
+          "latency_seconds": 0.791,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.904,
+        "total_latency_seconds": 0.904
+      }
+    },
+    {
+      "idx": 49,
+      "domain": "law",
+      "gold": "E",
+      "resp_a": "F",
+      "resp_b": "E",
+      "ans_a": "F",
+      "ans_b": "E",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 319,
+          "tokens_out": 2,
+          "latency_seconds": 0.426,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 317,
+          "tokens_out": 1,
+          "latency_seconds": 0.707,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 331,
+          "tokens_out": 2,
+          "latency_seconds": 0.485,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.707,
+        "total_latency_seconds": 1.191
+      }
+    },
+    {
+      "idx": 50,
+      "domain": "chemistry",
+      "gold": "F",
+      "resp_a": "B",
+      "resp_b": "To find the percentage of Zn in the sample, we can use stoichiometry based on the given reactions:\n\n1. Calculate the moles of the precipitate $\\text{Zn}_2\\text{Fe(CN)}_6$ produced:\n   $$\\text{Moles of } \\text{Zn}_2\\text{Fe(CN)}_6 = \\frac{0.969 \\text{ g}}{342.6 \\text{ g/mol}} \\approx 0.002828 \\text{ mol}$$\n\n2. From the second reaction, 1 mole of $\\text{Zn}_2\\text{Fe(CN)}_6$ contains 2 moles of $\\text{Zn}$:\n   $$\\text{Moles of Zn} = 2 \\times 0.002828 \\text{ mol} = 0.005656 \\text{ mol}$$\n\n3. Calculate the mass of Zn in the sample:\n   $$\\text{Mass of Zn} = 0.005656 \\text{ mol} \\times 65.4 \\text{ g/mol} \\approx 0.370 \\text{ g",
+      "ans_a": "B",
+      "ans_b": "G",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 280,
+          "tokens_out": 2,
+          "latency_seconds": 0.548,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 274,
+          "tokens_out": 252,
+          "latency_seconds": 1.315,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 292,
+          "tokens_out": 2,
+          "latency_seconds": 0.642,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.315,
+        "total_latency_seconds": 1.957
+      }
+    },
+    {
+      "idx": 51,
+      "domain": "health",
+      "gold": "F",
+      "resp_a": "G",
+      "resp_b": "To determine the most appropriate next step in management, let's analyze the clinical presentation:\n\n1. **Trauma History:** High-speed motor vehicle collision with hemorrhagic shock (tachycardia, hypotension) and respiratory distress.\n2. **Physical Exam & Imaging:** Decreased breath sounds at the left lung base and a chest x-ray showing opacification of the left lower lung field with loss of the diaphragmatic shadow. \n3. **Chest Tube Finding:** The return of **greenish fluid** (gastric or enteric contents) from the chest tube indicates a **traumatic diaphragmatic rupture** with herniation and perforation of abdominal viscera (stomach or bowel) into the thoracic cavity.\n\nGiven the presence of a hollow viscus rupture in the chest causing severe contamination and shock, immediate surgical exploration and repair are required. For a patient with a traumatic diaphragmatic hernia and signs of peritonitis/contamination or severe instability, the standard approach involves an exploratory laparotomy (often combined with thoracotomy if needed, but laparotomy is the primary approach for acute diaphragmatic rupture with intra-abdominal organ involvement).\n\nTherefore, the correct management step is surgical intervention.\n\nF",
+      "ans_a": "G",
+      "ans_b": "F",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "F",
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 227,
+          "tokens_out": 2,
+          "latency_seconds": 0.445,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 229,
+          "tokens_out": 240,
+          "latency_seconds": 1.662,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 239,
+          "tokens_out": 2,
+          "latency_seconds": 0.467,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.662,
+        "total_latency_seconds": 2.129
+      }
+    },
+    {
+      "idx": 52,
+      "domain": "history",
+      "gold": "J",
+      "resp_a": "B",
+      "resp_b": "A",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 210,
+          "tokens_out": 2,
+          "latency_seconds": 0.442,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 209,
+          "tokens_out": 1,
+          "latency_seconds": 0.803,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 222,
+          "tokens_out": 2,
+          "latency_seconds": 0.602,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.803,
+        "total_latency_seconds": 1.405
+      }
+    },
+    {
+      "idx": 53,
+      "domain": "physics",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 186,
+          "tokens_out": 2,
+          "latency_seconds": 0.586,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 194,
+          "tokens_out": 1,
+          "latency_seconds": 0.773,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.773,
+        "total_latency_seconds": 0.773
+      }
+    },
+    {
+      "idx": 54,
+      "domain": "physics",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 53,
+          "tokens_out": 2,
+          "latency_seconds": 0.562,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 52,
+          "tokens_out": 1,
+          "latency_seconds": 0.665,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.665,
+        "total_latency_seconds": 0.665
+      }
+    },
+    {
+      "idx": 55,
+      "domain": "economics",
+      "gold": "G",
+      "resp_a": "E",
+      "resp_b": "G",
+      "ans_a": "E",
+      "ans_b": "G",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 213,
+          "tokens_out": 2,
+          "latency_seconds": 0.439,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 226,
+          "tokens_out": 1,
+          "latency_seconds": 0.71,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 225,
+          "tokens_out": 2,
+          "latency_seconds": 0.555,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.71,
+        "total_latency_seconds": 1.265
+      }
+    },
+    {
+      "idx": 56,
+      "domain": "math",
+      "gold": "H",
+      "resp_a": "C",
+      "resp_b": "H",
+      "ans_a": "C",
+      "ans_b": "H",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 104,
+          "tokens_out": 2,
+          "latency_seconds": 0.481,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 104,
+          "tokens_out": 1,
+          "latency_seconds": 0.754,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 116,
+          "tokens_out": 2,
+          "latency_seconds": 0.469,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.754,
+        "total_latency_seconds": 1.224
+      }
+    },
+    {
+      "idx": 57,
+      "domain": "business",
+      "gold": "F",
+      "resp_a": "C",
+      "resp_b": "To find the return on invested capital (ROIC), we use the average invested capital for the year:\n\n1. **Average Invested Capital** = $(\\text{Investments at Dec 31, 1966} + \\text{Investments at Dec 31, 1967}) / 2$\n   $\\text{Average Invested Capital} = (\\$250,000 + \\$350,000) / 2 = \\$600,000 / 2 = \\$300,000$\n\n2. **Return on Invested Capital** = $\\text{Net Income} / \\text{Average Invested Capital}$\n   $\\text{ROIC} = \\$25,000 / \\$300,000 = 0.08333...$ or approximately **8.3%**.\n\nF",
+      "ans_a": "C",
+      "ans_b": "F",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 191,
+          "tokens_out": 2,
+          "latency_seconds": 0.491,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 199,
+          "tokens_out": 196,
+          "latency_seconds": 1.32,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 203,
+          "tokens_out": 2,
+          "latency_seconds": 0.864,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.32,
+        "total_latency_seconds": 2.184
+      }
+    },
+    {
+      "idx": 58,
+      "domain": "history",
+      "gold": "B",
+      "resp_a": "F",
+      "resp_b": "B",
+      "ans_a": "F",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "F",
+      "final_ans": "F",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 263,
+          "tokens_out": 2,
+          "latency_seconds": 0.411,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 266,
+          "tokens_out": 1,
+          "latency_seconds": 0.767,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 275,
+          "tokens_out": 2,
+          "latency_seconds": 0.53,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.767,
+        "total_latency_seconds": 1.297
+      }
+    },
+    {
+      "idx": 59,
+      "domain": "math",
+      "gold": "A",
+      "resp_a": "C",
+      "resp_b": "To determine which set of side lengths is impossible, we can use the **triangle inequality theorem**, which states that the sum of the lengths of any two sides of a triangle must be greater than the length of the third side.\n\nSince the longest side is 10, the sum of the other two sides must be strictly greater than 10. Let's test the options:\n* A: $5 + 5 = 10$ (Not greater than 10; equality does not form a valid triangle, it's a degenerate flat line).\n\nA",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 74,
+          "tokens_out": 2,
+          "latency_seconds": 0.524,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 74,
+          "tokens_out": 118,
+          "latency_seconds": 1.186,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 86,
+          "tokens_out": 2,
+          "latency_seconds": 0.56,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.186,
+        "total_latency_seconds": 1.747
+      }
+    },
+    {
+      "idx": 60,
+      "domain": "biology",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 105,
+          "tokens_out": 2,
+          "latency_seconds": 0.943,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 103,
+          "tokens_out": 1,
+          "latency_seconds": 0.772,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.943,
+        "total_latency_seconds": 0.943
+      }
+    },
+    {
+      "idx": 61,
+      "domain": "math",
+      "gold": "G",
+      "resp_a": "G",
+      "resp_b": "G",
+      "ans_a": "G",
+      "ans_b": "G",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 143,
+          "tokens_out": 2,
+          "latency_seconds": 0.416,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 141,
+          "tokens_out": 1,
+          "latency_seconds": 0.754,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.754,
+        "total_latency_seconds": 0.754
+      }
+    },
+    {
+      "idx": 62,
+      "domain": "history",
+      "gold": "H",
+      "resp_a": "H",
+      "resp_b": "H",
+      "ans_a": "H",
+      "ans_b": "H",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 93,
+          "tokens_out": 2,
+          "latency_seconds": 0.539,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 88,
+          "tokens_out": 1,
+          "latency_seconds": 0.719,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.719,
+        "total_latency_seconds": 0.719
+      }
+    },
+    {
+      "idx": 63,
+      "domain": "business",
+      "gold": "J",
+      "resp_a": "B",
+      "resp_b": "To determine the correct answer, let's match the three descriptions to the standard \"techniques of neutralization\" (used for justifying or denying unethical behavior, originally conceptualized by Gresham Sykes and David Matza):\n\n1. *\"where actors are convinced that their actions harms nobody\"* $\\rightarrow$ **Denial of injury**\n2. *\"where actors argue that their norm violation is an attempt to realize higher-order values\"* $\\rightarrow$ **Appeal to higher loyalties**\n3. *\"where actors argue they are owed something\"* (often conceptualized as accumulating enough \"good deeds\" to offset bad ones, or a sense of moral credits) $\\rightarrow$ **Metaphor of the ledger** (or metaphor of the balance).\n\nLooking at the options, the sequence **Denial of injury**, **Appeal to higher loyalties**, **Metaphor of the ledger** corresponds to **Option J** (and conceptually matches C, but J uses the exact terminology most common in business ethics literature). Wait, let's check the exact order in the prompt:\n1. Denial of injury\n2. Appeal to higher loyalties\n3. Metaphor of the ledger\n\nThis matches **J**.\n\nJ",
+      "ans_a": "B",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 275,
+          "tokens_out": 2,
+          "latency_seconds": 0.48,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 239,
+          "tokens_out": 243,
+          "latency_seconds": 1.666,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 287,
+          "tokens_out": 2,
+          "latency_seconds": 0.572,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.666,
+        "total_latency_seconds": 2.238
+      }
+    },
+    {
+      "idx": 64,
+      "domain": "other",
+      "gold": "H",
+      "resp_a": "I",
+      "resp_b": "H",
+      "ans_a": "I",
+      "ans_b": "H",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 166,
+          "tokens_out": 2,
+          "latency_seconds": 0.388,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 157,
+          "tokens_out": 1,
+          "latency_seconds": 0.842,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 178,
+          "tokens_out": 2,
+          "latency_seconds": 0.866,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.842,
+        "total_latency_seconds": 1.708
+      }
+    },
+    {
+      "idx": 65,
+      "domain": "psychology",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 75,
+          "tokens_out": 2,
+          "latency_seconds": 0.365,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 76,
+          "tokens_out": 1,
+          "latency_seconds": 0.791,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.791,
+        "total_latency_seconds": 0.791
+      }
+    },
+    {
+      "idx": 66,
+      "domain": "health",
+      "gold": "F",
+      "resp_a": "F",
+      "resp_b": "To determine which of the listed options is not found in RNA, let's look at the components of RNA (Ribonucleic Acid):\n- RNA contains **ribose** (a sugar, not a nucleotide base).\n- RNA contains **phosphate** groups.\n- RNA contains the nitrogenous bases **adenine**, **cytosine**, **guanine**, and **uracil** (replacing thymine, which is found in DNA).\n- Among the specific nucleotide bases listed (Cytosine, Uracil, Thymine, Guanine, Adenine), **Thymine** is found in DNA, not RNA. \n- Additionally, \"Deoxyribose\" is the sugar found in DNA, not RNA. However, the question specifically asks for a \"nucleotide base\" that is not found in RNA. Thymine is a pyrimidine nucleotide base, while Deoxyribose is a sugar (which is why option A is technically a sugar, but among the bases, Thymine is the one). Wait, let's re-read carefully: \"Which of the following nucleotide bases is not found in RNA?\" Thymine is a base. \n\nF",
+      "ans_a": "F",
+      "ans_b": "F",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 78,
+          "tokens_out": 2,
+          "latency_seconds": 0.376,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 72,
+          "tokens_out": 240,
+          "latency_seconds": 1.421,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.421,
+        "total_latency_seconds": 1.421
+      }
+    },
+    {
+      "idx": 67,
+      "domain": "law",
+      "gold": "D",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 269,
+          "tokens_out": 2,
+          "latency_seconds": 1.157,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 261,
+          "tokens_out": 1,
+          "latency_seconds": 1.131,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.157,
+        "total_latency_seconds": 1.157
+      }
+    },
+    {
+      "idx": 68,
+      "domain": "biology",
+      "gold": "C",
+      "resp_a": "A",
+      "resp_b": "C",
+      "ans_a": "A",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 810,
+          "tokens_out": 2,
+          "latency_seconds": 0.627,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 815,
+          "tokens_out": 1,
+          "latency_seconds": 0.833,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 822,
+          "tokens_out": 2,
+          "latency_seconds": 0.703,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.833,
+        "total_latency_seconds": 1.536
+      }
+    },
+    {
+      "idx": 69,
+      "domain": "business",
+      "gold": "G",
+      "resp_a": "C",
+      "resp_b": "G",
+      "ans_a": "C",
+      "ans_b": "G",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 123,
+          "tokens_out": 2,
+          "latency_seconds": 0.403,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 132,
+          "tokens_out": 1,
+          "latency_seconds": 0.732,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 135,
+          "tokens_out": 2,
+          "latency_seconds": 0.55,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.732,
+        "total_latency_seconds": 1.282
+      }
+    },
+    {
+      "idx": 70,
+      "domain": "physics",
+      "gold": "A",
+      "resp_a": "The correct answer is:\n\n**D. $\\frac{2}{3}H$**",
+      "resp_b": "To find the ratio of the radius $R$ to the height $H$ that minimizes the surface area $A$ for a fixed volume $V$:\n\nThe volume of a cylinder is $V = \\pi R^2 H$, which gives $H = \\frac{V}{\\pi R^2}$.\nThe total surface area is $A = 2\\pi R^2 + 2\\pi R H$.\n\nSubstitute $H$ into the surface area formula:\n$A(R) = 2\\pi R^2 + 2\\pi R \\left(\\frac{V}{\\pi R^2}\\right) = 2\\pi R^2 + \\frac{2V}{R}$\n\nTo find the minimum, take the derivative with respect to $R$ and set it to zero:\n$\\frac{dA}{dR} = 4\\pi R - \\frac{2V}{R^2} = 0$\n\n$4\\pi R^3 = 2V$\n\nSince $V = \\pi R^2 H$:\n$4\\pi R^3 = 2(\\pi R^2 H)$\n$4R = 2H$",
+      "ans_a": "H",
+      "ans_b": "H",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "H",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 137,
+          "tokens_out": 18,
+          "latency_seconds": 0.698,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 149,
+          "tokens_out": 252,
+          "latency_seconds": 1.477,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.477,
+        "total_latency_seconds": 1.477
+      }
+    },
+    {
+      "idx": 71,
+      "domain": "chemistry",
+      "gold": "B",
+      "resp_a": "C",
+      "resp_b": "To find the dipole moment ($\\mu$) of $\\text{SO}_2$, we use the Debye equation for the molar polarization ($P_m$):\n\n$$P_m = \\frac{\\varepsilon - 1}{\\varepsilon + 2} \\frac{M}{\\rho} = \\frac{4\\pi N_A}{3} \\left( \\alpha_0 + \\frac{\\mu^2}{3\\varepsilon_0 k_B T} \\right)$$\n\nFor an ideal gas, $\\frac{M}{\\rho} = \\frac{RT}{P}$, so the molar polarization can be approximated as (since $\\varepsilon$ is close to 1):\n$$P_m \\approx \\frac{4\\pi}{3} N_A (\\alpha_0 + \\frac{\\mu^2}{3 k_B T}) = A + \\frac{B}{T}$$\n\nAlternatively, using the relation derived from the Langevin-Debye formula:\n$$P_m = \\frac{(\\varepsilon - 1)RT}{P}$$\n\nLet's calculate $P_m$ at both temperatures ($P = 1 \\text{ atm} = 1.013 \\times 1",
+      "ans_a": "C",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 158,
+          "tokens_out": 2,
+          "latency_seconds": 1.54,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 158,
+          "tokens_out": 252,
+          "latency_seconds": 1.71,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 170,
+          "tokens_out": 2,
+          "latency_seconds": 0.493,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.71,
+        "total_latency_seconds": 2.203
+      }
+    },
+    {
+      "idx": 72,
+      "domain": "law",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "C",
+      "ans_a": "B",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 319,
+          "tokens_out": 2,
+          "latency_seconds": 0.444,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 315,
+          "tokens_out": 1,
+          "latency_seconds": 0.761,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 331,
+          "tokens_out": 2,
+          "latency_seconds": 0.461,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.761,
+        "total_latency_seconds": 1.222
+      }
+    },
+    {
+      "idx": 73,
+      "domain": "law",
+      "gold": "G",
+      "resp_a": "G",
+      "resp_b": "Under Federal Rule of Evidence 410 (and equivalent state rules), statements made during plea discussions with a prosecuting attorney are generally inadmissible. However, discussions with law enforcement agents (like an FBI investigator) who lack authority to enter into a plea bargain do not qualify as plea negotiations under Rule 410. Therefore, the statement is admissible as a statement of an opposing party (Federal Rule of Evidence 801(d)(2)).\n\nG",
+      "ans_a": "G",
+      "ans_b": "G",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 299,
+          "tokens_out": 2,
+          "latency_seconds": 0.529,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 311,
+          "tokens_out": 92,
+          "latency_seconds": 1.154,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.154,
+        "total_latency_seconds": 1.154
+      }
+    },
+    {
+      "idx": 74,
+      "domain": "physics",
+      "gold": "I",
+      "resp_a": "**D**",
+      "resp_b": "To find the bandwidth of the resulting light, we use the time-bandwidth product relation (or uncertainty principle for waves), which relates the frequency bandwidth $\\Delta \\nu$ to the chopping time or shutter frequency $\\Delta t$ (where $\\Delta \\nu \\approx f$, the chopping frequency):\n\n$$\\Delta \\nu = 40 \\text{ MHz} = 40 \\times 10^6 \\text{ Hz}$$\n\nThe relationship between wavelength bandwidth ($\\Delta \\lambda$) and frequency bandwidth ($\\Delta \\nu$) is given by:\n$$\\Delta \\lambda = \\frac{\\lambda^2}{c} \\Delta \\nu$$\n\nGiven:\n- $\\lambda = 520 \\text{ nm} = 520 \\times 10^{-9} \\text{ m}$\n- $c = 3 \\times 10^8 \\text{ m/s}$\n- $\\Delta \\nu = 40 \\times 10^6 \\text{ Hz}$\n\nSubstitute the values:\n$$\\Delta \\lambda = \\frac{(520 \\times 10^{-9})^2 \\times (40 \\times 10^6)}{3 \\times",
+      "ans_a": "D",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "I",
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 176,
+          "tokens_out": 4,
+          "latency_seconds": 0.638,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 174,
+          "tokens_out": 252,
+          "latency_seconds": 1.602,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 188,
+          "tokens_out": 462,
+          "latency_seconds": 3.425,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.602,
+        "total_latency_seconds": 5.027
+      }
+    },
+    {
+      "idx": 75,
+      "domain": "computer science",
+      "gold": "J",
+      "resp_a": "A",
+      "resp_b": "J",
+      "ans_a": "A",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 1488,
+          "tokens_out": 2,
+          "latency_seconds": 0.627,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 1588,
+          "tokens_out": 1,
+          "latency_seconds": 0.793,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 1500,
+          "tokens_out": 2,
+          "latency_seconds": 0.914,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.793,
+        "total_latency_seconds": 1.707
+      }
+    },
+    {
+      "idx": 76,
+      "domain": "physics",
+      "gold": "H",
+      "resp_a": "**Solution Outline**\n\n1. **Isothermal expansion of an ideal gas**\n   For an isothermal process, the change in Gibbs free energy is\n   \u0394G = n\u2009RT\u2009ln(p\u2082/p\u2081).\n\n2. **Given data**\n   \u2022 n = 2.25 mol\n   \u2022 T = 325 K\n   \u2022 R = 8.314 J/(mol\u00b7K)\n   \u2022 p\u2081 = 12.0 bar\n   \u2022 p\u2082 = 2.5 bar\n\n3. **Compute the pressure ratio**\n   p\u2082/p\u2081 = 2.5 bar / 12.0 bar = 0.208333\u2026\n\n4. **Compute ln(p\u2082/p\u2081)**\n   ln(0.208333) \u2248 \u20131.571\n\n5. **Calculate \u0394G**\n   \u0394G = 2.25 mol \u00d7 8.314 J/(mol\u00b7K) \u00d7 325 K \u00d7 (\u20131.571)\n       \u2248 \u20137.89 \u00d7 10\u00b3 J\n\n6. **Match to the choices**\n   The result corresponds to choice **A",
+      "resp_b": "To calculate the change in Gibbs free energy ($\\Delta G$) for the isothermal expansion of an ideal gas, we use the formula:\n$$\\Delta G = nRT \\ln\\left(\\frac{P_f}{P_i}\\right)$$\n\nGiven:\n- $n = 2.25 \\text{ mol}$\n- $R = 8.314 \\text{ J/(mol}\\cdot\\text{K)}$\n- $T = 325 \\text{ K}$\n- $P_i = 12.0 \\text{ bar}$\n- $P_f = 2.5 \\text{ bar}$\n\nSubstitute the values into the equation:\n$$\\Delta G = (2.25)(8.314)(325) \\ln\\left(\\frac{2.5}{12.0}\\right)$$\n\n$$\\Delta G = 6077.49 \\times \\ln(0.20833)$$\n\n$$\\Delta G = 6077.49 \\times (-1.5686) \\approx -9533.4 \\text{ J} = -9",
+      "ans_a": "A",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 252,
+          "tokens_out": 256,
+          "latency_seconds": 4.223,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 248,
+          "tokens_out": 252,
+          "latency_seconds": 1.626,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 264,
+          "tokens_out": 2,
+          "latency_seconds": 0.443,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 4.223,
+        "total_latency_seconds": 4.667
+      }
+    },
+    {
+      "idx": 77,
+      "domain": "physics",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "To find the net charge contained in the cube, we can use Gauss's Law:\n$$\\oint \\vec{E} \\cdot d\\vec{A} = \\frac{q_{\\text{enc}}}{\\varepsilon_0}$$\n\nThe electric field is directed vertically downwards. For the cube of edge length $L = 100\\text{ m}$:\n- The top face is at $z = 300\\text{ m}$, where the electric field points into the cube (downwards), so the flux is negative: $\\Phi_{\\text{top}} = -E_{\\text{top}} A = -60.0 \\times (100)^2$.\n- The bottom face is at $z = 200\\text{ m}$, where the electric field points out of the cube (downwards), so the flux is positive: $\\Phi_{\\text{bottom}} = E_{\\text{bottom}} A = 100 \\times (100)^2$.\n- The sides of the cube are parallel to the vertical electric field, so the flux through the sides is zero.\n\nThe net flux $\\Phi_{\\text{net}}$ is:\n$$\\Phi_{\\text",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 269,
+          "tokens_out": 2,
+          "latency_seconds": 0.414,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 282,
+          "tokens_out": 252,
+          "latency_seconds": 1.624,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 281,
+          "tokens_out": 2,
+          "latency_seconds": 0.608,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.624,
+        "total_latency_seconds": 2.231
+      }
+    },
+    {
+      "idx": 78,
+      "domain": "computer science",
+      "gold": "E",
+      "resp_a": "E",
+      "resp_b": "E",
+      "ans_a": "E",
+      "ans_b": "E",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 143,
+          "tokens_out": 2,
+          "latency_seconds": 0.416,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 141,
+          "tokens_out": 1,
+          "latency_seconds": 0.795,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.795,
+        "total_latency_seconds": 0.795
+      }
+    },
+    {
+      "idx": 79,
+      "domain": "other",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 131,
+          "tokens_out": 2,
+          "latency_seconds": 0.409,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 134,
+          "tokens_out": 1,
+          "latency_seconds": 0.91,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.91,
+        "total_latency_seconds": 0.91
+      }
+    },
+    {
+      "idx": 80,
+      "domain": "philosophy",
+      "gold": "I",
+      "resp_a": "E",
+      "resp_b": "I",
+      "ans_a": "E",
+      "ans_b": "I",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "I",
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 79,
+          "tokens_out": 2,
+          "latency_seconds": 0.587,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 75,
+          "tokens_out": 1,
+          "latency_seconds": 0.974,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 91,
+          "tokens_out": 2,
+          "latency_seconds": 0.465,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.974,
+        "total_latency_seconds": 1.439
+      }
+    },
+    {
+      "idx": 81,
+      "domain": "chemistry",
+      "gold": "F",
+      "resp_a": "F",
+      "resp_b": "F",
+      "ans_a": "F",
+      "ans_b": "F",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 160,
+          "tokens_out": 2,
+          "latency_seconds": 0.806,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 155,
+          "tokens_out": 1,
+          "latency_seconds": 0.916,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.916,
+        "total_latency_seconds": 0.916
+      }
+    },
+    {
+      "idx": 82,
+      "domain": "biology",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 49,
+          "tokens_out": 2,
+          "latency_seconds": 0.361,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 47,
+          "tokens_out": 1,
+          "latency_seconds": 0.739,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.739,
+        "total_latency_seconds": 0.739
+      }
+    },
+    {
+      "idx": 83,
+      "domain": "physics",
+      "gold": "J",
+      "resp_a": "B",
+      "resp_b": "J",
+      "ans_a": "B",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "J",
+      "final_ans": "J",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 110,
+          "tokens_out": 2,
+          "latency_seconds": 0.43,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 110,
+          "tokens_out": 1,
+          "latency_seconds": 1.136,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 122,
+          "tokens_out": 2,
+          "latency_seconds": 0.479,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.136,
+        "total_latency_seconds": 1.614
+      }
+    },
+    {
+      "idx": 84,
+      "domain": "health",
+      "gold": "F",
+      "resp_a": "F, G, I",
+      "resp_b": "G",
+      "ans_a": "F",
+      "ans_b": "G",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "F",
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 133,
+          "tokens_out": 6,
+          "latency_seconds": 0.396,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 128,
+          "tokens_out": 1,
+          "latency_seconds": 0.766,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 145,
+          "tokens_out": 8,
+          "latency_seconds": 1.092,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.766,
+        "total_latency_seconds": 1.857
+      }
+    },
+    {
+      "idx": 85,
+      "domain": "physics",
+      "gold": "E",
+      "resp_a": "E",
+      "resp_b": "E",
+      "ans_a": "E",
+      "ans_b": "E",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 167,
+          "tokens_out": 2,
+          "latency_seconds": 0.564,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 157,
+          "tokens_out": 1,
+          "latency_seconds": 0.903,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.903,
+        "total_latency_seconds": 0.903
+      }
+    },
+    {
+      "idx": 86,
+      "domain": "psychology",
+      "gold": "G",
+      "resp_a": "E",
+      "resp_b": "C",
+      "ans_a": "E",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 132,
+          "tokens_out": 2,
+          "latency_seconds": 0.432,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 123,
+          "tokens_out": 1,
+          "latency_seconds": 0.739,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 144,
+          "tokens_out": 2,
+          "latency_seconds": 0.465,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.739,
+        "total_latency_seconds": 1.204
+      }
+    },
+    {
+      "idx": 87,
+      "domain": "physics",
+      "gold": "G",
+      "resp_a": "B",
+      "resp_b": "To calculate the de Broglie wavelength ($\\lambda$) of an electron:\n\n1. **Formula:** \n   $$\\lambda = \\frac{h}{\\sqrt{2mE}}$$\n   where:\n   - $h$ is Planck's constant ($6.626 \\times 10^{-34} \\text{ J}\\cdot\\text{s}$)\n   - $m$ is the mass of an electron ($9.109 \\times 10^{-31} \\text{ kg}$)\n   - $E$ is the kinetic energy in Joules ($50 \\text{ eV} = 50 \\times 1.602 \\times 10^{-19} \\text{ J} = 8.01 \\times 10^{-18} \\text{ J}$)\n\n2. **Alternative shortcut formula in terms of eV:**\n   $$\\lambda (\\text{in nm}) \\approx \\frac{1.226}{\\sqrt{E (\\text{in eV})}}$$\n   $$\\lambda \\approx \\frac{1.226}{\\sqrt{50}} = \\frac{1.226}{7.",
+      "ans_a": "B",
+      "ans_b": "E",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 113,
+          "tokens_out": 2,
+          "latency_seconds": 0.605,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 111,
+          "tokens_out": 252,
+          "latency_seconds": 1.509,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 125,
+          "tokens_out": 2,
+          "latency_seconds": 0.534,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.509,
+        "total_latency_seconds": 2.043
+      }
+    },
+    {
+      "idx": 88,
+      "domain": "math",
+      "gold": "J",
+      "resp_a": "B",
+      "resp_b": "J",
+      "ans_a": "B",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "J",
+      "final_ans": "J",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 114,
+          "tokens_out": 2,
+          "latency_seconds": 0.405,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 113,
+          "tokens_out": 1,
+          "latency_seconds": 0.812,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 126,
+          "tokens_out": 2,
+          "latency_seconds": 0.505,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.812,
+        "total_latency_seconds": 1.317
+      }
+    },
+    {
+      "idx": 89,
+      "domain": "physics",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "To find the correct option, let's calculate the values:\n\n(a) **Root-mean-square speed ($v_{rms}$)** of nitrogen ($N_2$) at standard conditions ($T = 273.15\\text{ K}$, molar mass $M = 28.013\\text{ g/mol} = 0.028013\\text{ kg/mol}$):\n$$v_{rms} = \\sqrt{\\frac{3RT}{M}} = \\sqrt{\\frac{3 \\times 8.314 \\times 273.15}{0.028013}} \\approx 492.6\\text{ m/sec} \\approx 492\\text{ m/sec}$$\n\n(b) **Translational kinetic energy of one molecule at the most probable speed ($v_p$)**:\nThe most probable speed is given by:\n$$v_p = \\sqrt{\\frac{2RT}{M}} = \\sqrt{\\frac{2 \\times 8.314 \\times 273.15}{0.028013",
+      "ans_a": "D",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 301,
+          "tokens_out": 2,
+          "latency_seconds": 0.502,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 303,
+          "tokens_out": 252,
+          "latency_seconds": 2.126,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 313,
+          "tokens_out": 2,
+          "latency_seconds": 0.652,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 2.126,
+        "total_latency_seconds": 2.777
+      }
+    },
+    {
+      "idx": 90,
+      "domain": "psychology",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 233,
+          "tokens_out": 2,
+          "latency_seconds": 0.37,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 236,
+          "tokens_out": 1,
+          "latency_seconds": 0.712,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.712,
+        "total_latency_seconds": 0.712
+      }
+    },
+    {
+      "idx": 91,
+      "domain": "economics",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 168,
+          "tokens_out": 2,
+          "latency_seconds": 0.4,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 176,
+          "tokens_out": 1,
+          "latency_seconds": 0.744,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.744,
+        "total_latency_seconds": 0.744
+      }
+    },
+    {
+      "idx": 92,
+      "domain": "other",
+      "gold": "B",
+      "resp_a": "D",
+      "resp_b": "To find the cumulative income share of the bottom 60% of households, we add the income shares of the poorest 20%, the next 20%, and the middle 20%:\n\n7.5% + 11.8% + 15.5% = 34.80%\n\nB",
+      "ans_a": "D",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 223,
+          "tokens_out": 2,
+          "latency_seconds": 0.526,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 230,
+          "tokens_out": 70,
+          "latency_seconds": 0.833,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 235,
+          "tokens_out": 2,
+          "latency_seconds": 0.535,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.833,
+        "total_latency_seconds": 1.368
+      }
+    },
+    {
+      "idx": 93,
+      "domain": "physics",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 110,
+          "tokens_out": 2,
+          "latency_seconds": 0.412,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 109,
+          "tokens_out": 1,
+          "latency_seconds": 0.743,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.743,
+        "total_latency_seconds": 0.743
+      }
+    },
+    {
+      "idx": 94,
+      "domain": "math",
+      "gold": "F",
+      "resp_a": "**F**",
+      "resp_b": "F",
+      "ans_a": "F",
+      "ans_b": "F",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 179,
+          "tokens_out": 4,
+          "latency_seconds": 0.399,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 208,
+          "tokens_out": 1,
+          "latency_seconds": 0.709,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.709,
+        "total_latency_seconds": 0.709
+      }
+    },
+    {
+      "idx": 95,
+      "domain": "chemistry",
+      "gold": "J",
+      "resp_a": "G",
+      "resp_b": "To find the maximum number of phases that can be at equilibrium in a multi-component system, we use Gibbs' Phase Rule:\n\n$$F = C - P + 2$$\n\nWhere:\n* $F$ is the degrees of freedom (the minimum value for $F$ is $0$, representing an invariant point).\n* $C$ is the number of components ($C = 3$).\n* $P$ is the number of phases.\n\nSetting $F = 0$ to find the maximum number of phases ($P_{max}$):\n$$0 = 3 - P_{max} + 2$$\n$$P_{max} = 5$$\n\nJ",
+      "ans_a": "G",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 80,
+          "tokens_out": 2,
+          "latency_seconds": 0.357,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 80,
+          "tokens_out": 142,
+          "latency_seconds": 1.14,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 92,
+          "tokens_out": 2,
+          "latency_seconds": 0.403,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.14,
+        "total_latency_seconds": 1.543
+      }
+    },
+    {
+      "idx": 96,
+      "domain": "business",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "To find the amount paid:\n\n1. Calculate the price after the 10% trade discount:\n   List price = $56.65\n   Discount = 10% of $56.65 = $5.665\n   Price after trade discount = $56.65 - $5.665 = $50.985\n\n2. Check the payment terms:\n   Terms are (2/10), (n/30), meaning a 2% cash discount is available if paid within 10 days.\n   The purchase was made on December 10 and paid on December 20, which is exactly 10 days later. Therefore, the cash discount *does* apply.\n   Wait, December 10 to December 20 is 10 days. Usually, \"within 10 days\" means day 1 to day 10 (i.e., by December 19). Let's check both possibilities.\n   If the discount period includes the 10th day (Dec 10 to Dec 20 inclusive is 11 days, exclusive of start day is",
+      "ans_a": "B",
+      "ans_b": "E",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 174,
+          "tokens_out": 2,
+          "latency_seconds": 0.407,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 173,
+          "tokens_out": 252,
+          "latency_seconds": 1.491,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 186,
+          "tokens_out": 2,
+          "latency_seconds": 0.473,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.491,
+        "total_latency_seconds": 1.964
+      }
+    },
+    {
+      "idx": 97,
+      "domain": "health",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 236,
+          "tokens_out": 2,
+          "latency_seconds": 0.404,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 237,
+          "tokens_out": 1,
+          "latency_seconds": 0.725,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.725,
+        "total_latency_seconds": 0.725
+      }
+    },
+    {
+      "idx": 98,
+      "domain": "chemistry",
+      "gold": "E",
+      "resp_a": "C",
+      "resp_b": "To find the energy of the electronic transition, we use the Planck-Einstein relation:\n$$E = \\frac{hc}{\\lambda}$$\n\nWhere:\n- $h$ (Planck's constant) $\\approx 6.626 \\times 10^{-27} \\text{ erg s}$ (or $6.626 \\times 10^{-34} \\text{ J s}$)\n- $c$ (speed of light) $\\approx 3 \\times 10^{10} \\text{ cm/s}$\n- $\\lambda = 5890 \\text{ \\AA} = 5890 \\times 10^{-8} \\text{ cm} = 5.89 \\times 10^{-5} \\text{ cm}$\n\nSubstitute the values:\n$$E = \\frac{(6.626 \\times 10^{-27} \\text{ erg s}) \\times (3 \\times 10^{10} \\text{ cm/s})}{5.89 \\times 10^{-5} \\text{ cm}}$$\n\n$$E = \\frac{1.98",
+      "ans_a": "C",
+      "ans_b": "E",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "E",
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 241,
+          "tokens_out": 2,
+          "latency_seconds": 0.5,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 242,
+          "tokens_out": 252,
+          "latency_seconds": 1.278,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 253,
+          "tokens_out": 489,
+          "latency_seconds": 3.868,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.278,
+        "total_latency_seconds": 5.147
+      }
+    },
+    {
+      "idx": 99,
+      "domain": "business",
+      "gold": "H",
+      "resp_a": "C",
+      "resp_b": "To solve the problem:\n\n1. **Calculate Average Accounts Receivable:**\n   - 19X1: $(\\$28,000 + \\$32,000) / 2 = \\$30,000$\n   - 19X2: $(\\$32,000 + \\$35,000) / 2 = \\$33,500$\n\n2. **Calculate Average Collection Period (360-day year):**\n   - 19X1: $(\\$30,000 / \\$850,000) \\times 360 = 12.71$ days (approx. $12.7$ days)\n   - 19X2: $(\\$33,500 / \\$920,000) \\times 360 = 13.11$ days\n\n3. **Calculate Cost of Carrying Additional Accounts Receivable:**\n   - Increase in average receivables from 19X1 to 19X2: $\\$33,500 - \\$30,000 = \\$3",
+      "ans_a": "C",
+      "ans_b": null,
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 410,
+          "tokens_out": 2,
+          "latency_seconds": 0.534,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 408,
+          "tokens_out": 252,
+          "latency_seconds": 1.527,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 422,
+          "tokens_out": 2,
+          "latency_seconds": 0.505,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.527,
+        "total_latency_seconds": 2.032
+      }
+    },
+    {
+      "idx": 100,
+      "domain": "law",
+      "gold": "D",
+      "resp_a": "C",
+      "resp_b": "D",
+      "ans_a": "C",
+      "ans_b": "D",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 348,
+          "tokens_out": 2,
+          "latency_seconds": 0.393,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 359,
+          "tokens_out": 1,
+          "latency_seconds": 0.681,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 360,
+          "tokens_out": 2,
+          "latency_seconds": 0.425,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.681,
+        "total_latency_seconds": 1.106
+      }
+    },
+    {
+      "idx": 101,
+      "domain": "math",
+      "gold": "C",
+      "resp_a": "To determine the smallest positive integer \\( n > 1 \\) whose positive divisors have a product of \\( n^6 \\), we use the formula for the product of the divisors of a number \\( n \\):\n\n\\[\n\\text{Product of divisors} = n^{d(n)/2}\n\\]\n\nwhere \\( d(n) \\) is the number of positive divisors of \\( n \\).\n\nGiven that the product of the divisors is \\( n^6 \\), we set up the equation:\n\n\\[\nn^{d(n)/2} = n^6\n\\]\n\nThis implies:\n\n\\[\n\\frac{d(n)}{2} = 6 \\quad \\Rightarrow \\quad d(n) = 12\n\\]\n\nSo, we need to find the smallest \\( n > 1 \\) with exactly 12 positive divisors.\n\n**Step-by-Step Solution:**\n\n1. **Understand the Divisor Function:**\n   - If \\( n \\) has the prime factorization \\( n = p_1^{a_1} p_2^{a_2} \\cdots p_k^{a_k} \\), then the number of divisors is:\n     \\[\n     d(n) = (a_1 + 1)(a_2",
+      "resp_b": "To find the smallest positive integer $n$ ($n > 1$) whose positive divisors have a product of $n^6$, we can use the formula for the product of the divisors of a number $n$.\n\nThe product of the positive divisors of $n$, denoted as $P(n)$, is given by:\n$$P(n) = n^{\\frac{d(n)}{2}}$$\nwhere $d(n)$ is the number of positive divisors of $n$.\n\nWe are given that the product of the divisors is $n^6$, so:\n$$n^{\\frac{d(n)}{2}} = n^6$$\n\nThis implies that:\n$$\\frac{d(n)}{2} = 6 \\implies d(n) = 12$$\n\nWe need to find the smallest positive integer $n$ that has exactly 12 divisors. \n\nLet the prime factorization of $n$ be $p_1^{e_1} p_2^{e_2} \\cdots p_k^{e_k}$. The number of divisors is given by:\n$$d(n) = (e_1 + 1)(e_2 + 1)",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 102,
+          "tokens_out": 256,
+          "latency_seconds": 4.622,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 100,
+          "tokens_out": 252,
+          "latency_seconds": 1.59,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 4.622,
+        "total_latency_seconds": 4.622
+      }
+    },
+    {
+      "idx": 102,
+      "domain": "economics",
+      "gold": "G",
+      "resp_a": "C",
+      "resp_b": "G",
+      "ans_a": "C",
+      "ans_b": "G",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 178,
+          "tokens_out": 2,
+          "latency_seconds": 0.415,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 173,
+          "tokens_out": 1,
+          "latency_seconds": 0.735,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 190,
+          "tokens_out": 2,
+          "latency_seconds": 0.468,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.735,
+        "total_latency_seconds": 1.203
+      }
+    },
+    {
+      "idx": 103,
+      "domain": "economics",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 185,
+          "tokens_out": 2,
+          "latency_seconds": 0.376,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 187,
+          "tokens_out": 1,
+          "latency_seconds": 0.717,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.717,
+        "total_latency_seconds": 0.717
+      }
+    },
+    {
+      "idx": 104,
+      "domain": "economics",
+      "gold": "A",
+      "resp_a": "C",
+      "resp_b": "A",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 118,
+          "tokens_out": 2,
+          "latency_seconds": 0.626,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 117,
+          "tokens_out": 1,
+          "latency_seconds": 0.988,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 130,
+          "tokens_out": 2,
+          "latency_seconds": 0.476,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.988,
+        "total_latency_seconds": 1.464
+      }
+    },
+    {
+      "idx": 105,
+      "domain": "physics",
+      "gold": "C",
+      "resp_a": "(a) **D**\n(b) **D**",
+      "resp_b": "To determine the correct option, let's solve the problem step-by-step:\n\n1. **Type of mirror:** \n   - The image is formed on a wall, which means it is a **real image** (since real images can be projected on a screen/wall, whereas virtual images cannot).\n   - Only a **concave mirror** can form a real image. (Convex and plane mirrors always form virtual images for real objects).\n\n2. **Height of the image ($h_i$):**\n   - Given:\n     - Object distance ($u$) = $-10\\text{ cm} = -0.1\\text{ m}$ (by sign convention, object is in front)\n     - Image distance ($v$) = $-3\\text{ m} = -300\\text{ cm}$ (real image is formed on the same side as the object)\n     - Object height ($h_o$) = $5\\text{ mm}$\n   - Magnification formula ($m$):\n     $$m = \\frac{h_i}{h_o} = -\\frac{v}{u}$$\n   - Substitute the values:",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 178,
+          "tokens_out": 11,
+          "latency_seconds": 1.307,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 175,
+          "tokens_out": 252,
+          "latency_seconds": 1.374,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.374,
+        "total_latency_seconds": 1.374
+      }
+    },
+    {
+      "idx": 106,
+      "domain": "law",
+      "gold": "B",
+      "resp_a": "I",
+      "resp_b": "A",
+      "ans_a": "I",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 468,
+          "tokens_out": 2,
+          "latency_seconds": 0.357,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 469,
+          "tokens_out": 1,
+          "latency_seconds": 3.636,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 480,
+          "tokens_out": 2,
+          "latency_seconds": 0.882,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 3.636,
+        "total_latency_seconds": 4.518
+      }
+    },
+    {
+      "idx": 107,
+      "domain": "chemistry",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "To determine the IUPAC name for the given compound $\\text{CH}_3\\text{CHBrCHClCH}_2\\text{CH}_3$:\n\n1. **Find the longest carbon chain:** The chain has 5 carbon atoms, so the root name is **pentane**.\n2. **Number the chain:** Number from the end closer to the substituents to give them the lowest possible locants. \n   - Left to right: Bromo at C2, Chloro at C3 (Locants: 2, 3)\n   - Right to left: Chloro at C3, Bromo at C4 (Locants: 3, 4)\n   - The numbering from left to right gives the lower locants (2, 3).\n3. **Identify and alphabetize the substituents:** \n   - 2-bromo\n   - 3-chloro\n   - \"Bromo\" comes before \"chloro\" alphabetically.\n\nPutting it together, the name is **2-bromo-3-chloropentane** (ignoring hyphens/commas in standard formatting variations, it matches option B).\n\nB",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 156,
+          "tokens_out": 2,
+          "latency_seconds": 0.749,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 141,
+          "tokens_out": 239,
+          "latency_seconds": 5.925,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 5.925,
+        "total_latency_seconds": 5.925
+      }
+    },
+    {
+      "idx": 108,
+      "domain": "health",
+      "gold": "E",
+      "resp_a": "I",
+      "resp_b": "I",
+      "ans_a": "I",
+      "ans_b": "I",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 85,
+          "tokens_out": 2,
+          "latency_seconds": 1.063,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 82,
+          "tokens_out": 1,
+          "latency_seconds": 7.29,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 7.29,
+        "total_latency_seconds": 7.29
+      }
+    },
+    {
+      "idx": 109,
+      "domain": "psychology",
+      "gold": "E",
+      "resp_a": "G",
+      "resp_b": "E",
+      "ans_a": "G",
+      "ans_b": "E",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "E",
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 135,
+          "tokens_out": 2,
+          "latency_seconds": 0.57,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 139,
+          "tokens_out": 1,
+          "latency_seconds": 0.744,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 147,
+          "tokens_out": 2,
+          "latency_seconds": 0.488,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.744,
+        "total_latency_seconds": 1.232
+      }
+    },
+    {
+      "idx": 110,
+      "domain": "health",
+      "gold": "B",
+      "resp_a": "C",
+      "resp_b": "B",
+      "ans_a": "C",
+      "ans_b": "B",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 224,
+          "tokens_out": 2,
+          "latency_seconds": 0.41,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 224,
+          "tokens_out": 1,
+          "latency_seconds": 0.842,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 236,
+          "tokens_out": 2,
+          "latency_seconds": 0.561,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.842,
+        "total_latency_seconds": 1.403
+      }
+    },
+    {
+      "idx": 111,
+      "domain": "psychology",
+      "gold": "G",
+      "resp_a": "G",
+      "resp_b": "G",
+      "ans_a": "G",
+      "ans_b": "G",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "G",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 145,
+          "tokens_out": 2,
+          "latency_seconds": 0.667,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 144,
+          "tokens_out": 1,
+          "latency_seconds": 0.659,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.667,
+        "total_latency_seconds": 0.667
+      }
+    },
+    {
+      "idx": 112,
+      "domain": "other",
+      "gold": "I",
+      "resp_a": "C",
+      "resp_b": "I",
+      "ans_a": "C",
+      "ans_b": "I",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "I",
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 66,
+          "tokens_out": 2,
+          "latency_seconds": 0.39,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 67,
+          "tokens_out": 1,
+          "latency_seconds": 0.921,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 78,
+          "tokens_out": 2,
+          "latency_seconds": 0.445,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.921,
+        "total_latency_seconds": 1.366
+      }
+    },
+    {
+      "idx": 113,
+      "domain": "philosophy",
+      "gold": "H",
+      "resp_a": "H",
+      "resp_b": "A",
+      "ans_a": "H",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 149,
+          "tokens_out": 2,
+          "latency_seconds": 0.384,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 156,
+          "tokens_out": 1,
+          "latency_seconds": 0.774,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 161,
+          "tokens_out": 2,
+          "latency_seconds": 0.608,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.774,
+        "total_latency_seconds": 1.382
+      }
+    },
+    {
+      "idx": 114,
+      "domain": "physics",
+      "gold": "H",
+      "resp_a": "C",
+      "resp_b": "To find the vibrational contribution to the molar heat capacity at constant volume ($C_{V,\\text{vib}}$) for $\\mathrm{I}_2(\\mathrm{~g})$, we use the equipartition theorem and standard contributions for a diatomic molecule.\n\nFor a linear (diatomic) gas molecule like $\\mathrm{I}_2$:\n- Translational contribution: $C_{V,\\text{trans}} = \\frac{3}{2}R$\n- Rotational contribution: $C_{V,\\text{rot}} = R$\n\nTherefore, the sum of translational and rotational contributions is:\n$$C_{V,\\text{trans}} + C_{V,\\text{rot}} = \\frac{3}{2}R + R = \\frac{5}{2}R$$\n\nUsing $R = 8.314 \\text{ J mol}^{-1} \\text{ K}^{-1}$:\n$$\\frac{5}{2} \\times 8.314 = 20.785 \\text{ J mol}^{-1} \\text{ K}^{-1}$$\n\nGiven that the total molar constant volume heat capacity $C_V = 28.6 \\text{ J mol}^{-",
+      "ans_a": "C",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 373,
+          "tokens_out": 2,
+          "latency_seconds": 0.556,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 349,
+          "tokens_out": 252,
+          "latency_seconds": 1.448,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 385,
+          "tokens_out": 500,
+          "latency_seconds": 3.919,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.448,
+        "total_latency_seconds": 5.367
+      }
+    },
+    {
+      "idx": 115,
+      "domain": "law",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 410,
+          "tokens_out": 2,
+          "latency_seconds": 0.466,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 418,
+          "tokens_out": 1,
+          "latency_seconds": 0.696,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.696,
+        "total_latency_seconds": 0.696
+      }
+    },
+    {
+      "idx": 116,
+      "domain": "health",
+      "gold": "D",
+      "resp_a": "C",
+      "resp_b": "H",
+      "ans_a": "C",
+      "ans_b": "H",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 169,
+          "tokens_out": 2,
+          "latency_seconds": 0.473,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 178,
+          "tokens_out": 1,
+          "latency_seconds": 0.887,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 181,
+          "tokens_out": 2,
+          "latency_seconds": 0.489,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.887,
+        "total_latency_seconds": 1.377
+      }
+    },
+    {
+      "idx": 117,
+      "domain": "physics",
+      "gold": "B",
+      "resp_a": "To find \\(\\ddot{\\mathbf{r}} \\cdot \\mathbf{e}_r = \\mathbf{a} \\cdot \\mathbf{e}_r\\) for a particle moving with constant speed \\(v\\) along the cardioid \\(r = k(1 + \\cos \\theta)\\), we proceed as follows:\n\n1. **Express the position vector in Cartesian coordinates:**\n   \\[\n   \\mathbf{r} = r \\mathbf{e}_r = k(1 + \\cos \\theta) \\mathbf{e}_r\n   \\]\n   where \\(\\mathbf{e}_r\\) is the radial unit vector.\n\n2. **Convert to Cartesian coordinates:**\n   \\[\n   x = r \\cos \\theta = k(1 + \\cos \\theta) \\cos \\theta\n   \\]\n   \\[\n   y = r \\sin \\theta = k(1 + \\cos \\theta) \\sin \\theta\n   \\]\n\n3. **Compute the first derivative \\(\\dot{\\mathbf{r}}\\):**\n   Since \\(v = \\text{const}\\), we have \\(v = \\sqrt{\\dot{x}^2 + \\dot{y}^2}\\). Using the chain rule and polar coordinates, we find:\n   \\[\n   \\dot{\\mathbf{r}} = \\frac{dr}{d\\theta} \\",
+      "resp_b": "To find the radial component of the acceleration $\\mathbf{a} \\cdot \\mathbf{e}_r = \\ddot{r} - r\\dot{\\theta}^2$ for a particle moving with constant speed $v$ along the cardioid $r = k(1 + \\cos \\theta)$, we proceed as follows:\n\n1. **Cardioid geometry and derivatives:**\n   $r = k(1 + \\cos \\theta)$\n   $\\dot{r} = -k \\sin \\theta \\, \\dot{\\theta}$\n   $\\ddot{r} = -k \\cos \\theta \\, \\dot{\\theta}^2 - k \\sin \\theta \\, \\ddot{\\theta}$\n\n2. **Velocity squared ($v^2$):**\n   The square of the speed in polar coordinates is:\n   $v^2 = \\dot{r}^2 + r^2 \\dot{\\theta}^2 = k^2 \\sin^2 \\theta \\, \\dot{\\theta}^2 + k^2(1 + \\cos \\theta)^2 \\dot{\\theta}^2$\n   $v^2 = k^2 \\dot{\\theta}^2\n [\\sin^2 \\theta +",
+      "ans_a": "D",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 221,
+          "tokens_out": 256,
+          "latency_seconds": 2.296,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 236,
+          "tokens_out": 252,
+          "latency_seconds": 1.425,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 233,
+          "tokens_out": 500,
+          "latency_seconds": 3.516,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 2.296,
+        "total_latency_seconds": 5.812
+      }
+    },
+    {
+      "idx": 118,
+      "domain": "biology",
+      "gold": "F",
+      "resp_a": "F",
+      "resp_b": "F",
+      "ans_a": "F",
+      "ans_b": "F",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 161,
+          "tokens_out": 2,
+          "latency_seconds": 0.374,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 167,
+          "tokens_out": 1,
+          "latency_seconds": 0.745,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.745,
+        "total_latency_seconds": 0.745
+      }
+    },
+    {
+      "idx": 119,
+      "domain": "math",
+      "gold": "F",
+      "resp_a": "**Solution Outline**\n\n1.  Define the integrand\n    -  \\(I(\\theta)=N^2\\,\\frac{\\sin^2(k)}{k^2}\\) with\n       \\(k=\\frac{\\pi\\,N\\,d\\,\\sin\\theta}{\\lambda}\\).\n    -  Given \\(N=10^4\\), \\(d=10^{-4}\\,\\mathrm{m}\\), \\(\\lambda=632.8\\times10^{-9}\\,\\mathrm{m}\\), so\n       \\[\n         k(\\theta)\n         =\\frac{\\pi\\cdot10^4\\cdot10^{-4}\\,\\sin\\theta}\n              {632.8\\times10^{-9}}\n         \\approx1.5806\\times10^6\\,\\sin\\theta.\n       \\]\n\n2.  Midpoint\u2010rule setup\n    -  Interval \\([-10^{-6},10^{-6}]\\), \\(n=10\\).\n    -  Subinterval width \\(\\Delta\\theta=2\\times10^{-6}\\).\n    -  Midpoints \\(\\theta_j=-10^{-6}+j\\,\\Delta\\theta\\), \\(j=0,\\dots,9\\).\n\n3.  Evaluate \\(I(\\theta_j)\\) at each midpoint\n    -  For each",
+      "resp_b": "To find the estimated total light intensity, we need to evaluate the integral $\\int_{-10^{-6}}^{10^{-6}} I(\\theta) d\\theta$ using the Midpoint Rule with $n = 10$.\n\nGiven parameters:\n- $N = 10,000$\n- $d = 10^{-4} \\text{ m}$\n- $\\lambda = 632.8 \\times 10^{-9} \\text{ m}$\n- Interval $[a, b] = [-10^{-6}, 10^{-6}]$\n- $n = 10$\n\nThe width of each subinterval is:\n$$\\Delta \\theta = \\frac{b - a}{n} = \\frac{10^{-6} - (-10^{-6})}{10} = \\frac{2 \\times 10^{-6}}{10} = 2 \\times 10^{-7}$$\n\nThe midpoints of the 10 subintervals are given by:\n$$\\theta_i = a + \\left(i - \\frac{1}{2}\\right)\\Delta \\theta \\quad \\text{for }",
+      "ans_a": "I",
+      "ans_b": "I",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 289,
+          "tokens_out": 256,
+          "latency_seconds": 2.105,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 282,
+          "tokens_out": 252,
+          "latency_seconds": 1.316,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 2.105,
+        "total_latency_seconds": 2.105
+      }
+    },
+    {
+      "idx": 120,
+      "domain": "business",
+      "gold": "H",
+      "resp_a": "E",
+      "resp_b": "To find the milline rate, use the formula:\n\n$$\\text{Milline Rate} = \\frac{\\text{Rate per agate line} \\times 1,000,000}{\\text{Circulation}}$$\n\n$$\\text{Milline Rate} = \\frac{\\$4 \\times 1,000,000}{2,000,000} = \\frac{\\$4,000,000}{2,000,000} = \\$2.00$$\n\nH",
+      "ans_a": "E",
+      "ans_b": "H",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 120,
+          "tokens_out": 2,
+          "latency_seconds": 1.021,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 120,
+          "tokens_out": 117,
+          "latency_seconds": 1.023,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 132,
+          "tokens_out": 2,
+          "latency_seconds": 0.495,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.023,
+        "total_latency_seconds": 1.518
+      }
+    },
+    {
+      "idx": 121,
+      "domain": "physics",
+      "gold": "H",
+      "resp_a": "**C**",
+      "resp_b": "To find the hovering time, we can use the Tsiolkovsky rocket equation and the condition for hovering.\n\n1. **Hovering Condition:**\n   The upward thrust must equal the downward gravitational force:\n   $$F_{\\text{thrust}} = v_e \\left(-\\frac{dm}{dt}\\right) = m g_{\\text{moon}}$$\n   where $g_{\\text{moon}} = \\frac{g}{6} \\approx \\frac{9.81}{6} \\approx 1.635 \\mathrm{~m/s^2}$, and $v_e = 2000 \\mathrm{~m/s}$.\n\n2. **Fuel Mass and Time:**\n   Since the burn rate $-\\frac{dm}{dt}$ is constant for a constant thrust to hover:\n   $$-\\frac{dm}{dt} = \\frac{m g_{\\text{moon}}}{v_e}$$\n   The total mass $m(t)$ decreases as fuel is burned. However, for a small fraction of mass used (20%), we can approximate the average mass or use the exact integration. \n   \n   Using the rocket equation for constant acceleration (hovering",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 182,
+          "tokens_out": 4,
+          "latency_seconds": 0.386,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 180,
+          "tokens_out": 252,
+          "latency_seconds": 1.496,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 194,
+          "tokens_out": 500,
+          "latency_seconds": 3.877,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.496,
+        "total_latency_seconds": 5.372
+      }
+    },
+    {
+      "idx": 122,
+      "domain": "economics",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 70,
+          "tokens_out": 2,
+          "latency_seconds": 0.565,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 71,
+          "tokens_out": 1,
+          "latency_seconds": 0.84,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.84,
+        "total_latency_seconds": 0.84
+      }
+    },
+    {
+      "idx": 123,
+      "domain": "business",
+      "gold": "F",
+      "resp_a": "B",
+      "resp_b": "To find the total number of rides the family can go on, we first need to calculate the cost for one \"round\" of rides where all four family members (2 adults, 2 children) go on a ride once:\n\n* Cost for 2 adults: $0.75 \\times 2 = \\$1.50$\n* Cost for 2 children: $0.50 \\times 2 = \\$1.00$\n* Total cost per round for the whole family: $\\$1.50 + \\$1.00 = \\$2.50$\n\nNext, we divide Mr. Stadlow's total money by the cost per round:\n* Total money: $\\$10.00$\n* Number of rounds: $\\$10.00 / \\$2.50 = 4$ rounds\n\nSince the family goes on 4 rounds together, and each round consists of 4 rides (one for each family member), the total number of rides is:\n* $4 \\text{ rounds} \\times 4 \\text{ family members} = 16 \\text{ rides}$ \n\nWait, let's re-read carefully. Does \"",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 128,
+          "tokens_out": 2,
+          "latency_seconds": 0.397,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 128,
+          "tokens_out": 252,
+          "latency_seconds": 2.325,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 140,
+          "tokens_out": 2,
+          "latency_seconds": 0.488,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 2.325,
+        "total_latency_seconds": 2.813
+      }
+    },
+    {
+      "idx": 124,
+      "domain": "computer science",
+      "gold": "G",
+      "resp_a": "A",
+      "resp_b": "To find the minimum vertex cover of the graph $G$ with edges $E = \\{\\langle 2,1\\rangle, \\langle 2,0\\rangle, \\langle 2,3\\rangle, \\langle 1,4\\rangle, \\langle 4,3\\rangle\\}$:\n\nThe edges are:\n- (2, 1)\n- (2, 0)\n- (2, 3)\n- (1, 4)\n- (4, 3)\n\nLet's test the option **D. [1, 3]**:\n- Edge (2, 1) is covered by 1.\n- Edge (2, 0) is not covered by {1, 3}. Thus, {1, 3} is not a valid vertex cover.\n\nLet's test option **A. [2, 3]**:\n- Edge (2, 1): covered by 2.\n- Edge (2, 0): covered by 2.\n- Edge (2, 3): covered by 2 and 3.\n- Edge (1, 4): not covered. Not a valid vertex cover",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 181,
+          "tokens_out": 2,
+          "latency_seconds": 0.346,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 190,
+          "tokens_out": 252,
+          "latency_seconds": 1.465,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.465,
+        "total_latency_seconds": 1.465
+      }
+    },
+    {
+      "idx": 125,
+      "domain": "chemistry",
+      "gold": "A",
+      "resp_a": "C",
+      "resp_b": "To find the total heat needed, we need to calculate three components:\n1. Heating the solid lead from 20\u00b0C to its melting point (327\u00b0C):\n   $Q_1 = m \\cdot c_{\\text{solid}} \\cdot \\Delta T_1 = 60 \\text{ g} \\cdot 0.0306 \\text{ cal/(g}\\cdot^\\circ\\text{C)} \\cdot (327 - 20)^\\circ\\text{C}$\n   $Q_1 = 60 \\cdot 0.0306 \\cdot 307 \\approx 563.65 \\text{ cal}$\n\n2. Melting the lead at 327\u00b0C (Heat of fusion):\n   $Q_2 = m \\cdot L_f = 60 \\text{ g} \\cdot 5.86 \\text{ cal/g} = 351.6 \\text{ cal}$\n\n3. Heating the liquid lead from 327\u00b0C to 360\u00b0C:\n   $Q_3 = m \\cdot c_{\\text{",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 165,
+          "tokens_out": 2,
+          "latency_seconds": 0.462,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 166,
+          "tokens_out": 252,
+          "latency_seconds": 1.402,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.402,
+        "total_latency_seconds": 1.402
+      }
+    },
+    {
+      "idx": 126,
+      "domain": "other",
+      "gold": "F",
+      "resp_a": "F",
+      "resp_b": "F",
+      "ans_a": "F",
+      "ans_b": "F",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "F",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 124,
+          "tokens_out": 2,
+          "latency_seconds": 1.072,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 151,
+          "tokens_out": 1,
+          "latency_seconds": 0.748,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 1.072,
+        "total_latency_seconds": 1.072
+      }
+    },
+    {
+      "idx": 127,
+      "domain": "chemistry",
+      "gold": "A",
+      "resp_a": "B",
+      "resp_b": "A",
+      "ans_a": "B",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "E",
+      "final_ans": "E",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 386,
+          "tokens_out": 2,
+          "latency_seconds": 0.511,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 386,
+          "tokens_out": 1,
+          "latency_seconds": 0.944,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 398,
+          "tokens_out": 2,
+          "latency_seconds": 0.451,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.944,
+        "total_latency_seconds": 1.396
+      }
+    },
+    {
+      "idx": 128,
+      "domain": "other",
+      "gold": "J",
+      "resp_a": "G",
+      "resp_b": "J",
+      "ans_a": "G",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "G",
+      "final_ans": "G",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 76,
+          "tokens_out": 2,
+          "latency_seconds": 0.494,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 76,
+          "tokens_out": 1,
+          "latency_seconds": 0.777,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 88,
+          "tokens_out": 2,
+          "latency_seconds": 0.439,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.777,
+        "total_latency_seconds": 1.215
+      }
+    },
+    {
+      "idx": 129,
+      "domain": "physics",
+      "gold": "J",
+      "resp_a": "C",
+      "resp_b": "J",
+      "ans_a": "C",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 62,
+          "tokens_out": 2,
+          "latency_seconds": 0.41,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 62,
+          "tokens_out": 1,
+          "latency_seconds": 0.675,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 74,
+          "tokens_out": 2,
+          "latency_seconds": 0.561,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.675,
+        "total_latency_seconds": 1.236
+      }
+    },
+    {
+      "idx": 130,
+      "domain": "math",
+      "gold": "I",
+      "resp_a": "I",
+      "resp_b": "I",
+      "ans_a": "I",
+      "ans_b": "I",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 113,
+          "tokens_out": 2,
+          "latency_seconds": 0.341,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 111,
+          "tokens_out": 1,
+          "latency_seconds": 0.825,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.825,
+        "total_latency_seconds": 0.825
+      }
+    },
+    {
+      "idx": 131,
+      "domain": "other",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 91,
+          "tokens_out": 2,
+          "latency_seconds": 0.713,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 91,
+          "tokens_out": 1,
+          "latency_seconds": 0.818,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.818,
+        "total_latency_seconds": 0.818
+      }
+    },
+    {
+      "idx": 132,
+      "domain": "business",
+      "gold": "I",
+      "resp_a": "I",
+      "resp_b": "I",
+      "ans_a": "I",
+      "ans_b": "I",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 168,
+          "tokens_out": 2,
+          "latency_seconds": 0.43,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 148,
+          "tokens_out": 1,
+          "latency_seconds": 0.873,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.873,
+        "total_latency_seconds": 0.873
+      }
+    },
+    {
+      "idx": 133,
+      "domain": "other",
+      "gold": "H",
+      "resp_a": "D",
+      "resp_b": "H",
+      "ans_a": "D",
+      "ans_b": "H",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 85,
+          "tokens_out": 2,
+          "latency_seconds": 0.567,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 85,
+          "tokens_out": 1,
+          "latency_seconds": 0.721,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 97,
+          "tokens_out": 2,
+          "latency_seconds": 0.58,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.721,
+        "total_latency_seconds": 1.301
+      }
+    },
+    {
+      "idx": 134,
+      "domain": "philosophy",
+      "gold": "E",
+      "resp_a": "E",
+      "resp_b": "H",
+      "ans_a": "E",
+      "ans_b": "H",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "H",
+      "final_ans": "H",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 157,
+          "tokens_out": 2,
+          "latency_seconds": 0.387,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 166,
+          "tokens_out": 1,
+          "latency_seconds": 1.429,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 169,
+          "tokens_out": 2,
+          "latency_seconds": 0.433,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.429,
+        "total_latency_seconds": 1.862
+      }
+    },
+    {
+      "idx": 135,
+      "domain": "math",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 111,
+          "tokens_out": 2,
+          "latency_seconds": 0.47,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 113,
+          "tokens_out": 1,
+          "latency_seconds": 0.762,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.762,
+        "total_latency_seconds": 0.762
+      }
+    },
+    {
+      "idx": 136,
+      "domain": "chemistry",
+      "gold": "B",
+      "resp_a": "C",
+      "resp_b": "To find the melting point of sulfur at 1000 atm, we can use the Clausius-Clapeyron equation for phase transitions (fusion):\n\n$$\\frac{dT}{dP} = \\frac{T \\Delta V}{\\Delta H_{fus}}$$\n\nGiven:\n- Initial temperature ($T$) = $119.3^\\circ\\text{C} = 392.45\\text{ K}$\n- Change in volume ($\\Delta V$) = $41\\text{ cm}^3\\text{ kg}^{-1} = 4.1 \\times 10^{-5}\\text{ m}^3\\text{ kg}^{-1}$\n- Enthalpy of fusion ($\\Delta H_{fus}$) = $422\\text{ cal mol}^{-1}$\n  - Molar mass of sulfur ($S_8$) $\\approx 256.5\\text{ g mol}^{-1} = 0.2565\\text{ kg mol}^{-1}$\n  - $\\Delta H_{fus} = 422\\text{ cal mol}^{-1} \\times 4.184\\text{ J cal}^{-1}",
+      "ans_a": "C",
+      "ans_b": "J",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 119,
+          "tokens_out": 2,
+          "latency_seconds": 0.623,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 119,
+          "tokens_out": 252,
+          "latency_seconds": 1.341,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 131,
+          "tokens_out": 2,
+          "latency_seconds": 0.553,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.341,
+        "total_latency_seconds": 1.895
+      }
+    },
+    {
+      "idx": 137,
+      "domain": "economics",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 348,
+          "tokens_out": 2,
+          "latency_seconds": 0.434,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 359,
+          "tokens_out": 1,
+          "latency_seconds": 0.92,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.92,
+        "total_latency_seconds": 0.92
+      }
+    },
+    {
+      "idx": 138,
+      "domain": "math",
+      "gold": "H",
+      "resp_a": "A",
+      "resp_b": "H",
+      "ans_a": "A",
+      "ans_b": "H",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 185,
+          "tokens_out": 2,
+          "latency_seconds": 0.418,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 181,
+          "tokens_out": 1,
+          "latency_seconds": 0.744,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 197,
+          "tokens_out": 2,
+          "latency_seconds": 0.452,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.744,
+        "total_latency_seconds": 1.196
+      }
+    },
+    {
+      "idx": 139,
+      "domain": "chemistry",
+      "gold": "H",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 353,
+          "tokens_out": 2,
+          "latency_seconds": 0.402,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 336,
+          "tokens_out": 1,
+          "latency_seconds": 0.743,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.743,
+        "total_latency_seconds": 0.743
+      }
+    },
+    {
+      "idx": 140,
+      "domain": "chemistry",
+      "gold": "H",
+      "resp_a": "**C**",
+      "resp_b": "To calculate the theoretical density ($\\rho$) of sodium (Na) in a body-centered cubic (BCC) structure:\n\n1. **Formula for density:**\n   $$\\rho = \\frac{Z \\cdot M}{N_A \\cdot a^3}$$\n\n2. **Given values:**\n   * Number of atoms per unit cell for BCC ($Z$) = $2$\n   * Molar mass of Na ($M$) = $22.99 \\, \\text{g/mol} = 22.99 \\times 10^{-3} \\, \\text{kg/mol}$\n   * Avogadro's number ($N_A$) = $6.022 \\times 10^{23} \\, \\text{mol}^{-1}$\n   * Edge length ($a$) = $4.24 \\, \\text{\\AA} = 4.24 \\times 10^{-10} \\, \\text{m}$\n\n3. **Calculation:**\n   * Volume ($a^3$) = $(4.24 \\times 10^{-10} \\, \\text{m})^3 = 7.625",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "B",
+      "final_ans": "B",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 216,
+          "tokens_out": 4,
+          "latency_seconds": 0.564,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 216,
+          "tokens_out": 252,
+          "latency_seconds": 1.46,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 228,
+          "tokens_out": 2,
+          "latency_seconds": 0.502,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.46,
+        "total_latency_seconds": 1.962
+      }
+    },
+    {
+      "idx": 141,
+      "domain": "business",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "D",
+      "ans_a": "D",
+      "ans_b": "D",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 55,
+          "tokens_out": 2,
+          "latency_seconds": 0.508,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 57,
+          "tokens_out": 1,
+          "latency_seconds": 0.795,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.795,
+        "total_latency_seconds": 0.795
+      }
+    },
+    {
+      "idx": 142,
+      "domain": "physics",
+      "gold": "I",
+      "resp_a": "C",
+      "resp_b": "To find the rate of heat dissipation by conduction and radiation, we use the standard formulas for heat transfer between a fine wire (inner cylinder) and a surrounding coaxial cylinder.\n\n**1. Conduction through the gas:**\nThe rate of heat transfer by conduction through a cylindrical shell is given by:\n$$\\frac{dQ}{dt} = \\frac{2\\pi k L (T_1 - T_2)}{\\ln(r_2/r_1)}$$\n\nGiven:\n*   Diameter of wire, $d_1 = 0.5 \\text{ mm} \\implies r_1 = 0.025 \\text{ cm}$\n*   Diameter of cylinder, $d_2 = 5 \\text{ cm} \\implies r_2 = 2.5 \\text{ cm}$\n*   Length, $L = 25 \\text{ cm}$\n*   Temperature of wire, $T_1 = 750 \\text{ K}$\n*   Temperature of cylinder, $T_2 = 250 \\text{ K}$\n*   Thermal conductivity, $k = 6 \\times 10^{-5} \\text{",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 377,
+          "tokens_out": 2,
+          "latency_seconds": 0.627,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 377,
+          "tokens_out": 252,
+          "latency_seconds": 1.454,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 389,
+          "tokens_out": 2,
+          "latency_seconds": 0.489,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.454,
+        "total_latency_seconds": 1.943
+      }
+    },
+    {
+      "idx": 143,
+      "domain": "chemistry",
+      "gold": "J",
+      "resp_a": "D",
+      "resp_b": "To find the molecular mass ($M$) of the gas, we can use the ideal gas law rearranged for density:\n\n$$M = \\frac{dRT}{P}$$\n\nWhere:\n* $d = 2.05 \\text{ g/L}$\n* $R = 0.08206 \\text{ L}\\cdot\\text{atm}/(\\text{mol}\\cdot\\text{K})$\n* $T = 26.0\\text{ }^\\circ\\text{C} + 273.15 = 299.15 \\text{ K}$\n* $P = \\frac{722 \\text{ torr}}{760 \\text{ torr/atm}} = 0.950 \\text{ atm}$\n\nNow, plug in the values:\n\n$$M = \\frac{(2.05 \\text{ g/L}) \\times (0.08206 \\text{ L}\\cdot\\text{atm}/(\\text{mol}\\cdot\\text{K})) \\times (299.15 \\text{ K})}{0.950 \\text{ atm}}$$",
+      "ans_a": "D",
+      "ans_b": "G",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 142,
+          "tokens_out": 2,
+          "latency_seconds": 0.439,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 153,
+          "tokens_out": 252,
+          "latency_seconds": 2.574,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 154,
+          "tokens_out": 2,
+          "latency_seconds": 0.51,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 2.574,
+        "total_latency_seconds": 3.084
+      }
+    },
+    {
+      "idx": 144,
+      "domain": "math",
+      "gold": "D",
+      "resp_a": "D",
+      "resp_b": "E",
+      "ans_a": "D",
+      "ans_b": "E",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 83,
+          "tokens_out": 2,
+          "latency_seconds": 0.579,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 82,
+          "tokens_out": 1,
+          "latency_seconds": 0.705,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 95,
+          "tokens_out": 2,
+          "latency_seconds": 0.434,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 0.705,
+        "total_latency_seconds": 1.139
+      }
+    },
+    {
+      "idx": 145,
+      "domain": "biology",
+      "gold": "E",
+      "resp_a": "E",
+      "resp_b": "E",
+      "ans_a": "E",
+      "ans_b": "E",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 205,
+          "tokens_out": 2,
+          "latency_seconds": 0.366,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 200,
+          "tokens_out": 1,
+          "latency_seconds": 0.883,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.883,
+        "total_latency_seconds": 0.883
+      }
+    },
+    {
+      "idx": 146,
+      "domain": "physics",
+      "gold": "E",
+      "resp_a": "C",
+      "resp_b": "To find the actual distance, we need to account for the thermal expansion of the steel tape. \n\nThe coefficient of linear expansion for steel is approximately $\\alpha = 1.2 \\times 10^{-5} \\,^\\circ\\text{C}^{-1}$ (or $\\text{K}^{-1}$).\n\nThe change in temperature is:\n$\\Delta T = 35^\\circ\\text{C} - 20^\\circ\\text{C} = 15^\\circ\\text{C}$\n\nThe fractional increase in the length of the tape is:\n$\\frac{\\Delta L}{L_0} = \\alpha \\Delta T = (1.2 \\times 10^{-5})(15) = 0.00018$\n\nThus, the actual length of each \"meter\" marked on the tape at $35^\\circ\\text{C}$ is:\n$L = L_0 (1 + \\alpha \\Delta T) = 1 + 0.00018 = 1.00018\\text{ m}$\n\nThe actual distance $D$ is the measured reading multiplied by this expansion factor:\n$",
+      "ans_a": "C",
+      "ans_b": "D",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "E",
+      "final_ans": "E",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 184,
+          "tokens_out": 2,
+          "latency_seconds": 0.527,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 184,
+          "tokens_out": 252,
+          "latency_seconds": 5.413,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 196,
+          "tokens_out": 2,
+          "latency_seconds": 0.41,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 5.413,
+        "total_latency_seconds": 5.823
+      }
+    },
+    {
+      "idx": 147,
+      "domain": "math",
+      "gold": "D",
+      "resp_a": "C",
+      "resp_b": "To find out what day of the week April 2011 began on, we can work it out step-by-step:\n\n1. February 2011 had 28 days (not a leap year). \n2. March 2011 had 31 days.\n3. Total days from March 1 to April 1 = 31 days.\n4. 31 divided by 7 leaves a remainder of 3 (since $7 \\times 4 = 28$, and $31 - 28 = 3$).\n\nThis means April 1 falls 3 days later in the week than March 1 did. However, since the question asks for the day of the week for April based on the end of March, we look at the last day of March. \n- March has 31 days. \n- February 2011 started on a Tuesday (February 1, 2011 was a Tuesday).\n- February had 28 days ($28 = 4 \\times 7$), so March 1 was also a Tuesday.\n- March has 31 days. March 31",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "D",
+      "final_ans": "D",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 70,
+          "tokens_out": 2,
+          "latency_seconds": 0.368,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 70,
+          "tokens_out": 252,
+          "latency_seconds": 1.822,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 82,
+          "tokens_out": 2,
+          "latency_seconds": 0.441,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.822,
+        "total_latency_seconds": 2.262
+      }
+    },
+    {
+      "idx": 148,
+      "domain": "physics",
+      "gold": "I",
+      "resp_a": "C",
+      "resp_b": "To find the flow speed in the second section of the pipe, we use the volumetric flow rate formula:\n$$Q = A \\cdot v$$\n\nWhere:\n- $Q$ is the volume flow rate = $9.5\\text{ liters/second} = 9.5 \\times 10^{-3}\\text{ m}^3\\text{/s}$\n- $A$ is the cross-sectional area of the pipe = $\\pi r^2 = \\pi \\left(\\frac{d}{2}\\right)^2$\n- $d$ is the diameter = $4.0\\text{ cm} = 0.04\\text{ m}$\n- $v$ is the flow speed\n\nFirst, calculate the cross-sectional area $A$:\n$$A = \\pi \\left(\\frac{0.04\\text{ m}}{2}\\right)^2 = \\pi (0.02\\text{ m})^2 = 0.0004\\pi\\text{ m}^2 \\approx 0.0012566\\text{ m}^2$$\n\nNow, solve for the flow speed $v$:\n$$",
+      "ans_a": "C",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "I",
+      "final_ans": "I",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 144,
+          "tokens_out": 2,
+          "latency_seconds": 0.393,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 143,
+          "tokens_out": 252,
+          "latency_seconds": 1.618,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 156,
+          "tokens_out": 3,
+          "latency_seconds": 0.504,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.618,
+        "total_latency_seconds": 2.122
+      }
+    },
+    {
+      "idx": 149,
+      "domain": "philosophy",
+      "gold": "B",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 145,
+          "tokens_out": 2,
+          "latency_seconds": 0.391,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 152,
+          "tokens_out": 1,
+          "latency_seconds": 0.709,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.709,
+        "total_latency_seconds": 0.709
+      }
+    }
+  ]
+}

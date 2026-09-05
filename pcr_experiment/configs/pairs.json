@@ -1,0 +1,22 @@
+{
+  "pairs": {
+    "pair2": {"cheap_a":{"provider":"groq","model":"allam-2-7b"},"cheap_b":{"provider":"mistral","model":"mistral-small-latest"},"frontier":{"provider":"groq","model":"openai/gpt-oss-120b"}},
+    "pair3": {
+  "description": "Within-family Mistral control.",
+  "cheap_a": {
+    "provider": "mistral",
+    "model": "ministral-3b-latest"
+  },
+  "cheap_b": {
+    "provider": "mistral",
+    "model": "ministral-8b-latest"
+  },
+  "frontier": {
+    "provider": "mistral",
+    "model": "mistral-large-latest"
+  }
+},
+    "pair4": {"cheap_a":{"provider":"groq","model":"allam-2-7b"},"cheap_b":{"provider":"gemini","model":"gemini-2.5-flash-lite"},"frontier":{"provider":"groq","model":"openai/gpt-oss-120b"}},
+    "pair5": {"cheap_a":{"provider":"groq","model":"allam-2-7b"},"cheap_b":{"provider":"gemini","model":"gemini-2.5-flash-lite"},"frontier":{"provider":"gemini","model":"gemini-3.1-pro"}}
+  }
+}

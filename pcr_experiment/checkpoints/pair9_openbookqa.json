@@ -1,0 +1,138 @@
+{
+  "pair_id": "pair9",
+  "benchmark": "openbookqa",
+  "n_total": 200,
+  "cheap_a": "mistral:ministral-8b-latest",
+  "cheap_b": "gemini:gemini-flash-lite-latest",
+  "frontier": "mistral:mistral-medium-latest",
+  "results": [
+    {
+      "idx": 0,
+      "domain": "openbookqa",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 59,
+          "tokens_out": 2,
+          "latency_seconds": 1.439,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 55,
+          "tokens_out": 1,
+          "latency_seconds": 32.178,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 32.178,
+        "total_latency_seconds": 32.178
+      }
+    },
+    {
+      "idx": 1,
+      "domain": "openbookqa",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 56,
+          "tokens_out": 2,
+          "latency_seconds": 0.57,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 52,
+          "tokens_out": 1,
+          "latency_seconds": 21.603,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 21.603,
+        "total_latency_seconds": 21.603
+      }
+    },
+    {
+      "idx": 2,
+      "domain": "openbookqa",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 43,
+          "tokens_out": 2,
+          "latency_seconds": 0.495,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 42,
+          "tokens_out": 1,
+          "latency_seconds": 19.872,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 19.872,
+        "total_latency_seconds": 19.872
+      }
+    },
+    {
+      "idx": 3,
+      "domain": "openbookqa",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 40,
+          "tokens_out": 2,
+          "latency_seconds": 0.48,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 39,
+          "tokens_out": 1,
+          "latency_seconds": 23.173,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 23.173,
+        "total_latency_seconds": 23.173
+      }
+    }
+  ]
+}

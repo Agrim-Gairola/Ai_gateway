@@ -1,0 +1,37 @@
+{
+  "pair": "pair2",
+  "benchmark": "mmlu",
+  "n_completed": 250,
+  "n_planned": 250,
+  "metrics": {
+    "agreement_rate": 0.608,
+    "escalation_rate": 0.392,
+    "accuracy_when_agreed": 0.8355263157894737,
+    "coordinated_hallucination_rate": 0.16447368421052633,
+    "overall_pcr_accuracy": 0.816
+  },
+  "metrics_95ci": {
+    "agreement_rate": [
+      0.5462854973692514,
+      0.66644559162483
+    ],
+    "accuracy_when_agreed": [
+      0.7684679929264209,
+      0.8860427410496163
+    ],
+    "coordinated_hallucination_rate": [
+      0.11395725895038367,
+      0.23153200707357918
+    ],
+    "overall_pcr_accuracy": [
+      0.7633102234972703,
+      0.8591251850409677
+    ]
+  },
+  "ablation": {
+    "always_cheap_a": 0.568,
+    "always_cheap_b": 0.756,
+    "no_escalation": 0.568,
+    "pcr_full": 0.816
+  }
+}
