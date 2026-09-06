@@ -473,6 +473,38 @@
         "parallel_latency_seconds": 60.683,
         "total_latency_seconds": 60.683
       }
+    },
+    {
+      "idx": 14,
+      "domain": "public_relations",
+      "gold": "B",
+      "resp_a": "B",
+      "resp_b": "B",
+      "ans_a": "B",
+      "ans_b": "B",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "B",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 202,
+          "tokens_out": 41,
+          "latency_seconds": 0.632,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 144,
+          "tokens_out": 2,
+          "latency_seconds": 0.271,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 0.632,
+        "total_latency_seconds": 0.632
+      }
     }
   ]
 }

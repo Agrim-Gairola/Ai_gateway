@@ -31,6 +31,68 @@
       "always_frontier": 0.515875
     }
   },
+  "pair10_mmlu_pro": {
+    "n": 150,
+    "escalation_rate": 0.4533333333333333,
+    "acc": {
+      "always_cheap_a": 0.6533333333333333,
+      "always_cheap_b": 0.6333333333333333,
+      "consensus_no_escalation": 0.6533333333333333,
+      "pcr2": 0.7666666666666667,
+      "oracle_2cheap": 0.8333333333333334,
+      "best_cheap": 0.6533333333333333,
+      "always_frontier": 0.7125,
+      "random_cheap_frontier": 0.6829166666666666
+    },
+    "chall": {
+      "consensus_no_escalation": 0.17073170731707318,
+      "pcr2": 0.17073170731707318
+    },
+    "cost_per_1k": {
+      "always_cheap_a": 0.03865933333333334,
+      "always_cheap_b": 0.04448266666666666,
+      "consensus_no_escalation": 0.08314200000000001,
+      "pcr2": 0.2176226666666667,
+      "always_frontier": 0.29664852941176467
+    },
+    "latency": {
+      "always_cheap_a": 1.57464,
+      "always_cheap_b": 0.23949333333333334,
+      "consensus_no_escalation": 1.6454733333333333,
+      "pcr2": 2.0995333333333335,
+      "always_frontier": 1.0016029411764706
+    }
+  },
+  "pair10_openbookqa": {
+    "n": 200,
+    "escalation_rate": 0.09,
+    "acc": {
+      "always_cheap_a": 0.91,
+      "always_cheap_b": 0.97,
+      "consensus_no_escalation": 0.91,
+      "pcr2": 0.945,
+      "oracle_2cheap": 0.985,
+      "best_cheap": 0.97
+    },
+    "chall": {
+      "consensus_no_escalation": 0.016483516483516484,
+      "pcr2": 0.016483516483516484
+    },
+    "cost_per_1k": {
+      "always_cheap_a": 0.0158015,
+      "always_cheap_b": 0.011604,
+      "consensus_no_escalation": 0.0274055,
+      "pcr2": 0.035724500000000006,
+      "always_frontier": 0.09243333333333333
+    },
+    "latency": {
+      "always_cheap_a": 4.23971,
+      "always_cheap_b": 0.16416,
+      "consensus_no_escalation": 4.25563,
+      "pcr2": 4.30582,
+      "always_frontier": 0.5576666666666666
+    }
+  },
   "pair10_truthfulqa": {
     "n": 150,
     "escalation_rate": 0.3,
@@ -61,6 +123,70 @@
       "consensus_no_escalation": 0.8839866666666667,
       "pcr2": 1.0344066666666667,
       "always_frontier": 0.5014
+    }
+  },
+  "pair11_arc": {
+    "n": 150,
+    "escalation_rate": 0.06666666666666667,
+    "acc": {
+      "always_cheap_a": 0.92,
+      "always_cheap_b": 0.94,
+      "consensus_no_escalation": 0.92,
+      "pcr2": 0.9466666666666667,
+      "oracle_2cheap": 0.9533333333333334,
+      "best_cheap": 0.94,
+      "always_frontier": 0.95,
+      "random_cheap_frontier": 0.935
+    },
+    "chall": {
+      "consensus_no_escalation": 0.02857142857142857,
+      "pcr2": 0.02857142857142857
+    },
+    "cost_per_1k": {
+      "always_cheap_a": 0.01716466666666667,
+      "always_cheap_b": 0.015832,
+      "consensus_no_escalation": 0.03299666666666667,
+      "pcr2": 0.04029693333333334,
+      "always_frontier": 0.10950399999999999
+    },
+    "latency": {
+      "always_cheap_a": 5.660473333333333,
+      "always_cheap_b": 0.3084266666666667,
+      "consensus_no_escalation": 5.675073333333334,
+      "pcr2": 5.7098466666666665,
+      "always_frontier": 0.5216000000000001
+    }
+  },
+  "pair11_mmlu_pro": {
+    "n": 150,
+    "escalation_rate": 0.5,
+    "acc": {
+      "always_cheap_a": 0.66,
+      "always_cheap_b": 0.6,
+      "consensus_no_escalation": 0.66,
+      "pcr2": 0.76,
+      "oracle_2cheap": 0.8266666666666667,
+      "best_cheap": 0.66,
+      "always_frontier": 0.7125,
+      "random_cheap_frontier": 0.68625
+    },
+    "chall": {
+      "consensus_no_escalation": 0.13333333333333333,
+      "pcr2": 0.13333333333333333
+    },
+    "cost_per_1k": {
+      "always_cheap_a": 0.03828,
+      "always_cheap_b": 0.04448266666666666,
+      "consensus_no_escalation": 0.08276266666666668,
+      "pcr2": 0.22984966666666665,
+      "always_frontier": 0.294174
+    },
+    "latency": {
+      "always_cheap_a": 2.5228866666666665,
+      "always_cheap_b": 0.32966666666666666,
+      "consensus_no_escalation": 2.5388933333333332,
+      "pcr2": 3.0587333333333335,
+      "always_frontier": 1.03968
     }
   },
   "pair11_truthfulqa": {
@@ -216,6 +342,70 @@
     },
     "cost_per_1k": {},
     "latency": {}
+  },
+  "pair3_mmlu_pro": {
+    "n": 150,
+    "escalation_rate": 0.24,
+    "acc": {
+      "always_cheap_a": 0.6533333333333333,
+      "always_cheap_b": 0.74,
+      "consensus_no_escalation": 0.6533333333333333,
+      "pcr2": 0.7733333333333333,
+      "oracle_2cheap": 0.78,
+      "best_cheap": 0.74,
+      "always_frontier": 0.7125,
+      "random_cheap_frontier": 0.6829166666666666
+    },
+    "chall": {
+      "consensus_no_escalation": 0.19298245614035087,
+      "pcr2": 0.19298245614035087
+    },
+    "cost_per_1k": {
+      "always_cheap_a": 0.039336,
+      "always_cheap_b": 0.066029,
+      "consensus_no_escalation": 0.10536499999999999,
+      "pcr2": 0.18914893333333332,
+      "always_frontier": 0.34909972222222224
+    },
+    "latency": {
+      "always_cheap_a": 1.1898,
+      "always_cheap_b": 0.4194733333333333,
+      "consensus_no_escalation": 1.2368666666666666,
+      "pcr2": 1.54714,
+      "always_frontier": 1.2928055555555555
+    }
+  },
+  "pair3_truthfulqa": {
+    "n": 150,
+    "escalation_rate": 0.19333333333333333,
+    "acc": {
+      "always_cheap_a": 0.6933333333333334,
+      "always_cheap_b": 0.7133333333333334,
+      "consensus_no_escalation": 0.6933333333333334,
+      "pcr2": 0.76,
+      "oracle_2cheap": 0.76,
+      "best_cheap": 0.7133333333333334,
+      "always_frontier": 0.7875,
+      "random_cheap_frontier": 0.7404166666666667
+    },
+    "chall": {
+      "consensus_no_escalation": 0.19834710743801653,
+      "pcr2": 0.19834710743801653
+    },
+    "cost_per_1k": {
+      "always_cheap_a": 0.019289333333333332,
+      "always_cheap_b": 0.033423999999999995,
+      "consensus_no_escalation": 0.052713333333333334,
+      "pcr2": 0.07646673333333334,
+      "always_frontier": 0.12286241379310343
+    },
+    "latency": {
+      "always_cheap_a": 0.7231133333333334,
+      "always_cheap_b": 0.23384,
+      "consensus_no_escalation": 0.73448,
+      "pcr2": 0.83234,
+      "always_frontier": 0.5061724137931034
+    }
   },
   "pair4_arc": {
     "n": 100,

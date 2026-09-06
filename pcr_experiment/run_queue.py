@@ -234,6 +234,13 @@ def maybe_self_remove(all_settled, jobs, st):
         f"(PCR-3 hard tier, pair10/pair11 head-to-head) are now filled.\n",
         encoding="utf-8")
     log("QUEUE EMPTY -- all jobs done or dead. " + summary)
+    # regenerate analysis + paper-ready number dump (FINAL_NUMBERS.md)
+    try:
+        subprocess.run([PY, "-m", "pcr_experiment.finalize"],
+                       cwd=str(ROOT.parent), timeout=2400, capture_output=True, text=True)
+        log("  finalize.py done -> pcr_experiment/FINAL_NUMBERS.md")
+    except Exception as e:
+        log(f"  finalize.py failed: {e} -- run 'python -m pcr_experiment.finalize' by hand")
     notify_done(summary)
     # remove the recurring scheduled task if it exists (Windows)
     try:

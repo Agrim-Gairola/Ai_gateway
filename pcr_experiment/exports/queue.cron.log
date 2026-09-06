@@ -2,3 +2,12 @@
 [2026-09-04 09:42:12Z] solo_sweep:arc+mmlu+mmlu_pro+truthfulqa:n80: running (status was deferred, attempts 0)
 [2026-09-05 14:16:27Z] === queue pass start (30 jobs) ===
 [2026-09-05 14:16:27Z] solo_sweep:arc+mmlu+mmlu_pro+truthfulqa:n80: running (status was deferred, attempts 0)
+[2026-09-06 08:00:03Z] === queue pass start (13 jobs) ===
+[2026-09-06 08:00:03Z] pcr2:pair10:openbookqa: running (status was deferred, attempts 0)
+[2026-09-06 08:05:34Z]   ok (rc=0)
+[2026-09-06 08:05:39Z] pcr2:pair10:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-06 08:06:28Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-06 08:06:33Z] pcr2:pair11:openbookqa: running (status was deferred, attempts 0)

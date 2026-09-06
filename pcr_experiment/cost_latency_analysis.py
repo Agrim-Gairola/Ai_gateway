@@ -73,8 +73,12 @@ def _toks(call):
 
 
 def analyse_cell(data):
-    rows = [r for r in data["results"] if r.get("usage")]
-    if not rows:
+    # require the modern 2-cheap usage schema; skips PCR-3 checkpoints
+    # (usage.cheap is a list) and any malformed early rows
+    rows = [r for r in data["results"]
+            if isinstance(r.get("usage"), dict)
+            and "cheap_a" in r["usage"] and "cheap_b" in r["usage"]]
+    if len(rows) < 20:
         return None
     n = len(rows)
     cheap_a_model = data.get("cheap_a", "")

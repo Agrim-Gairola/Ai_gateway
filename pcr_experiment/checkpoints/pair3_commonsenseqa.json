@@ -133,6 +133,43 @@
         "parallel_latency_seconds": 37.575,
         "total_latency_seconds": 37.575
       }
+    },
+    {
+      "idx": 4,
+      "domain": "commonsenseqa",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "C",
+      "ans_a": "A",
+      "ans_b": "C",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "A",
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 109,
+          "tokens_out": 50,
+          "latency_seconds": 0.501,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 109,
+          "tokens_out": 656,
+          "latency_seconds": 1.668,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 109,
+          "tokens_out": 44,
+          "latency_seconds": 0.36,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 1.668,
+        "total_latency_seconds": 2.029
+      }
     }
   ]
 }

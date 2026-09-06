@@ -202,6 +202,107 @@
         "parallel_latency_seconds": 33.63,
         "total_latency_seconds": 33.63
       }
+    },
+    {
+      "idx": 6,
+      "domain": "openbookqa",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 131,
+          "tokens_out": 21,
+          "latency_seconds": 24.538,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 131,
+          "tokens_out": 30,
+          "latency_seconds": 0.318,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 24.538,
+        "total_latency_seconds": 24.538
+      }
+    },
+    {
+      "idx": 7,
+      "domain": "openbookqa",
+      "gold": "A",
+      "resp_a": "A",
+      "resp_b": "A",
+      "ans_a": "A",
+      "ans_b": "A",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "A",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 105,
+          "tokens_out": 35,
+          "latency_seconds": 43.843,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 105,
+          "tokens_out": 35,
+          "latency_seconds": 0.27,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 43.843,
+        "total_latency_seconds": 43.843
+      }
+    },
+    {
+      "idx": 8,
+      "domain": "openbookqa",
+      "gold": "A",
+      "resp_a": "D",
+      "resp_b": "A",
+      "ans_a": "D",
+      "ans_b": "A",
+      "agree": false,
+      "similarity": null,
+      "escalated": true,
+      "frontier_ans": "C",
+      "final_ans": "C",
+      "correct": false,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 115,
+          "tokens_out": 135,
+          "latency_seconds": 60.64,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 115,
+          "tokens_out": 101,
+          "latency_seconds": 0.256,
+          "tokens_estimated": false
+        },
+        "frontier": {
+          "tokens_in": 115,
+          "tokens_out": 72,
+          "latency_seconds": 0.544,
+          "tokens_estimated": false
+        },
+        "parallel_latency_seconds": 60.64,
+        "total_latency_seconds": 61.184
+      }
     }
   ]
 }

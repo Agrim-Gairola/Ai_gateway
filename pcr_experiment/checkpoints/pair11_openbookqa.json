@@ -458,6 +458,38 @@
         "parallel_latency_seconds": 73.869,
         "total_latency_seconds": 73.869
       }
+    },
+    {
+      "idx": 14,
+      "domain": "openbookqa",
+      "gold": "C",
+      "resp_a": "C",
+      "resp_b": "C",
+      "ans_a": "C",
+      "ans_b": "C",
+      "agree": true,
+      "similarity": null,
+      "escalated": false,
+      "frontier_ans": null,
+      "final_ans": "C",
+      "correct": true,
+      "usage": {
+        "cheap_a": {
+          "tokens_in": 106,
+          "tokens_out": 64,
+          "latency_seconds": 13.541,
+          "tokens_estimated": false
+        },
+        "cheap_b": {
+          "tokens_in": 48,
+          "tokens_out": 2,
+          "latency_seconds": 0.53,
+          "tokens_estimated": false
+        },
+        "frontier": null,
+        "parallel_latency_seconds": 13.541,
+        "total_latency_seconds": 13.541
+      }
     }
   ]
 }

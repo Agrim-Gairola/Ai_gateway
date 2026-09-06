@@ -1,0 +1,65 @@
+[2026-09-06 06:19:46Z] === queue pass start (13 jobs) ===
+[2026-09-06 06:19:46Z] pcr2:pair3:mmlu_pro: running (status was deferred, attempts 0)
+[2026-09-06 06:31:59Z]   ok (rc=0)
+[2026-09-06 06:32:04Z] pcr2:pair10:openbookqa: running (status was deferred, attempts 0)
+[2026-09-06 06:51:32Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-06 06:51:37Z] pcr2:pair10:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-06 06:55:15Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-06 06:55:20Z] pcr2:pair11:openbookqa: running (status was deferred, attempts 0)
+[2026-09-06 06:56:29Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-06 06:56:34Z] pcr2:pair3:openbookqa: running (status was deferred, attempts 0)
+[2026-09-06 06:59:55Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-06 07:00:00Z] pcr2:pair3:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-06 07:01:30Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-06 07:01:35Z] pcr2:pair11:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-06 07:14:08Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-06 07:14:13Z] pcr2:pair10:mmlu: running (status was deferred, attempts 0)
+[2026-09-06 07:15:06Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-06 07:15:11Z] pcr2:pair11:mmlu: running (status was deferred, attempts 0)
+[2026-09-06 07:15:59Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-06 07:17:20Z] rebuilt exports/figures
+
+===================================================
+QUEUE STATUS
+===================================================
+  pcr2:pair11:arc             done       
+  pcr2:pair10:mmlu_pro        done       
+  pcr2:pair3:truthfulqa       done       
+  pcr2:pair11:mmlu_pro        done       
+  pcr2:pair3:mmlu_pro         done       
+  pcr2:pair10:openbookqa      deferred   
+  pcr2:pair10:commonsenseqa   deferred   
+  pcr2:pair11:openbookqa      deferred   
+  pcr2:pair3:openbookqa       deferred   
+  pcr2:pair3:commonsenseqa    deferred   
+  pcr2:pair11:commonsenseqa   deferred   
+  pcr2:pair10:mmlu            deferred   
+  pcr2:pair11:mmlu            deferred   
+---------------------------------------------------
+  deferred=8  done=5
+[2026-09-06 07:17:20Z] === queue pass done. {'done': 5, 'deferred': 8} ===
+RESUME PASS DONE Sun Sep  6 12:47:20 IST 2026
