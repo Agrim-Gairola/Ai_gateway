@@ -255,8 +255,20 @@ LOCK = ROOT / "queue.lock"
 LOCK_STALE_SEC = 7 * 3600
 
 
+def _pid_alive(pid):
+    if pid <= 0:
+        return False
+    try:
+        r = subprocess.run(["tasklist", "/FI", f"PID eq {pid}", "/NH"],
+                           capture_output=True, text=True, timeout=15)
+        return str(pid) in r.stdout
+    except Exception:
+        return True  # can't tell -> assume alive (safer)
+
+
 def acquire_lock():
-    # atomic create-or-fail; only a stale lock (>LOCK_STALE_SEC) may be stolen
+    # atomic create-or-fail; steal the lock if its holder PID is dead, or if it
+    # is older than LOCK_STALE_SEC
     try:
         fd = os.open(str(LOCK), os.O_CREAT | os.O_EXCL | os.O_WRONLY)
         os.write(fd, f"{os.getpid()} {now()}\n".encode())
@@ -264,13 +276,18 @@ def acquire_lock():
         return True
     except FileExistsError:
         try:
+            txt = LOCK.read_text(encoding="utf-8").strip()
+            holder = int(txt.split()[0])
             age = time.time() - LOCK.stat().st_mtime
-        except FileNotFoundError:
-            return acquire_lock()  # race: it vanished, retry once
-        if age < LOCK_STALE_SEC:
-            log(f"another run_queue is active (lock {int(age)}s old) -- exiting")
-            return False
-        log(f"stale lock ({int(age)}s) -- taking over")
+        except (FileNotFoundError, ValueError, IndexError):
+            return acquire_lock()  # race / malformed -> retry once
+        if _pid_alive(holder):
+            if age < LOCK_STALE_SEC:
+                log(f"another run_queue (pid {holder}) is active -- exiting")
+                return False
+            log(f"lock held by pid {holder} but {int(age)}s old -- taking over")
+        else:
+            log(f"stale lock (holder pid {holder} is dead) -- taking over")
         LOCK.unlink(missing_ok=True)
         return acquire_lock()
 

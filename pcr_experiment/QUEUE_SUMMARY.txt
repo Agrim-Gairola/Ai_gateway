@@ -1,0 +1,23 @@
+PCR test queue finished 2026-09-08 12:24:00Z
+
+13 done, 0 dead. Rebuilt: ablation_study.json, trade_off + family figures.
+
+done:
+  pcr2:pair11:arc
+  pcr2:pair10:mmlu_pro
+  pcr2:pair3:truthfulqa
+  pcr2:pair11:mmlu_pro
+  pcr2:pair3:mmlu_pro
+  pcr2:pair10:openbookqa
+  pcr2:pair10:commonsenseqa
+  pcr2:pair11:openbookqa
+  pcr2:pair3:openbookqa
+  pcr2:pair3:commonsenseqa
+  pcr2:pair11:commonsenseqa
+  pcr2:pair10:mmlu
+  pcr2:pair11:mmlu
+
+dead (needs a look):
+  (none)
+
+Next: re-read ABLATION_STUDY.md sections 4a / 7 / 8 -- the pending cells (PCR-3 hard tier, pair10/pair11 head-to-head) are now filled.

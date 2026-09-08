@@ -1,0 +1,43 @@
+[2026-09-07 09:32:12Z] === queue pass start (13 jobs) ===
+[2026-09-07 09:32:12Z] pcr2:pair10:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-07 09:50:03Z]   ok (rc=0)
+[2026-09-07 09:50:08Z] pcr2:pair11:openbookqa: running (status was deferred, attempts 0)
+[2026-09-07 10:07:46Z]   ok (rc=0)
+[2026-09-07 10:07:51Z] pcr2:pair3:openbookqa: running (status was deferred, attempts 0)
+[2026-09-07 10:32:09Z]   ok (rc=0)
+[2026-09-07 10:32:14Z] pcr2:pair3:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-07 10:49:17Z]   ok (rc=0)
+[2026-09-07 10:49:22Z] pcr2:pair11:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-07 11:06:05Z]   ok (rc=0)
+[2026-09-07 11:06:10Z] pcr2:pair10:mmlu: running (status was deferred, attempts 0)
+[2026-09-07 11:12:00Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-07 11:12:05Z] pcr2:pair11:mmlu: running (status was deferred, attempts 0)
+[2026-09-07 11:12:55Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-07 11:14:49Z] rebuilt exports/figures
+
+===================================================
+QUEUE STATUS
+===================================================
+  pcr2:pair11:arc             done       
+  pcr2:pair10:mmlu_pro        done       
+  pcr2:pair3:truthfulqa       done       
+  pcr2:pair11:mmlu_pro        done       
+  pcr2:pair3:mmlu_pro         done       
+  pcr2:pair10:openbookqa      done       
+  pcr2:pair10:commonsenseqa   done       
+  pcr2:pair11:openbookqa      done       
+  pcr2:pair3:openbookqa       done       
+  pcr2:pair3:commonsenseqa    done       
+  pcr2:pair11:commonsenseqa   done       
+  pcr2:pair10:mmlu            deferred   
+  pcr2:pair11:mmlu            deferred   
+---------------------------------------------------
+  deferred=2  done=11
+[2026-09-07 11:14:49Z] === queue pass done. {'done': 11, 'deferred': 2} ===
+RESUME2 PASS DONE Mon Sep  7 16:44:49 IST 2026

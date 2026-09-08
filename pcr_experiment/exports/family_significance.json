@@ -1,18 +1,25 @@
 {
   "cells_used": [
     "pair10/arc [cross_family] n=150",
+    "pair10/commonsenseqa [cross_family] n=200",
+    "pair10/mmlu [cross_family] n=250",
     "pair10/mmlu_pro [cross_family] n=150",
     "pair10/openbookqa [cross_family] n=200",
     "pair10/truthfulqa [cross_family] n=150",
     "pair11/arc [cross_family] n=150",
+    "pair11/commonsenseqa [cross_family] n=200",
+    "pair11/mmlu [cross_family] n=250",
     "pair11/mmlu_pro [cross_family] n=150",
+    "pair11/openbookqa [cross_family] n=200",
     "pair11/truthfulqa [cross_family] n=150",
     "pair2/arc [cross_family] n=300",
     "pair2/mmlu [cross_family] n=800",
     "pair3/arc [within_family] n=300",
+    "pair3/commonsenseqa [within_family] n=200",
     "pair3/gsm8k [within_family] n=150",
     "pair3/mmlu [within_family] n=250",
     "pair3/mmlu_pro [within_family] n=150",
+    "pair3/openbookqa [within_family] n=200",
     "pair3/truthfulqa [within_family] n=150",
     "pair4/arc [cross_family] n=100",
     "pair4/gsm8k [cross_family] n=800",
@@ -32,15 +39,8 @@
     "pair9/arc [cross_family] n=150"
   ],
   "cells_skipped": [
-    "pair10/commonsenseqa (n=15, partial)",
     "pair10/gsm8k (n=1, partial)",
-    "pair10/mmlu (n=15, partial)",
-    "pair11/commonsenseqa (n=12, partial)",
-    "pair11/mmlu (n=5, partial)",
-    "pair11/openbookqa (n=15, partial)",
     "pair2/gsm8k (capability-mismatch exclusion)",
-    "pair3/commonsenseqa (n=5, partial)",
-    "pair3/openbookqa (n=9, partial)",
     "pair8/commonsenseqa (n=4, partial)",
     "pair8/mmlu (n=1, partial)",
     "pair8/mmlu_pro (capability-mismatch exclusion)",
@@ -79,20 +79,20 @@
     "mmlu": {
       "agreement": {
         "within": 0.73,
-        "cross": 0.76,
-        "gap": -0.030000000000000027,
+        "cross": 0.7735483870967742,
+        "gap": -0.04354838709677422,
         "ci95": [
-          -0.0760952380952381,
-          0.017619047619047645
+          -0.08780645161290324,
+          -0.0005161290322580614
         ]
       },
       "c_hall": {
         "within": 0.10136986301369863,
-        "cross": 0.09273182957393483,
-        "gap": 0.008638033439763798,
+        "cross": 0.0950792326939116,
+        "gap": 0.006290630319787036,
         "ci95": [
-          -0.027744934701993865,
-          0.046278563370674486
+          -0.027380323165206888,
+          0.041999520971582355
         ]
       }
     },
@@ -158,42 +158,62 @@
     },
     "openbookqa": {
       "agreement": {
-        "within": 0.95,
-        "cross": 0.8724489795918368,
-        "gap": 0.0775510204081632,
+        "within": 0.9225,
+        "cross": 0.875,
+        "gap": 0.04749999999999999,
         "ci95": [
-          0.03204081632653066,
-          0.12265306122448982
+          0.008918918918918939,
+          0.08520270270270269
         ]
       },
       "c_hall": {
-        "within": 0.021052631578947368,
-        "cross": 0.017543859649122806,
-        "gap": 0.003508771929824562,
+        "within": 0.032520325203252036,
+        "cross": 0.021235521235521235,
+        "gap": 0.011284803967730801,
         "ci95": [
-          -0.0196078431372549,
-          0.029472407519708914
+          -0.010128458498023714,
+          0.033692427790788446
+        ]
+      }
+    },
+    "commonsenseqa": {
+      "agreement": {
+        "within": 0.9075,
+        "cross": 0.8175,
+        "gap": 0.08999999999999997,
+        "ci95": [
+          0.04249999999999998,
+          0.135
+        ]
+      },
+      "c_hall": {
+        "within": 0.11294765840220386,
+        "cross": 0.0856269113149847,
+        "gap": 0.027320747087219155,
+        "ci95": [
+          -0.017575563729409882,
+          0.07255806010928961
         ]
       }
     }
   },
   "benchmark_balanced": {
     "agreement": {
-      "within": 0.816384126984127,
-      "cross": 0.7397162037037037,
-      "gap": 0.07666792328042327,
+      "within": 0.828095238095238,
+      "cross": 0.751401388888889,
+      "gap": 0.07669384920634903,
       "ci95": [
-        -0.017290079365079647,
-        0.17669616402116395
+        -0.009492724867724789,
+        0.17480231481481479
       ],
       "within_pairs": {
-        "pair3": 0.7745333333333333,
+        "pair3": 0.8096666666666666,
         "pair7": 0.8012857142857143,
         "pair8": 0.8733333333333333
       },
       "cross_pairs": {
-        "pair10": 0.7758333333333334,
-        "pair11": 0.7155555555555555,
+        "pair10": 0.7835555555555556,
+        "pair11": 0.7779444444444444,
         "pair2": 0.75875,
         "pair4": 0.540625,
         "pair6": 0.7475333333333334,
@@ -201,21 +221,21 @@
       }
     },
     "c_hall": {
-      "within": 0.10603915779587088,
-      "cross": 0.06858698299950214,
-      "gap": 0.03745217479636874,
+      "within": 0.10498442068328984,
+      "cross": 0.0677390740482362,
+      "gap": 0.03724534663505363,
       "ci95": [
-        0.004536254902157172,
-        0.06898462432666097
+        0.005357631181964639,
+        0.06822377872083704
       ],
       "within_pairs": {
-        "pair3": 0.11119888617496272,
+        "pair3": 0.10803467483721954,
         "pair7": 0.12294912156379499,
         "pair8": 0.08396946564885496
       },
       "cross_pairs": {
-        "pair10": 0.07765558328079798,
-        "pair11": 0.09135143153834742,
+        "pair10": 0.08019051795081338,
+        "pair11": 0.08372904316073639,
         "pair2": 0.06641693811074918,
         "pair4": 0.03309078309078309,
         "pair6": 0.12078493975411295,

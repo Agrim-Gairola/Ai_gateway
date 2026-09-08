@@ -11,14 +11,14 @@
       "overall_accuracy": 0.9466666666666667
     },
     "pair10_commonsenseqa": {
-      "n": 15,
+      "n": 200,
       "n_planned": 200,
-      "complete": false,
-      "agreement_rate": 0.9333333333333333,
-      "escalation_rate": 0.06666666666666667,
-      "accuracy_when_agreed": 1.0,
-      "chall_rate": 0.0,
-      "overall_accuracy": 1.0
+      "complete": true,
+      "agreement_rate": 0.81,
+      "escalation_rate": 0.19,
+      "accuracy_when_agreed": 0.9259259259259259,
+      "chall_rate": 0.07407407407407407,
+      "overall_accuracy": 0.845
     },
     "pair10_gsm8k": {
       "n": 1,
@@ -31,14 +31,14 @@
       "overall_accuracy": 1.0
     },
     "pair10_mmlu": {
-      "n": 15,
+      "n": 250,
       "n_planned": 250,
-      "complete": false,
-      "agreement_rate": 0.7333333333333333,
-      "escalation_rate": 0.26666666666666666,
-      "accuracy_when_agreed": 0.9090909090909091,
-      "chall_rate": 0.09090909090909091,
-      "overall_accuracy": 0.8
+      "complete": true,
+      "agreement_rate": 0.788,
+      "escalation_rate": 0.212,
+      "accuracy_when_agreed": 0.9035532994923858,
+      "chall_rate": 0.09644670050761421,
+      "overall_accuracy": 0.86
     },
     "pair10_mmlu_pro": {
       "n": 150,
@@ -81,24 +81,24 @@
       "overall_accuracy": 0.9466666666666667
     },
     "pair11_commonsenseqa": {
-      "n": 12,
+      "n": 200,
       "n_planned": 200,
-      "complete": false,
-      "agreement_rate": 1.0,
-      "escalation_rate": 0.0,
-      "accuracy_when_agreed": 0.9166666666666666,
-      "chall_rate": 0.08333333333333333,
-      "overall_accuracy": 0.9166666666666666
+      "complete": true,
+      "agreement_rate": 0.825,
+      "escalation_rate": 0.175,
+      "accuracy_when_agreed": 0.9030303030303031,
+      "chall_rate": 0.09696969696969697,
+      "overall_accuracy": 0.84
     },
     "pair11_mmlu": {
-      "n": 5,
+      "n": 250,
       "n_planned": 250,
-      "complete": false,
-      "agreement_rate": 0.6,
-      "escalation_rate": 0.4,
-      "accuracy_when_agreed": 1.0,
-      "chall_rate": 0.0,
-      "overall_accuracy": 0.8
+      "complete": true,
+      "agreement_rate": 0.816,
+      "escalation_rate": 0.184,
+      "accuracy_when_agreed": 0.8970588235294118,
+      "chall_rate": 0.10294117647058823,
+      "overall_accuracy": 0.876
     },
     "pair11_mmlu_pro": {
       "n": 150,
@@ -111,14 +111,14 @@
       "overall_accuracy": 0.76
     },
     "pair11_openbookqa": {
-      "n": 15,
+      "n": 200,
       "n_planned": 200,
-      "complete": false,
-      "agreement_rate": 0.9333333333333333,
-      "escalation_rate": 0.06666666666666667,
-      "accuracy_when_agreed": 0.9285714285714286,
-      "chall_rate": 0.07142857142857142,
-      "overall_accuracy": 0.8666666666666667
+      "complete": true,
+      "agreement_rate": 0.88,
+      "escalation_rate": 0.12,
+      "accuracy_when_agreed": 0.9715909090909091,
+      "chall_rate": 0.028409090909090908,
+      "overall_accuracy": 0.93
     },
     "pair11_truthfulqa": {
       "n": 150,
@@ -171,14 +171,14 @@
       "overall_accuracy": 0.9433333333333334
     },
     "pair3_commonsenseqa": {
-      "n": 5,
+      "n": 200,
       "n_planned": 200,
-      "complete": false,
-      "agreement_rate": 0.8,
-      "escalation_rate": 0.2,
-      "accuracy_when_agreed": 1.0,
-      "chall_rate": 0.0,
-      "overall_accuracy": 1.0
+      "complete": true,
+      "agreement_rate": 0.9,
+      "escalation_rate": 0.1,
+      "accuracy_when_agreed": 0.8444444444444444,
+      "chall_rate": 0.15555555555555556,
+      "overall_accuracy": 0.83
     },
     "pair3_gsm8k": {
       "n": 150,
@@ -211,14 +211,14 @@
       "overall_accuracy": 0.7733333333333333
     },
     "pair3_openbookqa": {
-      "n": 9,
+      "n": 200,
       "n_planned": 200,
-      "complete": false,
-      "agreement_rate": 0.7777777777777778,
-      "escalation_rate": 0.2222222222222222,
-      "accuracy_when_agreed": 1.0,
-      "chall_rate": 0.0,
-      "overall_accuracy": 0.8888888888888888
+      "complete": true,
+      "agreement_rate": 0.895,
+      "escalation_rate": 0.105,
+      "accuracy_when_agreed": 0.9553072625698324,
+      "chall_rate": 0.0446927374301676,
+      "overall_accuracy": 0.91
     },
     "pair3_truthfulqa": {
       "n": 150,
@@ -514,17 +514,17 @@
   "pooled_by_pair": {
     "pair10": {
       "n_benchmarks": 7,
-      "agreement_rate": 0.6814285714285714,
-      "accuracy_when_agreed": 0.9330780959946194,
-      "chall_rate": 0.06692190400538048,
-      "overall_accuracy": 0.8930952380952382
+      "agreement_rate": 0.6716190476190477,
+      "accuracy_when_agreed": 0.9198094820491867,
+      "chall_rate": 0.08019051795081338,
+      "overall_accuracy": 0.8795238095238095
     },
     "pair11": {
       "n_benchmarks": 6,
-      "agreement_rate": 0.7799999999999999,
-      "accuracy_when_agreed": 0.9285306334371755,
-      "chall_rate": 0.0714693665628245,
-      "overall_accuracy": 0.8494444444444444
+      "agreement_rate": 0.7779444444444444,
+      "accuracy_when_agreed": 0.9162709568392636,
+      "chall_rate": 0.08372904316073639,
+      "overall_accuracy": 0.8598888888888889
     },
     "pair2": {
       "n_benchmarks": 3,
@@ -535,10 +535,10 @@
     },
     "pair3": {
       "n_benchmarks": 7,
-      "agreement_rate": 0.7786349206349207,
-      "accuracy_when_agreed": 0.9205722241607409,
-      "chall_rate": 0.07942777583925908,
-      "overall_accuracy": 0.8724126984126984
+      "agreement_rate": 0.8096666666666666,
+      "accuracy_when_agreed": 0.8919653251627804,
+      "chall_rate": 0.10803467483721954,
+      "overall_accuracy": 0.8511428571428572
     },
     "pair4": {
       "n_benchmarks": 2,
@@ -586,17 +586,17 @@
   "pooled_by_pair_for_family": {
     "pair10": {
       "n_benchmarks": 7,
-      "agreement_rate": 0.6814285714285714,
-      "accuracy_when_agreed": 0.9330780959946194,
-      "chall_rate": 0.06692190400538048,
-      "overall_accuracy": 0.8930952380952382
+      "agreement_rate": 0.6716190476190477,
+      "accuracy_when_agreed": 0.9198094820491867,
+      "chall_rate": 0.08019051795081338,
+      "overall_accuracy": 0.8795238095238095
     },
     "pair11": {
       "n_benchmarks": 6,
-      "agreement_rate": 0.7799999999999999,
-      "accuracy_when_agreed": 0.9285306334371755,
-      "chall_rate": 0.0714693665628245,
-      "overall_accuracy": 0.8494444444444444
+      "agreement_rate": 0.7779444444444444,
+      "accuracy_when_agreed": 0.9162709568392636,
+      "chall_rate": 0.08372904316073639,
+      "overall_accuracy": 0.8598888888888889
     },
     "pair2": {
       "n_benchmarks": 2,
@@ -607,10 +607,10 @@
     },
     "pair3": {
       "n_benchmarks": 7,
-      "agreement_rate": 0.7786349206349207,
-      "accuracy_when_agreed": 0.9205722241607409,
-      "chall_rate": 0.07942777583925908,
-      "overall_accuracy": 0.8724126984126984
+      "agreement_rate": 0.8096666666666666,
+      "accuracy_when_agreed": 0.8919653251627804,
+      "chall_rate": 0.10803467483721954,
+      "overall_accuracy": 0.8511428571428572
     },
     "pair4": {
       "n_benchmarks": 2,

@@ -11,3 +11,6 @@
     raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
 RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
 [2026-09-06 08:06:33Z] pcr2:pair11:openbookqa: running (status was deferred, attempts 0)
+[2026-09-07 08:00:04Z] stale lock (86401s) -- taking over
+[2026-09-07 08:00:04Z] === queue pass start (13 jobs) ===
+[2026-09-07 08:00:04Z] pcr2:pair10:commonsenseqa: running (status was deferred, attempts 0)

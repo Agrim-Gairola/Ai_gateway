@@ -1,0 +1,31 @@
+[2026-09-08 11:42:20Z] === queue pass start (13 jobs) ===
+[2026-09-08 11:42:20Z] pcr2:pair10:mmlu: running (status was deferred, attempts 0)
+[2026-09-08 11:59:20Z]   ok (rc=0)
+[2026-09-08 11:59:25Z] pcr2:pair11:mmlu: running (status was deferred, attempts 0)
+[2026-09-08 12:22:15Z]   ok (rc=0)
+[2026-09-08 12:24:00Z] rebuilt exports/figures
+
+===================================================
+QUEUE STATUS
+===================================================
+  pcr2:pair11:arc             done       
+  pcr2:pair10:mmlu_pro        done       
+  pcr2:pair3:truthfulqa       done       
+  pcr2:pair11:mmlu_pro        done       
+  pcr2:pair3:mmlu_pro         done       
+  pcr2:pair10:openbookqa      done       
+  pcr2:pair10:commonsenseqa   done       
+  pcr2:pair11:openbookqa      done       
+  pcr2:pair3:openbookqa       done       
+  pcr2:pair3:commonsenseqa    done       
+  pcr2:pair11:commonsenseqa   done       
+  pcr2:pair10:mmlu            done       
+  pcr2:pair11:mmlu            done       
+---------------------------------------------------
+  done=13
+[2026-09-08 12:24:00Z] QUEUE EMPTY -- all jobs done or dead. 13 done, 0 dead. Rebuilt: ablation_study.json, trade_off + family figures.
+[2026-09-08 12:26:54Z]   finalize.py done -> pcr_experiment/FINAL_NUMBERS.md
+[2026-09-08 12:26:56Z]   desktop notification sent ([Windows.UI.Notifications.ToastNotificat...)
+[2026-09-08 12:26:56Z]   schtasks delete PCR_daily_queue -> rc=0 SUCCESS: The scheduled task "PCR_daily_queue" was successfully deleted.
+[2026-09-08 12:26:56Z] === queue pass done. {'done': 13} ===
+PAIR10-11 PASS DONE Tue Sep  8 17:56:56 IST 2026

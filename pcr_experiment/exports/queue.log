@@ -452,3 +452,40 @@ RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
     raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
 RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
 [2026-09-06 08:06:33Z] pcr2:pair11:openbookqa: running (status was deferred, attempts 0)
+[2026-09-07 08:00:04Z] stale lock (86401s) -- taking over
+[2026-09-07 08:00:04Z] === queue pass start (13 jobs) ===
+[2026-09-07 08:00:04Z] pcr2:pair10:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-07 09:32:12Z] === queue pass start (13 jobs) ===
+[2026-09-07 09:32:12Z] pcr2:pair10:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-07 09:50:03Z]   ok (rc=0)
+[2026-09-07 09:50:08Z] pcr2:pair11:openbookqa: running (status was deferred, attempts 0)
+[2026-09-07 10:07:46Z]   ok (rc=0)
+[2026-09-07 10:07:51Z] pcr2:pair3:openbookqa: running (status was deferred, attempts 0)
+[2026-09-07 10:32:09Z]   ok (rc=0)
+[2026-09-07 10:32:14Z] pcr2:pair3:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-07 10:49:17Z]   ok (rc=0)
+[2026-09-07 10:49:22Z] pcr2:pair11:commonsenseqa: running (status was deferred, attempts 0)
+[2026-09-07 11:06:05Z]   ok (rc=0)
+[2026-09-07 11:06:10Z] pcr2:pair10:mmlu: running (status was deferred, attempts 0)
+[2026-09-07 11:12:00Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-07 11:12:05Z] pcr2:pair11:mmlu: running (status was deferred, attempts 0)
+[2026-09-07 11:12:55Z]   DEFERRED (rate-limited). tail:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\files\pcr_experiment\pcr_runner.py", line 280, in call_groq
+    raise RuntimeError(f"Groq call failed after {MAX_RETRIES} retries: {model}")
+RuntimeError: Groq call failed after 5 retries: openai/gpt-oss-20b
+[2026-09-07 11:14:49Z] rebuilt exports/figures
+[2026-09-07 11:14:49Z] === queue pass done. {'done': 11, 'deferred': 2} ===
+[2026-09-08 11:42:20Z] === queue pass start (13 jobs) ===
+[2026-09-08 11:42:20Z] pcr2:pair10:mmlu: running (status was deferred, attempts 0)
+[2026-09-08 11:59:20Z]   ok (rc=0)
+[2026-09-08 11:59:25Z] pcr2:pair11:mmlu: running (status was deferred, attempts 0)
+[2026-09-08 12:22:15Z]   ok (rc=0)
+[2026-09-08 12:24:00Z] rebuilt exports/figures
+[2026-09-08 12:24:00Z] QUEUE EMPTY -- all jobs done or dead. 13 done, 0 dead. Rebuilt: ablation_study.json, trade_off + family figures.
+[2026-09-08 12:26:54Z]   finalize.py done -> pcr_experiment/FINAL_NUMBERS.md
+[2026-09-08 12:26:56Z]   desktop notification sent ([Windows.UI.Notifications.ToastNotificat...)
+[2026-09-08 12:26:56Z]   schtasks delete PCR_daily_queue -> rc=0 SUCCESS: The scheduled task "PCR_daily_queue" was successfully deleted.
+[2026-09-08 12:26:56Z] === queue pass done. {'done': 13} ===
