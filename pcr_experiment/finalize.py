@@ -20,12 +20,17 @@ def sh(mod, *extra):
                    capture_output=True, text=True, timeout=1800)
 
 
+RESULTS_PAIRS = "pair3,pair7,pair10,pair11"  # the consistent 4-pair grid
+
+
 def main():
     # 1. rebuild everything from checkpoints (no API)
     for m in ("pooled_analysis", "family_significance", "cost_latency_analysis",
               "ablation_study", "trade_off_figures", "make_figures"):
         extra = ["--export"] if m in ("pooled_analysis", "family_significance",
                                       "cost_latency_analysis", "ablation_study") else []
+        if m == "family_significance":
+            extra += ["--only-pairs", RESULTS_PAIRS]
         try:
             sh(m, *extra)
         except Exception as e:

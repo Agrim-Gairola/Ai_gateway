@@ -5,7 +5,7 @@ Cells with <50 questions -> '---' (pending)."""
 import json, os, sys
 
 CK = "pcr_experiment/checkpoints"
-PAIRS = ["pair1","pair2","pair3","pair4","pair5","pair6","pair7","pair8","pair9","pair10","pair11"]
+PAIRS = ["pair3","pair7","pair10","pair11"]  # the consistent 4-pair results grid
 BM = [("arc","ARC"),("mmlu","MMLU"),("mmlu_pro","M-Pro"),("truthfulqa","TQA"),
       ("openbookqa","OBQA"),("commonsenseqa","CSQA")]
 LABEL = {

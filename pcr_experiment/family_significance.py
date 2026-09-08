@@ -110,12 +110,15 @@ def bootstrap_pair_level(pair_rates_a, pair_rates_b, iters, seed):
     return diffs[int(0.025 * len(diffs))], diffs[int(0.975 * len(diffs)) - 1]
 
 
-def run(iterations=10000, seed=42, export=False):
+def run(iterations=10000, seed=42, export=False, only_pairs=None):
     available = discover_available()
     # condition -> benchmark -> list of (pair_id, rows)
     cells = defaultdict(lambda: defaultdict(list))
     used, skipped = [], []
     for pair_id, bm in available:
+        if only_pairs and pair_id not in only_pairs:
+            skipped.append(f"{pair_id}/{bm} (not in --only-pairs)")
+            continue
         cond = FAMILY_CONDITIONS.get(pair_id)
         if cond not in ("within_family", "cross_family"):
             skipped.append(f"{pair_id}/{bm} (untagged)")
@@ -220,5 +223,9 @@ if __name__ == "__main__":
     ap.add_argument("--iterations", type=int, default=10000)
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--export", action="store_true")
+    ap.add_argument("--only-pairs", default="",
+                    help="comma-separated pair ids to restrict the pool to "
+                         "(e.g. pair3,pair7,pair10,pair11)")
     a = ap.parse_args()
-    run(iterations=a.iterations, seed=a.seed, export=a.export)
+    op = set(x.strip() for x in a.only_pairs.split(",") if x.strip()) or None
+    run(iterations=a.iterations, seed=a.seed, export=a.export, only_pairs=op)

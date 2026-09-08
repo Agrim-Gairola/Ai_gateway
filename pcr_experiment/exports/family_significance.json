@@ -12,8 +12,6 @@
     "pair11/mmlu_pro [cross_family] n=150",
     "pair11/openbookqa [cross_family] n=200",
     "pair11/truthfulqa [cross_family] n=150",
-    "pair2/arc [cross_family] n=300",
-    "pair2/mmlu [cross_family] n=800",
     "pair3/arc [within_family] n=300",
     "pair3/commonsenseqa [within_family] n=200",
     "pair3/gsm8k [within_family] n=150",
@@ -21,158 +19,140 @@
     "pair3/mmlu_pro [within_family] n=150",
     "pair3/openbookqa [within_family] n=200",
     "pair3/truthfulqa [within_family] n=150",
-    "pair4/arc [cross_family] n=100",
-    "pair4/gsm8k [cross_family] n=800",
-    "pair6/arc [cross_family] n=200",
-    "pair6/mmlu [cross_family] n=250",
-    "pair6/mmlu_pro [cross_family] n=150",
-    "pair6/openbookqa [cross_family] n=192",
-    "pair6/truthfulqa [cross_family] n=150",
     "pair7/arc [within_family] n=200",
     "pair7/commonsenseqa [within_family] n=200",
     "pair7/gsm8k [within_family] n=150",
     "pair7/mmlu [within_family] n=250",
     "pair7/mmlu_pro [within_family] n=150",
     "pair7/openbookqa [within_family] n=200",
-    "pair7/truthfulqa [within_family] n=150",
-    "pair8/arc [within_family] n=150",
-    "pair9/arc [cross_family] n=150"
+    "pair7/truthfulqa [within_family] n=150"
   ],
   "cells_skipped": [
     "pair10/gsm8k (n=1, partial)",
-    "pair2/gsm8k (capability-mismatch exclusion)",
-    "pair8/commonsenseqa (n=4, partial)",
-    "pair8/mmlu (n=1, partial)",
-    "pair8/mmlu_pro (capability-mismatch exclusion)",
-    "pair8/openbookqa (n=6, partial)",
-    "pair8/truthfulqa (capability-mismatch exclusion)",
-    "pair9/commonsenseqa (n=12, partial)",
-    "pair9/mmlu_pro (capability-mismatch exclusion)",
-    "pair9/openbookqa (n=4, partial)",
-    "pair9/truthfulqa (capability-mismatch exclusion)",
-    "pcr3_allgroq_gptoss20_qwen36_qwen38/arc (untagged)",
-    "pcr3_allgroq_gptoss20_qwen36_qwen38/mmlu_pro (untagged)",
-    "pcr3_allgroq_gptoss20_qwen36_qwen38/truthfulqa (untagged)"
+    "pair2/arc (not in --only-pairs)",
+    "pair2/gsm8k (not in --only-pairs)",
+    "pair2/mmlu (not in --only-pairs)",
+    "pair4/arc (not in --only-pairs)",
+    "pair4/gsm8k (not in --only-pairs)",
+    "pair6/arc (not in --only-pairs)",
+    "pair6/mmlu (not in --only-pairs)",
+    "pair6/mmlu_pro (not in --only-pairs)",
+    "pair6/openbookqa (not in --only-pairs)",
+    "pair6/truthfulqa (not in --only-pairs)",
+    "pair8/arc (not in --only-pairs)",
+    "pair8/commonsenseqa (not in --only-pairs)",
+    "pair8/mmlu (not in --only-pairs)",
+    "pair8/mmlu_pro (not in --only-pairs)",
+    "pair8/openbookqa (not in --only-pairs)",
+    "pair8/truthfulqa (not in --only-pairs)",
+    "pair9/arc (not in --only-pairs)",
+    "pair9/commonsenseqa (not in --only-pairs)",
+    "pair9/mmlu_pro (not in --only-pairs)",
+    "pair9/openbookqa (not in --only-pairs)",
+    "pair9/truthfulqa (not in --only-pairs)",
+    "pcr3_allgroq_gptoss20_qwen36_qwen38/arc (not in --only-pairs)",
+    "pcr3_allgroq_gptoss20_qwen36_qwen38/mmlu_pro (not in --only-pairs)",
+    "pcr3_allgroq_gptoss20_qwen36_qwen38/truthfulqa (not in --only-pairs)"
   ],
   "iterations": 10000,
   "per_benchmark": {
     "mmlu_pro": {
       "agreement": {
         "within": 0.74,
-        "cross": 0.52,
-        "gap": 0.21999999999999997,
+        "cross": 0.5233333333333333,
+        "gap": 0.21666666666666667,
         "ci95": [
-          0.15333333333333332,
-          0.28888888888888886
+          0.14,
+          0.2933333333333333
         ]
       },
       "c_hall": {
         "within": 0.22522522522522523,
-        "cross": 0.19230769230769232,
-        "gap": 0.03291753291753291,
+        "cross": 0.15286624203821655,
+        "gap": 0.07235898318700867,
         "ci95": [
-          -0.04120321506860436,
-          0.10819153881915389
+          -0.0034934497816594134,
+          0.14913793103448272
         ]
       }
     },
     "mmlu": {
       "agreement": {
         "within": 0.73,
-        "cross": 0.7735483870967742,
-        "gap": -0.04354838709677422,
+        "cross": 0.802,
+        "gap": -0.07200000000000006,
         "ci95": [
-          -0.08780645161290324,
-          -0.0005161290322580614
+          -0.12200000000000011,
+          -0.020000000000000018
         ]
       },
       "c_hall": {
         "within": 0.10136986301369863,
-        "cross": 0.0950792326939116,
-        "gap": 0.006290630319787036,
+        "cross": 0.09975062344139651,
+        "gap": 0.001619239572302117,
         "ci95": [
-          -0.027380323165206888,
-          0.041999520971582355
-        ]
-      }
-    },
-    "gsm8k": {
-      "agreement": {
-        "within": 0.5366666666666666,
-        "cross": 0.34125,
-        "gap": 0.19541666666666663,
-        "ci95": [
-          0.13,
-          0.26083333333333336
-        ]
-      },
-      "c_hall": {
-        "within": 0.09316770186335403,
-        "cross": 0.02564102564102564,
-        "gap": 0.06752667622232839,
-        "ci95": [
-          0.020565327732563227,
-          0.11846689895470383
+          -0.04004278978856034,
+          0.04303908651734738
         ]
       }
     },
     "arc": {
       "agreement": {
-        "within": 0.9353846153846154,
-        "cross": 0.8561904761904762,
-        "gap": 0.0791941391941392,
+        "within": 0.954,
+        "cross": 0.94,
+        "gap": 0.014000000000000012,
         "ci95": [
-          0.050915750915750846,
-          0.10783882783882781
+          -0.018000000000000016,
+          0.04733333333333334
         ]
       },
       "c_hall": {
-        "within": 0.044407894736842105,
-        "cross": 0.030033370411568408,
-        "gap": 0.014374524325273697,
+        "within": 0.033542976939203356,
+        "cross": 0.028368794326241134,
+        "gap": 0.005174182612962222,
         "ci95": [
-          -0.005422333733450059,
-          0.0347409259971784
+          -0.02050943257725905,
+          0.029081632653061226
         ]
       }
     },
     "truthfulqa": {
       "agreement": {
         "within": 0.8466666666666667,
-        "cross": 0.7177777777777777,
-        "gap": 0.12888888888888894,
+        "cross": 0.7066666666666667,
+        "gap": 0.14,
         "ci95": [
-          0.06888888888888889,
-          0.18666666666666665
+          0.07666666666666666,
+          0.20333333333333337
         ]
       },
       "c_hall": {
         "within": 0.16929133858267717,
-        "cross": 0.13622291021671826,
-        "gap": 0.03306842836595891,
+        "cross": 0.10377358490566038,
+        "gap": 0.06551775367701679,
         "ci95": [
-          -0.02499558381911321,
-          0.09262244559290692
+          0.003232062055591456,
+          0.12809373354397052
         ]
       }
     },
     "openbookqa": {
       "agreement": {
         "within": 0.9225,
-        "cross": 0.875,
-        "gap": 0.04749999999999999,
+        "cross": 0.895,
+        "gap": 0.02749999999999997,
         "ci95": [
-          0.008918918918918939,
-          0.08520270270270269
+          -0.012500000000000067,
+          0.0675
         ]
       },
       "c_hall": {
         "within": 0.032520325203252036,
-        "cross": 0.021235521235521235,
-        "gap": 0.011284803967730801,
+        "cross": 0.0223463687150838,
+        "gap": 0.010173956488168236,
         "ci95": [
-          -0.010128458498023714,
-          0.033692427790788446
+          -0.012908351433694364,
+          0.034420289855072464
         ]
       }
     },
@@ -199,47 +179,37 @@
   },
   "benchmark_balanced": {
     "agreement": {
-      "within": 0.828095238095238,
-      "cross": 0.751401388888889,
-      "gap": 0.07669384920634903,
+      "within": 0.8054761904761905,
+      "cross": 0.78075,
+      "gap": 0.0247261904761904,
       "ci95": [
-        -0.009492724867724789,
-        0.17480231481481479
+        0.017730158730158707,
+        0.03172222222222221
       ],
       "within_pairs": {
         "pair3": 0.8096666666666666,
-        "pair7": 0.8012857142857143,
-        "pair8": 0.8733333333333333
+        "pair7": 0.8012857142857143
       },
       "cross_pairs": {
         "pair10": 0.7835555555555556,
-        "pair11": 0.7779444444444444,
-        "pair2": 0.75875,
-        "pair4": 0.540625,
-        "pair6": 0.7475333333333334,
-        "pair9": 0.9
+        "pair11": 0.7779444444444444
       }
     },
     "c_hall": {
-      "within": 0.10498442068328984,
-      "cross": 0.0677390740482362,
-      "gap": 0.03724534663505363,
+      "within": 0.11549189820050726,
+      "cross": 0.08195978055577488,
+      "gap": 0.03353211764473238,
       "ci95": [
-        0.005357631181964639,
-        0.06822377872083704
+        0.024305631676483155,
+        0.042758603612981616
       ],
       "within_pairs": {
         "pair3": 0.10803467483721954,
-        "pair7": 0.12294912156379499,
-        "pair8": 0.08396946564885496
+        "pair7": 0.12294912156379499
       },
       "cross_pairs": {
         "pair10": 0.08019051795081338,
-        "pair11": 0.08372904316073639,
-        "pair2": 0.06641693811074918,
-        "pair4": 0.03309078309078309,
-        "pair6": 0.12078493975411295,
-        "pair9": 0.022222222222222223
+        "pair11": 0.08372904316073639
       }
     }
   }
