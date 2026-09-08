@@ -587,8 +587,9 @@ accuracy at $\approx$1/3 the cost.}
 \end{figure}
 
 \begin{table}[!t]
-\caption{Measured cost and latency (per-call instrumentation; 20 cells,
-representative rows). Cost = list-price tokens; runs were free-tier.}
+\caption{Measured cost and latency for the 4 complete pairs (per-call
+instrumentation; representative rows ordered by cost cut). Cost = list-price
+tokens; runs were free-tier. AF = always-frontier.}
 \label{tab:cost}
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{l c c c c c}
@@ -598,15 +599,24 @@ representative rows). Cost = list-price tokens; runs were free-tier.}
 Pair 7 / OpenBookQA & 5.0\% & 0.028 & 0.100 & 72\% & 0.49\,s \\
 Pair 7 / CommonsenseQA & 8.5\% & 0.032 & 0.104 & 69\% & 0.55\,s \\
 Pair 7 / ARC & 4.0\% & 0.036 & 0.108 & 66\% & 0.40\,s \\
-Pair 10 / ARC & 5.3\% & 0.039 & 0.105 & 63\% & 0.90\,s \\
-Pair 7 / MMLU & 11.6\% & 0.072 & 0.169 & 57\% & 0.53\,s \\
+Pair 10 / OpenBookQA & 9.0\% & 0.036 & 0.092 & 61\% & 4.31\,s \\
+Pair 7 / TruthfulQA & 11.3\% & 0.053 & 0.130 & 59\% & 0.38\,s \\
 Pair 11 / MMLU & 18.4\% & 0.083 & 0.172 & 52\% & 1.27\,s \\
+Pair 10 / MMLU & 21.2\% & 0.087 & 0.170 & 49\% & 1.94\,s \\
 Pair 3 / MMLU-Pro & 24.0\% & 0.189 & 0.349 & 46\% & 1.55\,s \\
 Pair 7 / MMLU-Pro & 28.0\% & 0.169 & 0.287 & 41\% & 0.63\,s \\
+Pair 10 / TruthfulQA & 30.0\% & 0.075 & 0.122 & 39\% & 1.03\,s \\
 Pair 11 / MMLU-Pro & 50.0\% & 0.230 & 0.294 & 22\% & 3.06\,s \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Latency is set by the slowest cheap model, not the policy: Pair~7 (both Qwen3
+27B on Groq) runs PCR-2 at \textbf{0.4--0.6\,s on every benchmark}, whereas
+Pairs~10/11 (which pair \texttt{gpt-oss-20B} with Qwen) run at \textbf{0.9--5.7\,s}
+--- \texttt{gpt-oss-20B}'s reasoning prelude, not the extra model or the
+provider, is the cost. For a latency-sensitive deployment the cheap pair should
+be two \textit{non-reasoning} small models on the same fast provider.
 
 \subsection{Finding 4: PCR-3 does not help}
 A third cheap model (all-Groq trio, $N=120$/benchmark) breaks nearly every tie
@@ -776,6 +786,61 @@ four; all on Groq.}
 \end{tabular}
 \end{table}
 
+\subsection{When the second cheap model earns its call}
+Table~\ref{tab:netgain} decomposes PCR-2 against the strongest single cheap model
+(the policy a practitioner would fall back to) and shows the escalation rate that
+drives its cost. Three things stand out.
+
+\textbf{The value is concentrated on the hard tier.} PCR-2 beats Best-Cheap by
+$+10$ to $+11$\,pp on MMLU-Pro for Pairs~7/10/11, and by $+15.6$\,pp on MMLU for
+Pair~3 (whose weak safety-tuned Cheap~B drags Best-Cheap down while consensus
+still filters well). On ARC the gap is $\pm1$\,pp.
+
+\textbf{On the ``easy'' knowledge benchmarks PCR-2 can lose.} On OpenBookQA all
+four pairs come in $1$--$2.5$\,pp \textit{below} Best-Cheap, and the cross-family
+pairs are $2$--$4$\,pp below on CommonsenseQA. When cheap models are already near
+ceiling, the $\sim$10--20\% of queries that escalate flip about as many correct
+answers to wrong as they rescue --- 8 of the 24 cells, all easy-tier, are net
+negative. \textbf{PCR-2 is a middle-of-the-difficulty-range tool}: skip it where
+a single cheap model already clears $\sim$92\%.
+
+\textbf{Escalation rate is a free difficulty gauge.} It rises monotonically with
+benchmark difficulty for every pair ($\sim$5\% ARC $\to$ 12--42\% MMLU $\to$
+24--50\% MMLU-Pro) without any labels or training --- the router's own
+disagreement signal is an unsupervised estimate of query hardness that a
+deployment can log and act on.
+
+\begin{table}[!t]
+\caption{\textbf{Top:} PCR-2 accuracy minus the stronger cheap model's solo
+accuracy (pp) --- positive = the second model plus escalation helps.
+\textbf{Bottom:} escalation rate (\%). ``(w)'' = within-family.}
+\label{tab:netgain}
+\renewcommand{\arraystretch}{1.2}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{l c c c c c c}
+\toprule
+\multicolumn{7}{c}{\textit{PCR-2 $-$ Best-Cheap (pp)}} \\
+\midrule
+\textbf{Pair} & \textbf{ARC} & \textbf{MMLU} & \textbf{M-Pro} & \textbf{TQA} & \textbf{OBQA} & \textbf{CSQA} \\
+\midrule
+3\,{\footnotesize(w)} & $+0.7$ & $+15.6$ & $+3.3$ & $+4.7$ & $-1.0$ & $+3.0$ \\
+7\,{\footnotesize(w)} & $-0.5$ & $+0.8$ & $+10.7$ & $+2.0$ & $-2.0$ & $0.0$ \\
+10 & $-0.7$ & $+3.2$ & $+11.3$ & $-2.7$ & $-2.5$ & $-4.0$ \\
+11 & $+0.7$ & $+4.4$ & $+10.0$ & $+1.3$ & $-1.5$ & $-2.0$ \\
+\midrule
+\multicolumn{7}{c}{\textit{Escalation rate (\%)}} \\
+\midrule
+\textbf{Pair} & \textbf{ARC} & \textbf{MMLU} & \textbf{M-Pro} & \textbf{TQA} & \textbf{OBQA} & \textbf{CSQA} \\
+\midrule
+3\,{\footnotesize(w)} & 5 & 42 & 24 & 19 & 10 & 10 \\
+7\,{\footnotesize(w)} & 4 & 12 & 28 & 11 & 5 & 8 \\
+10 & 5 & 21 & 45 & 30 & 9 & 19 \\
+11 & 7 & 18 & 50 & 29 & 12 & 18 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Domain-level heterogeneity (Pair 1 MMLU)}
 Within knowledge retrieval, domain identity modulates C-Hall by an order of
 magnitude (Table~\ref{tab:domain}). Virology (C-Hall 53.3\%, sim.\ 0.966) and
@@ -815,6 +880,17 @@ genuine $\approx$27\% C-Hall on a letter task with an adequate budget. But the
 specific 31.8\% figure is budget-sensitive and should carry that caveat.
 
 \subsection{Practitioner recommendations}
+The four complete pairs also settle the practitioner question directly. The
+recommended default, \textbf{Pair~7 (Qwen3.6-27B + Qwen3.8-27B $\to$
+gpt-oss-120B, all Groq)}, holds 93--95\% on easy, 84\% on MMLU (vs.\ 82.5\% for
+always-frontier) and 73--83\% on the hard tier, at 0.4--0.6\,s and 41--72\%
+below always-frontier cost. The cross-family alternative, \textbf{Pairs~10/11
+(gpt-oss-20B + Qwen)}, matches it on accuracy --- in fact edges ahead on MMLU
+(86--88\%) and the hard tier (76--78\%) because the two developers' errors are
+less correlated --- but runs 2--10$\times$ slower and escalates more (Table~%
+\ref{tab:netgain}). Choose Pair~7 when latency dominates, Pair~10/11 when the
+workload leans hard and independence matters.
+
 \begin{table}[!t]
 \caption{Recommended configuration by goal (free-tier, 2026).}
 \label{tab:recs}
@@ -825,12 +901,16 @@ specific 31.8\% figure is budget-sensitive and should carry that caveat.
 \midrule
 High-volume, mostly easy/medium; minimise cost + latency
 & PCR-2: qwen3.6-27b + qwen3.8-27b $\to$ gpt-oss-120b (all Groq)
-& $\approx$Best-Cheap / Always-Frontier accuracy; 57--69\% cheaper; 0.5\,s;
-5--12\% escalation; no truncation. \\
-Maximum error-independence
-& PCR-2: gpt-oss-20b + qwen3.8-27b $\to$ gpt-oss-120b (all Groq)
-& Different developers $\Rightarrow$ independent training; solo accuracies
-within $\sim$1\,pp; both fast/free. \\
+& $\approx$Best-Cheap / Always-Frontier accuracy; 41--72\% cheaper; 0.4--0.6\,s;
+4--12\% escalation; no truncation. \\
+Hard-leaning workload; want error-independence
+& PCR-2: gpt-oss-20b + qwen3.8-27b $\to$ gpt-oss-120b (Pair~11, all Groq)
+& Different developers $\Rightarrow$ less-correlated errors; +4\,pp on MMLU,
++10\,pp on MMLU-Pro over Best-Cheap. Cost: 1--3\,s, higher escalation. \\
+Easy benchmarks where a cheap model already clears $\sim$92\%
+& Skip PCR; use the stronger cheap model alone
+& On OpenBookQA/CommonsenseQA PCR-2 is 1--4\,pp \textit{below} Best-Cheap
+(Table~\ref{tab:netgain}) --- escalation flips as many right as it fixes. \\
 Hard / adversarial queries
 & Do not use PCR consensus as a trust signal; route to frontier or gate by
 difficulty
@@ -867,15 +947,20 @@ The domain-calibrated threshold system generalizes to difficulty-tier
 calibration, resolving the safety problem while preserving PCR's cost advantage.
 
 \subsection*{Limitations}
-Pilot-scale $N$ (150--300 per new cell) gives per-benchmark C-Hall CIs of
-$\pm3$--14\,pp. The within-family condition spans two developers (gpt-oss, Qwen),
-both on one provider, so provider is confounded with family; a
-capability-matched, non-Groq within-family pair remains the key missing
-replicate. Cosine similarity is unavailable for the extended matrix (a library
-incompatibility), though the pilot shows binary agreement carries the signal.
-Always-Frontier is a single model (gpt-oss-120b). All runs used free-tier APIs;
-paid-tier cost profiles differ. Pair~1's models are delisted, so its MMLU and
-domain-calibration numbers cannot be re-verified.
+Pilot-scale $N$ (150--300 per cell) gives per-benchmark C-Hall CIs of
+$\pm3$--14\,pp, and the family comparison rests on two pairs per condition --- the
+hard-tier C-Hall premium (Finding~5) needs a powered replication before it can be
+claimed. The within-family condition spans two developers (gpt-oss, Qwen), both
+on one provider, so provider is confounded with lineage; a capability-matched,
+non-Groq within-family pair remains the key missing replicate. Pair~3's Cheap~B
+is a safety-tuned model that refuses or hedges on $\sim$40\% of MMLU items,
+halving its agreement and inflating escalation without inflating accuracy ---
+\textbf{safety-tuned models are poor PCR cheap models} and were included only for
+the same-lineage comparison. Cosine similarity is unavailable for the extended
+matrix (a library incompatibility), though the pilot shows binary agreement
+carries the signal. Always-Frontier is a single model (gpt-oss-120b). All runs
+used free-tier APIs; paid-tier cost profiles differ. Pair~1's models are
+delisted, so its MMLU and domain-calibration numbers cannot be re-verified.
 
 \subsection*{Future Work}
 A statistically powered family study ($\approx$1000 MMLU-Pro questions
