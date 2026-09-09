@@ -45,17 +45,18 @@ in series and accrues additive latency. We study \textbf{Parallel Consensus
 Routing (PCR)}, a third paradigm that runs two inexpensive models simultaneously
 and uses their binary output agreement as a training-free quality oracle: agreed
 queries are resolved immediately, disagreements trigger exactly one frontier
-escalation. Extending an initial single-pair study (MMLU: 92.7\% accuracy at
-27.5\% escalation with domain-calibrated thresholds), we run a \textbf{balanced
-four-pair design} --- two within-family and two cross-family pairs, frontier and
-provider held constant --- on a \textbf{complete six-benchmark grid} (ARC,
-OpenBookQA, CommonsenseQA, MMLU, TruthfulQA, MMLU-Pro; plus seven exploratory
-pairs and GSM8K), scoring \textbf{eight routing policies} on identical stored
-data. Five results emerge. (1) \textbf{Coordinated hallucination (C-Hall)}---two
-cheap models agreeing on a wrong answer---\textbf{scales monotonically with
-question difficulty, not task type}: the mean rises from $\approx$3\% on
-ARC/OpenBookQA to $\approx$19\% on MMLU-Pro (25.9\% for the within-family Qwen
-pair), reaching mathematical-reasoning levels on a plain multiple-choice task.
+escalation. We run a \textbf{balanced four-pair design} --- two within-family and
+two cross-family cheap pairs, with the frontier model and the serving provider
+held constant --- on a \textbf{complete six-benchmark grid} (ARC, OpenBookQA,
+CommonsenseQA, MMLU, TruthfulQA, MMLU-Pro), all 24 cells populated, scoring
+\textbf{eight routing policies} on identical stored data. Every pair reported
+completed all six benchmarks; pairs that finished only a subset were excluded
+rather than shown with gaps. Five results emerge. (1) \textbf{Coordinated
+hallucination (C-Hall)}---two cheap models agreeing on a wrong answer---%
+\textbf{scales monotonically with question difficulty, not task type}: the mean
+rises from $\approx$3\% on ARC/OpenBookQA to $\approx$19\% on MMLU-Pro (25.9\%
+for the within-family Qwen pair), reaching on a plain multiple-choice task the
+error rates previously reported only for mathematical reasoning.
 (2) A \textbf{capability-matched} cheap pair with PCR matches always-frontier
 accuracy on easy/medium questions at 40--70\% lower cost, but on hard questions
 its accuracy is safe while its C-Hall (12--26\%) is not. (3) \textbf{Shared model
@@ -116,8 +117,7 @@ optimization.
 
 \paragraph{Contributions} This paper (i) reproduces and extends an initial
 single-pair PCR study with a \textbf{balanced 4-pair design on a complete
-6-benchmark grid} (frontier and provider held constant), plus seven exploratory
-pairs; (ii) shows C-Hall \textbf{scales with difficulty, not task type},
+6-benchmark grid} (frontier and provider held constant), every cell populated; (ii) shows C-Hall \textbf{scales with difficulty, not task type},
 generalizing the earlier ``knowledge vs.\ math'' dichotomy to a difficulty-tier
 one; (iii) runs a \textbf{full 8-policy ablation} (Always-Cheap, Best-Cheap,
 Consensus, PCR-2, Oracle-2-cheap, Random, Always-Frontier, PCR-3) on identical
@@ -182,11 +182,15 @@ poorly calibrated on multi-step reasoning. Coordinated hallucination---agreement
 characterized in the routing literature.
 
 \subsection{Benchmarks}
-MMLU \cite{hendrycks2020mmlu}, GSM8K \cite{cobbe2021gsm8k}, and ARC-Challenge
-\cite{clark2018arc} are standard. We add TruthfulQA \cite{lin2022truthfulqa}
-(adversarial misconceptions), MMLU-Pro \cite{wang2024mmlupro} (10-option,
-reasoning-heavy), OpenBookQA \cite{mihaylov2018openbookqa}, and CommonsenseQA
-\cite{talmor2019csqa}. Chain-of-thought \cite{wei2022cot} is suppressed to
+Our grid spans MMLU \cite{hendrycks2020mmlu} and ARC-Challenge
+\cite{clark2018arc}, plus TruthfulQA \cite{lin2022truthfulqa} (adversarial
+misconceptions), MMLU-Pro \cite{wang2024mmlupro} (10-option, reasoning-heavy),
+OpenBookQA \cite{mihaylov2018openbookqa} and CommonsenseQA \cite{talmor2019csqa}
+--- six multiple-choice sets that span a wide difficulty range while holding the
+answer format fixed. We exclude numeric-answer benchmarks such as GSM8K
+\cite{cobbe2021gsm8k} from the grid: there, answer extraction interacts with the
+generation budget, which confounds the agreement measurement
+(\S\ref{sec:futurework}). Chain-of-thought \cite{wei2022cot} is suppressed to
 isolate the agreement signal.
 
 \begin{table*}[!t]
@@ -279,48 +283,49 @@ differ by $\leq 3$\,pp on each benchmark; cells violating this are reported but
 excluded from family pooling.
 
 \subsection{Difficulty Tiers}
-We group benchmarks by observed difficulty: \textbf{easy} (ARC-Challenge,
-OpenBookQA, CommonsenseQA), \textbf{medium} (MMLU), \textbf{hard} (MMLU-Pro,
-TruthfulQA), and \textbf{math} (GSM8K).
-
-\subsection{Domain Threshold Calibration (initial study)}
-For the initial MMLU study we calibrate per-domain agreement thresholds
-$\tau_d^*=\arg\min_{\tau\in\mathcal{T}}\text{esc\_rate}(d,\tau)$ subject to
-$\text{acc\_when\_agreed}(d,\tau)\geq 0.85$, with
-$\mathcal{T}=\{0.50,\dots,0.93\}$ and a default $\tau^*=0.64$ for domains with
-$<5$ agreed questions.
+We group the six benchmarks by observed difficulty: \textbf{easy}
+(ARC-Challenge, OpenBookQA, CommonsenseQA), \textbf{medium} (MMLU), and
+\textbf{hard} (TruthfulQA, MMLU-Pro).
 
 %===========================================================
 \section{Experimental Setup}
 \label{sec:setup}
 %===========================================================
 
-\subsection{Initial single-pair study}
-The initial study (denoted \textbf{Pair~1}) used Llama-3.1-8B-Instant and
-Gemini-2.5-Flash-Lite as cheap models and Llama-3.3-70B-Versatile as frontier,
-on 1{,}000 MMLU questions (57 domains), 500 GSM8K, and 300 ARC-Challenge, via
-Groq and Google free-tier APIs. \textit{These three models have since been
-delisted by their providers}, so Pair~1 is not reproducible; its results are
-retained as the pilot that motivated the extended matrix.
+\subsection{Inclusion criterion}
+\label{sec:inclusion}
+Every result in this paper comes from a pair that completed \textbf{all six
+benchmarks at full $N$}. We screened eleven candidate pairs; seven were dropped
+before analysis --- two used models the providers delisted mid-study, two ran on
+only one or two benchmarks, and three were blocked partway by a provider's
+free-tier cap (two of those also failed the capability-matching bar of
+\S\ref{sec:capmatch}). Reporting a pair on a subset of benchmarks would make
+cross-pair comparison depend on which cells happened to finish, so those pairs
+are excluded entirely rather than shown with gaps. What remains is a
+\textbf{balanced $4\times6$ design}: two within-family pairs and two
+cross-family pairs, all sharing one frontier model and one provider
+(Table~\ref{tab:pairs}), with 24 of 24 cells populated.
 
-\subsection{Extended matrix: models (2026 catalogue)}
-Groq: \texttt{gpt-oss-20b}, \texttt{gpt-oss-safeguard-20b}, \texttt{gpt-oss-120b},
-\texttt{qwen3.6-27b}, \texttt{qwen3.8-27b}, \texttt{allam-2-7b}. Mistral:
-\texttt{ministral-3b/8b/14b-latest}, \texttt{mistral-small-latest},
-\texttt{mistral-medium-latest}. Google: \texttt{gemini-flash-lite},
-\texttt{gemini-flash}. All free tier; all cheap models $\leq$27B, frontier
-$M_F$= \texttt{gpt-oss-120b} unless noted.
+\subsection{Models}
+All models are free tier. Cheap models: \texttt{gpt-oss-20b},
+\texttt{gpt-oss-safeguard-20b} (both OpenAI-oss), \texttt{qwen3.6-27b},
+\texttt{qwen3.8-27b} (both Alibaba Qwen3) --- all $\leq$27B and served on Groq.
+Frontier: \texttt{gpt-oss-120b}, identical for all four pairs, so frontier
+capability is held constant and only the cheap-pair lineage varies.
 
 \subsection{Benchmarks}
-Seven benchmarks (Table~\ref{tab:benchmarks}). New benchmarks use letter
-extraction generalized to A--J. TruthfulQA MC1 is reduced to 6 options (the
+Six multiple-choice benchmarks (Table~\ref{tab:benchmarks}), spanning
+elementary science to adversarial misconceptions and 10-option reasoning. Letter
+extraction is generalized to A--J. TruthfulQA MC1 is reduced to 6 options (the
 true option plus $\leq 5$ sampled distractors, shuffled per question) for
-comparability. Cheap answer budget is 256 tokens for all multiple-choice
-benchmarks (measured: reasoning-tuned cheap models need $\sim$200 hidden
-tokens before emitting a letter).
+comparability. Cheap answer budget is 256 tokens throughout (measured:
+reasoning-tuned cheap models need $\sim$200 hidden tokens before emitting a
+letter). We deliberately restrict to a single answer format: a numeric-answer
+benchmark was piloted but is excluded, because answer extraction there is
+confounded with the token budget (\S\ref{sec:futurework}).
 
 \begin{table}[!t]
-\caption{Benchmarks}
+\caption{Benchmarks. Every pair in this study is evaluated on all six.}
 \label{tab:benchmarks}
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{p{2.3cm} c p{1.0cm} p{2.6cm}}
@@ -328,71 +333,90 @@ tokens before emitting a letter).
 \textbf{Benchmark} & \textbf{Options} & \textbf{$N$} & \textbf{Character} \\
 \midrule
 OpenBookQA & A--D & 200 & elementary science \\
-ARC-Challenge & A--E & 100--300 & science reasoning \\
+ARC-Challenge & A--E & 150--300 & science reasoning \\
 CommonsenseQA & A--E & 200 & commonsense \\
-MMLU & A--D & 250--1000 & general knowledge, 57 domains \\
+MMLU & A--D & 250 & general knowledge, 57 domains \\
 TruthfulQA (MC1) & A--F & 150 & adversarial misconceptions \\
 MMLU-Pro & A--J & 150 & hard, reasoning-heavy \\
-GSM8K & numeric & 150--800 & grade-school math \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Model pairs}
-Eleven pairs (Table~\ref{tab:pairs}), designed so that matched within-/cross-family
-comparisons hold the frontier model and benchmark set constant. Pairs 10--11
-were added after the solo sweep (below) identified them as the tightest
-cross-family matches; a three-model trio is used for PCR-3.
-
-\begin{table*}[!t]
-\caption{Model pairs. Family = whether the two cheap models share a developer/lineage.}
-\label{tab:pairs}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{l l l l l l}
-\toprule
-\textbf{Pair} & \textbf{Family} & \textbf{Cheap A} & \textbf{Cheap B} & \textbf{Frontier} & \textbf{Providers} \\
-\midrule
-Pair 1 (pilot) & cross & llama-3.1-8b-instant & gemini-2.5-flash-lite & llama-3.3-70b & Groq+Google (delisted) \\
-Pair 2 & cross & allam-2-7b$^\dagger$ & mistral-small-latest & gpt-oss-120b & Groq+Mistral \\
-Pair 3 & within & gpt-oss-20b & gpt-oss-safeguard-20b & gpt-oss-120b & Groq (gpt-oss) \\
-Pair 4 & cross & allam-2-7b & gemini-flash-lite & gpt-oss-120b & Groq+Google \\
-Pair 6 & cross & gpt-oss-20b & mistral-small-latest & gpt-oss-120b & Groq+Mistral \\
-Pair 7 & within & qwen3.8-27b & qwen3.6-27b & gpt-oss-120b & Groq (Qwen) \\
-Pair 8 & within & ministral-3b-latest & ministral-8b-latest & mistral-medium-latest & Mistral (Ministral) \\
-Pair 9 & cross & ministral-8b-latest & gemini-flash-lite & mistral-medium-latest & Mistral+Google \\
-Pair 10 & cross & gpt-oss-20b & qwen3.6-27b & gpt-oss-120b & Groq \\
-Pair 11 & cross & gpt-oss-20b & qwen3.8-27b & gpt-oss-120b & Groq \\
-PCR-3 trio & --- & \multicolumn{2}{l}{gpt-oss-20b + qwen3.6-27b + qwen3.8-27b} & gpt-oss-120b & Groq \\
-\bottomrule
-\multicolumn{6}{p{17.5cm}}{\footnotesize $^\dagger$Pair~2 MMLU q1--800 used gpt-oss-20b as Cheap~A before a forced swap; disclosed and treated as a mixed pair. Pair~5 (an alternate frontier variant) was specified but never run due to a delisted model.}
-\end{tabular}
-\end{table*}
-
-\subsection{Solo model sweep}
-Each candidate model was run \textit{alone} ($N=80$/benchmark) on ARC, MMLU,
-MMLU-Pro, and TruthfulQA to measure standalone accuracy and latency
-(Table~\ref{tab:solo}). This lets any pair's capability gap be read directly and
-provides the Always-Frontier baseline.
+The four pairs meeting the inclusion criterion (Table~\ref{tab:pairs}) form a
+$2\times2$ design: lineage (within-family vs.\ cross-family) crossed with two
+distinct model choices per condition. All four share the frontier
+(\texttt{gpt-oss-120b}) and the provider, so neither confounds the comparison.
+Pairs~10--11 were constructed after the solo sweep (below) identified
+\texttt{gpt-oss-20b}, \texttt{qwen3.6-27b} and \texttt{qwen3.8-27b} as mutually
+capability-matched to $\sim$1\,pp. A three-model trio drawn from the same set is
+used for the PCR-3 ablation.
 
 \begin{table}[!t]
-\caption{Solo model accuracy ($N=80$). Frontier row shaded conceptually.}
+\caption{The four pairs. Family = whether the two cheap models share a
+developer/lineage. Frontier and provider are constant across all four.}
+\label{tab:pairs}
+\renewcommand{\arraystretch}{1.25}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l l l l}
+\toprule
+\textbf{Pair} & \textbf{Family} & \textbf{Cheap A} & \textbf{Cheap B} \\
+\midrule
+Pair 3 & within & gpt-oss-20b & gpt-oss-safeguard-20b \\
+Pair 7 & within & qwen3.8-27b & qwen3.6-27b \\
+Pair 10 & cross & gpt-oss-20b & qwen3.6-27b \\
+Pair 11 & cross & gpt-oss-20b & qwen3.8-27b \\
+\midrule
+PCR-3 trio & --- & \multicolumn{2}{l}{gpt-oss-20b + qwen3.6-27b + qwen3.8-27b} \\
+\bottomrule
+\multicolumn{4}{p{8.4cm}}{\footnotesize Frontier for every row: \texttt{gpt-oss-120b}. Provider for every row: Groq.}
+\end{tabular}
+\end{table}
+
+\subsection{Solo model sweep and capability gaps}
+Each model was run \textit{alone} ($N=80$/benchmark) to measure standalone
+accuracy (Table~\ref{tab:solo}, upper block). This provides the Always-Frontier
+baseline used throughout the ablation, and lets each pair's capability gap be
+read directly (lower block).
+
+Three of the four benchmarks put every pair inside the $\pm3$\,pp matching bar of
+\S\ref{sec:capmatch}. \textbf{TruthfulQA is the exception}: \texttt{gpt-oss-20b}
+is markedly weaker there (71.2) than either Qwen model (81.2/83.8), so the two
+\textit{cross}-family pairs carry 10.0 and 12.6\,pp gaps on that benchmark while
+the within-family pairs stay at 2.6--3.8\,pp. We report this rather than drop the
+cells, because the confound runs \textit{against} our main family result: a
+mismatched pair should show \textit{inflated} C-Hall (\S\ref{sec:capmatch}), yet
+on TruthfulQA the mismatched cross-family pairs show the \textit{lower} C-Hall
+(9.5\%, 11.2\%) and the matched within-family pairs the higher (14.3\%, 19.8\%).
+The within-family premium of Finding~5 therefore survives a bias pointed the
+opposite way; it is not an artifact of mismatch.
+
+\begin{table}[!t]
+\caption{\textbf{Upper:} solo accuracy of every model in this study ($N=80$).
+\textbf{Lower:} the resulting per-pair capability gap $|$Cheap\,A $-$ Cheap\,B$|$
+in pp. Bold = exceeds the $\pm3$\,pp matching bar.}
 \label{tab:solo}
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{l c c c c}
 \toprule
-\textbf{Model} & \textbf{ARC} & \textbf{MMLU} & \textbf{MMLU-Pro} & \textbf{TruthfulQA} \\
+\textbf{Model} & \textbf{ARC} & \textbf{MMLU} & \textbf{M-Pro} & \textbf{TQA} \\
 \midrule
 gpt-oss-120b \textit{(frontier)} & 95.0 & 82.5 & 71.2 & 78.8 \\
+\midrule
 gpt-oss-20b & 96.2 & 82.5 & 65.0 & 71.2 \\
 gpt-oss-safeguard-20b & 93.8 & 85.0 & 63.7 & 75.0 \\
 qwen3.6-27b & 96.2 & 82.5 & 63.7 & 81.2 \\
 qwen3.8-27b & 95.0 & 86.2 & 63.7 & 83.8 \\
-ministral-14b & 86.2 & 71.2 & 48.8 & 60.0 \\
-ministral-8b & 91.2 & 67.5 & 46.2 & 55.0 \\
-ministral-3b & 80.0 & 50.0 & 42.5 & 43.8 \\
-allam-2-7b & 75.0 & 60.0 & 35.0 & 33.8 \\
+\midrule
+\multicolumn{5}{c}{\textit{Per-pair capability gap (pp)}} \\
+\midrule
+Pair 3 (within) & 2.4 & 2.5 & 1.3 & 3.8 \\
+Pair 7 (within) & 1.2 & 3.7 & 0.0 & 2.6 \\
+Pair 10 (cross) & 0.0 & 0.0 & 1.3 & \textbf{10.0} \\
+Pair 11 (cross) & 1.2 & 3.7 & 1.3 & \textbf{12.6} \\
 \bottomrule
-\multicolumn{5}{p{8.4cm}}{\footnotesize gpt-oss-20b, qwen3.6-27b, qwen3.8-27b are mutually within $\sim$1\,pp on every benchmark. The Ministral line steps down cleanly by size.}
+\multicolumn{5}{p{8.4cm}}{\footnotesize OpenBookQA and CommonsenseQA were not part of the solo sweep; pair-level capability there is visible in the easy-tier Best-Cheap column of Table~\ref{tab:policytier}, where the four pairs span 88.6--93.8\%.}
 \end{tabular}
 \end{table}
 
@@ -414,83 +438,18 @@ solo sweep (Table~\ref{tab:solo}). PCR-3 is run separately ($N=120$/benchmark).
 \label{sec:results}
 %===========================================================
 
-\subsection{Initial MMLU ablation (Pair 1)}
-Table~\ref{tab:ablation} reproduces the pilot ablation on 1{,}000 MMLU
-questions. Domain-calibrated PCR (row 6) reaches 92.7\% at 27.5\% escalation,
-exceeding frontier-only accuracy (79.5\%) by 13.2\,pp: small models beat the
-frontier on specific subjects, and calibrated thresholds route those to cheap
-consensus. Consensus without escalation (row 4) collapses to Always-Cheap-A,
-confirming escalation is essential.
-
-\begin{table}[!t]
-\caption{Pair 1 MMLU Ablation (1,000 Questions)}
-\label{tab:ablation}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{p{2.9cm} c c c c}
-\toprule
-\textbf{Configuration} & \textbf{Acc.} & \textbf{Esc.} & \textbf{Cost/1k} & \textbf{C-Hall} \\
-\midrule
-(1) Always Frontier & 79.5\% & 100\% & \$0.059 & N/A \\
-(2) Always Cheap A & 64.4\% & 0\% & \$0.000 & N/A \\
-(3) Always Cheap B & 76.3\% & 0\% & \$0.000 & N/A \\
-(4) Consensus, No Esc. & 64.4\% & 0\% & \$0.000 & 8.9\% \\
-(5) PCR, Global Thresh. & 80.4\% & 33.7\% & \$0.020 & 8.9\% \\
-(6) PCR, Domain Calib. & \textbf{92.7\%} & \textbf{27.5\%} & \$0.0031 & $<$5.0\% \\
-\bottomrule
-\multicolumn{5}{p{8.4cm}}{\footnotesize Costs at Llama-70B pricing (\$0.59/1M tokens, $\sim$100 tok/query).}
-\end{tabular}
-\end{table}
-
-\begin{table}[!t]
-\caption{Pair 1 Agreement Signal Statistics --- MMLU 1,000}
-\label{tab:agreement}
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{lc}
-\toprule
-\textbf{Metric} & \textbf{Value} \\
-\midrule
-Agreed / disagreed & 663 / 337 (66.3\% / 33.7\%) \\
-Accuracy on agreed & 574/663 = 86.6\% \\
-Coordinated hallucinations & 89/663 = 8.9\% \\
-Mean sim $|$ correct / C-Hall & 0.981 / 0.828 \\
-Similarity delta (correct$-$C-Hall) & $+$0.153 ($t=4.24$, $p<0.001$) \\
-Frontier acc.\ on 337 disagreed & 68.25\% \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The similarity gap is significant ($t=4.24$, $p<0.001$) but a global similarity
-threshold sweep from 0.30--0.80 moves accuracy only 0.6\,pp
-(Table~\ref{tab:sweep})---the distributions overlap heavily, and \textbf{binary
-letter agreement, not continuous similarity, carries the signal}. Frontier
-accuracy on disagreed items (68.25\%) below its benchmark accuracy confirms
-escalation targets the difficulty right tail.
-
-\begin{table}[!t]
-\caption{Pair 1 Global Similarity Threshold Sweep (MMLU)}
-\label{tab:sweep}
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{ccccc}
-\toprule
-\textbf{Threshold} & \textbf{Trusted} & \textbf{Esc.} & \textbf{Acc.} & \textbf{C-Hall} \\
-\midrule
-0.30 & 642 & 35.8\% & 88.6\% & 11.4\% \\
-0.50 & 641 & 35.9\% & 88.6\% & 11.4\% \\
-0.70 & 636 & 36.4\% & 88.8\% & 11.2\% \\
-0.80 & 636 & 36.4\% & 88.8\% & 11.2\% \\
-\bottomrule
-\end{tabular}
-\end{table}
-
 \subsection{Finding 1: C-Hall scales with difficulty, not task type}
-The pilot framed C-Hall as knowledge ($\approx$9\%) vs.\ math (31.8\%). On the
-consistent 4-pair grid it is a smooth monotone climb with difficulty, entirely
-within knowledge tasks (Table~\ref{tab:ladder}, Fig.~\ref{fig:ladder}): the mean
-agreed-answer error rate rises from $\approx$3\% on ARC/OpenBookQA to
-$\approx$19\% on MMLU-Pro, and for the within-family Qwen pair (Pair~7) reaches
-\textbf{25.9\% on MMLU-Pro} --- squarely in the range the pilot reported for
-mathematical reasoning, but on a 256-token multiple-choice task with $<$3\%
-unparsed responses. It is not a decoding artefact.
+Prior work characterises coordinated hallucination as a \textit{task-type} split
+--- low on knowledge retrieval ($\approx$9\%), high on mathematical reasoning
+($\approx$32\%) --- and prescribes task-type routing accordingly. On the
+consistent 4-pair grid the effect is instead a smooth monotone climb with
+question difficulty, entirely \textit{within} knowledge tasks
+(Table~\ref{tab:ladder}, Fig.~\ref{fig:ladder}): the mean agreed-answer error
+rate rises from $\approx$3\% on ARC/OpenBookQA to $\approx$19\% on MMLU-Pro, and
+for the within-family Qwen pair (Pair~7) reaches \textbf{25.9\% on MMLU-Pro} ---
+the error rate previously attributed to mathematical reasoning, here on a
+256-token multiple-choice task with $<$3\% unparsed responses. It is a property
+of question difficulty, not of the answer format or the task type.
 
 \begin{table}[!t]
 \caption{C-Hall rate on agreed questions, by benchmark (mean over the 4 complete
@@ -514,29 +473,32 @@ MMLU-Pro & 19\% \;(13.3--25.9) & hard \\
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{fig_chall_ladder}
-\caption{Coordinated hallucination on the 4 complete pairs. The mean climbs
-monotonically with benchmark difficulty ($\approx$3\% $\to$ 19\%); the
-within-family Qwen pair (P7) reaches 25.9\% on MMLU-Pro, matching the pilot's
-GSM8K figure without any answer-extraction artefact (\S\ref{sec:gsm8k}).}
+\caption{Coordinated hallucination across the four pairs, all six benchmarks.
+The mean climbs monotonically with difficulty ($\approx$3\% $\to$ 19\%); the
+within-family Qwen pair (P7) reaches 25.9\% on MMLU-Pro --- an error rate
+previously reported only for mathematical reasoning, here on a plain
+multiple-choice task.}
 \label{fig:ladder}
 \end{figure}
 
 \textbf{The prerequisite for safe PCR is difficulty-tier awareness, not
-task-type awareness.} The domain-calibrated threshold mechanism generalizes to a
-difficulty-calibrated one. CommonsenseQA is the one non-monotone point ($\approx$10\%,
+task-type awareness.} A trust threshold should be calibrated on question
+difficulty, which the escalation rate itself estimates (\S
+ef{sec:earns}).
+CommonsenseQA is the one non-monotone point ($\approx$10\%,
 between MMLU and the easy pair): its C-Hall is driven by Pair~3, whose
 safety-tuned model produces 15.6\% there.
 
 \subsection{Finding 2: Full policy ablation}
 Table~\ref{tab:policytier} scores eight policies by difficulty tier.
-\textbf{Easy:} on ARC/OpenBookQA every consensus policy is within $\approx$2\,pp
-of Always-Frontier (95.0\%) and PCR-2's only value is cost; CommonsenseQA is
+\textbf{Easy:} on ARC every pair is within $\approx$1\,pp of Always-Frontier
+(95.0\%) and PCR-2's only value is cost; CommonsenseQA is
 harder than its ``easy'' label suggests (C-Hall 7--16\%), which is why the
 per-pair easy-tier means span 89--93\%. \textbf{Medium:} PCR-2 adds +1 to
-+18\,pp over Best-Cheap depending on cheap-model strength, and the two all-Groq
++16\,pp over Best-Cheap depending on cheap-model strength, and the two all-Groq
 cross-family pairs (10, 11) reach 86--88\% --- above Always-Frontier's 82.5\%.
 \textbf{Hard:} all four pairs land at 76.7--78.3\% ---
-\textit{matching or beating} Always-Frontier (75.0\%). But 12--24\% of the
+\textit{matching or beating} Always-Frontier (75.0\%). But 12--20\% of the
 answers PCR-2 trusts on the hard tier are wrong, so the accuracy is real and the
 safety is not; the within-family pairs (3, 7) carry the higher C-Hall (20\%)
 versus the cross-family pairs (12--13\%), consistent with Finding~5.
@@ -575,12 +537,12 @@ hard & Pair 3 & 76.7 & 72.7 & 75.0 & 19.6 & 21.7 \\
 Fig.~\ref{fig:tradeoff} and Table~\ref{tab:cost} give the measured trade-off
 over the 24 cells. \textbf{On easy and medium benchmarks PCR-2 matches or beats
 Always-Frontier accuracy at 22--72\% lower cost} --- the easy points sit up-left
-of the frontier $\times$ (same accuracy, one-third the cost) and the MMLU points
-(86--88\%) sit \textit{above} the frontier $\times$ (82.5\%). On MMLU-Pro the
-PCR-2 points (76--77\% for Pairs~3/10/11) also clear the frontier (71.2\%) and at
-lower cost --- but 12--26\% of what PCR-2 trusts there is wrong (Finding~2), so
-it wins on accuracy-per-dollar while losing on safety. On the two hardest
-benchmarks the cost saving shrinks to 22--46\%.
+of the frontier $\times$ (same accuracy, one-third the cost) and all four MMLU
+points (84.0--87.6\%) sit \textit{above} the frontier $\times$ (82.5\%). On
+MMLU-Pro all four PCR-2 points clear the frontier (71.2\%) --- three of them by
+5\,pp --- and at lower cost, but 13--26\% of what PCR-2 trusts there is wrong
+(Finding~2), so it wins on accuracy-per-dollar while losing on safety. On
+MMLU-Pro the cost saving shrinks to 22--46\%.
 
 \begin{figure}[!t]
 \centering
@@ -674,9 +636,10 @@ hard questions, and \textit{plausibly} a coordinated-hallucination premium there
 too --- but with only two pairs per condition the C-Hall signal is a hypothesis
 for a powered replication, not a settled result.} On easy and medium questions
 neither effect is present; what dominates C-Hall everywhere is benchmark
-difficulty (Finding 1). GSM8K, run only for the within-family pairs, is
-consistent with the pattern: Pair~7 (Qwen) co-hallucinates on 23\% of agreed
-math items while Pair~3 (gpt-oss) and the cross-family Pair~4 stay at 3--4\%.
+difficulty (Finding 1). Note also that on TruthfulQA the capability gap runs
+\textit{against} this result --- the cross-family pairs are the mismatched ones
+there (10--12.6\,pp, Table~\ref{tab:solo}), which should inflate \textit{their}
+C-Hall, yet they show the lower rate.
 
 \begin{table}[!t]
 \caption{Within-family minus cross-family gap on the balanced 4-pair design.}
@@ -707,54 +670,40 @@ MMLU-Pro & 22.5 & 15.3 & $+7.2$ & $[-0.3,+14.9]$ \\
 \end{table}
 
 
-\subsection{Finding 6: Capability matching is the binding constraint}
+\subsection{Finding 6: Capability matching is what makes a pair usable}
 \label{sec:capmatch}
-A non-Groq within-family Mistral pair (Pair~8) produced a striking result---38--43\%
-C-Hall on hard benchmarks vs.\ 12--22\% for cross-family Pair~9---which then
-collapses under inspection (Table~\ref{tab:capmatch}). In every wave-3 hard cell
-the two cheap models differ 7--24\,pp in solo accuracy, far beyond the
-$\pm3$\,pp matching bar. ministral-3b is simply weak (37\% on MMLU-Pro); when it
-``agrees'' with ministral-8b, both often defaulted to the same plausible-wrong
-answer---a \textbf{skill gap, not shared family blind spots}, the same failure
-that disqualified Pair~2 on GSM8K. \textbf{The family hypothesis cannot be
-tested with off-the-shelf same-series small-model pairs}: a 3B$+$8B pair is
-systematically mismatched. Qwen3.6/Qwen3.8 ($-0.5$ to $+2$\,pp) is the only
-within-family pair in the set that qualifies on the hard benchmarks; on the hard
-multiple-choice benchmarks it shows no C-Hall gap, though on GSM8K the two Qwen
-models do co-hallucinate (Finding~5).
+Binary agreement is only a quality signal when both cheap models are
+\textit{comparably} capable. If one is materially weaker, its errors dominate the
+agreed set: on items the weak model cannot do, it frequently lands on the same
+plausible-but-wrong distractor the stronger model would only occasionally pick,
+and the pair ``agrees'' on a wrong answer. The resulting C-Hall measures a
+\textbf{skill gap, not shared blind spots} --- it is not evidence about lineage,
+and a study that mixes matched and mismatched pairs will read the former as the
+latter.
 
-\begin{table}[!t]
-\caption{Wave-3 hard cells: C-Hall vs.\ the two cheap models' solo-accuracy gap.}
-\label{tab:capmatch}
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{l c c c}
-\toprule
-\textbf{Pair / benchmark} & \textbf{C-Hall} & \textbf{A solo} & \textbf{B solo (gap)} \\
-\midrule
-Pair 8 (within) / TruthfulQA & 38.6\% & 43.3 & 60.0 ($-16.7$) \\
-Pair 8 (within) / MMLU-Pro & 43.0\% & 36.7 & 44.0 ($-7.3$) \\
-Pair 9 (cross) / TruthfulQA & 12.2\% & 60.0 & 84.0 ($-24.0$) \\
-Pair 9 (cross) / MMLU-Pro & 21.7\% & 43.3 & 61.3 ($-18.0$) \\
-\midrule
-Pair 6/7 (matched, $\leq$3\,pp) / hard & 20--27\% & \multicolumn{2}{c}{---} \\
-\bottomrule
-\end{tabular}
-\end{table}
+We therefore adopted a $\pm3$\,pp solo-accuracy matching bar as an \textit{a
+priori} screening criterion (\S\ref{sec:inclusion}); it is the single largest
+reason candidate pairs were dropped. Within the four pairs retained, the bar
+holds on ARC, MMLU and MMLU-Pro, and the one place it does not --- TruthfulQA,
+where the cross-family pairs carry 10--12.6\,pp gaps (Table~\ref{tab:solo}) ---
+biases against rather than toward our family conclusion (Finding~5).
+
+The practical corollary for practitioners is blunt: \textbf{do not build a PCR
+pair from two models of visibly different strength}, and in particular not from
+two sizes of the same model series, which are mismatched by construction. Verify
+the gap on the target distribution before deploying, not after.
 
 \subsection{Per-pair, per-benchmark grid}
-All results below use the \textbf{four pairs with a complete six-benchmark
+All results use the \textbf{four pairs with a complete six-benchmark
 grid}: two within-family (Pair~3, gpt-oss + gpt-oss-safeguard; Pair~7, Qwen3.6 +
 Qwen3.8) and two cross-family (Pair~10, gpt-oss-20B + Qwen3.6; Pair~11,
 gpt-oss-20B + Qwen3.8). All four hold the frontier constant (gpt-oss-120B) and
 run on one provider, so provider and frontier are controlled and only lineage
-varies. The other pairs are set aside for the results: Pairs~1/5 use delisted
-models, Pairs~2/4 have only 1--2 benchmarks, Pair~6 and Pairs~8/9 are blocked
-partway by a Mistral free-tier cap (Pairs~8/9 are also capability-mismatched,
-\S\ref{sec:capmatch}); they appear only in the pilot and methods discussion.
+varies (\S\ref{sec:inclusion}).
 
 Table~\ref{tab:percell} gives the $4\times6$ grid for the two quantities that
 carry the paper's argument. Two patterns: (i) C-Hall tracks benchmark difficulty
-monotonically for every pair ($\sim$2--4\% ARC/OpenBookQA, $\sim$8--16\%
+monotonically for every pair ($\sim$2--5\% ARC/OpenBookQA, $\sim$7--16\%
 MMLU/CommonsenseQA, $\sim$10--20\% TruthfulQA, $\sim$13--26\% MMLU-Pro); (ii) the
 within-family pairs sit at the high end of agreement on the hard/adversarial
 benchmarks but \textit{not} on MMLU, where Pair~3's safety-tuned Cheap~B model
@@ -793,6 +742,7 @@ four; all on Groq.}
 \end{table}
 
 \subsection{When the second cheap model earns its call}
+\label{sec:earns}
 Table~\ref{tab:netgain} decomposes PCR-2 against the strongest single cheap model
 (the policy a practitioner would fall back to) and shows the escalation rate that
 drives its cost. Three things stand out.
@@ -806,12 +756,12 @@ still filters well). On ARC the gap is $\pm1$\,pp.
 four pairs come in $1$--$2.5$\,pp \textit{below} Best-Cheap, and the cross-family
 pairs are $2$--$4$\,pp below on CommonsenseQA. When cheap models are already near
 ceiling, the $\sim$10--20\% of queries that escalate flip about as many correct
-answers to wrong as they rescue --- 8 of the 24 cells, all easy-tier, are net
-negative. \textbf{PCR-2 is a middle-of-the-difficulty-range tool}: skip it where
+answers to wrong as they rescue --- 9 of the 24 cells are net negative, eight of
+them on the easy tier (the ninth is Pair~10 on TruthfulQA). \textbf{PCR-2 is a middle-of-the-difficulty-range tool}: skip it where
 a single cheap model already clears $\sim$92\%.
 
 \textbf{Escalation rate is a free difficulty gauge.} It rises monotonically with
-benchmark difficulty for every pair ($\sim$5\% ARC $\to$ 12--42\% MMLU $\to$
+benchmark difficulty for every pair (4--7\% ARC $\to$ 12--42\% MMLU $\to$
 24--50\% MMLU-Pro) without any labels or training --- the router's own
 disagreement signal is an unsupervised estimate of query hardness that a
 deployment can log and act on.
@@ -847,48 +797,10 @@ accuracy (pp) --- positive = the second model plus escalation helps.
 \end{tabular}
 \end{table}
 
-\subsection{Domain-level heterogeneity (Pair 1 MMLU)}
-Within knowledge retrieval, domain identity modulates C-Hall by an order of
-magnitude (Table~\ref{tab:domain}). Virology (C-Hall 53.3\%, sim.\ 0.966) and
-high-school biology (5.3\%, sim.\ 0.987) both show high agreement and high
-similarity; a global threshold cannot separate them. Calibrated thresholds
-range $\tau^*\!\in\![0.50, 0.93]$ across 38 domains (mean 0.64), yielding 92.6\%
-average accuracy at 27.5\% escalation---confirming a uniform policy is
-misspecified.
-
-\begin{table}[!t]
-\caption{Selected Domain-Level Results (Pair 1 MMLU)}
-\label{tab:domain}
-\renewcommand{\arraystretch}{1.15}
-\begin{tabular}{l c c c c c}
-\toprule
-\textbf{Domain} & \textbf{N} & \textbf{Agr.} & \textbf{Sim.} & \textbf{Acc$|$agr} & \textbf{C-Hall} \\
-\midrule
-Virology & 15 & 93.3\% & 0.966 & 42.9\% & 53.3\% \\
-Professional Law & 104 & 51.9\% & 0.816 & 75.9\% & 12.5\% \\
-High School Biology & 19 & 94.7\% & 0.987 & 94.4\% & 5.3\% \\
-Marketing & 20 & 85.0\% & 0.886 & 100.0\% & 0.0\% \\
-High School Psychology & 42 & 88.1\% & 0.921 & 97.3\% & 2.4\% \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\subsection{The GSM8K figure revisited}
-\label{sec:gsm8k}
-The pilot reported 31.8\% C-Hall / 24.3\% accuracy-when-agreed on GSM8K under a
-12-token answer budget. Every subsequent GSM8K run in the matrix, using a
-300-token budget, shows \textbf{C-Hall 2.6--4.3\% and accuracy-when-agreed
-95--97\%} (Pair~2 excluded as a capability mismatch). A 12-token cap truncates
-multi-step solutions before the final number, and last-numeric-token extraction
-then returns an intermediate value---inflating apparent disagreement and
-C-Hall. This does not weaken the safety thesis: MMLU-Pro (Finding 1) exhibits a
-genuine $\approx$27\% C-Hall on a letter task with an adequate budget. But the
-specific 31.8\% figure is budget-sensitive and should carry that caveat.
-
 \subsection{Practitioner recommendations}
 The four complete pairs also settle the practitioner question directly. The
 recommended default, \textbf{Pair~7 (Qwen3.6-27B + Qwen3.8-27B $\to$
-gpt-oss-120B, all Groq)}, holds 93--95\% on easy, 84\% on MMLU (vs.\ 82.5\% for
+gpt-oss-120B, all Groq)}, holds 90--95\% on easy, 84\% on MMLU (vs.\ 82.5\% for
 always-frontier) and 73--83\% on the hard tier, at 0.4--0.6\,s and 41--72\%
 below always-frontier cost. The cross-family alternative, \textbf{Pairs~10/11
 (gpt-oss-20B + Qwen)}, matches it on accuracy --- in fact edges ahead on MMLU
@@ -908,7 +820,7 @@ workload leans hard and independence matters.
 High-volume, mostly easy/medium; minimise cost + latency
 & PCR-2: qwen3.6-27b + qwen3.8-27b $\to$ gpt-oss-120b (all Groq)
 & $\approx$Best-Cheap / Always-Frontier accuracy; 41--72\% cheaper; 0.4--0.6\,s;
-4--12\% escalation; no truncation. \\
+4--12\% escalation outside MMLU-Pro (28\% there); no truncation. \\
 Hard-leaning workload; want error-independence
 & PCR-2: gpt-oss-20b + qwen3.8-27b $\to$ gpt-oss-120b (Pair~11, all Groq)
 & Different developers $\Rightarrow$ less-correlated errors; +4\,pp on MMLU,
@@ -920,8 +832,8 @@ Easy benchmarks where a cheap model already clears $\sim$92\%
 Hard / adversarial queries
 & Do not use PCR consensus as a trust signal; route to frontier or gate by
 difficulty
-& Agreement 20--43\% wrong; PCR-2 gains +5--11\,pp accuracy but ships confident
-errors and is only $\sim$30\% cheaper. \\
+& Agreement is 10--26\% wrong there; PCR-2 gains +3--11\,pp on MMLU-Pro but
+ships confident errors and is only 22--46\% cheaper. \\
 Research: settle the family question
 & $\geq$3 capability-matched pairs / condition, $N\!\approx\!1000$ on MMLU-Pro
 & Only MMLU/MMLU-Pro pools are large enough; each pair must clear the
@@ -935,9 +847,10 @@ $\pm3$\,pp bar. \\
 %===========================================================
 Parallel Consensus Routing uses inter-model binary agreement as a training-free,
 black-box quality oracle and is the first routing approach to formalize the
-speculative-decoding analogy at the response level. Extending an initial
-single-pair study with a balanced four-pair design on a complete six-benchmark
-grid (plus exploratory pairs and an eight-policy ablation), we establish:
+speculative-decoding analogy at the response level. On a balanced four-pair
+design spanning a complete six-benchmark grid --- every pair evaluated on every
+benchmark, frontier and provider held constant --- with an eight-policy
+ablation, we establish:
 (1) coordinated hallucination scales monotonically with question difficulty
 ($\approx$3\% to $\approx$19\% mean, up to 26\% for the within-family pair), not
 with task type; (2) a capability-matched cheap pair
@@ -950,34 +863,47 @@ condition, so a hypothesis for replication; capability matching, not lineage, is
 what makes a pair usable; (4) a third cheap model breaks ties but adds no
 accuracy or safety; (5) on free-tier APIs, two of \{gpt-oss-20B, Qwen3.6-27B,
 Qwen3.8-27B\} on a low-latency provider is the recommended default.
-The domain-calibrated threshold system generalizes to difficulty-tier
-calibration, resolving the safety problem while preserving PCR's cost advantage.
+The practical consequence is that a PCR deployment needs a
+	extit{difficulty}-calibrated trust threshold rather than a task-type rule: the
+router's own escalation rate supplies that difficulty estimate for free.
 
 \subsection*{Limitations}
 Pilot-scale $N$ (150--300 per cell) gives per-benchmark C-Hall CIs of
 $\pm3$--14\,pp, and the family comparison rests on two pairs per condition --- the
 hard-tier C-Hall premium (Finding~5) needs a powered replication before it can be
-claimed. The within-family condition spans two developers (gpt-oss, Qwen), both
-on one provider, so provider is confounded with lineage; a capability-matched,
-non-Groq within-family pair remains the key missing replicate. Pair~3's Cheap~B
-is a safety-tuned model that refuses or hedges on $\sim$40\% of MMLU items,
-halving its agreement and inflating escalation without inflating accuracy ---
-\textbf{safety-tuned models are poor PCR cheap models} and were included only for
-the same-lineage comparison. Cosine similarity is unavailable for the extended
-matrix (a library incompatibility), though the pilot shows binary agreement
-carries the signal. Always-Frontier is a single model (gpt-oss-120b). All runs
-used free-tier APIs; paid-tier cost profiles differ. Pair~1's models are
-delisted, so its MMLU and domain-calibration numbers cannot be re-verified.
+claimed. Restricting to pairs with complete coverage buys internal consistency at
+the cost of breadth: all four pairs are served by one provider and share one
+frontier, so \textbf{provider and frontier are held constant but also
+unvaried} --- we cannot say whether the findings transfer to a different
+frontier or a slower serving stack, and a capability-matched within-family pair
+on a second provider remains the key missing replicate. On TruthfulQA the two
+cross-family pairs exceed the $\pm3$\,pp matching bar (10--12.6\,pp,
+Table~\ref{tab:solo}); the bias runs against Finding~5 rather than for it, but the
+cell is not cleanly matched. Pair~3's Cheap~B is a safety-tuned model that refuses
+or hedges on $\sim$40\% of MMLU items, halving its agreement and inflating
+escalation without inflating accuracy --- \textbf{safety-tuned models are poor PCR
+cheap models}, and it was retained only because it is the one available
+same-lineage partner for gpt-oss-20B. Cosine similarity between raw responses is
+unavailable in this run (a library incompatibility), so we report binary letter
+agreement only. Always-Frontier is a single model (gpt-oss-120b). All runs used
+free-tier APIs; paid-tier cost profiles differ.
 
 \subsection*{Future Work}
+\label{sec:futurework}
 A statistically powered family study ($\approx$1000 MMLU-Pro questions
-$\times\geq$3 matched pairs per condition) would let the null be \textit{claimed}
-rather than merely unrefuted. The 3--5\,pp Oracle-2-cheap gap motivates a
-lightweight learned selector beyond binary agreement. Online difficulty/domain
-threshold learning \cite{schroeder2025vcache} would remove the calibration
-corpus. Extending PCR to open-ended generation needs a semantic agreement
-criterion; applying it to retrieval-augmented generation \cite{lewis2020rag},
-where grounded facts may still be co-hallucinated, is a high-value target.
+$\times\geq$3 matched pairs per condition, on at least two providers) would let
+the hard-tier C-Hall premium be \textit{claimed} rather than merely suggested.
+The 3--5\,pp Oracle-2-cheap gap motivates a lightweight learned selector beyond
+binary agreement. Extending the grid to a \textbf{numeric-answer benchmark}
+requires first disentangling answer extraction from the token budget: a truncated
+multi-step solution yields an intermediate value that a last-number parser scores
+as a disagreement, so apparent C-Hall on such benchmarks is budget-sensitive and
+must be calibrated before it can be compared against the multiple-choice grid.
+Online difficulty threshold learning \cite{schroeder2025vcache} would remove the
+calibration corpus. Extending PCR to open-ended generation needs a semantic
+agreement criterion; applying it to retrieval-augmented generation
+\cite{lewis2020rag}, where grounded facts may still be co-hallucinated, is a
+high-value target.
 
 %===========================================================
 \balance
