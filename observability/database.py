@@ -7,9 +7,11 @@ from datetime import datetime
 from sqlalchemy import Column, String, Float, Integer, Boolean, DateTime, Text, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv('D:/files/.env')
+# Load .env from the repository root, wherever the repo happens to live.
+load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 Base = declarative_base()
 

@@ -4,9 +4,11 @@ import logging
 import warnings
 from abc import ABC, abstractmethod
 from typing import Tuple, AsyncGenerator
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv('D:/files/.env')
+# Load .env from the repository root, wherever the repo happens to live.
+load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 logger = logging.getLogger("ai_gateway.providers")
 

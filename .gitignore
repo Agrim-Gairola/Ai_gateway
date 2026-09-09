@@ -1,9 +1,24 @@
+# ── Secrets ──────────────────────────────────────────────
 .env
+.env.*
+!.env.example
+api.txt
+*.key
+*.pem
+secrets.json
+credentials.json
+
+# ── Python ───────────────────────────────────────────────
 __pycache__/
 *.pyc
-*.db
-ai_gateway.db
 *.egg-info/
 .eggs/
 dist/
 build/
+.venv/
+venv/
+
+# ── Local state ──────────────────────────────────────────
+*.db
+ai_gateway.db
+.streamlit/

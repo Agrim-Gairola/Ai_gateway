@@ -2,9 +2,11 @@ import os
 import secrets
 from datetime import datetime, timedelta
 from typing import Optional
+from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv('D:/files/.env')
+# Load .env from the repository root, wherever the repo happens to live.
+load_dotenv(Path(__file__).resolve().parent / ".env")
 
 
 def generate_token() -> str:

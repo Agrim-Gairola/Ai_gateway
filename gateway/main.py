@@ -5,8 +5,10 @@ os.environ["HF_DATASETS_OFFLINE"] = "1"
 import time
 import uuid
 from contextlib import asynccontextmanager
+from pathlib import Path
 from dotenv import load_dotenv
-load_dotenv('D:/files/.env')
+# Load .env from the repository root, wherever the repo happens to live.
+load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
