@@ -22,3 +22,6 @@ venv/
 *.db
 ai_gateway.db
 .streamlit/
+
+# Pre-history-rewrite backup bundle
+_pre_purge_backup_*.bundle
