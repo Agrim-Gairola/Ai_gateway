@@ -20,7 +20,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
 % figures live in exports/figures/ ; adjust or copy alongside this .tex
-\graphicspath{{exports/figures/}{figures/}{./}}
+\graphicspath{{./}}
 
 \begin{document}
 
@@ -513,7 +513,7 @@ MMLU-Pro & 19\% \;(13.3--25.9) & hard \\
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\columnwidth]{fig_chall_ladder.png}
+\includegraphics[width=\columnwidth]{fig_chall_ladder}
 \caption{Coordinated hallucination on the 4 complete pairs. The mean climbs
 monotonically with benchmark difficulty ($\approx$3\% $\to$ 19\%); the
 within-family Qwen pair (P7) reaches 25.9\% on MMLU-Pro, matching the pilot's
@@ -584,7 +584,7 @@ benchmarks the cost saving shrinks to 22--46\%.
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\columnwidth]{fig_acc_cost.png}
+\includegraphics[width=\columnwidth]{fig_acc_cost}
 \caption{PCR-2 accuracy vs.\ cost per 1{,}000 queries for the 4 complete pairs
 $\times$ 6 benchmarks, coloured by difficulty tier. $\times$ = Always-Frontier
 (gpt-oss-120B run solo) at its own cost and accuracy. Easy points are up-left of

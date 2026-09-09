@@ -63,10 +63,12 @@ def fig_ladder():
     ax.set_title("Coordinated hallucination climbs monotonically with benchmark difficulty",
                  fontsize=9.5)
     fig.tight_layout()
-    out = os.path.join(FIGDIR, "fig_chall_ladder.png")
-    fig.savefig(out, dpi=220, bbox_inches="tight")
+    for ext in ("png", "pdf"):
+        for d in (FIGDIR, ROOT):          # exports/figures/ AND next to the .tex
+            fig.savefig(os.path.join(d, f"fig_chall_ladder.{ext}"),
+                        dpi=220, bbox_inches="tight")
     plt.close(fig)
-    print("wrote", out, "means", [round(m, 1) for m in means])
+    print("wrote fig_chall_ladder.{png,pdf} means", [round(m, 1) for m in means])
 
 
 def fig_acc_cost():
@@ -104,10 +106,12 @@ def fig_acc_cost():
     ax.legend(fontsize=8, loc="lower left", framealpha=0.9)
     ax.set_title("Accuracy vs cost: 4 pairs $\\times$ 6 benchmarks", fontsize=10)
     fig.tight_layout()
-    out = os.path.join(FIGDIR, "fig_acc_cost.png")
-    fig.savefig(out, dpi=220, bbox_inches="tight")
+    for ext in ("png", "pdf"):
+        for d in (FIGDIR, ROOT):
+            fig.savefig(os.path.join(d, f"fig_acc_cost.{ext}"),
+                        dpi=220, bbox_inches="tight")
     plt.close(fig)
-    print("wrote", out)
+    print("wrote fig_acc_cost.{png,pdf}")
 
 
 if __name__ == "__main__":

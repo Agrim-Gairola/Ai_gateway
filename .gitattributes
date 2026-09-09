@@ -1,0 +1,10 @@
+# never touch binary assets
+*.png binary
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+# normalize text
+*.tex text eol=lf
+*.md  text eol=lf
+*.py  text eol=lf
+*.bib text eol=lf
