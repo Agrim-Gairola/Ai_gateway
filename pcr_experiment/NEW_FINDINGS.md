@@ -29,24 +29,32 @@ as-is; `pair6/commonsenseqa` 16/200, parked pending reset).
 
 ---
 
+> **Update (2026-09-09):** the definitive results are now the **consistent
+> 4-pair × 6-benchmark grid** — pair3, pair7 (within-family) and pair10, pair11
+> (cross-family), all sharing the `gpt-oss-120b` frontier and the Groq provider,
+> every cell at full N. The tables below are refreshed to that grid; the earlier
+> 7-pair numbers (which mixed in the capability-mismatched pair8/pair9 and the
+> partial pair6) are superseded. See `pcr_ieee_v2.tex` for the final paper.
+
 ## Finding 1 — Coordinated hallucination scales with benchmark **difficulty**, not task type
 
-The original paper framed C-Hall as *knowledge* (≈9%) vs *math* (31.8%). Across
-six knowledge benchmarks and seven pairs the real pattern is a smooth climb with
-question difficulty / adversarialness — no change in task type:
+The original paper framed C-Hall as *knowledge* (≈9%) vs *math* (31.8%). On the
+4-pair grid the real pattern is a smooth monotone climb with question difficulty
+— no change in task type:
 
-| Benchmark | mean C-Hall (all pairs) | range across pairs |
+| Benchmark | mean C-Hall (4 pairs) | range across pairs |
 |---|---|---|
-| OpenBookQA (elementary science) | **2%** | 1.9–2.1% |
-| ARC-Challenge (science) | **4%** | 2.2–8.4% |
-| CommonsenseQA (commonsense) | **7%** | (one pair) |
-| MMLU (general knowledge) | **10%** | 9.2–11.3% |
-| **TruthfulQA (adversarial misconceptions)** | **21%** | 12.2–38.6% |
-| **MMLU-Pro (hard, 10-option)** | **30%** | 21.7–43.0% |
+| OpenBookQA (elementary science) | **3%** | 1.6–4.5% |
+| ARC-Challenge (science) | **3%** | 2.6–3.9% |
+| MMLU (general knowledge) | **10%** | 8.3–11.3% |
+| CommonsenseQA (commonsense) | **10%** | 7.1–15.6% |
+| **TruthfulQA (adversarial misconceptions)** | **14%** | 9.5–19.8% |
+| **MMLU-Pro (hard, 10-option)** | **19%** | 13.3–25.9% |
 
-*(Figure `fig6_newbench_chall.png`.)*
+*(Figure `fig_chall_ladder.png`.)* CommonsenseQA is the one non-monotone point —
+its ~10% is driven by pair3's safety-tuned model (15.6% there).
 
-MMLU-Pro's ≈27% C-Hall on the capability-matched pairs (pair6/pair7) **matches
+MMLU-Pro's **25.9% C-Hall for the within-family Qwen pair (pair7)** **matches
 the paper's GSM8K figure on a plain letter task** — no numeric-answer extraction,
 256-token budget, &lt;3% unparsed — so it cannot be dismissed as a truncation
 artefact (cf. Finding 5). Wave 3's mismatched pairs sit even higher (Finding 3),
@@ -86,46 +94,45 @@ rare and neutral. PCR's real value band is the middle (MMLU-like); the paper's
 
 ---
 
-## Finding 3 — Family relatedness: robust on agreement, **null on coordinated hallucination** — and the binding constraint is capability matching
+## Finding 3 — Family: a difficulty-gated agreement premium, and a **suggestive** C-Hall premium on the hard tail
 
-### 3a. Agreement rate — within-family pairs agree more
+Clean 2-vs-2 design: within = {pair3, pair7}, cross = {pair10, pair11}, all 6
+benchmarks, frontier + provider constant. Bootstrap 95% CIs on the (within −
+cross) gap:
 
-Bootstrap 95% CIs on the (within − cross) gap *(Figure `fig4_family_forest.png`)*:
+### 3a. Agreement rate — the premium is difficulty-gated
 
-| Pool | within | cross | gap | 95% CI | verdict |
+| Benchmark | within | cross | gap | 95% CI | verdict |
 |---|---|---|---|---|---|
-| ARC | 93.5% | 82.3% | +11.3 pp | [+7.9, +14.6] | **excludes 0** |
-| OpenBookQA | 95.0% | 83.3% | +11.7 pp | [+5.5, +17.8] | **excludes 0** |
-| TruthfulQA | 88.7% | 74.0% | +14.7 pp | [+6.0, +23.3] | **excludes 0** |
-| MMLU-Pro | 72.0% | 51.3% | +20.7 pp | [+10.0, +31.3] | **excludes 0** |
-| GSM8K | 78.0% | 34.1% | +43.9 pp | [+36.3, +51.2] | **excludes 0** |
-| MMLU | 73.0% | 76.0% | −3.0 pp | [−7.6, +1.8] | spans 0 |
-| **Benchmark-balanced, pair-level** | **84.3%** | **73.7%** | **+10.6 pp** | **[−2.3, +24.7]** | marginal |
+| ARC | 95.4% | 94.0% | +1.4 pp | [−1.8, +4.7] | spans 0 |
+| OpenBookQA | 92.2% | 89.5% | +2.7 pp | [−1.3, +6.8] | spans 0 |
+| MMLU | 73.0% | 80.2% | **−7.2 pp** | [−12.2, −2.0] | **excludes 0 (reversed)** |
+| CommonsenseQA | 90.8% | 81.8% | +9.0 pp | [+4.2, +13.5] | **excludes 0** |
+| TruthfulQA | 84.7% | 70.7% | +14.0 pp | [+7.7, +20.3] | **excludes 0** |
+| MMLU-Pro | 74.0% | 52.3% | +21.7 pp | [+14.0, +29.3] | **excludes 0** |
 
-Within-family pairs agree more on 5 of 6 benchmarks. The conservative pair-level
-pool (3 within vs 4 cross pairs, each pair one draw) now straddles zero — the
-effect is real per-benchmark but not overwhelming when each pair counts once.
+Null on easy; large ($+9$ to $+22$ pp) on the hard/adversarial benchmarks. MMLU
+**reverses** — pair3's safety-tuned model refuses/hedges on ~40% of items, cutting
+its agreement to 58%.
 
-### 3b. Coordinated hallucination — no effect in any capability-matched comparison
+### 3b. Coordinated hallucination — follows the same shape, one step weaker
 
-| Pool | within | cross | gap | 95% CI | verdict |
+| Benchmark | within | cross | gap | 95% CI | verdict |
 |---|---|---|---|---|---|
-| OpenBookQA | 2.1% | 1.9% | +0.2 pp | [−2.7, +3.0] | spans 0 |
-| ARC | 4.4% | 3.1% | +1.4 pp | [−0.7, +3.6] | spans 0 |
-| MMLU | 10.1% | 9.3% | +0.9 pp | [−2.8, +4.6] | spans 0 |
-| GSM8K | 4.3% | 2.6% | +1.7 pp | [−2.1, +6.1] | spans 0 |
-| TruthfulQA | 14.3% | 19.8% | −5.5 pp | [−15.1, +4.0] | spans 0 |
-| MMLU-Pro | 25.9% | 27.3% | −1.3 pp | [−14.4, +11.6] | spans 0 |
-| **Benchmark-balanced, pair-level** | **8.1%** | **6.1%** | **+2.1 pp** | **[−2.6, +6.2]** | spans 0 |
+| ARC | 3.4% | 2.8% | +0.5 pp | [−2.1, +2.9] | spans 0 |
+| OpenBookQA | 3.3% | 2.2% | +1.0 pp | [−1.3, +3.4] | spans 0 |
+| MMLU | 10.1% | 10.0% | +0.2 pp | [−4.0, +4.3] | spans 0 |
+| CommonsenseQA | 11.3% | 8.6% | +2.7 pp | [−1.8, +7.3] | spans 0 |
+| **TruthfulQA** | 16.9% | 10.4% | **+6.6 pp** | [+0.3, +12.8] | **excludes 0** |
+| MMLU-Pro | 22.5% | 15.3% | +7.2 pp | [−0.3, +14.9] | boundary |
+| **Balanced, pair-level** | 10.5% | 6.8% | **+3.4 pp** | [+2.4, +4.3] | excludes 0 (2 pairs/cond.) |
 
-*(TruthfulQA / MMLU-Pro rows use only the capability-matched pairs — pair7 within,
-pair6 cross. The wave-3 pairs are excluded here; see 3c.)*
-
-Every interval spans zero. Within-family cheap models agree substantially more,
-**but that extra agreement is not disproportionately wrong.** The intuitive
-"same training family ⇒ they hallucinate together" hypothesis is **not
-supported** by any properly matched comparison. What drives C-Hall is the
-**benchmark** (Finding 1), not the family relationship.
+**Revised conclusion:** shared lineage buys a large agreement premium on hard
+questions and, *plausibly*, a coordinated-hallucination premium there too
+(TruthfulQA +6.6 pp; MMLU-Pro +7.2 pp at the boundary). Null on easy/medium. With
+only two pairs per condition this is a **hypothesis for a powered replication**,
+not the settled "no effect" of the earlier 7-pair pool. What dominates C-Hall
+everywhere is still benchmark difficulty (Finding 1), not lineage.
 
 ### 3c. Why this is hard to test: capability matching is the binding constraint
 

@@ -53,8 +53,9 @@ OpenBookQA, CommonsenseQA, MMLU, TruthfulQA, MMLU-Pro; plus seven exploratory
 pairs and GSM8K), scoring \textbf{eight routing policies} on identical stored
 data. Five results emerge. (1) \textbf{Coordinated hallucination (C-Hall)}---two
 cheap models agreeing on a wrong answer---\textbf{scales monotonically with
-question difficulty, not task type}: from 2\% on OpenBookQA to $\approx$26\% on
-MMLU-Pro, reaching mathematical-reasoning levels on a plain multiple-choice task.
+question difficulty, not task type}: the mean rises from $\approx$3\% on
+ARC/OpenBookQA to $\approx$19\% on MMLU-Pro (25.9\% for the within-family Qwen
+pair), reaching mathematical-reasoning levels on a plain multiple-choice task.
 (2) A \textbf{capability-matched} cheap pair with PCR matches always-frontier
 accuracy on easy/medium questions at 40--70\% lower cost, but on hard questions
 its accuracy is safe while its C-Hall (12--26\%) is not. (3) \textbf{Shared model
@@ -482,44 +483,49 @@ escalation targets the difficulty right tail.
 \end{table}
 
 \subsection{Finding 1: C-Hall scales with difficulty, not task type}
-The pilot framed C-Hall as knowledge ($\approx$9\%) vs.\ math (31.8\%). The
-7-benchmark matrix shows a smooth monotone climb with difficulty, entirely
-within knowledge tasks (Table~\ref{tab:ladder}, Fig.~\ref{fig:ladder}):
+The pilot framed C-Hall as knowledge ($\approx$9\%) vs.\ math (31.8\%). On the
+consistent 4-pair grid it is a smooth monotone climb with difficulty, entirely
+within knowledge tasks (Table~\ref{tab:ladder}, Fig.~\ref{fig:ladder}): the mean
+agreed-answer error rate rises from $\approx$3\% on ARC/OpenBookQA to
+$\approx$19\% on MMLU-Pro, and for the within-family Qwen pair (Pair~7) reaches
+\textbf{25.9\% on MMLU-Pro} --- squarely in the range the pilot reported for
+mathematical reasoning, but on a 256-token multiple-choice task with $<$3\%
+unparsed responses. It is not a decoding artefact.
 
 \begin{table}[!t]
-\caption{C-Hall rate on agreed questions, by benchmark (mean over all pairs)}
+\caption{C-Hall rate on agreed questions, by benchmark (mean over the 4 complete
+pairs; range across pairs in parentheses).}
 \label{tab:ladder}
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{l c l}
 \toprule
 \textbf{Benchmark} & \textbf{Mean C-Hall} & \textbf{Tier} \\
 \midrule
-OpenBookQA & 2\% & easy \\
-ARC-Challenge & 4\% & easy \\
-CommonsenseQA & 7\% & easy \\
-MMLU & 10\% & medium \\
-TruthfulQA & 21\% & hard \\
-MMLU-Pro & 30\% & hard \\
+OpenBookQA & 3\% \;(1.6--4.5) & easy \\
+ARC-Challenge & 3\% \;(2.6--3.9) & easy \\
+MMLU & 10\% \;(8.3--11.3) & medium \\
+CommonsenseQA & 10\% \;(7.1--15.6) & easy \\
+TruthfulQA & 14\% \;(9.5--19.8) & hard \\
+MMLU-Pro & 19\% \;(13.3--25.9) & hard \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\columnwidth]{fig6_newbench_chall.png}
-\caption{Coordinated hallucination scales with benchmark difficulty. On the
-capability-matched pairs, MMLU-Pro reaches $\approx$27\% C-Hall on a plain
-letter task---matching the pilot's GSM8K figure without any answer-extraction
-artefact (\S\ref{sec:gsm8k}).}
+\includegraphics[width=\columnwidth]{fig_chall_ladder.png}
+\caption{Coordinated hallucination on the 4 complete pairs. The mean climbs
+monotonically with benchmark difficulty ($\approx$3\% $\to$ 19\%); the
+within-family Qwen pair (P7) reaches 25.9\% on MMLU-Pro, matching the pilot's
+GSM8K figure without any answer-extraction artefact (\S\ref{sec:gsm8k}).}
 \label{fig:ladder}
 \end{figure}
 
-MMLU-Pro's $\approx$27\% agreed-answer error rate (on matched pairs 6/7) equals
-the pilot's math figure, but on a 256-token multiple-choice task with $<$3\%
-unparsed responses---it is not a decoding artefact. \textbf{The prerequisite for
-safe PCR is difficulty-tier awareness, not task-type awareness.} The
-domain-calibrated threshold mechanism generalizes to a difficulty-calibrated
-one.
+\textbf{The prerequisite for safe PCR is difficulty-tier awareness, not
+task-type awareness.} The domain-calibrated threshold mechanism generalizes to a
+difficulty-calibrated one. CommonsenseQA is the one non-monotone point ($\approx$10\%,
+between MMLU and the easy pair): its C-Hall is driven by Pair~3, whose
+safety-tuned model produces 15.6\% there.
 
 \subsection{Finding 2: Full policy ablation}
 Table~\ref{tab:policytier} scores eight policies by difficulty tier.
@@ -566,23 +572,23 @@ hard & Pair 3 & 76.7 & 72.7 & 75.0 & 19.6 & 21.7 \\
 \end{table}
 
 \subsection{Finding 3: Does a cheap pair beat the frontier?}
-Fig.~\ref{fig:tradeoff} and Table~\ref{tab:cost} give the measured trade-off.
-\textbf{On easy/medium a capability-matched cheap pair with PCR-2 matches
-Always-Frontier accuracy at 42--72\% lower cost.} Latency is decided by the
-\textit{provider}, not the policy: all-Groq pairs run PCR-2 at $\approx$0.5\,s;
-any pair with a Mistral or Google leg runs at 1.6--7.8\,s. PCR-2 is
-1.2--1.7$\times$ faster than a serial cascade but not faster than a single
-$\approx$0.9\,s Groq frontier call---its latency advantage is architectural, not
-absolute. On hard benchmarks the cost saving shrinks to 9--47\% and the accuracy
-is unsafe regardless, so PCR is the wrong tool there.
+Fig.~\ref{fig:tradeoff} and Table~\ref{tab:cost} give the measured trade-off
+over the 24 cells. \textbf{On easy and medium benchmarks PCR-2 matches or beats
+Always-Frontier accuracy at 22--72\% lower cost} --- the easy points sit up-left
+of the frontier $\times$ (same accuracy, one-third the cost) and the MMLU points
+(86--88\%) sit \textit{above} the frontier $\times$ (82.5\%). On MMLU-Pro the
+PCR-2 points (76--77\% for Pairs~3/10/11) also clear the frontier (71.2\%) and at
+lower cost --- but 12--26\% of what PCR-2 trusts there is wrong (Finding~2), so
+it wins on accuracy-per-dollar while losing on safety. On the two hardest
+benchmarks the cost saving shrinks to 22--46\%.
 
 \begin{figure}[!t]
 \centering
-\includegraphics[width=\columnwidth]{fig7_tradeoff_cost.png}
-\caption{Accuracy vs.\ cost per 1{,}000 queries. Circles = PCR-2, faint squares
-= single cheap model, $\times$ = Always-Frontier (gpt-oss-120b, measured),
-dashed line = its accuracy. Easy tier: PCR-2 within $\approx$1\,pp of frontier
-accuracy at $\approx$1/3 the cost.}
+\includegraphics[width=\columnwidth]{fig_acc_cost.png}
+\caption{PCR-2 accuracy vs.\ cost per 1{,}000 queries for the 4 complete pairs
+$\times$ 6 benchmarks, coloured by difficulty tier. $\times$ = Always-Frontier
+(gpt-oss-120B run solo) at its own cost and accuracy. Easy points are up-left of
+the frontier; the MMLU and MMLU-Pro points sit above it.}
 \label{fig:tradeoff}
 \end{figure}
 
@@ -933,7 +939,8 @@ speculative-decoding analogy at the response level. Extending an initial
 single-pair study with a balanced four-pair design on a complete six-benchmark
 grid (plus exploratory pairs and an eight-policy ablation), we establish:
 (1) coordinated hallucination scales monotonically with question difficulty
-(2\% to $\approx$26\%), not with task type; (2) a capability-matched cheap pair
+($\approx$3\% to $\approx$19\% mean, up to 26\% for the within-family pair), not
+with task type; (2) a capability-matched cheap pair
 with PCR-2 matches always-frontier accuracy on easy/medium queries at 40--70\%
 lower cost, but is unsafe on hard queries where 12--26\% of trusted answers are
 wrong; (3) shared model lineage buys a large agreement premium on
